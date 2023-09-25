@@ -1,2 +1,33 @@
 \chapter{Alcance}
 \label{cap:alcance}
+
+Al ser un proyecto que puede ser complejo y largo, definiremos el alcance y los objetivos que se deberan de cumplir para considerar que las hipotesis que nos
+hemos planteado esten satisfechas. 
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+Este projecto tiene como objetivo principal investigar el uso de inteligencias artificiales para aplicar ingieneria inversa a programas. 
+En otras palabras, nos proponemos utilizar inteligencias artificiales tipo ChatGPT o similares para generar un codigo en C a partir unica
+y exclusivamente del ejecutable o de un archivo objeto.
+
+Para poder alcanzar este objetivo se ha decidido dividirlo en subobjetivos de tal manera que podamos ir dando pasos hasta el objetivo principal.
+Los subobjetivos definidos son los siguientes:
+
+\begin{itemize}
+    \item Pruebas de uso con ChatGPT Plus, utilizando modelos como el GPT-3.5 y GPT-4
+    \item Pruebas de uso con un modelo mas pequeño denominados LoRA \footnote{LoRA (\textit{Low-Rank Adaptation}) es una tecnica de \textit{fine-tuning} para modelos
+          prentrenados en la cual propone utilizar una matriz de rangos baja de tal manera que reducimos los tiempos y memoria de GPU necesarios para el entrenamiento.} 
+          y haciendo \textit{fine-tuning} para nuestra tarea en especifico.
+\end{itemize}
+
+El objetivo de realizar pruebas con ChatGPT es obtener una aproximación de los resultados que podamos obtener con nuestro modelo. ChatGPT nos
+ofrece un entorno rapido y sencillo para poder hacer pruebas y analizar los resultados que podamos obtener.
+
+Una vez realizadas las pruebas con ChatGPT, independientemente del resultado obtenido, se procedera a desplejar una inteligencia artificial mas pequeña,
+denominadas LoRa, en la cual se procedera a hacer diferentes metodos de \textit{fine-tuning}de tal manera que podemos augmentar la calidad de los resultados
+obtenidos. La principal razon por la cual utilizamos modelos LoRa se debe a una cuestion tecnica. Estos modelos estan optimizados para obtener resultados
+similares a un modelo normal como GPT-3.5 pero utilizando una cantidad menor de recursos hardware.
+
+\section{Posibles riesgos y obstaculos}
+\label{sec:riesgos}
