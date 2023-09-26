@@ -1,20 +1,24 @@
 \chapter{Justificación}
 \label{cap:justificacion}
 
-La justificacion de este proyecto se basa en dos razones: la investigación de usos de los modelos de lenguaje basados en redes neuronales y por ultimo,
-en el caso de que los resultados sean positivos, que podamos utilizar los modelos de lenguaje para poder obtener el codigo fuente de un ejecutable nos
-permitiria, entre otras cosas, para el analisis de malware y seguridad, depuración y mantenimiento de software heredado, interoperabilidad, auditorias 
+% Corregido
+
+La justificación de este proyecto se basa en dos razones: la investigación de usos de los modelos de lenguaje basados en redes neuronales y por último,
+en el caso de que los resultados sean positivos, que podamos utilizar los modelos de lenguaje para poder obtener el código fuente de un ejecutable nos
+permitiría, entre otras cosas, para el análisis de malware y seguridad, depuración y mantenimiento de software heredado, interoperabilidad, auditorias
 de software e incluso para la educación y aprendizaje.
 
 \section{Soluciones y alternativas existentes}
 \label{sec:alternativas}
 
-Actualmente en el mercado podemos encontrar diferentes herramientas o programas llamados descompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
-en un codigo C aproximado. Con aproximado me vengo a referir que el codigo que nos dan es mas parecido a un pseudocodigo muy parecido a C, pero que necesitaria ciertos ajustes
-por parte nuestra para que fuese mas legible.
+% Corregido
 
-Así mismo, la mayoria de estas herramientas estan mas orientadas a la generación de un codigo ensamblador más "amigable" y que majoritariamente siempre necesitara intervención
-para que pueda ser mas legible. Tambien añadir que estas herramientas no utilizan inteligencia artificial para mejorar sus resultados.
+Actualmente, en el mercado podemos encontrar diferentes herramientas o programas llamados descompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
+en un código C aproximado. Con aproximado me vengo a referir que el código que nos dan es más parecido a un pseudocódigo muy parecido a C, pero que necesitaría ciertos ajustes
+por parte nuestra para que fuese más legible.
+
+Así mismo, la mayoría de estas herramientas están más orientadas a la generación de un código ensamblador más "amigable" y que mayoritariamente siempre necesitara intervención
+para que pueda ser más legible. También añadir que estas herramientas no utilizan inteligencia artificial para mejorar sus resultados.
 
 Algunas de estas herramientas son:
 
@@ -26,3 +30,15 @@ Algunas de estas herramientas son:
 
 \section{Solucion tomada}
 \label{sec:solucion}
+
+% Corregido
+
+La solución tomada pasa por investigar si el uso de inteligencia artificial, más concretamente el uso de modelos de lenguaje preentrenados, nos podría ayudar a la hora de hacer
+ingeniería inversa sobre un programa en su forma de ejecutable u objeto.
+
+Para poder hacerlo se decide utilizar modelos de lenguaje disponibles en Internet que la propia comunidad de desarrollo de software libre ha creado o modelos liberados por Microsoft.
+La intención es aplicar \textit{fine-tuning} sobre estos modelos ya preentrenados, de tal manera que podemos aumentar la calidad de los resultados obtenidos para nuestra
+tarea específica.
+
+Así mismo, se tendrá que investigar sobre que método de \textit{fine-tuning} podemos utilizar, que se ajuste más a la características de nuestra tarea, teniendo en cuenta cosas como el
+tipo de datos que se utilizan y el resultado que se quiere obtener.
