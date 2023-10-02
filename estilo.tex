@@ -20,6 +20,29 @@
 \usepackage{listings} % para poder hacer uso de "listings" propios (p.ej. códigos)
 \usepackage{eurosym} % para poder usar el símbolo del euro con \euro {xx}
 \usepackage{hyperref} % TODO: añade la opción hidelinks para imprimirlo (los enlaces no aparecerán resaltados)
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+
+%Fancyhdr Styles
+\fancypagestyle{frontmatter}{%
+    \fancyhf{} % clear all fields
+    \renewcommand{\headrulewidth}{0pt}
+    \lhead{}
+    \lfoot[\thepage]{}
+    \rfoot[]{\thepage} 
+    }%
+\fancypagestyle{mainmatter}{%
+    \fancyhf{} % clear all fields
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \lhead[\leftmark]{Daniel García Estévez}
+    \rhead[Daniel García Estévez]{\rightmark}
+    \lfoot[\thepage]{}
+    \rfoot[]{\thepage} 
+}%
 
 % Para que no parta las palabras
 \pretolerance=10000

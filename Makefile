@@ -17,16 +17,16 @@ pdf:
 	pdflatex ${DOCUMENTO}
 	bibtex ${DOCUMENTO}.aux
 	pdflatex ${DOCUMENTO}
-	rm -f $(TEMPORALES) *dvi
+	del -f $(TEMPORALES) *dvi
 
 backup:
 	tar -cvzf ${HOY}.tgz ${DOCUMENTO}.tex  ./figs/* 
 
 clean:
-	rm -f $(TEMPORALES)
+	del -f $(TEMPORALES)
 
 cleanall:
-	rm -f $(TEMPORALES) *pdf *dvi
+	del -f $(TEMPORALES) *pdf *dvi
 
 release:
 	tar -cvzf $(HOY).tgz *

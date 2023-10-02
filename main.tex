@@ -5,8 +5,8 @@
 \begin{document}
 \baselineskip 1.\baselineskip
 
+\pagestyle{frontmatter}
 \frontmatter
-
 \input{portada/indice.tex} % aqui se cargan todas las "primeras paginas"
 
 % Bibliografa
@@ -15,15 +15,22 @@
   \addcontentsline{toc}{chapter}{\bibname}}
 
 \mainmatter
-
+\pagestyle{mainmatter}
 \setcounter{page}{1}
 
-\input{capitulos/introducion}
-\input{capitulos/justificacion}
-\input{capitulos/alcance}
+% Primera entrega de GEP
+% \input{capitulos/introducion}
+% \input{capitulos/justificacion}
+% \input{capitulos/alcance}
+
+% Segunda entrega de GEP
+\input{capitulos/tareas.tex}
+\input{capitulos/estimacion.tex}
+\input{capitulos/riesgos.tex}
+
+% Tercera entrega de GEP
 
 \clearpage
-\thispagestyle{empty}
 
 \printindex \nocite{*}
 \appendix
