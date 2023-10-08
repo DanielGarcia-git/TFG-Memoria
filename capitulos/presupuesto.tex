@@ -1,6 +1,17 @@
 \chapter{Presupuesto}
 \label{cap:presupuesto}
 
+\section{Recursos humanos}
+\label{sec:recursos_humanos}
+
+Para poder definir el presupuesto dedicado a los recursos humanos deberemos de indentificar los actores implicados en el proceso y su sueldo medio. Para poder definir que sueldo
+le asignamos a cada actor implicado hemos utilizado una pagina web llamada \textit{Glassdoor}\footnote{Glassdoor es un sitio web estadounidense en el que empleados actuales y 
+antiguos hacen reseñas anónimas de empresas. \cite{Glassdoor}}.
+
+En nuestro proyecto, tal y como definimos en el sección \ref{sec:actores}, las actores implicados son: el responsable de proyectos de inteligencia artificial e innovación,
+el investigador de inteligencia artificial y un programador junior con conociemientos en \textit{scripting}. En la tabla \ref{tab:presupuesto_roles} podremos obervar el precio 
+por hora de cada actor y el precio por hora añadiendo los impuestos necesarios. Para el calculo de impuestos hemos estimado que de media una empresa paga un 30\% de impuestos por 
+cada trabajador.
 
 \begin{table}[H]
     \centering
@@ -15,8 +26,15 @@
     \end{tabular}%
     }
     \caption{Salarios netos medios por hora para cada rol (Glassdor)}
-    \label{tab:pre-rol}
+    \label{tab:presupuesto_roles}
 \end{table}
+
+A continuación detallare lo que tendremos que pagar en concepto de sueldos a cada trabajador por las tareas que hace cada uno y la dedicación estimada. Para ello, utilizaremos
+las tareas que definimos en el capitulo \ref{cap:tareas}. Detallaremos por cada tarea quien es el actor implicado, el precio por hora de esa tarea, que viene determinado
+por los actores implicados, los impuestos por hora y el total de sueldo neto e impuestos. Así mismo, tambien detallare el total por cada paquete de tareas.
+
+En la tabla \ref{tab:tareas_presupuesto} podreis ver esta información, cabe destacar que en esta apartado no podreis ver reflejado las contingencias ya que esto 
+lo detallaremos en la sección \ref{sec:contingencias}
 
 \begin{table}[H]
     \centering
@@ -68,6 +86,25 @@
     \label{tab:tareas_presupuesto}
 \end{table}
 
+\section{Recursos materiales directos}
+\label{sec:recursos_directos}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llcll}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Recursos materiales}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Cantidad}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Vida útil (años)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Amortización}} \\ \hline
+    \multicolumn{1}{|l|}{LG Gram 15Z980-BAA}                                   & \multicolumn{1}{l|}{1040.90 €}                               & \multicolumn{1}{c|}{1}                                         & \multicolumn{1}{l|}{4}                                                 & \multicolumn{1}{l|}{58.78 €}                                       \\ \hline
+                                                                               &                                                              & \multicolumn{1}{l}{}                                           &                                                                        &                                                                   
+    \end{tabular}
+    \caption{Amortización de los recursos materiales (Elaboración propia)}
+    \label{tab:amortizacion}
+\end{table}
+
+\section{Recursos materiales inderectos}
+\label{sec:recursos_indirectos}
+
 \begin{table}[H]
     \centering
     \begin{tabular}{l|l|l|l|l|}
@@ -77,4 +114,26 @@
     \end{tabular}
     \caption{}
     \label{tab:oficina}
+\end{table}
+
+\section{Contingencias}
+\label{sec:contingencias}
+
+\section{Presupuesto final}
+\label{sec:presupuesto_final}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Resumen}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} \\ \hline
+    Recursos humanos                                               &                                                              \\ \hline
+    Recursos materiales directos                                   &                                                              \\ \hline
+    Recursos materiales indirectos                                 &                                                              \\ \hline
+    Contingencias                                                  &                                                              \\ \hline
+    \multicolumn{1}{|r|}{\textbf{Total}}                           & \textbf{}                                                    \\ \hline
+    \end{tabular}
+    \caption{Presupuesto final (Elaboración propia)}
+    \label{tab:presupuesto_final}
 \end{table}
