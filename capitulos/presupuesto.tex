@@ -111,38 +111,93 @@ gratuitamente el departamento de Arquitectura de Computadores, de la Facultat de
 Este servición nos ofrece acceso a 8 GPU NVIDIA RTX 2080TI 11 GB GDDR6 PCIe\footnote{Información disponible en \href{https://www.ac.upc.edu/ca/nosaltres/serveis-tic/blog/nou-node-amb-gpus-al-cluster-sert}{Departamento de Arquitectura de Computadores}},
 que utilizaremos para ejecutar nuestros modelos de lenguaje.
 
+Así mismo, en la tabla \ref{tab:amortizacion} podreis observar que debido a que los recursos son finitos, es decir, tienen una vida util finita, se ha calculado la
+amortización asociada siguiendo la siguiente formula:
+
+
+\begin{myequation}[h]
+    \begin{equation}
+        Amortizacion= \frac{Precio}{Vida\ util \cdot 249\cdot Dedicacion}\cdot Duracion\ proyecto
+    \label{ec:ec1}
+    \end{equation}
+    \caption{Equación amortización de los recursos materiales}
+\end{myequation} 
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{llcll}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|llcl|l|}
     \hline
     \rowcolor[HTML]{8EA9D8} 
     \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Recursos materiales}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Cantidad}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Vida útil (años)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Amortización}} \\ \hline
-    \multicolumn{1}{|l|}{LG Gram 15Z980-BAA}                                   & \multicolumn{1}{l|}{1040.90 €}                               & \multicolumn{1}{c|}{1}                                         & \multicolumn{1}{l|}{4}                                                 & \multicolumn{1}{l|}{58.78 €}                                       \\ \hline
-                                                                               &                                                              & \multicolumn{1}{l}{}                                           &                                                                        &                                                                   
-    \end{tabular}
-    \caption{Amortización de los recursos materiales (Elaboración propia)}
+    \multicolumn{1}{|l|}{LG Gram 15Z980-BAA}                                   & \multicolumn{1}{l|}{1040.90 €}                               & \multicolumn{1}{c|}{1}                                         & 4                                                                      & 117.57 €                                                           \\ \hline
+    \multicolumn{1}{|l|}{Ordenador sobremesa custom}                           & \multicolumn{1}{l|}{500 €}                                   & \multicolumn{1}{c|}{1}                                         & 4                                                                      & 56.48 €                                                            \\ \hline
+    \multicolumn{1}{|l|}{Servicio computación en la nube}                      & \multicolumn{1}{l|}{0 €}                                     & \multicolumn{1}{c|}{1}                                         & -                                                                      & No Amortizable                                                     \\ \hline
+    \multicolumn{4}{|r|}{\textbf{TOTAL}}                                                                                                                                                                                                                                                & 174.05 €                                                           \\ \hline
+    \end{tabular}%
+    }
+    \caption{Amortización de los recursos materiales directos (Elaboración propia)}
     \label{tab:amortizacion}
 \end{table}
 
 \section{Recursos materiales inderectos}
 \label{sec:recursos_indirectos}
 
+Tal y como he explicado en la sección \ref{sec:identificacion_gastos} en un proyecto de estas caracteristicas tambien disponemos de recursos materiales indirectos, que son aquellos
+que no influyen directamente en el proyecto pero que se han de tener en cuenta. 
+
+En este proyecto hemos contemplado un unico recurso indirecto que son el espacio de trabajo donde se puede desarrollar este proyecto. En este caso, al ser un proyecto 
+temporal y con la unica necesidad de tener conexión a internet, se ha decidio por utilizar un espació de \textit{co-working}\footnote{El cotrabajo o trabajo en oficina integrada 
+(del inglés coworking) es una forma de trabajo que permite a profesionales independientes, emprendedores, y pymes de diferentes sectores, compartir un mismo espacio de trabajo, 
+tanto físico como virtual, para desarrollar sus proyectos profesionales de manera independiente.\cite{CoWorking}}
+
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|l|l|l|l|}
+    \begin{tabular}{llll|l|}
     \cline{2-5}
-                                            & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio mensual}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{IVA (21\%)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Meses}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Total}} \\ \hline
-    \multicolumn{1}{|l|}{Espacio coworking} & 1640 €                                                               & 1984.4 €                                                         & 4                                                           & 7937.6 €                                                    \\ \hline
+    \multicolumn{1}{l|}{}                   & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio mensual}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{IVA (21\%)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Meses}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Total}} \\ \hline
+    \multicolumn{1}{|l|}{Espacio coworking} & \multicolumn{1}{l|}{1640 €}                                          & \multicolumn{1}{l|}{1984.4 €}                                   & 4                                                           & 7937.6 €                                                    \\ \hline
+    \multicolumn{4}{|r|}{\textbf{TOTAL}}                                                                                                                                                                                                           & 7937.6 €                                                    \\ \hline
     \end{tabular}
-    \caption{}
+    \caption{Coste de los recursos materiales indirectos (Elaboración propia)}
     \label{tab:oficina}
 \end{table}
+
+Como podemos observar en la tabla \ref{tab:oficina} tenemos que el espacio de \textit{co-working} es una cuota mensual, donde en esta misma se incluye los gastos derivados de
+electricidad, internet, agua, entre otroas gastos. Al tratarse de un bien que no poseemos, este no sera amortizable.
 
 \section{Contingencias}
 \label{sec:contingencias}
 
+Al tratarse de un proyecto de investigació y por la naturaleza de estos mismos, la incertidumbre es alta, y por lo tanto, las contigencias se llevaran un 
+porcentaje del presupuesto alto, debido a que deberemos ser mas cautelosos.
+
+Para poder estimar las contingencias se han tenido dos imprevistos en cuenta que podremos ver reflejados en la tabla \ref{tab:contingencias}. Para calcular el
+precio de estos imprevistos, hemos tenido en cuenta el numero de horas que se deberian de hacer mas para poder contener este imprevisto.
+
+En el caso del imprevisto sea la inexperiencia el numero de horas que podrian hacerse seran del orden de 50 horas mas de trabajo para el investigador de inteligencia artificial.
+Por lo que respecta al imprevisto de que los resultados no sean los esperados, se ha calculado que se necesitaran unas 60 horas de investigación extra para poder
+recalcular las conclusiones.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|lll|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Imprevisto}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Probabilidad}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Coste}} \\ \hline
+    \multicolumn{1}{|l|}{Inexperiencia en las tecnologías utilizadas} & \multicolumn{1}{l|}{50 \%}                                          & 1763.5 €                                                     & 881.75 €                                                    \\ \hline
+    \multicolumn{1}{|l|}{Resultados obtenidos no esperados}           & \multicolumn{1}{l|}{60 \%}                                          & 2116.2 €                                                     & 1269.72 €                                                   \\ \hline
+    \multicolumn{3}{|r|}{\textbf{TOTAL}}                                                                                                                                                                  & 2151.47 €                                                   \\ \hline
+    \end{tabular}
+    \caption{Coste de los imprevistos (Elaboración propia)}
+    \label{tab:contingencias}
+\end{table}
+
 \section{Presupuesto final}
 \label{sec:presupuesto_final}
+
+Una vez analizadas todas las secciones anteriores, obtenemos en la tabla \ref{tab:presupuesto_final} el total del presupuesto del proyecto con contingencias (las cuales suponen el 
+7.87 \% del presupuesto total) y los impuestos oportunos.
 
 \begin{table}[H]
     \centering
@@ -150,11 +205,11 @@ que utilizaremos para ejecutar nuestros modelos de lenguaje.
     \hline
     \rowcolor[HTML]{8EA9D8} 
     \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Resumen}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} \\ \hline
-    Recursos humanos                                               &                                                              \\ \hline
-    Recursos materiales directos                                   &                                                              \\ \hline
-    Recursos materiales indirectos                                 &                                                              \\ \hline
-    Contingencias                                                  &                                                              \\ \hline
-    \multicolumn{1}{|r|}{\textbf{Total}}                           & \textbf{}                                                    \\ \hline
+    Recursos humanos                                               & 17066.32 €                                                   \\ \hline
+    Recursos materiales directos                                   & 174.05 €                                                     \\ \hline
+    Recursos materiales indirectos                                 & 7937.9 €                                                     \\ \hline
+    Contingencias                                                  & 2151.47 €                                                    \\ \hline
+    \multicolumn{1}{|r|}{\textbf{TOTAL}}                           & 27329.74 €                                                   \\ \hline
     \end{tabular}
     \caption{Presupuesto final (Elaboración propia)}
     \label{tab:presupuesto_final}
