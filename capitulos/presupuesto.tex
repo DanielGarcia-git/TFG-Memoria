@@ -1,0 +1,225 @@
+\chapter{Presupuesto}
+\label{cap:presupuesto}
+
+\section{Identificación y estimación de gastos}
+\label{sec:identificacion_gastos}
+
+% Corregido
+
+Para el desarrollo del proyecto es necesario una serie de gastos asociados a diferentes tipos de recursos. En estos recursos podemos identificar los
+recursos humanos, los recursos materiales tanto directos como indirectos.
+
+Los gastos en recursos humanos son aquellos gastos relacionados con el pago de salarios por el trabajo que realizaran cada actor implicado en el proyecto.
+Los gastos en recursos materiales encontramos de dos tipos: los directos, que son aquellos que influyen directamente en el proyecto y que son necesarios, como
+el equipamiento informático. Y los recursos materiales indirectos son recursos que no influyen directamente sobre el proyecto, pero se han de tener en cuenta,
+estos recursos son tales como el alquiler de un espacio de trabajo, por ejemplo.
+
+Así mismo, como en todos los proyectos, sabemos que asimilamos ciertos riesgos e imprevistos y, por lo tanto, en el presupuesto se han de tomar en consideración y
+reservar una parte para contingencias. En las próximas secciones detallaré el presupuesto por cada tipo de recurso.
+
+\section{Recursos humanos}
+\label{sec:recursos_humanos}
+
+% Corregido
+
+Para poder definir el presupuesto dedicado a los recursos humanos deberemos de identificar los actores implicados en el proceso y su sueldo medio. Para poder definir que sueldo
+le asignamos a cada actor implicado hemos utilizado una página web llamada \textit{Glassdoor}\footnote{Glassdoor es un sitio web estadounidense en el que empleados actuales y
+antiguos hacen reseñas anónimas de empresas. \cite{Glassdoor}}.
+
+En nuestro proyecto, tal y como definimos en la sección \ref{sec:actores}, los actores implicados son: el responsable de proyectos de inteligencia artificial e innovación,
+el investigador de inteligencia artificial y un programador junior con conocimientos en \textit{scripting}. En la tabla \ref{tab:presupuesto_roles} podremos observar el precio
+por hora de cada actor y el precio por hora añadiendo los impuestos necesarios. Para el cálculo de impuestos hemos estimado que de media una empresa paga un 30\% de impuestos por
+cada trabajador.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|c|c|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \textbf{Rol}                                                                                               & \multicolumn{1}{l|}{\cellcolor[HTML]{8EA9D8}\textbf{Sueldo neto (hora)}} & \multicolumn{1}{l|}{\cellcolor[HTML]{8EA9D8}\textbf{Sueldo neto + impuestos (hora)}} \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Responsable de proyectos de\\ inteligencia artificial e innovación\end{tabular} & 30.42 €                                                                  & 39.55 €                                                                              \\ \hline
+    Investigador inteligencia artificial                                                                       & 27.13 €                                                                  & 35.27 €                                                                              \\ \hline
+    Programador junior                                                                                         & 10.83 €                                                                  & 14.08 €                                                                              \\ \hline
+    \end{tabular}%
+    }
+    \caption{Salarios netos medios por hora para cada rol (Glassdor)}
+    \label{tab:presupuesto_roles}
+\end{table}
+
+A continuación detallaré lo que tendremos que pagar en concepto de sueldos a cada trabajador por las tareas que hace cada uno y la dedicación estimada. Para ello, utilizaremos
+las tareas que definimos en el capítulo \ref{cap:tareas}. Detallaremos por cada tarea quién es el actor implicado, el precio por hora de esa tarea, que viene determinado
+por los actores implicados, los impuestos por hora y el total de sueldo neto e impuestos. Así mismo, también detallaré el total por cada paquete de tareas.
+
+En la tabla \ref{tab:tareas_presupuesto} podréis ver esta información, cabe destacar que en esta apartado no podréis ver reflejado las contingencias, ya que esto
+lo detallaremos en la sección \ref{sec:contingencias}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|llll|lll|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Código tarea}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Número de horas}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Rol}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio por hora (neto)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Total neto}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Impuestos por hora}}      & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Total impuestos}} \\ \hline
+    \multicolumn{1}{|l|}{GP01}                                          & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{608.4 €}                                     & \multicolumn{1}{l|}{9.13 €}                                                   & 182.52 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{GP02}                                          & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{608.4 €}                                     & \multicolumn{1}{l|}{9.13 €}                                                   & 182.52 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{GP03}                                          & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{608.4 €}                                     & \multicolumn{1}{l|}{9.13 €}                                                   & 182.52 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{GP04}                                          & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{608.4 €}                                     & \multicolumn{1}{l|}{9.13 €}                                                   & 182.52 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{GP05}                                          & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{608.4 €}                                     & \multicolumn{1}{l|}{9.13 €}                                                   & 182.52 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{DC01}                                          & \multicolumn{1}{l|}{176}                                              & \multicolumn{1}{l|}{Responsable de proyectos}             & 30.42 €                                                                      & \multicolumn{1}{l|}{5353.92 €}                                   & \multicolumn{1}{l|}{9.13 €}                                                   & 1606.78 €                                                             \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete neto}}                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{8395.92 €}}  & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete impuestos}} & \textbf{2518.78 €}                                                    \\ \hline
+    \multicolumn{1}{|l|}{I01}                                           & \multicolumn{1}{l|}{5}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{135.7 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 40.71 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{I02}                                           & \multicolumn{1}{l|}{5}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{135.7 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 40.71 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{I03}                                           & \multicolumn{1}{l|}{5}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{135.7 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 40.71 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{I04}                                           & \multicolumn{1}{l|}{5}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{135.7 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 40.71 €                                                               \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete neto}}                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{542.8 €}}    & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete impuestos}} & \textbf{162.84 €}                                                     \\ \hline
+    \multicolumn{1}{|l|}{AGPT01}                                        & \multicolumn{1}{l|}{4}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{108.56 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 32.57 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{AGPT02}                                        & \multicolumn{1}{l|}{4}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{108.56 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 32.57 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{AGPT03}                                        & \multicolumn{1}{l|}{4}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{108.56 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 32.57 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{AGPT04}                                        & \multicolumn{1}{l|}{4}                                                & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{108.56 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 32.57 €                                                               \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete neto}}                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{434.24 €}}   & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete impuestos}} & \textbf{130.27 €}                                                     \\ \hline
+    \multicolumn{1}{|l|}{D01}                                           & \multicolumn{1}{l|}{28}                                               & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{759.92 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 227.98 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{D02}                                           & \multicolumn{1}{l|}{12}                                               & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{325.68 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 97.70 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{D03}                                           & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{542.8 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 162.84 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{D04}                                           & \multicolumn{1}{l|}{20}                                               & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{542.8 €}                                     & \multicolumn{1}{l|}{8.14 €}                                                   & 162.84 €                                                              \\ \hline
+    \multicolumn{1}{|l|}{D05}                                           & \multicolumn{1}{l|}{40}                                               & \multicolumn{1}{l|}{Investigador en IA}                   & 27.14 €                                                                      & \multicolumn{1}{l|}{1085.6 €}                                    & \multicolumn{1}{l|}{8.14 €}                                                   & 325.68 €                                                              \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete neto}}                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{3256.8 €}}   & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete impuestos}} & \textbf{977.04 €}                                                     \\ \hline
+    \multicolumn{1}{|l|}{DH01}                                          & \multicolumn{1}{l|}{28}                                               & \multicolumn{1}{l|}{Programador junior}                   & 10.83 €                                                                      & \multicolumn{1}{l|}{303.24 €}                                    & \multicolumn{1}{l|}{3.25 €}                                                   & 90.97 €                                                               \\ \hline
+    \multicolumn{1}{|l|}{DH02}                                          & \multicolumn{1}{l|}{18}                                               & \multicolumn{1}{l|}{Programador junior}                   & 10.83 €                                                                      & \multicolumn{1}{l|}{194.94 €}                                    & \multicolumn{1}{l|}{3.25 €}                                                   & 58.48 €                                                               \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete neto}}                                                                                                                                                                                                              & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{498.18 €}}   & \multicolumn{1}{l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total paquete impuestos}} & \textbf{149.45 €}                                                     \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total neto}}                                                                                                                                                                                                                      & \multicolumn{3}{c|}{\cellcolor[HTML]{A4BAE0}\textbf{13127.94 €}}                                                                                                                                                         \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total impuestos}}                                                                                                                                                                                                                 & \multicolumn{3}{c|}{\cellcolor[HTML]{A4BAE0}\textbf{3938.38 €}}                                                                                                                                                          \\ \hline
+    \rowcolor[HTML]{A4BAE0} 
+    \multicolumn{4}{|l|}{\cellcolor[HTML]{A4BAE0}\textbf{Total (neto + impuestos)}}                                                                                                                                                                                                        & \multicolumn{3}{c|}{\cellcolor[HTML]{A4BAE0}\textbf{17066.32 €}}                                                                                                                                                         \\ \hline
+    \end{tabular}%
+    }
+    \caption{Detalle de gastos por personal por cada tarea (Elaboración propia)}
+    \label{tab:tareas_presupuesto}
+\end{table}
+
+\section{Recursos materiales directos}
+\label{sec:recursos_directos}
+
+% Corregido
+
+Tal y como hemos definido en la sección \ref{sec:identificacion_gastos}, los recursos materiales directos son aquellos que influyen directamente sobre el
+proyecto. En este caso, disponemos de 3 recursos materiales directos. Un portátil, una torre y un servicio de computación en la nube donde disponemos de 8 GPUs.
+
+Como se puede apreciar en la tabla \ref{tab:amortizacion} el servicio de computación en la nube no tiene ningún gasto. Esto se debe a que es un servicio que ofrece
+gratuitamente el departamento de Arquitectura de Computadores, de la Facultad de Informática de Barcelona, perteneciente a la Universidad Politécnica de Cataluña.
+Este servicio nos ofrece acceso a 8 GPU NVIDIA RTX 2080TI 11 GB GDDR6 PCIe\footnote{Información disponible en \href{https://www.ac.upc.edu/ca/nosaltres/serveis-tic/blog/nou-node-amb-gpus-al-cluster-sert}{Departamento de Arquitectura de Computadores}},
+que utilizaremos para ejecutar nuestros modelos de lenguaje.
+
+Así mismo, en la tabla \ref{tab:amortizacion} podréis observar que debido a que los recursos son finitos, es decir, tienen una vida útil finita, se ha calculado la
+amortización asociada siguiendo la siguiente fórmula:
+
+\begin{myequation}[h]
+    \begin{equation}
+        Amortizacion= \frac{Precio}{Vida\ util \cdot 249\cdot Dedicacion}\cdot Duracion\ proyecto
+    \label{ec:ec1}
+    \end{equation}
+    \caption{Equación amortización de los recursos materiales}
+\end{myequation} 
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|llcl|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Recursos materiales}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Cantidad}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Vida útil (años)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Amortización}} \\ \hline
+    \multicolumn{1}{|l|}{LG Gram 15Z980-BAA}                                   & \multicolumn{1}{l|}{1040.90 €}                               & \multicolumn{1}{c|}{1}                                         & 4                                                                      & 117.57 €                                                           \\ \hline
+    \multicolumn{1}{|l|}{Ordenador sobremesa custom}                           & \multicolumn{1}{l|}{500 €}                                   & \multicolumn{1}{c|}{1}                                         & 4                                                                      & 56.48 €                                                            \\ \hline
+    \multicolumn{1}{|l|}{Servicio computación en la nube}                      & \multicolumn{1}{l|}{0 €}                                     & \multicolumn{1}{c|}{1}                                         & -                                                                      & No Amortizable                                                     \\ \hline
+    \multicolumn{4}{|r|}{\textbf{TOTAL}}                                                                                                                                                                                                                                                & 174.05 €                                                           \\ \hline
+    \end{tabular}%
+    }
+    \caption{Amortización de los recursos materiales directos (Elaboración propia)}
+    \label{tab:amortizacion}
+\end{table}
+
+\section{Recursos materiales inderectos}
+\label{sec:recursos_indirectos}
+
+% Corregido
+
+Tal y como he explicado en la sección \ref{sec:identificacion_gastos} en un proyecto de estas características también disponemos de recursos materiales indirectos, que son aquellos
+que no influyen directamente en el proyecto, pero que se han de tener en cuenta.
+
+En este proyecto hemos contemplado un único recurso indirecto que son el espacio de trabajo donde se puede desarrollar este proyecto. En este caso, al ser un proyecto
+temporal y con la única necesidad de tener conexión a internet, se ha decidió por utilizar un espacio de \textit{co-working}\footnote{El cotrabajo o trabajo en oficina integrada
+(del inglés coworking) es una forma de trabajo que permite a profesionales independientes, emprendedores, y pymes de diferentes sectores, compartir un mismo espacio de trabajo,
+tanto físico como virtual, para desarrollar sus proyectos profesionales de manera independiente.\cite{CoWorking}}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{llll|l|}
+    \cline{2-5}
+    \multicolumn{1}{l|}{}                   & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio mensual}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{IVA (21\%)}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Meses}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Total}} \\ \hline
+    \multicolumn{1}{|l|}{Espacio coworking} & \multicolumn{1}{l|}{1640 €}                                          & \multicolumn{1}{l|}{1984.4 €}                                   & 4                                                           & 7937.6 €                                                    \\ \hline
+    \multicolumn{4}{|r|}{\textbf{TOTAL}}                                                                                                                                                                                                           & 7937.6 €                                                    \\ \hline
+    \end{tabular}
+    \caption{Coste de los recursos materiales indirectos (Elaboración propia)}
+    \label{tab:oficina}
+\end{table}
+
+Como podemos observar en la tabla \ref{tab:oficina} tenemos que el espacio de \textit{co-working} es una cuota mensual, donde en esta misma se incluye los gastos derivados de
+electricidad, internet, agua, entre otros gastos. Al tratarse de un bien que no poseemos, este no será amortizable.
+
+\section{Contingencias}
+\label{sec:contingencias}
+
+% Corregido
+
+Al tratarse de un proyecto de investigación y por la naturaleza de estos mismos, la incertidumbre es alta y, por lo tanto, las contingencias se llevarán un
+porcentaje del presupuesto alto, debido a que deberemos ser más cautelosos.
+
+Para poder estimar las contingencias se han tenido dos imprevistos en cuenta que podremos ver reflejados en la tabla \ref{tab:contingencias}. Para calcular el
+precio de estos imprevistos, hemos tenido en cuenta el número de horas que se deberían de hacer más para poder contener este imprevisto.
+
+En el caso del imprevisto sea la inexperiencia, el número de horas que podrían hacerse serán del orden de 50 horas más de trabajo para el investigador de inteligencia artificial.
+Por lo que respecta al imprevisto de que los resultados no sean los esperados, se ha calculado que se necesitaran unas 60 horas de investigación extra para poder
+recalcular las conclusiones.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|lll|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Imprevisto}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Probabilidad}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Coste}} \\ \hline
+    \multicolumn{1}{|l|}{Inexperiencia en las tecnologías utilizadas} & \multicolumn{1}{l|}{50 \%}                                          & 1763.5 €                                                     & 881.75 €                                                    \\ \hline
+    \multicolumn{1}{|l|}{Resultados obtenidos no esperados}           & \multicolumn{1}{l|}{60 \%}                                          & 2116.2 €                                                     & 1269.72 €                                                   \\ \hline
+    \multicolumn{3}{|r|}{\textbf{TOTAL}}                                                                                                                                                                  & 2151.47 €                                                   \\ \hline
+    \end{tabular}
+    \caption{Coste de los imprevistos (Elaboración propia)}
+    \label{tab:contingencias}
+\end{table}
+
+\section{Presupuesto final}
+\label{sec:presupuesto_final}
+
+Una vez analizadas todas las secciones anteriores, obtenemos en la tabla \ref{tab:presupuesto_final} el total del presupuesto del proyecto con contingencias (las cuales suponen el 
+7.87 \% del presupuesto total) y los impuestos oportunos.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Resumen}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Precio}} \\ \hline
+    Recursos humanos                                               & 17066.32 €                                                   \\ \hline
+    Recursos materiales directos                                   & 174.05 €                                                     \\ \hline
+    Recursos materiales indirectos                                 & 7937.9 €                                                     \\ \hline
+    Contingencias                                                  & 2151.47 €                                                    \\ \hline
+    \multicolumn{1}{|r|}{\textbf{TOTAL}}                           & 27329.74 €                                                   \\ \hline
+    \end{tabular}
+    \caption{Presupuesto final (Elaboración propia)}
+    \label{tab:presupuesto_final}
+\end{table}
