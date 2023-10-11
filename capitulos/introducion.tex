@@ -2,35 +2,31 @@
 \label{cap:introducion}
 \setcounter{page}{1}
 
-% Corregido
-
 % TODO: Descomentar cuando tengamos una frase que poner
-% \begin{flushright}
-%     \begin{minipage}[]{10cm}
-%         \emph{Quizás algún fragmento de libro inspirador...}\\
-%     \end{minipage}\\
+\begin{flushright}
+    \begin{minipage}[]{10cm}
+        \emph{Basically, if reverse engineering is banned, then a lot of the open source community is doomed to fail}\\
+    \end{minipage}\\
 
-%     Autor, \textit{Título}\\
-% \end{flushright}
+    Jon Lech Johansen, \textit{}\\
+\end{flushright}
 
-% \vspace{1cm}
+\vspace{1cm}
 
-Durante los últimos meses hemos visto como las inteligencias artificiales han entrado de lleno en nuestras vidas. Hemos pasado de tratar estas como algo que entendían
-unos pocos a abrir telediarios con inteligencias artificiales capaces de contestar cualquier pregunta que les pudiésemos hacer, resolviendo complejas tareas e incluso
-planteándonos como afectara ello en nuestro sistema educativo. ¿Pero de dónde salen estas inteligencias artificiales? ¿Por qué pueden hacer tareas complejas?
-¿Dónde está el límite? ¿Qué tipos de tareas podrían hacer?
+Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me gustaria introducir formalmente el concepto de ``ingeniería inversa'' o conocida en el mundo de la
+informatica como \textit{reverse engineering}. La ingineria inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que el humano haya hecho. Por lo tanto,
+no es un concepto que solo acotemos dentro de la ingineria informatica si no que se puede aplicar a cualquier proceso ingineril. De hecho, este proceso es bastante similar al
+metodo cientifico, con la unica diferencia que la ingineria inversa solo se aplica sobre cosas que ha hecho un humano y en el metodo cientifico lo aplicamos en fenomenos
+naturales.
 
-Estas inteligencias artificiales son lo que conocemos por el nombre técnico de Large Lenguage Model. Estos modelos cogen este nombre por su gran extensión, estamos hablando
-de modelos como GPT-3 de OpenAI que tiene 175.000 millones de parámetros \cite{BrownTomB2020LMaF}. Estos modelos que han sido entrenados para predecir texto, es decir, dado un texto, predicen cuál será
-su continuación, pero a pesar de ello han demostrado que aumentado el número de parámetros y los datos de entrenamiento son capaces de realizar tareas diferentes a les que se
-le ha entrenado inicialmente.
+La ingineria inversa es usada normalmente para obtener conocimiendo desconocido o la filosofia del diseño cuando esta información no esta disponible, ya sea porque su propietario
+ha decidido no compartirla o porque esta información esta perdida o destruida. \cite{alma991003132729706711}
 
-Por lo tanto, no hacen preguntar hasta donde está el límite, qué tareas son capaces de hacer y que otras no. Nosotros nos hemos interesado por una: ¿un modelo tipo GPT-3 sería capaz
-de aplicar ingeniería inversa sobre un ejecutable de tal manera que generase su código fuente? Entendemos que este tipo de tareas, es una tarea compleja, ya que existen muchos
-métodos para emborronar un ejecutable y que volver hacia atrás, recuperar el código fuente, sea una tarea difícil o casi imposible.
+La ingienería inversa aplicada al \textit{software} es el mismo concepto pero aplicada a programa en su formato binario, con el objetivo de obtener el codigo fuente en un lenguaje
+de programación concreto y así poder obtener información como el diseño del programa. De hecho, la ingeniería inversa aplicada al \textit{software} requiere diferentes artes:
+descifrado de codigos, resolución de puzzles, programación y analisis logico.
 
-Así mismo, sabiendo cuáles son las limitaciones que supone un trabajo de final de grado y la premisa que nos hemos propuesto, intentaremos en este proyecto dar los primeros pasos
-para poder investigar la viabilidad de utilizar inteligencia artificial para hacer ingeniería inversa.
+Las aplicaciones de la ingineria inversa son muy variadas, pero podemos destacar dos categorias: seguridad y desarrollo de \textit{software}.
 
 \section{Contextualización}
 \label{sec:contextualizacion}
