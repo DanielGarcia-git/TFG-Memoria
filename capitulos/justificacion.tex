@@ -11,8 +11,6 @@ de software e incluso para la educación y aprendizaje.
 \section{Soluciones y alternativas existentes}
 \label{sec:alternativas}
 
-% Corregido
-
 Actualmente, en el mercado podemos encontrar diferentes herramientas o programas llamados descompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
 en un código C aproximado. Con aproximado me vengo a referir que el código que nos dan es más parecido a un pseudocódigo muy parecido a C, pero que necesitaría ciertos ajustes
 por parte nuestra para que fuese más legible.
@@ -27,6 +25,38 @@ Algunas de estas herramientas son:
     \item \bf Ghidra\footnote{Enlace a la pagina web del producto \href{https://ghidra-sre.org/}{Ghidra}}
     \item \bf AllyDbg\footnote{Enlace a la pagina web del producto \href{https://www.ollydbg.de/}{AllyDbg}}
 \end{itemize}
+
+\subsection{IDA Pro}
+\label{subsec:IDA_pro}
+
+\begin{code}[h]
+    \begin{lstlisting}[language=C++]
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int maximo(int x, int y);
+
+    int main(){
+        int x=5,y=6,max;
+        max=maximo(x,y); //Se pasa una copia de x & y, se guarda el retorno
+
+        printf("El valor maximo es %i\n",max );
+
+        system("pause");
+        return 0;
+    }
+
+    int maximo(int a, int b){
+        if(a>b)
+            return a;
+        else
+            return b;
+    }
+    \end{lstlisting}
+    \caption[Prueba 2]{Prueba}
+    \label{cod:codejemplo}
+\end{code}
+    
 
 \section{Solucion tomada}
 \label{sec:solucion}
