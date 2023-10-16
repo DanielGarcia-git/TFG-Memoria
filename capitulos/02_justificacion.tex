@@ -1,6 +1,9 @@
 \chapter{Justificación}
 \label{cap:justificacion}
 
+En este capitulo detallare las soluciones que hay disponibles para el problema descrito en sección \ref{sec:problema}. Ademas, detallare la solución tomada en este proyecto
+y porque esta solución podria dar mejores resultados que los que dan las herramientas actuales.
+
 \section{Soluciones y alternativas existentes}
 \label{sec:alternativas}
 
@@ -119,19 +122,17 @@ podemos observar la funcion \textit{binarysearch2()}.
     \label{fig:IDAPro_binaryseacrh2}
 \end{figure}\
 
-Observamos que el pseudocódigo que nos facilitan se asemeja al codigo original le queda ciertos aspectos en los cuales podria mejorar.
-
 \section{Solucion tomada}
 \label{sec:solucion}
 
-% Corregido
+Una vez visto en la sección \ref{sec:alternativas} las diferentes alternativas que hay en el mercado para poder aplicar ingeniería inversa sobre fichero ejecutables y observado que los
+resultados obtenidos no son un código en C compilable y realista, quiero explicar cual es la solución que en este proyecto se desarrollara.
 
-La solución tomada pasa por investigar si el uso de inteligencia artificial, más concretamente el uso de modelos de lenguaje preentrenados, nos podría ayudar a la hora de hacer
-ingeniería inversa sobre un programa en su forma de ejecutable u objeto.
+El objetivo es a traves de un ejecutables desamblado poder generar un copdigo en C compilable y lo mas fiel al original. Para ello queremos de asistirnos de la inteligencia artifical
+de tal manera que si le damos un codigo desamblado esta nos pueda devolver un codigo en C. Mas concretamente, queremos utilizar inteligencias artificiales basadas en redes neuronales
+del estilo de ChatGPT\footnote{ChatGPT es una aplicación de chatbot de inteligencia artificial desarrollado en 2022 por OpenAI que se especializa en el diálogo} o modelos similares
+como Llama\footnote{LLaMA (Large Language Model Meta AI) es un gran modelo de lenguaje (LLM) lanzado por Meta AI en febrero de 2023}.
 
-Para poder hacerlo se decide utilizar modelos de lenguaje disponibles en Internet que la propia comunidad de desarrollo de software libre ha creado o modelos liberados por Microsoft.
-La intención es aplicar \textit{fine-tuning} sobre estos modelos ya preentrenados, de tal manera que podemos aumentar la calidad de los resultados obtenidos para nuestra
-tarea específica.
-
-Así mismo, se tendrá que investigar sobre que método de \textit{fine-tuning} podemos utilizar, que se ajuste más a la características de nuestra tarea, teniendo en cuenta cosas como el
-tipo de datos que se utilizan y el resultado que se quiere obtener.
+Por lo tanto, lo que se pretende en esta solución es poder mejorar los resultados de decompiladores que hay en el mercado asistiendonos con inteligencia artifical, la cual a demostrado
+que a pesar de haber sido entrenadas para hacer una unica tarea en concreto (los modelos anteriores por ejemplo, han sido entrenados exclusivamente para completar frases) son capaces de
+realizar otro tipo de tareas a las cuales no han sido entrenadas y con resultados bastante buenos. Ademas¡,e stan pueden ser re-entrenadas para mejorar los resultados.
