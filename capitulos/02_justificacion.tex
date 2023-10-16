@@ -1,17 +1,21 @@
 \chapter{Justificación}
 \label{cap:justificacion}
 
-En este capitulo detallare las soluciones que hay disponibles para el problema descrito en sección \ref{sec:problema}. Ademas, detallare la solución tomada en este proyecto
-y porque esta solución podria dar mejores resultados que los que dan las herramientas actuales.
+% Corregido
+
+En este capítulo detallaré las soluciones que hay disponibles para el problema descrito en sección \ref{sec:problema}. Además, detallaré la solución tomada en este proyecto
+y porque esta solución podría dar mejores resultados que los que dan las herramientas actuales.
 
 \section{Soluciones y alternativas existentes}
 \label{sec:alternativas}
 
-Actualmente, en el mercado podemos encontrar diferentes herramientas o programas llamados descompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
-en un código C aproximado llamado normalmente por estas herramiento como pseudocódigo.
+% Corregido
+
+Actualmente, en el mercado podemos encontrar diferentes herramientas o programas llamados decompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
+en un código C aproximado llamado normalmente por estas herramienta como pseudocódigo.
 
 Así mismo, la mayoría de estas herramientas están más orientadas a la generación de un código ensamblador más "amigable" y que mayoritariamente siempre necesitara intervención
-para que pueda ser más legible y asi ayudar en procesos de depuración.
+para que pueda ser más legible y así ayudar en procesos de depuración.
 
 Algunas de estas herramientas son:
 
@@ -21,19 +25,21 @@ Algunas de estas herramientas son:
     \item \bf AllyDbg\footnote{Enlace a la página web del producto \href{https://www.ollydbg.de/}{AllyDbg}}
 \end{itemize}
 
-En la proxima sección detallaremos un poco mas la herramienta IDA Pro en su vertiente gratuita llamda IDA Free\footnote{Enlace a la página web del producto \href{https://hex-rays.com/ida-free/}{IDA Free}},
+En la próxima sección detallaremos un poco más la herramienta IDA Pro en su vertiente gratuita llamada IDA Free\footnote{Enlace a la página web del producto \href{https://hex-rays.com/ida-free/}{IDA Free}},
 ya que esta es la más usada para aplicar ingeniería inversa.
 
 \subsection{IDA Pro}
 \label{subsec:IDA_pro}
 
+% Corregido
+
 IDA o \textit{Interactive Disassembler} es un desensamblador que es utilizado para ingeniería inversa. IDA soporta una variedad de formato de ejecutables para diferentes procesadores y
-sistemas operativos. Tambien es usado como depurador para ejecutables del tipo Windows PE, Mac OS X, Mach-O y Linux ELF\cite{IDAPro_Wikipedia}. Aunque nativamente IDA no teine decompilador, 
-en sus ultimas versiones dispones de un \textit{plugin} que nos brinda esta funcionalidad. Cabe destacar que este plugin es un decompilador basado en \textit{cloud}, es decir requiere
+sistemas operativos. También es usado como depurador para ejecutables del tipo Windows PE, Mac OS X, Mach-O y Linux ELF\cite{IDAPro_Wikipedia}. Aunque nativamente IDA no tiene decompilador,
+en sus últimas versiones dispones de un \textit{plug-in} que nos brinda esta funcionalidad. Cabe destacar que este plug-in es un decompilador basado en \textit{cloud}, es decir, requiere
 de conexión a internet para poder generar un pseudocódigo a partir de un ejecutable.
 
-Para poder analizar en mas profundidad esta herramienta he hecho diferentes pruebas con codigos muy sencillas para poder comprobar que tipo de solucion nos da esta herramienta. Para ello
-he utilizado el codigo \ref{cod:binarySearch}, donde se oberva la implementación del algoritmo de busqueda binaria en código C.
+Para poder analizar en más profundidad esta herramienta he hecho diferentes pruebas con códigos muy sencillas para poder comprobar que tipo de solución nos da esta herramienta. Para ello
+he utilizado el código \ref{cod:binarySearch}, donde se observa la implementación del algoritmo de búsqueda binaria en código C.
 
 \begin{code}
     \begin{minted}{c}
@@ -102,9 +108,9 @@ he utilizado el codigo \ref{cod:binarySearch}, donde se oberva la implementació
     \label{cod:binarySearch}
 \end{code}
 
-Compilamos el código y con el ejecutable que nos genera se lo damos a IDA Free y utilizando el plugin de decompilacor basado en \textit{cloud} generamos un pseudocódigo de los metodos
-que encontramos en el código \ref{cod:binarySearch}. En la figura \ref{fig:IDAPro_binaryseacrh1} podemos observar la funcion \textit{binarysearch1()} y en la figura \ref{fig:IDAPro_binaryseacrh2}
-podemos observar la funcion \textit{binarysearch2()}.
+Compilamos el código y con el ejecutable que nos genera se lo damos a IDA Free y utilizando el plug-in de decompilador basado en \textit{cloud} generamos un pseudocódigo de los métodos
+que encontramos en el código \ref{cod:binarySearch}. En la figura \ref{fig:IDAPro_binaryseacrh1} podemos observar la función \textit{binarysearch1()} y en la figura \ref{fig:IDAPro_binaryseacrh2}
+podemos observar la función \textit{binarysearch2()}.
 
 \begin{figure} [h!]
     \begin{center}
@@ -125,14 +131,16 @@ podemos observar la funcion \textit{binarysearch2()}.
 \section{Solucion tomada}
 \label{sec:solucion}
 
-Una vez visto en la sección \ref{sec:alternativas} las diferentes alternativas que hay en el mercado para poder aplicar ingeniería inversa sobre fichero ejecutables y observado que los
-resultados obtenidos no son un código en C compilable y realista, quiero explicar cual es la solución que en este proyecto se desarrollara.
+% Corregido
 
-El objetivo es a traves de un ejecutables desamblado poder generar un copdigo en C compilable y lo mas fiel al original. Para ello queremos de asistirnos de la inteligencia artifical
-de tal manera que si le damos un codigo desamblado esta nos pueda devolver un codigo en C. Mas concretamente, queremos utilizar inteligencias artificiales basadas en redes neuronales
+Una vez visto en la sección \ref{sec:alternativas} las diferentes alternativas que hay en el mercado para poder aplicar ingeniería inversa sobre fichero ejecutable y observado que los
+resultados obtenidos no son un código en C compilable y realista, quiero explicar cuál es la solución que en este proyecto se desarrollara.
+
+El objetivo es a través de un ejecutable desamblado poder generar un código en C compilable y lo más fiel al original. Para ello queremos de asistirnos de la inteligencia artificial
+de tal manera que si le damos un código desamblado esta nos pueda devolver un código en C. Más concretamente, queremos utilizar inteligencias artificiales basadas en redes neuronales
 del estilo de ChatGPT\footnote{ChatGPT es una aplicación de chatbot de inteligencia artificial desarrollado en 2022 por OpenAI que se especializa en el diálogo} o modelos similares
 como Llama\footnote{LLaMA (Large Language Model Meta AI) es un gran modelo de lenguaje (LLM) lanzado por Meta AI en febrero de 2023}.
 
-Por lo tanto, lo que se pretende en esta solución es poder mejorar los resultados de decompiladores que hay en el mercado asistiendonos con inteligencia artifical, la cual a demostrado
-que a pesar de haber sido entrenadas para hacer una unica tarea en concreto (los modelos anteriores por ejemplo, han sido entrenados exclusivamente para completar frases) son capaces de
-realizar otro tipo de tareas a las cuales no han sido entrenadas y con resultados bastante buenos. Ademas¡,e stan pueden ser re-entrenadas para mejorar los resultados.
+Por lo tanto, lo que se pretende en esta solución es poder mejorar los resultados de decompiladores que hay en el mercado, asistiéndonos con inteligencia artificial, la cual ha demostrado
+que a pesar de haber sido entrenadas para hacer una única tarea en concreto (los modelos anteriores por ejemplo, han sido entrenados exclusivamente para completar frases) son capaces de
+realizar otro tipo de tareas a las cuales no han sido entrenadas y con resultados bastante buenos. Además, están pueden ser reentrenadas para mejorar los resultados.
