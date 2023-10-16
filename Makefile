@@ -1,5 +1,5 @@
 DOCUMENTO = main
-TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf memoria.lomyequation memoria.locode
+TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf main.lomyequation main.locode
 HOY=$(shell date +"%Y-%m-%d")
 
 all: pdf 
@@ -11,13 +11,12 @@ ps: dvi
 	dvips -o ${DOCUMENTO}.ps ${DOCUMENTO}.dvi
 
 pdf: 
-	pdflatex ${DOCUMENTO}
-	pdflatex ${DOCUMENTO}
+	pdflatex --shell-escape ${DOCUMENTO}
+	pdflatex --shell-escape ${DOCUMENTO}
 	bibtex ${DOCUMENTO}.aux
-	pdflatex ${DOCUMENTO}
+	pdflatex --shell-escape ${DOCUMENTO}
 	bibtex ${DOCUMENTO}.aux
-	pdflatex ${DOCUMENTO}
-	del -f $(TEMPORALES) *dvi
+	pdflatex --shell-escape ${DOCUMENTO}
 
 backup:
 	tar -cvzf ${HOY}.tgz ${DOCUMENTO}.tex  ./figs/* 

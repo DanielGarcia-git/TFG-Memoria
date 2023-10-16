@@ -1,0 +1,139 @@
+\chapter{Introducción}
+\label{cap:introducion}
+
+\setcounter{page}{1}
+
+\begin{flushright}
+    \begin{minipage}[]{10cm}
+        \emph{Basically, if reverse engineering is banned, then a lot of the open source community is doomed to fail}\\
+    \end{minipage}\\
+
+    Jon Lech Johansen \textit{}\\
+\end{flushright}
+
+\vspace{1cm}
+
+% Corregido
+
+Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me gustaría introducir formalmente el concepto de ''ingeniería inversa'' o conocida en el mundo de la
+informática como \textit{reverse engineering}. La ingeniería inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que el humano haya hecho. Por lo tanto,
+no es un concepto que solo acotemos dentro de la ingeniería informática, sino que se puede aplicar a cualquier proceso ingenieril. De hecho, este proceso es bastante similar al
+método científico, con la única diferencia que la ingeniería inversa solo se aplica sobre cosas que ha hecho un humano y en el método científico lo aplicamos en fenómenos
+naturales.
+
+La ingeniería inversa es usada normalmente para obtener conocimiento desconocido o la filosofía del diseño cuando esta información no está disponible, ya sea porque su propietario
+ha decidido no compartirla o porque esta información está perdida o destruida. \cite{alma991003132729706711}
+
+La ingeniería inversa aplicada al \textit{software} es el mismo concepto, pero aplicada a programa en su formato binario, con el objetivo de obtener el código fuente en un lenguaje
+de programación concreto y así poder obtener información como el diseño del programa. De hecho, la ingeniería inversa aplicada al \textit{software} requiere diferentes artes:
+descifrado de códigos, resolución de puzzles, programación y análisis lógico.
+
+Las aplicaciones de la ingeniería inversa son muy variadas, pero podemos destacar dos categorías: seguridad y desarrollo de \textit{software}.
+
+Sus aplicaciones en seguridad son muy variadas, pero normalmente se le relaciona con \textit{malware}, algoritmos criptográficos y auditorias sobre binarios.
+
+Dentro del mundo del \textit{software} malicioso vemos que la ingeniería inversa se utiliza en dos aspectos diferentes. Desde el punto de perspectiva de los que desarrollan
+\textit{software} malicioso utilizan la ingeniería inversa para poder encontrar vulnerabilidades en los programas que quieren infectar. En cambio, desde el punto de vista de los
+desarrolladores de antivirus, utilizan la ingeniería inversa para poder diseccionar y analizar cada programa malicioso.
+
+También se puede aplicar ingeniería inversa sobre algoritmos criptográficos, de tal manera que podamos averiguar que tan seguro es ese mensaje encriptado, o incluso en caso de utilizar
+algoritmos basados en llaves, en los cuales la especificación del algoritmo de encriptación es conocido, pero que cada implementación específica puede variar, encontrar vulnerabilidades
+en estos algoritmos.
+
+Y por último, también la ingeniería inversa se aplica para realizar auditorias sobre binarios, de tal manera que podamos detectar si un programa es seguro o no, encontrar sus vulnerabilidades
+para poder corregirlas. Por lo tanto, cuanto mejores sean las herramientas de ingeniería inversa que se apliquen, podremos encontrar con mucha más eficacia problemas de seguridad en
+\textit{software} propietario.
+
+Como he mencionado con anterioridad, la ingeniería inversa también se aplica dentro del desarrollo de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas
+por ejemplo cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de herramientas de ingeniería inversa nos podrían ayudar a conseguir más interoperabilidad
+con el \textit{software} propietario.
+
+Otras de las aplicaciones, y que he mencionado anteriormente, es el comprobar la robustez y calidad de un programa informático, de tal manera que se pueda corregir posibles problemas
+de seguridad o problemas funcionales.
+
+Una vez introducido el concepto de ingeniería inversa de manera general, creo que es interesante contestar a la siguiente pregunta: \textbf{¿Es la ingeniería inversa legal?}
+
+Como hemos podido ver en los párrafos anteriores, muchas veces aplicamos ingeniería inversa sobre un \textit{software} propietario, algunos con fines de conocer vulnerabilidades y corregirlas
+y otros con fines de encontrar estas vulnerabilidades para tener un punto de ataque. En otras palabras, la legalidad de la aplicación de ingeniería inversa dependerá mucho de para
+que lo estamos aplicando, la finalidad, y sobre que lo estamos aplicando.
+
+En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar
+la interoperabilidad de dos programas.
+
+\section{Contextualización}
+\label{sec:contextualizacion}
+
+% Corregido
+
+Como bien he mencionado con anterioridad, este proyecto se enmarca dentro de un proyecto de final de Grado de Ingeniería Informática, en la especialidad de Tecnologías de la Información.
+Este grado se imparte en la Facultad de Informática de Barcelona (FIB) y está dentro del contexto de la Universitat Politècnica de Catalunya (UPC).
+
+En este trabajo se ha propuesto abordar una serie de competencias técnicas, que pasaré a detallar más adelante, que están estrechamente relacionadas con la especialidad cursada. Estas
+son las competencias técnicas:
+
+\begin{itemize}
+    \item \textbf{CTI3.3} Diseñar, implantar y configurar redes y servicios.
+    \item \textbf{CTI3.4} Diseñar \textit{software} de comunicaciones.
+\end{itemize}
+
+\section{Identificación del problema}
+\label{sec:problema}
+
+% Corregido
+
+Como he explicado en el capítulo \ref{cap:introducion} la ingeniería inversa es aplicada en una infinidad de campos y de los cuales hoy en día es utilizada. Pero como he mencionado
+aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los programas que podemos encontrar en el mercado son de tal complejidad que aplicar ingeniería inversa sobre la
+totalidad del programa supone horas y horas de trabajo, teniendo el riesgo de que los resultados obtenidos no se asemejen a la realidad.
+
+Esta complejidad no solo viene dada por el gran tamaño de los programas actuales, sino de las técnicas que se utilizan para poder ocultar aún más el programa original. Algunas
+de estas técnicas son \textit{constant blinding}\footnote{Esta técnica consiste en poner un valor aleatorio a las constantes (a través de operaciones como la XOR)}, cambiar el
+encoding de las variables\footnote{Busca la ocultación del valor de la variable cambiando su representación de datos}, agregación de datos\footnote{Busca agrupar variables del mismo
+tipo, por ejemplo bajo un \textit{struct}}, separación de datos\footnote{Al contrario que la agregación de datos, esta busca separar los datos en unidades más pequeñas, por ejemplo
+de un \textit{short} a un \textit{char}}, \textit{dead code insertion}\footnote{Agregar código redundante al programa}, \textit{loop unrolling}\footnote{Es una tecnica que aplican
+los compiladores que además de disminuir el coste computacional del programa hace que el código sea menos legible}, entre otras. \cite{TecnicasIlegibleBinario}
+
+También a la hora de aplicar ingeniería inversa debemos sumar la complejidad de las aplicaciones distribuidas, es decir, antes, cuando disponíamos de un programa disponíamos de su
+código en su totalidad, aunque este fuese en forma de un binario. Con las aplicaciones distribuidas, el programa se ha segmentado en diferentes partes y estas partes cada una se
+puede encontrar en una máquina diferente, provocando que no dispongamos a veces del todo el programa y, por lo tanto, de todo su diseño y lógica.
+
+En consecuencia, debido a las técnicas de ocultación de código, las optimizaciones que el compilador puede aplicar sobre el código, el gran tamaño de los programas modernos y el auge
+de las aplicaciones distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y que las soluciones actuales, que detallaré en la sección
+\ref{sec:alternativas}, no son capaces de dar buenos resultados, sino que dan una especie de pseudocódigo que nos puede ayudar a entender la lógica del programa.
+
+Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy complejo y costoso y, por lo tanto, inviable en muchos casos para ciertos escenarios.
+
+\section{Terminología y definiciones}
+\label{sec:terminalogia}
+
+% Corregido
+
+En este apartado pasaremos a detallar ciertos términos reiterativos que veremos a lo largo del proyecto y que son de especial importancia. Las definiciones son las siguientes:
+
+\begin{itemize}
+    \item \textbf{Large Lenguage Model:} un LLM o \textit{Large Lenguage Model} son modelos \textit{Pre-trained Lenguage Models}\footnote{El concepto de pre entrenamiento en un modelo
+                                        de lenguaje está relacionado con el aprendizaje por transferencia. La idea del aprendizaje por transferencia es reutilizar los conocimientos
+                                        aprendidos en una o varias tareas y aplicarlos a tareas nuevas.} (PLM) a los cuales se han aumentado o el tamaño del modelo en sí o los datos.
+                                        Con este aumento se dieron cuenta de que había una notoria mejora en términos de \textit{performance} y de la capacidad de los modelos en hacer
+                                        ciertas tareas. \cite{ZhaoWayneXin2023ASoL}
+    \item \textbf{Fine-tuning:} es una técnica de entrenamiento que consiste en reutilizar un modelo predefinido y preentrenado, de tal manera que ajustamos ciertas capas de la
+                                red neuronal para obtener mejores resultados para nuestra tarea en específico.
+\end{itemize}
+
+\section{Actores implicados}
+\label{sec:actores}
+
+% Corregido
+
+A continuación se pasarán a detallar a los actores implicados en el trabajo. Estos actores pueden participar de manera activa o pasiva dentro del proyecto, pero tiene una relevancia
+importante dentro de este mismo:
+
+\begin{itemize}
+    \item \textbf{Investigador:} Este proyecto consta de un único investigador, Daniel García Estevez. Este se encargará de hacer tareas tales como la investigación de modelos a utilizar, 
+                                 metodos de \textit{fine-tuning}, entre otras.
+    \item \textbf{Director y codirector:} El director del trabajo de final de grado Alex Pajuelo Gonzalez perteneciente al CRAAX\footnote{Centre de Recerca d'Arquitectures Avançades de Xarxes}
+                                        y profesor asociado a la UPC. Será el encargado de dirigir y supervisar este proyecto. Así mismo, el codirector del proyecto, Juan José Costa Prats
+                                        perteneciente al CRAAX, ara tareas similares al director.
+    \item \textbf{Experto en Inteligencia Artificial:} este proyecto constará con un experto en inteligencia artificial que dará soporte en temas más específicos que se salen fuera del alcance de
+                                                    este proyecto. El experto es Jordi Nin Guerrero profesor titular en el Departamento de Operaciones, Innovación y Data Sciences en ESADE.
+    \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú, profesor asociado de la UPC e investigador senior de PhD.
+\end{itemize}
