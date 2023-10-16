@@ -8,55 +8,57 @@
         \emph{Basically, if reverse engineering is banned, then a lot of the open source community is doomed to fail}\\
     \end{minipage}\\
 
-    Jon Lech Johansen, \textit{}\\
+    Jon Lech Johansen \textit{}\\
 \end{flushright}
 
 \vspace{1cm}
 
-Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me gustaria introducir formalmente el concepto de ``ingeniería inversa'' o conocida en el mundo de la
-informatica como \textit{reverse engineering}. La ingineria inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que el humano haya hecho. Por lo tanto,
-no es un concepto que solo acotemos dentro de la ingineria informatica si no que se puede aplicar a cualquier proceso ingineril. De hecho, este proceso es bastante similar al
-metodo cientifico, con la unica diferencia que la ingineria inversa solo se aplica sobre cosas que ha hecho un humano y en el metodo cientifico lo aplicamos en fenomenos
+% Corregido
+
+Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me gustaría introducir formalmente el concepto de ''ingeniería inversa'' o conocida en el mundo de la
+informática como \textit{reverse engineering}. La ingeniería inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que el humano haya hecho. Por lo tanto,
+no es un concepto que solo acotemos dentro de la ingeniería informática, sino que se puede aplicar a cualquier proceso ingenieril. De hecho, este proceso es bastante similar al
+método científico, con la única diferencia que la ingeniería inversa solo se aplica sobre cosas que ha hecho un humano y en el método científico lo aplicamos en fenómenos
 naturales.
 
-La ingineria inversa es usada normalmente para obtener conocimiendo desconocido o la filosofia del diseño cuando esta información no esta disponible, ya sea porque su propietario
-ha decidido no compartirla o porque esta información esta perdida o destruida. \cite{alma991003132729706711}
+La ingeniería inversa es usada normalmente para obtener conocimiento desconocido o la filosofía del diseño cuando esta información no está disponible, ya sea porque su propietario
+ha decidido no compartirla o porque esta información está perdida o destruida. \cite{alma991003132729706711}
 
-La ingienería inversa aplicada al \textit{software} es el mismo concepto pero aplicada a programa en su formato binario, con el objetivo de obtener el codigo fuente en un lenguaje
+La ingeniería inversa aplicada al \textit{software} es el mismo concepto, pero aplicada a programa en su formato binario, con el objetivo de obtener el código fuente en un lenguaje
 de programación concreto y así poder obtener información como el diseño del programa. De hecho, la ingeniería inversa aplicada al \textit{software} requiere diferentes artes:
-descifrado de codigos, resolución de puzzles, programación y analisis logico.
+descifrado de códigos, resolución de puzzles, programación y análisis lógico.
 
-Las aplicaciones de la ingineria inversa son muy variadas, pero podemos destacar dos categorias: seguridad y desarrollo de \textit{software}.
+Las aplicaciones de la ingeniería inversa son muy variadas, pero podemos destacar dos categorías: seguridad y desarrollo de \textit{software}.
 
-Sus aplicaciones en seguridad son muy variadas, pero normalmente se le relaciona con \textit{malware}, algoritmos criptograficos y auditorias sobre binarios.
+Sus aplicaciones en seguridad son muy variadas, pero normalmente se le relaciona con \textit{malware}, algoritmos criptográficos y auditorias sobre binarios.
 
 Dentro del mundo del \textit{software} malicioso vemos que la ingeniería inversa se utiliza en dos aspectos diferentes. Desde el punto de perspectiva de los que desarrollan
-\textit{software} malicioso utilizan la ingeniería inversa para poder encontrar vulnerabilidades en los programas que quieren infectar. En canvio, desde el punto de vista de los 
+\textit{software} malicioso utilizan la ingeniería inversa para poder encontrar vulnerabilidades en los programas que quieren infectar. En cambio, desde el punto de vista de los
 desarrolladores de antivirus, utilizan la ingeniería inversa para poder diseccionar y analizar cada programa malicioso.
 
-Tambien se puede aplicar ingeniería inversa sobre algoritmos criptograficos de tal manera que podamos averiguar que tan seguro es ese mensage encriptado, o incluso en caso de utilizar
-algoritmos basados en llaves, en los cuales la especificación del algoritmo de encriptación es conocico pero que cada implementación especifica puede variar, encontrar vulnerabilidades
+También se puede aplicar ingeniería inversa sobre algoritmos criptográficos, de tal manera que podamos averiguar que tan seguro es ese mensaje encriptado, o incluso en caso de utilizar
+algoritmos basados en llaves, en los cuales la especificación del algoritmo de encriptación es conocido, pero que cada implementación específica puede variar, encontrar vulnerabilidades
 en estos algoritmos.
 
-Y por ultimo, tambien la ingineria inversa se aplica para realizar auditorias sobre binarios, de tal manera que podamos detectar si un programa es seguro o no, encontrar sus vulnerabilidades
-para poder corregirlas. Por lo tanto, cuanto mejores sean las herramientas de ingineria inversa que se apliquen podremos encontrar con mucha mas eficacia problemas de seguridad en 
+Y por último, también la ingeniería inversa se aplica para realizar auditorias sobre binarios, de tal manera que podamos detectar si un programa es seguro o no, encontrar sus vulnerabilidades
+para poder corregirlas. Por lo tanto, cuanto mejores sean las herramientas de ingeniería inversa que se apliquen, podremos encontrar con mucha más eficacia problemas de seguridad en
 \textit{software} propietario.
 
-Como he mencionado con anterioridad, la ingeniería inversa tambien se aplica dentro del desarrolo de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas
-por ejemplo cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de herramientas de ingineria inversa nos podrian ayudar a conseguir mas interoperabilidad
+Como he mencionado con anterioridad, la ingeniería inversa también se aplica dentro del desarrollo de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas
+por ejemplo cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de herramientas de ingeniería inversa nos podrían ayudar a conseguir más interoperabilidad
 con el \textit{software} propietario.
 
-Otras de las aplicaciones, y que he mencionado anteriormente, es el comprobar la robustez y calidad de un programa informatico, de tal manera que se pueda corregir posibles problemas
+Otras de las aplicaciones, y que he mencionado anteriormente, es el comprobar la robustez y calidad de un programa informático, de tal manera que se pueda corregir posibles problemas
 de seguridad o problemas funcionales.
 
 Una vez introducido el concepto de ingeniería inversa de manera general, creo que es interesante contestar a la siguiente pregunta: \textbf{¿Es la ingeniería inversa legal?}
 
-Como hemos podido ver en los parrafos anteriores, muchas veces aplicamos ingeniería inversa sobre un \textit{software} propietario, algunos con fines de conocer vulnerabilidades y corregirlas
-y otros con fines de encontrar estas vulnerabilidades para tener un punto de ataque. En otras palabras, la legalidad de la aplicacion de ingineria inversa dependera mucho de para
+Como hemos podido ver en los párrafos anteriores, muchas veces aplicamos ingeniería inversa sobre un \textit{software} propietario, algunos con fines de conocer vulnerabilidades y corregirlas
+y otros con fines de encontrar estas vulnerabilidades para tener un punto de ataque. En otras palabras, la legalidad de la aplicación de ingeniería inversa dependerá mucho de para
 que lo estamos aplicando, la finalidad, y sobre que lo estamos aplicando.
 
-En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar 
-la interoperabilidad de dos programas. 
+En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar
+la interoperabilidad de dos programas.
 
 \section{Contextualización}
 \label{sec:contextualizacion}
@@ -77,26 +79,28 @@ son las competencias técnicas:
 \section{Identificación del problema}
 \label{sec:problema}
 
-Como he explicado en el capitulo \ref{cap:introducion} la ingeniería inversa es aplicada en una infinidad de campos y de los cuales hoy en dia es utilizada. Pero como he mencionado
-aplicar ingeniería inversa no es una tarea facil, ya que actualmente los programas que podemos encontrar en el mercado son de tal complejidad que aplicar ingineria inversa sobre la
+% Corregido
+
+Como he explicado en el capítulo \ref{cap:introducion} la ingeniería inversa es aplicada en una infinidad de campos y de los cuales hoy en día es utilizada. Pero como he mencionado
+aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los programas que podemos encontrar en el mercado son de tal complejidad que aplicar ingeniería inversa sobre la
 totalidad del programa supone horas y horas de trabajo, teniendo el riesgo de que los resultados obtenidos no se asemejen a la realidad.
 
-Esta complejidad no solo viene dada por el gran tamaño de los programas actuales si no de las tecnicas que se utilizan para poder ocultar aún más el programa original. Algunas
-de estas tecnicas son \textit{constant blinding}\footnote{Esta tecnica consiste en poner un valor aleatorio a las constantes (a traves de operaciones como la XOR)}, cambiar el 
+Esta complejidad no solo viene dada por el gran tamaño de los programas actuales, sino de las técnicas que se utilizan para poder ocultar aún más el programa original. Algunas
+de estas técnicas son \textit{constant blinding}\footnote{Esta técnica consiste en poner un valor aleatorio a las constantes (a través de operaciones como la XOR)}, cambiar el
 encoding de las variables\footnote{Busca la ocultación del valor de la variable cambiando su representación de datos}, agregación de datos\footnote{Busca agrupar variables del mismo
-tipo, por ejemplo bajo un \textit{struct}}, separación de datos\footnote{Al contrario que la agregación de datos, esta busca separar los datos en unidades mas pequeñas, por ejemplo
-de un \textit{short} a un \textit{char}}, \textit{dead code insertion}\footnote{Agreagar codigo redundante al programa}, \textit{loop unrolling}\footnote{Es una tecnica que aplican
-los compiladores que ademas de disminuir el coste computacional del programa hace que el codigo sea menos legible}, entre otras. \cite{TecnicasIlegibleBinario}
+tipo, por ejemplo bajo un \textit{struct}}, separación de datos\footnote{Al contrario que la agregación de datos, esta busca separar los datos en unidades más pequeñas, por ejemplo
+de un \textit{short} a un \textit{char}}, \textit{dead code insertion}\footnote{Agregar código redundante al programa}, \textit{loop unrolling}\footnote{Es una tecnica que aplican
+los compiladores que además de disminuir el coste computacional del programa hace que el código sea menos legible}, entre otras. \cite{TecnicasIlegibleBinario}
 
-Tambien a la hora de aplicar ingineria inversa debemos sumar la complejidad de las aplicaciones distribuidas, es decir, antes cuando disponiamos de un programa disponiamos de su
-codigo en su totalidad auqnue este fuese en forma de un binario. Con las aplicaciones distribuidas, el programa se ha segmentado en diferentes parte y estas partes cada una se
-puede encontrar en una maquina diferente, probocando que no dispongamos aveces del todo el programa y por lo tanto, de todo su diseño y logica.
+También a la hora de aplicar ingeniería inversa debemos sumar la complejidad de las aplicaciones distribuidas, es decir, antes, cuando disponíamos de un programa disponíamos de su
+código en su totalidad, aunque este fuese en forma de un binario. Con las aplicaciones distribuidas, el programa se ha segmentado en diferentes partes y estas partes cada una se
+puede encontrar en una máquina diferente, provocando que no dispongamos a veces del todo el programa y, por lo tanto, de todo su diseño y lógica.
 
-Por lo tanto, debido a las tecnicas de ocultación de codigo, las optimizaciones que el compilador puede aplicar sobre el codigo, el gran tamaño de los programas modernos y el auge
-de las aplicaciones distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y que las soluciones actuales, que detallare en la sección
-\ref{sec:alternativas}, no son capaces de dar buenos resultados, si no que dan una especie de pseudocódigo que nos puede ayudar a entender la logica del programa.
+En consecuencia, debido a las técnicas de ocultación de código, las optimizaciones que el compilador puede aplicar sobre el código, el gran tamaño de los programas modernos y el auge
+de las aplicaciones distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y que las soluciones actuales, que detallaré en la sección
+\ref{sec:alternativas}, no son capaces de dar buenos resultados, sino que dan una especie de pseudocódigo que nos puede ayudar a entender la lógica del programa.
 
-Todos estos factores contribuyen a que aplicar ingienería inversa sea muy complejo y costoso, y por lo tanto inviable en muchos casos para ciertos escenarios.
+Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy complejo y costoso y, por lo tanto, inviable en muchos casos para ciertos escenarios.
 
 \section{Terminología y definiciones}
 \label{sec:terminalogia}
