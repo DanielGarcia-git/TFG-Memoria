@@ -1,0 +1,34 @@
+\begin{center}
+    \begin{tikzpicture}
+        \begin{umlpackage}{script-compiler}
+            \umlclass[]{Compiler}{
+                - operatingSystem : OperatingSystem \\
+                - compilerOptions : CompilerOptions \\
+                - codeFiles : List<CodeFile> \\
+                - pathToCompiler : String \\
+            }{
+                - setPathToCompiler() : void \\
+                - setOperatingSystem() : void \\
+                + getOperatingSystem() : String \\
+                + getCompilerOptions() : CompilerOptions \\
+            }
+            \umlclass[]{CompilerOptions}{
+                - optimisationLevel : int \\
+            }{
+                + setOptimisationLevel() : int \\
+                + getOptimisationLevel(newLevel : int) : void \\
+            }
+            \umlclass[]{CodeFile}{
+                - codeFile : File \\
+                - pathToFile : String 
+            }{
+                + getData() : List<String> \\
+                + setPathToFile(path : String) : void \\
+                + getPathToFile() : String \\
+            }
+
+            \umlassoc[mult1=*, mult2=1]{Compiler}{CompilerOptions}
+            \umlassoc[mult1=*, mult2=*]{Compiler}{CodeFile}
+        \end{umlpackage}
+    \end{tikzpicture}
+\end{center}
