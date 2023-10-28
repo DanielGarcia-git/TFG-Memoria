@@ -1,6 +1,8 @@
 DOCUMENTO = main
-TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf main.lomyequation main.locode
-HOY=$(shell date +"%Y-%m-%d")
+DOCUMENTO_FINAL = TFG_Memoria_Ingineria_Inversa_Asistida_por_Inteligencia_Artificial
+TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf main.lomyequation main.locode *.lol
+DATE = $(shell echo %date%)
+DATE_FORMATED = $(subst /,-, $(DATE))
 
 all: pdf 
 
@@ -18,14 +20,12 @@ pdf:
 	bibtex ${DOCUMENTO}.aux
 	pdflatex --shell-escape ${DOCUMENTO}
 
-backup:
-	tar -cvzf ${HOY}.tgz ${DOCUMENTO}.tex  ./figs/* 
-
 clean:
 	del -f $(TEMPORALES)
 
 cleanall:
-	del -f $(TEMPORALES) *pdf *dvi
+	del -f $(TEMPORALES) *pdf *dvi 
 
-release:
-	tar -cvzf $(HOY).tgz *
+release: pdf clean
+	rename $(DOCUMENTO).pdf $(DOCUMENTO_FINAL).pdf
+	zip -r "TFG_Memoria_Release_$(DATE_FORMATED)".zip ./capitulos/* ./figuras/* ./portada/* ./recursos/* *.bib *.tex *.pdf
