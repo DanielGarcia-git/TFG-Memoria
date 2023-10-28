@@ -24,7 +24,7 @@ clean:
 	del -f $(TEMPORALES)
 
 cleanall:
-	del -f $(TEMPORALES) *pdf *dvi 
+	del -f $(TEMPORALES) *pdf *dvi *zip
 
 release: pdf clean
 	rename $(DOCUMENTO).pdf $(DOCUMENTO_FINAL).pdf
