@@ -1,7 +1,15 @@
 \begin{center}
     \begin{tikzpicture}
         \begin{umlpackage}{script-repository}
-            
+            \umlclass[]{RepositoryList}{
+                - pathToRepositoryFile : String \\
+            }{
+                + setRepositoryListByFile(pathToFile : String) : void \\
+            }
+            \umlclass[]{Repository}{
+                
+            }{
+            }
         \end{umlpackage}
     \end{tikzpicture}
 \end{center}
