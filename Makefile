@@ -1,6 +1,6 @@
 DOCUMENTO = main
 DOCUMENTO_FINAL = TFG_Memoria_Ingineria_Inversa_Asistida_por_Inteligencia_Artificial
-TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf main.lomyequation main.locode *.lol
+TEMPORALES = *idx *aux *lof *log *lot *toc *bbl *blg *~ *out *rel *spl *loa *brf main.lomyequation main.locode *.lol *.lomycode
 DATE = $(shell echo %date%)
 DATE_FORMATED = $(subst /,-, $(DATE))
 
