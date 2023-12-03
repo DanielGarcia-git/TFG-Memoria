@@ -1,0 +1,70 @@
+\chapter{Desviaciones del proyecto}
+\label{cap:desviaciones}
+
+% Corregido
+
+Durante los capítulos \ref{cap:tareas} y el capítulo \ref{cap:estimacion} se ha
+detallado una planificación del proyecto, se han definido las tareas, una estimación
+del tiempo que suponía cada tarea y se ha realizado una planificación temporal. Podemos 
+ver en la tabla \ref{tab:tareas} una definición de las tareas y una estimación de estas
+mismas.
+
+Como es previsible en cualquier proyecto, se han producido desviaciones en la planificación
+inicial. En este capítulo se detallarán las desviaciones que se han producido y se explicará
+el motivo de estas desviaciones.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|llcll|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Código}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Nombre tarea}}         & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Horas de trabajo}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Dependencias}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Recursos}} \\ \hline
+    \multicolumn{1}{|l|}{\textbf{GP}}                             & \multicolumn{4}{l|}{\textbf{Gestión del proyecto}}                                                                                                                                                                                                                                        \\ \hline
+    \multicolumn{1}{|l|}{GP01}                                    & \multicolumn{1}{l|}{Alcance}                                               & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{-}                                             & PC, ET, M                                                      \\ \hline
+    \multicolumn{1}{|l|}{GP02}                                    & \multicolumn{1}{l|}{Planificación}                                         & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP01}                                          & PC, ET, M                                                      \\ \hline
+    \multicolumn{1}{|l|}{GP03}                                    & \multicolumn{1}{l|}{Presupuesto}                                           & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP02}                                          & PC, ET, M                                                      \\ \hline
+    \multicolumn{1}{|l|}{GP04}                                    & \multicolumn{1}{l|}{Evaluación del proyecto}                               & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP01, GP02, GP03}                              & PC, ET, M                                                      \\ \hline
+    \multicolumn{1}{|l|}{GP05}                                    & \multicolumn{1}{l|}{Reuniones}                                             & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{-}                                             & PC, MT, DR, M                                                  \\ \hline
+    \multicolumn{1}{|l|}{DC01}                                    & \multicolumn{1}{l|}{Documentación}                                         & \multicolumn{1}{c|}{{\color[HTML]{FE0000} 163}}                        & \multicolumn{1}{l|}{-}                                             & PC, ET, G, M                                                   \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{FE0000} 263}                                             &                                                                    &                                                                \\ \hline
+    \multicolumn{1}{|l|}{\textbf{I}}                              & \multicolumn{4}{l|}{\textbf{Investigación y analisis}}                                                                                                                                                                                                                                    \\ \hline
+    \multicolumn{1}{|l|}{I01}                                     & \multicolumn{1}{l|}{Investigación sobre el concepto LLMs}                  & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{-}                                             & PC, D                                                          \\ \hline
+    \multicolumn{1}{|l|}{I02}                                     & \multicolumn{1}{l|}{Investigación LLMs Open Source y fine-tuning}          & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{I01}                                           & PC, D                                                          \\ \hline
+    \multicolumn{1}{|l|}{I03}                                     & \multicolumn{1}{l|}{Recogida de datos para el entrenamiento}               & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{-}                                             & PC, G, D                                                       \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{FE0000} 15}                                              &                                                                    &                                                                \\ \hline
+    \multicolumn{1}{|l|}{\textbf{AGPT}}                           & \multicolumn{4}{l|}{\textbf{Análisis y pruebas de la solución utilizando ChatGPT Plus}}                                                                                                                                                                                                   \\ \hline
+    \multicolumn{1}{|l|}{AGPT01}                                  & \multicolumn{1}{l|}{Análisis de ChatGPT}                                   & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{-}                                             & PC, GPT, D                                                     \\ \hline
+    \multicolumn{1}{|l|}{AGPT02}                                  & \multicolumn{1}{l|}{Pruebas de uso con GPT-3.5}                            & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT01}                                        & PC, GPT, D                                                     \\ \hline
+    \multicolumn{1}{|l|}{AGPT03}                                  & \multicolumn{1}{l|}{Pruebas de uso con GPT-4}                              & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT01}                                        & PC, GPT, D                                                     \\ \hline
+    \multicolumn{1}{|l|}{AGPT04}                                  & \multicolumn{1}{l|}{Analisis de los resultados}                            & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT02, AGPT03}                                & PC, D                                                          \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & 16                                                                     &                                                                    &                                                                \\ \hline
+    \multicolumn{1}{|l|}{\textbf{D}}                              & \multicolumn{4}{l|}{\textbf{Deployment de un LLM en un sistema de GPUs}}                                                                                                                                                                                                                  \\ \hline
+    \multicolumn{1}{|l|}{D01}                                     & \multicolumn{1}{l|}{Análisis y pruebas de ejecución de un LLM}             & \multicolumn{1}{c|}{28}                                                & \multicolumn{1}{l|}{I}                                             & PC, CAC, D                                                     \\ \hline
+    \multicolumn{1}{|l|}{D02}                                     & \multicolumn{1}{l|}{Pruebas de ejecución de nuestro target}                & \multicolumn{1}{c|}{{\color[HTML]{32CB00} 20}}                         & \multicolumn{1}{l|}{D01}                                           & PC, CAC, D                                                     \\ \hline
+    \multicolumn{1}{|l|}{D03}                                     & \multicolumn{1}{l|}{Fine-tuning}                                           & \multicolumn{1}{c|}{{\color[HTML]{32CB00} 30}}                         & \multicolumn{1}{l|}{D02, DH01}                                     & PC, CAC, G, D                                                  \\ \hline
+    \multicolumn{1}{|l|}{D04}                                     & \multicolumn{1}{l|}{Evaluación y correción 1}                              & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{D03}                                           & PC, CAC, G, D                                                  \\ \hline
+    \multicolumn{1}{|l|}{D05}                                     & \multicolumn{1}{l|}{Evaluación y correción 2}                              & \multicolumn{1}{c|}{40}                                                & \multicolumn{1}{l|}{D04}                                           & PC, CAC, G, D                                                  \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{32CB00} 138}                                             &                                                                    &                                                                \\ \hline
+    \multicolumn{1}{|l|}{\textbf{DH}}                             & \multicolumn{4}{l|}{\textbf{Desarrollo de herramientas}}                                                                                                                                                                                                                                  \\ \hline
+    \multicolumn{1}{|l|}{DH01}                                    & \multicolumn{1}{l|}{Desarrollo de scripts para la creación del Data Sheet} & \multicolumn{1}{c|}{28}                                                & \multicolumn{1}{l|}{-}                                             & PC, G, D                                                       \\ \hline
+    \multicolumn{1}{|l|}{DH02}                                    & \multicolumn{1}{l|}{Desarrollo de scripts de ejecución}                    & \multicolumn{1}{c|}{18}                                                & \multicolumn{1}{l|}{-}                                             & PC, CAC, G, D                                                  \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & 46                                                                     &                                                                    &                                                                \\ \hline
+    \rowcolor[HTML]{305496} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{305496}Total horas}                                                                                  & \multicolumn{1}{c|}{\cellcolor[HTML]{305496}478}                       &                                                                    &                                                                \\ \hline
+    \end{tabular}%
+    }
+    \caption{Resumen de las tareas del proyecto con las desviaciones}
+    \label{tab:desviacion_planificacion_temporal}
+\end{table}
+
+Las desviaciones en la planificación inicial se han producido principalmente en las tareas de
+configuración del entorno, ya que se trataba de un entorno nuevo y una tecnología nueva. Por ello,
+se ha tenido que invertir más tiempo del esperado. Para tener una idea de la desviación, se puede
+observar en la tabla \ref{tab:desviacion_planificacion_temporal} la desviación en horas de las tareas
+de configuración del entorno (marcadas en rojo).
