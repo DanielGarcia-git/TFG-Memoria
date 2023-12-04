@@ -1,17 +1,43 @@
-\chapter{Desviaciones del proyecto}
-\label{cap:desviaciones}
+\chapter{Estado actual del proyecto}
+\label{cap:estado_actual}
 
 % Corregido
 
-Durante los capítulos \ref{cap:tareas} y el capítulo \ref{cap:estimacion} se ha
-detallado una planificación del proyecto, se han definido las tareas, una estimación
-del tiempo que suponía cada tarea y se ha realizado una planificación temporal. Podemos 
-ver en la tabla \ref{tab:tareas} una definición de las tareas y una estimación de estas
-mismas.
+En este capítulo se detallará el estado actual del proyecto a fecha del día
+de entrega del informe de seguimiento, que tiene como fecha límite el 15 de
+diciembre de 2023.
 
-Como es previsible en cualquier proyecto, se han producido desviaciones en la planificación
-inicial. En este capítulo se detallarán las desviaciones que se han producido y se explicará
-el motivo de estas desviaciones.
+Se detallará cuál es el estado actual, las tareas que se han realizado, las tareas
+que quedan por realizar y las desviaciones que se han producido en la planificación.
+Asimismo, se detallarán, en caso de haberlas, las desviaciones que se hayan
+producido respecto a la planificación inicial.
+
+\section{Resumen de las tareas}
+\label{sec:resumen_tareas}
+
+En la tabla~\ref{tab:resumen_tareas} se puede ver un resumen de las tareas que se han realizado
+y las tareas que quedan por realizar. En la columna \textit{Estado} se puede ver el estado actual
+de la tarea, teniendo como estados los siguientes:
+
+\begin{itemize}
+    \item \textbf{No iniciada}: La tarea no se ha iniciado.
+    \item \textbf{En progreso}: La tarea se ha iniciado y se está trabajando en ella.
+    \item \textbf{Finalizada}: La tarea se ha finalizado.
+\end{itemize}
+
+Asimismo, en la columna de \textit{Previsión} se puede ver la previsión de finalización de la tarea.
+Teniendo como previsión los siguientes estados:
+
+\begin{itemize}
+    \item \textbf{A tiempo}: La tarea se finalizará en la fecha prevista.
+    \item \textbf{Con retraso}: La tarea se finalizará con retraso respecto a la fecha prevista.
+\end{itemize}
+
+Como se ha podido observar en la tabla \ref{tab:resumen_tareas}, se aprecia un
+retraso en las tareas con código \textit{I04}, \textit{AGPT04} y \textit{D02}.
+Esto se debe a que durante la realización del proyecto han cambiado las prioridades
+de la realización de las tareas, priorizando la ejecución de las tareas pertenecientes
+al paquete \textit{D} y \textit{DH}.
 
 \begin{table}[H]
     \centering
@@ -19,52 +45,89 @@ el motivo de estas desviaciones.
     \begin{tabular}{|llcll|}
     \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Código}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Nombre tarea}}         & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Horas de trabajo}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Dependencias}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Recursos}} \\ \hline
-    \multicolumn{1}{|l|}{\textbf{GP}}                             & \multicolumn{4}{l|}{\textbf{Gestión del proyecto}}                                                                                                                                                                                                                                        \\ \hline
-    \multicolumn{1}{|l|}{GP01}                                    & \multicolumn{1}{l|}{Alcance}                                               & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{-}                                             & PC, ET, M                                                      \\ \hline
-    \multicolumn{1}{|l|}{GP02}                                    & \multicolumn{1}{l|}{Planificación}                                         & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP01}                                          & PC, ET, M                                                      \\ \hline
-    \multicolumn{1}{|l|}{GP03}                                    & \multicolumn{1}{l|}{Presupuesto}                                           & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP02}                                          & PC, ET, M                                                      \\ \hline
-    \multicolumn{1}{|l|}{GP04}                                    & \multicolumn{1}{l|}{Evaluación del proyecto}                               & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{GP01, GP02, GP03}                              & PC, ET, M                                                      \\ \hline
-    \multicolumn{1}{|l|}{GP05}                                    & \multicolumn{1}{l|}{Reuniones}                                             & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{-}                                             & PC, MT, DR, M                                                  \\ \hline
-    \multicolumn{1}{|l|}{DC01}                                    & \multicolumn{1}{l|}{Documentación}                                         & \multicolumn{1}{c|}{{\color[HTML]{FE0000} 163}}                        & \multicolumn{1}{l|}{-}                                             & PC, ET, G, M                                                   \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Código}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Nombre tarea}}                                 & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Horas de trabajo}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Estado}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Previsión}} \\ \hline
+    \multicolumn{1}{|l|}{\textbf{GP}}                             & \multicolumn{4}{l|}{\textbf{Gestión del proyecto}}                                                                                                                                                                                                                                                           \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Alcance}                                               & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP02}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Planificación}                                         & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP03}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Presupuesto}                                           & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP04}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Evaluación del proyecto}                               & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}GP05}            & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Reuniones}                                             & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}DC01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Documentación}                                         & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}176}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{FE0000} 263}                                             &                                                                    &                                                                \\ \hline
-    \multicolumn{1}{|l|}{\textbf{I}}                              & \multicolumn{4}{l|}{\textbf{Investigación y analisis}}                                                                                                                                                                                                                                    \\ \hline
-    \multicolumn{1}{|l|}{I01}                                     & \multicolumn{1}{l|}{Investigación sobre el concepto LLMs}                  & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{-}                                             & PC, D                                                          \\ \hline
-    \multicolumn{1}{|l|}{I02}                                     & \multicolumn{1}{l|}{Investigación LLMs Open Source y fine-tuning}          & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{I01}                                           & PC, D                                                          \\ \hline
-    \multicolumn{1}{|l|}{I03}                                     & \multicolumn{1}{l|}{Recogida de datos para el entrenamiento}               & \multicolumn{1}{c|}{5}                                                 & \multicolumn{1}{l|}{-}                                             & PC, G, D                                                       \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 276                                                                    &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{I}}                              & \multicolumn{4}{l|}{\textbf{Investigación y analisis}}                                                                                                                                                                                                                                                       \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I01}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación sobre el concepto LLMs}                  & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I02}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación LLMs Open Source}                        & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I03}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación sobre métodos de fine-tuning}            & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}I04}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Recogida de datos para el entrenamiento}               & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & \cellcolor[HTML]{ED9797}Con retraso                             \\ \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{FE0000} 15}                                              &                                                                    &                                                                \\ \hline
-    \multicolumn{1}{|l|}{\textbf{AGPT}}                           & \multicolumn{4}{l|}{\textbf{Análisis y pruebas de la solución utilizando ChatGPT Plus}}                                                                                                                                                                                                   \\ \hline
-    \multicolumn{1}{|l|}{AGPT01}                                  & \multicolumn{1}{l|}{Análisis de ChatGPT}                                   & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{-}                                             & PC, GPT, D                                                     \\ \hline
-    \multicolumn{1}{|l|}{AGPT02}                                  & \multicolumn{1}{l|}{Pruebas de uso con GPT-3.5}                            & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT01}                                        & PC, GPT, D                                                     \\ \hline
-    \multicolumn{1}{|l|}{AGPT03}                                  & \multicolumn{1}{l|}{Pruebas de uso con GPT-4}                              & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT01}                                        & PC, GPT, D                                                     \\ \hline
-    \multicolumn{1}{|l|}{AGPT04}                                  & \multicolumn{1}{l|}{Analisis de los resultados}                            & \multicolumn{1}{c|}{4}                                                 & \multicolumn{1}{l|}{AGPT02, AGPT03}                                & PC, D                                                          \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 20                                                                     &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{AGPT}}                           & \multicolumn{4}{l|}{\textbf{Análisis y pruebas de la solución utilizando ChatGPT Plus}}                                                                                                                                                                                                                      \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT01}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Análisis de ChatGPT}                                   & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT02}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Pruebas de uso con GPT-3.5}                            & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT03}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Pruebas de uso con GPT-4}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}AGPT04}          & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Analisis de los resultados}                            & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & Con retraso                                                     \\ \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & 16                                                                     &                                                                    &                                                                \\ \hline
-    \multicolumn{1}{|l|}{\textbf{D}}                              & \multicolumn{4}{l|}{\textbf{Deployment de un LLM en un sistema de GPUs}}                                                                                                                                                                                                                  \\ \hline
-    \multicolumn{1}{|l|}{D01}                                     & \multicolumn{1}{l|}{Análisis y pruebas de ejecución de un LLM}             & \multicolumn{1}{c|}{28}                                                & \multicolumn{1}{l|}{I}                                             & PC, CAC, D                                                     \\ \hline
-    \multicolumn{1}{|l|}{D02}                                     & \multicolumn{1}{l|}{Pruebas de ejecución de nuestro target}                & \multicolumn{1}{c|}{{\color[HTML]{32CB00} 20}}                         & \multicolumn{1}{l|}{D01}                                           & PC, CAC, D                                                     \\ \hline
-    \multicolumn{1}{|l|}{D03}                                     & \multicolumn{1}{l|}{Fine-tuning}                                           & \multicolumn{1}{c|}{{\color[HTML]{32CB00} 30}}                         & \multicolumn{1}{l|}{D02, DH01}                                     & PC, CAC, G, D                                                  \\ \hline
-    \multicolumn{1}{|l|}{D04}                                     & \multicolumn{1}{l|}{Evaluación y correción 1}                              & \multicolumn{1}{c|}{20}                                                & \multicolumn{1}{l|}{D03}                                           & PC, CAC, G, D                                                  \\ \hline
-    \multicolumn{1}{|l|}{D05}                                     & \multicolumn{1}{l|}{Evaluación y correción 2}                              & \multicolumn{1}{c|}{40}                                                & \multicolumn{1}{l|}{D04}                                           & PC, CAC, G, D                                                  \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 16                                                                     &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{D}}                              & \multicolumn{4}{l|}{\textbf{Deployment de un LLM en un sistema de GPUs}}                                                                                                                                                                                                                                     \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}D01}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Análisis y pruebas de ejecución de un LLM}             & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}28}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}D02}             & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Pruebas de ejecución de nuestro target}                & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}12}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & Con retraso                                                     \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}D03}             & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Fine-tuning}                                           & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}D04}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Evaluación y correción 1}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}D05}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Evaluación y correción 2}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}40}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & A tiempo                                                        \\ \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & {\color[HTML]{32CB00} 138}                                             &                                                                    &                                                                \\ \hline
-    \multicolumn{1}{|l|}{\textbf{DH}}                             & \multicolumn{4}{l|}{\textbf{Desarrollo de herramientas}}                                                                                                                                                                                                                                  \\ \hline
-    \multicolumn{1}{|l|}{DH01}                                    & \multicolumn{1}{l|}{Desarrollo de scripts para la creación del Data Sheet} & \multicolumn{1}{c|}{28}                                                & \multicolumn{1}{l|}{-}                                             & PC, G, D                                                       \\ \hline
-    \multicolumn{1}{|l|}{DH02}                                    & \multicolumn{1}{l|}{Desarrollo de scripts de ejecución}                    & \multicolumn{1}{c|}{18}                                                & \multicolumn{1}{l|}{-}                                             & PC, CAC, G, D                                                  \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 120                                                                    &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{DH}}                             & \multicolumn{4}{l|}{\textbf{Desarrollo de herramientas}}                                                                                                                                                                                                                                                     \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}DH01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Desarrollo de scripts para la creación del Data Sheet} & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}28}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}DH02}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Desarrollo de scripts de ejecución}                    & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}18}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
     \rowcolor[HTML]{8EA9D8} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                          & 46                                                                     &                                                                    &                                                                \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 46                                                                     &                                                              &                                                                 \\ \hline
     \rowcolor[HTML]{305496} 
-    \multicolumn{2}{|l|}{\cellcolor[HTML]{305496}Total horas}                                                                                  & \multicolumn{1}{c|}{\cellcolor[HTML]{305496}478}                       &                                                                    &                                                                \\ \hline
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{305496}Total horas}                                                                                                          & \multicolumn{1}{c|}{\cellcolor[HTML]{305496}478}                       &                                                              &                                                                 \\ \hline
     \end{tabular}%
     }
-    \caption{Resumen de las tareas del proyecto con las desviaciones}
-    \label{tab:desviacion_planificacion_temporal}
+    \caption{Resumen del estado de las tareas}
+    \label{tab:resumen_tareas}
 \end{table}
 
-Las desviaciones en la planificación inicial se han producido principalmente en las tareas de
-configuración del entorno, ya que se trataba de un entorno nuevo y una tecnología nueva. Por ello,
-se ha tenido que invertir más tiempo del esperado. Para tener una idea de la desviación, se puede
-observar en la tabla \ref{tab:desviacion_planificacion_temporal} la desviación en horas de las tareas
-de configuración del entorno (marcadas en rojo).
+\section{Desviaciones}
+\label{sec:desviaciones}
+
+% Corregido
+
+Por lo que respecta a las desviaciones respecto a la planificación inicial, no hay
+desviaciones significativas que impliquen un cambio de horas en la planificación
+inicial. Sí que se han producido cambios en las prioridades de las tareas y, por
+lo tanto, se han realizado tareas antes de lo previsto y otras tareas se han
+retrasado respecto a la planificación inicial, pero no impidiendo que otras 
+tareas se retrasen.
+
+Por lo tanto, el diagrama de Gantt se ve modificado de la siguiente manera:
+
+\begin{itemize}
+    \item La tarea I04 se elimina del Sprint 02 y se añade al Sprint 05.
+    \item La tarea AGPT04 se elimina del Sprint 03 y se añade al Sprint 05.
+    \item Las tareas relacionadas con el paquete AGPT se eliminan del Sprint 03 y se añade al Sprint 02.
+    \item Se amplia el tiempo de las tareas del paquete DH.
+\end{itemize}
