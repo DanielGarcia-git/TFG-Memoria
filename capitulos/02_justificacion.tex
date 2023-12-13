@@ -41,7 +41,7 @@ de conexión a internet para poder generar un pseudocódigo a partir de un ejecu
 Para poder analizar en más profundidad esta herramienta he hecho diferentes pruebas con códigos muy sencillas para poder comprobar que tipo de solución nos da esta herramienta. Para ello
 he utilizado el código \ref{cod:binarySearch}, donde se observa la implementación del algoritmo de búsqueda binaria en código C.
 
-\begin{code}
+\begin{mycode}
     \begin{minted}{c}
     /** Recursive implementation
     * \param[in] arr array to search
@@ -104,9 +104,9 @@ he utilizado el código \ref{cod:binarySearch}, donde se observa la implementaci
         return mid;
     }
     \end{minted}
-    \captionof{listing}[Búsqueda binaria, iterativa y recursiva]{Búsqueda binaria, iterativa y recursiva (\cite{BinarySearchGitHub})}
+    \captionof{mycode}[Búsqueda binaria, iterativa y recursiva]{Búsqueda binaria, iterativa y recursiva (\cite{BinarySearchGitHub})}
     \label{cod:binarySearch}
-\end{code}
+\end{mycode}
 
 Compilamos el código y con el ejecutable que nos genera se lo damos a IDA Free y utilizando el plug-in de decompilador basado en \textit{cloud} generamos un pseudocódigo de los métodos
 que encontramos en el código \ref{cod:binarySearch}. En la figura \ref{fig:IDAPro_binaryseacrh1} podemos observar la función \textit{binarysearch1()} y en la figura \ref{fig:IDAPro_binaryseacrh2}
