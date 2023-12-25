@@ -1,5 +1,284 @@
-\chapter{Estimación del proyecto}
-\label{cap:estimacion}
+\chapter{Planificación}
+\label{cap:planificacion}
+
+% TODO:daniel: Añadir introducción
+
+\section{Descripción de tareas}
+\label{sec:descripcion_tareas}
+
+% TODO:daniel: Canviar al nuevo formato
+
+Para la realización de este proyecto se han creado diferentes tareas para la investigación, análisis y desarrollo de este mismo. La duración del proyecto está prevista
+que tenga fecha de inicio el día 18 de septiembre de 2023 y con fecha de finalización el 22 de enero de 2024. El proyecto tendrá una dedicación de trabajo de unas 450 horas,
+lo correspondiente a 18 créditos ECTS\footnote{Un crédito ECTS equivale a 25 horas de trabajo del estudiante.\cite{ECTS}}.
+
+A continuación pasaré a detallar los paquetes de tareas y las tareas que componen cada paquete.
+
+\subsection{Tareas de gestión del proyecto}
+\label{subsec:tareas_gestion}
+
+% Corregido
+
+En las tareas de gestión del proyecto estarán todas las tareas que tengan que ver con gestión de proyectos, tales como definición del proyecto, presupuestos, reuniones de
+sincronización, documentación relativa al proyecto, entre otras.
+
+\subsubsection{Gestión del proyecto}
+\label{subsubsec:tareas_gestion}
+
+% Corregido
+
+\begin{itemize}
+    \item \textbf{Alcance}
+        \begin{itemize}
+            \item \textbf{Código:} GP01
+            \item \textbf{Descripción:} Análisis y estudio del problema a estudiar, pudiendo definir el contexto y los objetivos del proyecto.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Manager del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Editor de texto
+        \end{itemize}
+    \item \textbf{Planificación}
+        \begin{itemize}
+            \item \textbf{Código:} GP02
+            \item \textbf{Descripción:} Definición de plazos y tareas a realizar el proyecto, planificación temporal.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} GP01
+            \item \textbf{Recursos humanos:} Manager del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Editor de texto
+        \end{itemize}
+    \item \textbf{Presupuesto}
+        \begin{itemize}
+            \item \textbf{Código:} GP03
+            \item \textbf{Descripción:} Realización del coste del proyecto e informe de sostenibilidad.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} GP02
+            \item \textbf{Recursos humanos:} Manager del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Editor de texto
+        \end{itemize}
+    \item \textbf{Evaluación del proyecto}
+        \begin{itemize}
+            \item \textbf{Código:} GP04
+            \item \textbf{Descripción:} Revisar que la documentación aportada en las tareas GP01, GP02 y GP03 sea correcta y adecuada a los requisitos.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} GP01, GP02, GP03
+            \item \textbf{Recursos humanos:} Manager del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Editor de texto
+        \end{itemize}
+    \item \textbf{Reuniones}
+        \begin{itemize}
+            \item \textbf{Código:} GP05
+            \item \textbf{Descripción:} Reuniones de sincronización con el director del proyecto y con los expertos vinculados al proyecto.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} - 
+            \item \textbf{Recursos humanos:} Manager del proyecto, Director del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Meet
+        \end{itemize}
+    \item \textbf{Documentación}
+        \begin{itemize}
+            \item \textbf{Código:} DC01
+            \item \textbf{Descripción:} Creación, redactado y evaluación de la memoria de proyecto.
+            \item \textbf{Duración:} 100h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Manager del proyecto
+            \item \textbf{Recursos materiales:} Ordenador, Editor de texto
+        \end{itemize}
+\end{itemize}
+
+\subsection{Tareas de análisis, investigación y pruebas}
+\label{subsec:tareas_analisis}
+
+% Corregido
+
+Este paquete de tareas contempla todas aquellas tareas de investigación de documentación, tecnologías, análisis y realización de pruebas sobre nuevas tecnologías
+que se puedan aplicar en nuestro caso de uso. En este caso, este paquete de tareas lo dividimos en tres: las tareas propias de investigación, las tareas propias de
+análisis y las tareas relacionadas con \textit{deployment} de tecnologías.
+
+\subsubsection{Investigación}
+\label{subsubsec:tareas_investigacion}
+
+% Corregido
+
+\begin{itemize}
+    \item \textbf{Investigación sobre el concepto LLMs}
+        \begin{itemize}
+            \item \textbf{Código:} I01
+            \item \textbf{Descripción:} Investigación sobre los \textit{Large Language Models} y los conceptos asociados a este.
+            \item \textbf{Duración:} 5h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador
+        \end{itemize}
+    \item \textbf{Investigación LLMs Open Source}
+        \begin{itemize}
+            \item \textbf{Código:} I02
+            \item \textbf{Descripción:} Investigación sobre los LLM disponibles creados por la comunidad, valorar cuál utilizar para el proyecto.
+            \item \textbf{Duración:} 5h
+            \item \textbf{Dependencias:} I01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador
+        \end{itemize}
+    \item \textbf{Investigación sobre métodos de \textit{fine-tuning}}
+        \begin{itemize}
+            \item \textbf{Código:} I03
+            \item \textbf{Descripción:} Investigación sobre que metodo de \textit{fine-tuning} se ajusta más a las necesidades del proyecto.
+            \item \textbf{Duración:} 5h
+            \item \textbf{Dependencias:} I01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Git
+        \end{itemize}
+    \item \textbf{Recogida de datos para el entrenamiento}
+        \begin{itemize}
+            \item \textbf{Código:} I04
+            \item \textbf{Descripción:} Investigación y análisis sobre repositorios de código, con código en C que sea apto para las pruebas en nuestro modelo. 
+            \item \textbf{Duración:} 5h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Git
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Análisis y pruebas de uso utilizando ChatGPT Plus}
+\label{subsubsec:tareas_ichatgpt}
+
+% Corregido
+
+\begin{itemize}
+    \item \textbf{Análisis de ChatGPT}
+        \begin{itemize}
+            \item \textbf{Código:} AGPT01
+            \item \textbf{Descripción:} Análisis sobre la plataforma de ChatGPT, como utilizar y obtener resultados óptimos.
+            \item \textbf{Duración:} 4h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, ChatGPT Plus
+        \end{itemize}
+    \item \textbf{Pruebas de uso con GPT-3.5}
+        \begin{itemize}
+            \item \textbf{Código:} AGPT02
+            \item \textbf{Descripción:} Pruebas con casos de código sencillo utilizando el modelo GPT-3.5 de ChatGPT Plus.
+            \item \textbf{Duración:} 4h
+            \item \textbf{Dependencias:} AGPT01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, ChatGPT Plus
+        \end{itemize}
+    \item \textbf{Pruebas de uso con GPT-4}
+        \begin{itemize}
+            \item \textbf{Código:} AGPT03
+            \item \textbf{Descripción:} Pruebas con casos de código sencillo utilizando el modelo GPT-4 de ChatGPT Plus.
+            \item \textbf{Duración:} 4h
+            \item \textbf{Dependencias:} AGPT01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, ChatGPT Plus
+        \end{itemize}
+    \item \textbf{Análisis de los resultados}
+        \begin{itemize}
+            \item \textbf{Código:} AGPT04
+            \item \textbf{Descripción:} Análisis de los resultados obtenidos en las pruebas de uso con GPT-3.5 y GPT-4, 
+                valorando si obtendremos resultados buenos con nuestro modelo.
+            \item \textbf{Duración:} 4h
+            \item \textbf{Dependencias:} AGPT02, AGPT03
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Deployment de un LLM en un sistema de GPUs}
+\label{subsubsec:tareas_gpu}
+
+% Corregido
+
+\begin{itemize}
+    \item \textbf{Análisis y pruebas de ejecución de un LLM}
+        \begin{itemize}
+            \item \textbf{Código:} D01
+            \item \textbf{Descripción:} Ejecución de un LLM dentro de un \textit{cluster} de GPUs obteniendo resultados básicos, las pruebas que se hagan
+                no tienen que estar relacionados con nuestros casos de uso.
+            \item \textbf{Duración:} 28h
+            \item \textbf{Dependencias:} I
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC
+        \end{itemize}
+    \item \textbf{Pruebas de ejecución de nuestro target}
+        \begin{itemize}
+            \item \textbf{Código:} D02
+            \item \textbf{Descripción:} Ejecución de casos de uso sencillos en el \textit{cluster} de GPUs.
+            \item \textbf{Duración:} 12h
+            \item \textbf{Dependencias:} D01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC
+        \end{itemize}
+    \item \textbf{\textit{Fine-tuning}}
+        \begin{itemize}
+            \item \textbf{Código:} D03
+            \item \textbf{Descripción:} Ejecución del \textit{fine-tuning} sobre nuestro modelo de tal manera que obtengamos mejores resultados,
+                en esta tarea se ha de utilizar el \textit{data sheet}.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} D02, DH01
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC, Git
+        \end{itemize}
+    \item \textbf{Evaluación y correción 1}
+        \begin{itemize}
+            \item \textbf{Código:} D04
+            \item \textbf{Descripción:} En esta tarea se valorarán los resultados obtenidos de la tarea D03 y se aplicaran las correcciones que sean
+                necesarias.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} D03
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC, Git
+        \end{itemize}
+    \item \textbf{Evaluación y correción 2}
+        \begin{itemize}
+            \item \textbf{Código:} D05
+            \item \textbf{Descripción:} En esta tarea se valorarán los resultados obtenidos de la tarea D03 y se aplicaran las correcciones que sean
+                necesarias.
+            \item \textbf{Duración:} 40h
+            \item \textbf{Dependencias:} D04
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC, Git
+        \end{itemize}
+\end{itemize}
+
+\subsection{Tareas de desarrollo}
+\label{subsec:tareas_desarrollo}
+
+% Corregido 
+
+En este grupo de tareas situaremos todas aquellas relacionadas con el desarrollo, ya sea el desarrollo de herramientas que ayudan a la hora del desarrollo en
+sí mismo, o tareas más de creación de aplicaciones o similares.
+
+\subsubsection{Desarrollo de herramientas}
+\label{subsubsec:tareas_herramientas}
+
+% Corregido 
+
+\begin{itemize}
+    \item \textbf{Desarrollo de scripts para la creación del Data Sheet}
+        \begin{itemize}
+            \item \textbf{Código:} DH01
+            \item \textbf{Descripción:} Desarrollo de scripts para compilar, parsear y obtener los ensamblados. Así mismo, se creara la base de datos
+                necesaria para el \textit{fine-tuning}.
+            \item \textbf{Duración:} 28h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Git
+        \end{itemize}
+    \item \textbf{Desarrollo de scripts de ejecución}
+        \begin{itemize}
+            \item \textbf{Código:} DH02
+            \item \textbf{Descripción:} Desarrollo de scripts para la ejecución del LLM en el \textit{cluster} de GPUs.
+            \item \textbf{Duración:} 20h
+            \item \textbf{Dependencias:} -
+            \item \textbf{Recursos humanos:} Desarrolladores
+            \item \textbf{Recursos materiales:} Ordenador, Cluster AC, Git
+        \end{itemize}
+\end{itemize}
+
+\section{Recursos}
+\label{subsec:recursos}
+
+\section{Estimación del proyecto}
+\label{sec:estimacion}
 
 % Corregido
 
@@ -36,7 +315,7 @@ Por lo tanto, en la siguiente tabla \ref{tab:proyecto_estimacion} disponemos un 
     \label{tab:proyecto_estimacion}
 \end{table}
 
-\section{Estimación de tareas}
+\subsection{Estimación de tareas}
 \label{sec:estimacion_tareas}
 
 % Corregido
@@ -128,7 +407,7 @@ En modo de leyenda, en esta tabla \ref{tab:recursos} podréis ver cuáles son lo
 \begingroup
     \vsize=\textwidth
     \hsize=\textheight
-    \section{Diagrama de Gantt}
+    \subsubsection{Diagrama de Gantt}
     \label{sec:gantt}
     \begin{table}[h]
         \centering
@@ -224,3 +503,182 @@ En modo de leyenda, en esta tabla \ref{tab:recursos} podréis ver cuáles son lo
 \pdfpageheight=\paperheight
 \pdfpagewidth=\paperwidth
 \headwidth=\textwidth
+
+\section{Gestión de riesgos: Planes alternativos y obstáculos}
+\label{sec:riesgos}
+
+% Corregido
+% TODO:daniel: Añadir referencia a la seccion
+
+A continuación, como se menciona en la sección \textbf{Posibles riesgos y obstaculos}, donde definimos los riegos
+que supone un proyecto de este tipo, detallaremos los planes alternativos para solucionar los riegos a los cuales nos enfrentamos.
+Así mismo, se detallará la probabilidad y el impacto que un riesgo pueda tener sobre nuestro proyecto.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|c|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Riesgos                                                                               & Probabilidad & Impacto & \multicolumn{1}{l|}{\cellcolor[HTML]{8EA9D8}Plan alternativo}                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+    Fecha fija de entrega                                                                 & Baja         & Bajo    & \begin{tabular}[c]{@{}c@{}}En los proyectos con deadlines ajustados hemos de considerar la fecha de\\ entrega como un riesgo, pero al utilizar un sistema agile, esto nos permite\\ en cada iteración poder corregir todos los desvíos o imprevistos que puedan\\ surgir\end{tabular}                                                                                                                                                  \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Inesperiencia en las\\ tecnologias utilizadas\end{tabular} & Baja         & Medio   & \begin{tabular}[c]{@{}c@{}}Como el objetivo del proyecto no es centrarse en los modelos de lenguaje\\ si no, en utilizarlos como medio para obtener un resultado, el plan alternativo\\ pasa por no dar prioridad al medio sino al fin\end{tabular}                                                                                                                                                                                    \\ \hline
+    \begin{tabular}[c]{@{}l@{}}Resultados obtenidos\\ no esperados\end{tabular}           & Media        & Alto    & \begin{tabular}[c]{@{}c@{}}En proyectos de investigación la incertidumbre es alta, ya que no sabemos con\\ total seguridad los resultados que obtendremos, por lo tanto, puede ser que no \\ sean los esperados. En consecuencia, en caso de que los resultados no sean\\ los esperados o no sean de la calidad esperada, el plan alternativo será intentar\\ modificar los métodos utilizados para afinar los resultados\end{tabular} \\ \hline
+    \end{tabular}%
+    }
+    \caption[Identificación de riesgos y planes alternativos]{Identificación de riesgos y planes alternativos (Elaboración propia)}
+    \label{tab:riegos}
+\end{table}
+
+\section{Planificación final}
+\label{sec:planificacion_final}
+
+% Corregido
+
+En este capítulo se detallará el estado actual del proyecto a fecha del día
+de entrega del informe de seguimiento, que tiene como fecha límite el 15 de
+diciembre de 2023.
+
+Se detallará cuál es el estado actual, las tareas que se han realizado, las tareas
+que quedan por realizar y las desviaciones que se han producido en la planificación.
+Asimismo, se detallarán, en caso de haberlas, las desviaciones que se hayan
+producido respecto a la planificación inicial.
+
+\subsection{Resumen de las tareas}
+\label{subsec:resumen_tareas}
+
+% Corregido
+
+En la tabla \ref{tab:resumen_tareas} se puede ver un resumen de las tareas que se han realizado
+y las tareas que quedan por realizar. En la columna \textit{Estado} se puede ver el estado actual
+de la tarea, teniendo como estados los siguientes:
+
+\begin{itemize}
+    \item \textbf{No iniciada}: La tarea no se ha iniciado.
+    \item \textbf{En progreso}: La tarea se ha iniciado y se está trabajando en ella.
+    \item \textbf{Finalizada}: La tarea se ha finalizado.
+\end{itemize}
+
+Así mismo, en la columna de \textit{Previsión} se puede ver la previsión de finalización de la tarea.
+Teniendo como previsión los siguientes estados:
+
+\begin{itemize}
+    \item \textbf{A tiempo}: La tarea se finalizará en la fecha prevista.
+    \item \textbf{Con retraso}: La tarea se finalizará con retraso respecto a la fecha prevista.
+\end{itemize}
+
+Como se ha podido observar en la tabla \ref{tab:resumen_tareas}, se aprecia un
+retraso en las tareas con código \textit{I04}, \textit{AGPT04} y \textit{D02}.
+Esto se debe a que durante la realización del proyecto han cambiado las prioridades
+de la realización de las tareas, priorizando la ejecución de las tareas pertenecientes
+al paquete \textit{D} y \textit{DH}.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|llcll|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}\textbf{Código}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Nombre tarea}}                                 & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Horas de trabajo}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Estado}} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}\textbf{Previsión}} \\ \hline
+    \multicolumn{1}{|l|}{\textbf{GP}}                             & \multicolumn{4}{l|}{\textbf{Gestión del proyecto}}                                                                                                                                                                                                                                                           \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Alcance}                                               & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP02}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Planificación}                                         & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP03}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Presupuesto}                                           & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}GP04}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Evaluación del proyecto}                               & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}GP05}            & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Reuniones}                                             & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}DC01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Documentación}                                         & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}176}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 276                                                                    &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{I}}                              & \multicolumn{4}{l|}{\textbf{Investigación y analisis}}                                                                                                                                                                                                                                                       \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I01}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación sobre el concepto LLMs}                  & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I02}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación LLMs Open Source}                        & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}I03}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Investigación sobre métodos de fine-tuning}            & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}I04}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Recogida de datos para el entrenamiento}               & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}5}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & \cellcolor[HTML]{ED9797}Con retraso                             \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 20                                                                     &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{AGPT}}                           & \multicolumn{4}{l|}{\textbf{Análisis y pruebas de la solución utilizando ChatGPT Plus}}                                                                                                                                                                                                                      \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT01}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Análisis de ChatGPT}                                   & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT02}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Pruebas de uso con GPT-3.5}                            & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}AGPT03}          & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Pruebas de uso con GPT-4}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}AGPT04}          & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Analisis de los resultados}                            & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}4}                         & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & Con retraso                                                     \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 16                                                                     &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{D}}                              & \multicolumn{4}{l|}{\textbf{Deployment de un LLM en un sistema de GPUs}}                                                                                                                                                                                                                                     \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}D01}             & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Análisis y pruebas de ejecución de un LLM}             & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}28}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}D02}             & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Pruebas de ejecución de nuestro target}                & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}12}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & Con retraso                                                     \\ \hline
+    \rowcolor[HTML]{F8E095} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{F8E095}D03}             & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}Fine-tuning}                                           & \multicolumn{1}{c|}{\cellcolor[HTML]{F8E095}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{F8E095}En progreso}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}D04}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Evaluación y correción 1}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}20}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{ED9797} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{ED9797}D05}             & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}Evaluación y correción 2}                              & \multicolumn{1}{c|}{\cellcolor[HTML]{ED9797}40}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{ED9797}No iniciada}     & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 120                                                                    &                                                              &                                                                 \\ \hline
+    \multicolumn{1}{|l|}{\textbf{DH}}                             & \multicolumn{4}{l|}{\textbf{Desarrollo de herramientas}}                                                                                                                                                                                                                                                     \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}DH01}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Desarrollo de scripts para la creación del Data Sheet} & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}28}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{9BEB81} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{9BEB81}DH02}            & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Desarrollo de scripts de ejecución}                    & \multicolumn{1}{c|}{\cellcolor[HTML]{9BEB81}18}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{9BEB81}Finalizada}      & A tiempo                                                        \\ \hline
+    \rowcolor[HTML]{8EA9D8} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{8EA9D8}Total horas paquete}                                                                                                  & 46                                                                     &                                                              &                                                                 \\ \hline
+    \rowcolor[HTML]{305496} 
+    \multicolumn{2}{|l|}{\cellcolor[HTML]{305496}Total horas}                                                                                                          & \multicolumn{1}{c|}{\cellcolor[HTML]{305496}478}                       &                                                              &                                                                 \\ \hline
+    \end{tabular}%
+    }
+    \caption{Resumen del estado de las tareas}
+    \label{tab:resumen_tareas}
+\end{table}
+
+\subsection{Desviaciones}
+\label{subsec:desviaciones}
+
+% Corregido
+
+Por lo que respecta a las desviaciones respecto a la planificación inicial, no hay
+desviaciones significativas que impliquen un cambio de horas en la planificación
+inicial. Sí que se han producido cambios en las prioridades de las tareas y, por
+lo tanto, se han realizado tareas antes de lo previsto y otras tareas se han
+retrasado respecto a la planificación inicial, pero no impidiendo que otras 
+tareas se retrasen.
+
+Este retraso ha sido debido a que se ha priorizado la realización de las tareas
+del paquete \textit{D} y \textit{DH} respecto a las tareas del paquete \textit{AGPT}.
+Esto se debe a que se ha considerado que por la naturaleza de estas tareas era más
+probable que se produjeran retrasos debido a la inexperiencia en el uso de las
+herramientas y la falta de conocimiento de los conceptos asociados a modelos de lenguaje
+y como entrenarlos.
+
+Así mismo, como estas tareas están relacionadas con el uso de un sistema de GPUs
+ofrecido por el departamento de Arquitectura de Computadores, en su servidor Sert.
+Se han producido diferentes incidencias que han impedido la utilización del servidor durante
+un tiempo, impidiendo a veces que el trabajo se pudiera realizar.
+
+No obstante, a pesar de que sí que ha supuesto una inversión mayor de horas de las
+previstas en la planificación inicial, no ha supuesto un retraso en la planificación
+del proyecto, ya que entra dentro de los riesgos de estas tareas que se plantearon
+al inicio y que se detallan en el capítulo \ref{sec:riesgos}.
+
+Por lo tanto, el diagrama de Gantt se ve modificado de la siguiente manera:
+
+\begin{itemize}
+    \item La tarea I04 se elimina del Sprint 02 y se añade al Sprint 05.
+    \item La tarea AGPT04 se elimina del Sprint 03 y se añade al Sprint 05.
+    \item Las tareas relacionadas con el paquete AGPT se eliminan del Sprint 03 y se añade al Sprint 02.
+    \item Se amplía el tiempo de las tareas del paquete DH.
+\end{itemize}
