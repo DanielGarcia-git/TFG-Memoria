@@ -1,15 +1,19 @@
-\begin{center}
-    \begin{tikzpicture}
-        \begin{umlpackage}{script-repository}
-            \umlclass[]{RepositoryList}{
-                - pathToRepositoryFile : String \\
-            }{
-                + setRepositoryListByFile(pathToFile : String) : void \\
-            }
-            \umlclass[]{Repository}{
-                
-            }{
-            }
-        \end{umlpackage}
-    \end{tikzpicture}
-\end{center}
+\begin{myuml}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{umlpackage}{script-repository}
+                \umlclass[]{RepositoryList}{
+                    - pathToRepositoryFile : String \\
+                }{
+                    + setRepositoryListByFile(pathToFile : String) : void \\
+                }
+                \umlclass[]{Repository}{
+                    
+                }{
+                }
+            \end{umlpackage}
+        \end{tikzpicture}
+    \end{center}
+    \captionof{myuml}[Diagrama de clases del módulo \textit{script-repository}]{Diagrama de clases del módulo \textit{script-repository} (Elaboración propia)}
+    \label{dig:script-repository}
+\end{myuml}

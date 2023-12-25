@@ -2,6 +2,7 @@
 *.lomyequation
 *.zip
 *.lomycode
+*.lomyuml
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
