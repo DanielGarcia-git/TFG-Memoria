@@ -149,7 +149,6 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-# TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
 # *.tikz
 *-tikzDictionary
 
@@ -306,3 +305,4 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 *.locode
+.vscode/settings.json
