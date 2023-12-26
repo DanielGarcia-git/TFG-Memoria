@@ -1,0 +1,50 @@
+\begin{myuml}[H]
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{umlpackage}[x=0, y=0]{main-command}
+
+            \end{umlpackage}
+
+            \begin{umlpackage}[x=0, y=-5]{main-tasks}
+                \umlclass[]{CleanUp}{
+                }{
+                    + clean() : void \\
+                    + defineTask() : void \\
+                }
+                \umlclass[]{Compiler}{
+                    - compiler : Compiler \\
+                    - codeFiles : List<CodeFile> \\
+                }{
+                    + getCodeFiles() : void \\
+                    + generateDirectory() : void \\
+                    + defineTask() : void \\
+                }
+                \umlclass[]{DataSet}{
+                    - dataSet : DataSet \\
+                    - asemblerFiles : List<CodeFile> \\
+                    - codeFiles : List<CodeFile> \\
+                }{
+                    + getFileByPathAndType(path : String, type : String) : void \\
+                    + defineTask() : void \\
+                }
+                \umlclass[]{Help}{
+                }{
+                    - printHelpMessage() : void \\
+                    + defineTask() : void \\
+                }
+                \umlclass[]{RespositorySetup}{
+                    - repositoryList : RepositoryList \\
+                }{
+                    + defineTask() : void \\
+                }
+                \umlclass[]{Version}{
+                }{
+                    - printVersionMessage() : void \\
+                    + defineTask() : void \\
+                }
+            \end{umlpackage}
+        \end{tikzpicture}
+        \captionof{myuml}[Diagrama de clases del módulo \textit{script-compiler}]{Diagrama de clases del módulo \textit{script-compiler} (Elaboración propia)}
+        \label{dig:script-compiler}
+    \end{center}
+\end{myuml}
