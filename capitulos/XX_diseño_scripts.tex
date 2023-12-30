@@ -28,6 +28,176 @@ siguientes criterios:
 \section{Diseño del sistema de scripts}
 \label{sec:diseño_sistema_scripts}
 
+% Corregido 30/12/2023
+% TODO:danielg: Revisar la sección de diseño del sistema de scripts
+
+Como bien he mencionado en el apartado anterior \ref{cap:diseñoImplentacion_scripts}, el
+sistema de scripts debe de ser modular, mantenible y portable. Podréis ver en la sección
+\ref{subsec:diagrama_clases} el diagrama de clases del sistema de scripts. Pero antes de
+entrar en detalle de los diferentes módulos implementados, explicaré las funcionalidades
+que nos ofrece este sistema de scripts.
+
+\subsection{Casoso de uso del sistema de scripts}
+\label{subsec:casos_uso_sistema_scripts}
+
+% Corregido 30/12/2023
+% TODO:danielg: Revisar la sección de diseño del sistema de scripts
+
+El sistema de scripts tiene como objetivo principal automatizar la generación de un dataset
+que contenga los datos necesarios para poder entrenar nuestro modelo. Para la generación
+de este dataset se ha dividido en diferentes pasos:
+
+% TODO:danielg: Revisar si hace falta añadir algun paso mas como por ejemplo en del finetuning
+
+\begin{enumerate}
+    \item \textbf{Recolección de datos:} en este paso se recogerán los datos necesarios
+        para poder generar el dataset. En mi caso, se trata de recolectar códigos escritos
+        en C. Mayoritariamente se han recolectado de la página web \textit{Github}
+        \footnote{URL al sitio web \href{https://github.com/}{Github}}, de repositorios 
+        públicos que se detallan en el apéndice \ref{apen:repositorios}.
+    \item \textbf{Compilación y generación de ensamblador:} en este paso se compilarán los
+        códigos obtenidos en el paso anterior y se generará el código en ensamblador. En este
+        paso se decidirán cosas como el nivel de optimización de la compilación (con esto podemos
+        definir diferentes niveles de complejidad en el código ensamblador). Una vez generado el
+        ejecutable se extraerá el código ensamblador utilizando herramientas como \textit{objdump}
+        \footnote{\textit{objdump} es un programa de línea de comandos para mostrar 
+        diversa información sobre archivos objeto en sistemas operativos tipo Unix. Por ejemplo, 
+        puede utilizarse como desensamblador para ver un ejecutable en forma de ensamblador.} o 
+        \textit{dumpbin}\footnote{El volcado de archivos binarios COFF de Microsoft o \textit{dumpbin}
+        muestra información sobre los archivos binarios del formato de archivo de objeto común.}.
+    \item \textbf{Generación de dataset:} en este paso se generará el dataset a partir de los
+        códigos ensambladores obtenidos en el paso anterior. Este paso generará un fichero JSON
+        \footnote{JSON o JavaScript Object Notation es un formato de texto sencillo para el 
+        intercambio de datos.} con los datos necesarios y en el formato correcto para poder 
+        entrenar nuestro modelo.
+\end{enumerate}
+
+\subsection{Módulos del sistema de scripts}
+\label{subsec:modulos_sistema_scripts}
+
+En esta sección se detallarán los diferentes módulos y submódulos definidos en el sistema de scripts y las
+funcionalidades o propósitos que tienen cada uno de ellos. Para más información sobre los métodos que contiene
+cada módulo, submódulo o clase podéis consultar la documentación generada que se encuentra en conjunto con
+el código fuente del proyecto.
+
+Los módulos definidos son los siguientes:
+
+\begin{itemize}
+    \item \textbf{Modulo main}
+    \begin{itemize}
+        \item \textit{main.tasks}
+        \item \textit{main.command}
+        \item \textit{main.log}
+    \end{itemize}
+    \item \textbf{Modulo script}
+    \begin{itemize}
+        \item \textit{script.dataset}
+        \item \textit{script.compiler}
+        \item \textit{script.repository}
+    \end{itemize}
+    \item \textbf{Modulo utils}
+    \begin{itemize}
+        \item \textit{utils.abstract}
+        \item \textit{utils.file}
+        \item \textit{utils.enum}
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Modulo main}
+\label{subsubsec:modulo_main}
+
+El módulo \textit{main} es el módulo principal del sistema de scripts. Este módulo se encarga de interpretar
+la entrada del usuario (los argumentos) y de llamar a los diferentes submódulos para que realicen las tareas
+correspondientes.
+
+En la tabla \ref{tab:main_description} se puede ver una descripción de los diferentes submódulos y clases que
+componen el módulo \textit{main}.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Módulo & Submódulo    & Clase            & Función & Descripción \\ \hline
+    main   & main.log     & -                &         &             \\ \hline
+    main   & main.log     & LogManager       &         &             \\ \hline
+    main   & main.command & -                &         &             \\ \hline
+    main   & main.command & Configuration    &         &             \\ \hline
+    main   & main.command & CommandProcessor &         &             \\ \hline
+    main   & main.tasks   & -                &         &             \\ \hline
+    main   & main.tasks   & Version          &         &             \\ \hline
+    main   & main.tasks   & Help             &         &             \\ \hline
+    main   & main.tasks   & CleanUp          &         &             \\ \hline
+    main   & main.tasks   & Compiler         &         &             \\ \hline
+    main   & main.tasks   & DataSet          &         &             \\ \hline
+    main   & main.tasks   & RepositorySetup  &         &             \\ \hline
+    \end{tabular}%
+    }
+    \caption{Descripción de los submódulos y clases que componen el módulo main}
+    \label{tab:main_description}
+\end{table}
+
+\subsubsection{Modulo script}
+\label{subsubsec:modulo_script}
+
+En la tabla \ref{tab:script_description} se puede ver una descripción de los diferentes submódulos y clases que
+componen el módulo \textit{script}.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Módulo & Submódulo         & Clase           & Función & Descripción \\ \hline
+    script & script.datset     & -               &         &             \\ \hline
+    script & script.datset     & DataFineTuning  &         &             \\ \hline
+    script & script.datset     & DataSet         &         &             \\ \hline
+    script & script.compiler   & -               &         &             \\ \hline
+    script & script.compiler   & Compiler        &         &             \\ \hline
+    script & script.compiler   & CompilerOptions &         &             \\ \hline
+    script & script.repository & -               &         &             \\ \hline
+    script & script.repository & Repository      &         &             \\ \hline
+    script & script.repository & RepositoryList  &         &             \\ \hline
+    \end{tabular}%
+    }
+    \caption{Descripción de los submódulos y clases que componen el módulo script}
+    \label{tab:script_description}
+\end{table}
+
+\subsubsection{Modulo utils}
+\label{subsubsec:modulo_utils}
+
+En la tabla \ref{tab:utils_description} se puede ver una descripción de los diferentes submódulos y clases que
+componen el módulo \textit{utils}.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Módulo & Submódulo      & Clase           & Función & Descripción \\ \hline
+    utils  & utils.abstract & -               &         &             \\ \hline
+    utils  & utils.abstract & Task            &         &             \\ \hline
+    utils  & utils.enum     & -               &         &             \\ \hline
+    utils  & utils.enum     & Arguments       &         &             \\ \hline
+    utils  & utils.enum     & CompilerOptions &         &             \\ \hline
+    utils  & utils.enum     & Compilers       &         &             \\ \hline
+    utils  & utils.enum     & OperatingSystem &         &             \\ \hline
+    utils  & utils.enum     & Paths           &         &             \\ \hline
+    utils  & utils.enum     & RepositoryType  &         &             \\ \hline
+    utils  & utils.file     & -               &         &             \\ \hline
+    utils  & utils.file     & File            &         &             \\ \hline
+    utils  & utils.file     & CodeFile        &         &             \\ \hline
+    utils  & utils.file     & ObjdumpFile     &         &             \\ \hline
+    \end{tabular}%
+    }
+    \caption{Descripción de los submódulos y clases que componen el módulo utils}
+    \label{tab:utils_description}
+    \end{table}
+
 \newpage
 \paperwidth=\pdfpageheight
 \paperheight=\pdfpagewidth
