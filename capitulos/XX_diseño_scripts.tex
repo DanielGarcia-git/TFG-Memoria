@@ -178,25 +178,25 @@ componen el módulo \textit{utils}.
     \begin{tabular}{|l|l|l|l|l|}
     \hline
     \rowcolor[HTML]{8EA9D8} 
-    Módulo & Submódulo      & Clase           & Función & Descripción \\ \hline
-    utils  & utils.abstract & -               &         &             \\ \hline
-    utils  & utils.abstract & Task            &         &             \\ \hline
-    utils  & utils.enum     & -               &         &             \\ \hline
-    utils  & utils.enum     & Arguments       &         &             \\ \hline
-    utils  & utils.enum     & CompilerOptions &         &             \\ \hline
-    utils  & utils.enum     & Compilers       &         &             \\ \hline
-    utils  & utils.enum     & OperatingSystem &         &             \\ \hline
-    utils  & utils.enum     & Paths           &         &             \\ \hline
-    utils  & utils.enum     & RepositoryType  &         &             \\ \hline
-    utils  & utils.file     & -               &         &             \\ \hline
-    utils  & utils.file     & File            &         &             \\ \hline
-    utils  & utils.file     & CodeFile        &         &             \\ \hline
-    utils  & utils.file     & ObjdumpFile     &         &             \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{8EA9D8}Módulo} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}Submódulo} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}Clase} & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}Función}                                                       & \multicolumn{1}{c|}{\cellcolor[HTML]{8EA9D8}Descripción}                                                                                                                            \\ \hline
+    utils                                                & utils.abstract                                         & -                                                  & Declaración de las clases abstractas                                                                       & \begin{tabular}[c]{@{}l@{}}Este submódulo contendrá todas las \\ clases abstractas utilizadas en el sistema\end{tabular}                                                            \\ \hline
+    utils                                                & utils.abstract                                         & Task                                               & Representa una tarea generica                                                                              & \begin{tabular}[c]{@{}l@{}}Esta clase define los métodos que tiene una\\ tarea y obliga implementar aquellos que son\\ específicos de una tarea\end{tabular}                        \\ \hline
+    utils                                                & utils.enum                                             & -                                                  & Declaración de los enumeradores                                                                            & \begin{tabular}[c]{@{}l@{}}Este submódulo contendrá todos los\\ enumeradores utilizados en el sistema\end{tabular}                                                                  \\ \hline
+    utils                                                & utils.enum                                             & Arguments                                          & Declaración de los argumentos                                                                              & \begin{tabular}[c]{@{}l@{}}En esta clase se definen los argumentos \\ disponibles en el sistema con una breve descripción\end{tabular}                                              \\ \hline
+    utils                                                & utils.enum                                             & CompilerOptions                                    & \begin{tabular}[c]{@{}l@{}}Declaración de las opciones del\\ compilador\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}En esta clase se definen las opciones que el\\ compilador tiene disponible\end{tabular}                                                                  \\ \hline
+    utils                                                & utils.enum                                             & Compilers                                          & \begin{tabular}[c]{@{}l@{}}Declaración de los compiladores\\ disponibles\end{tabular}                      & \begin{tabular}[c]{@{}l@{}}En esta clase se definen los compiladores y su\\ comando que se tienen disponibles en el sistema\end{tabular}                                            \\ \hline
+    utils                                                & utils.enum                                             & OperatingSystem                                    & \begin{tabular}[c]{@{}l@{}}Declaración de los sistemas\\ operativos soportados\end{tabular}                & \begin{tabular}[c]{@{}l@{}}En esta clase se definen los sistemas operativos \\ soportados por el sistema\end{tabular}                                                               \\ \hline
+    utils                                                & utils.enum                                             & Paths                                              & Declaración de los paths utilizados                                                                        & \begin{tabular}[c]{@{}l@{}}En esta clase se declaran los paths que se utilizan\\ como por ejemplo donde están ubicados los logs\end{tabular}                                        \\ \hline
+    utils                                                & utils.enum                                             & RepositoryType                                     & \begin{tabular}[c]{@{}l@{}}Declaración de los tipos de\\ repositorios\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}En esta clase se declaran los tipos de repositorios \\ que el sistema tiene, por ejemplo, repositorio de\\ código, de un sistema de IA, etc\end{tabular} \\ \hline
+    utils                                                & utils.file                                             & -                                                  & \begin{tabular}[c]{@{}l@{}}Declaración de las clases utilizadas\\ para representar un archivo\end{tabular} & \begin{tabular}[c]{@{}l@{}}Este submódulo contendrá todas las clases\\ que representen un archivo por ejemplo\\ de código\end{tabular}                                              \\ \hline
+    utils                                                & utils.file                                             & File                                               & Declaración de un fichero generico                                                                         & \begin{tabular}[c]{@{}l@{}}Esta clase representa un fichero genérico que\\ contiene cualquier tipo de datos\end{tabular}                                                            \\ \hline
+    utils                                                & utils.file                                             & CodeFile                                           & \begin{tabular}[c]{@{}l@{}}Declaración de un fichero que\\ contiene código\end{tabular}                    & \begin{tabular}[c]{@{}l@{}}Esta clase representa un fichero de código escrito\\ en cualquier lenguaje de programación\end{tabular}                                                  \\ \hline
+    utils                                                & utils.file                                             & ObjdumpFile                                        & \begin{tabular}[c]{@{}l@{}}Declaración de un fichero que\\ contienen código en ensamblador\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Esta clase representa un fichero de la salida estándar\\ al ejecutar un comando del estilo objdump\end{tabular}                                          \\ \hline
     \end{tabular}%
     }
     \caption{Descripción de los submódulos y clases que componen el módulo utils}
     \label{tab:utils_description}
-    \end{table}
+\end{table}
 
 \newpage
 \paperwidth=\pdfpageheight
