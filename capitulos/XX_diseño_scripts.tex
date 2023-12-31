@@ -109,6 +109,9 @@ Los módulos definidos son los siguientes:
 \subsubsection{Modulo main}
 \label{subsubsec:modulo_main}
 
+% Corregido 31/12/2023
+% TODO:danielg: Revisar la sección del módulo main
+
 El módulo \textit{main} es el módulo principal del sistema de scripts. Este módulo se encarga de interpretar
 la entrada del usuario (los argumentos) y de llamar a los diferentes submódulos para que realicen las tareas
 correspondientes.
@@ -122,19 +125,19 @@ componen el módulo \textit{main}.
     \begin{tabular}{|l|l|l|l|l|}
     \hline
     \rowcolor[HTML]{8EA9D8} 
-    Módulo & Submódulo    & Clase            & Función & Descripción \\ \hline
-    main   & main.log     & -                &         &             \\ \hline
-    main   & main.log     & LogManager       &         &             \\ \hline
-    main   & main.command & -                &         &             \\ \hline
-    main   & main.command & Configuration    &         &             \\ \hline
-    main   & main.command & CommandProcessor &         &             \\ \hline
-    main   & main.tasks   & -                &         &             \\ \hline
-    main   & main.tasks   & Version          &         &             \\ \hline
-    main   & main.tasks   & Help             &         &             \\ \hline
-    main   & main.tasks   & CleanUp          &         &             \\ \hline
-    main   & main.tasks   & Compiler         &         &             \\ \hline
-    main   & main.tasks   & DataSet          &         &             \\ \hline
-    main   & main.tasks   & RepositorySetup  &         &             \\ \hline
+    Módulo & Submódulo    & Clase            & Función                                                                                           & Descripción                                                                                                                                            \\ \hline
+    main   & main.log     & -                & Declaración del sistema de logs                                                                   & \begin{tabular}[c]{@{}l@{}}Este submódulo se encarga de gestionar\\ el sistema de logs\end{tabular}                                                    \\ \hline
+    main   & main.log     & LogManager       & \begin{tabular}[c]{@{}l@{}}Declaración de la clase que \\ controla los logs\end{tabular}          & \begin{tabular}[c]{@{}l@{}}Esta clase se encarga de gestionar y\\ controlar todo el sistema de logs\end{tabular}                                       \\ \hline
+    main   & main.command & -                & \begin{tabular}[c]{@{}l@{}}Declaración del sistema de\\ comandos\end{tabular}                     & \begin{tabular}[c]{@{}l@{}}Este submódulo contiene todas las \\ clases necesarias para definir los\\ comandos\end{tabular}                             \\ \hline
+    main   & main.command & Configuration    & \begin{tabular}[c]{@{}l@{}}Declaración de la configuración\\ del sistema\end{tabular}             & \begin{tabular}[c]{@{}l@{}}Esta clase se encarga de configurar y\\ mantener la configuración del sistema\end{tabular}                                  \\ \hline
+    main   & main.command & CommandProcessor & \begin{tabular}[c]{@{}l@{}}Declaración del procesador de \\ comandos\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Esta clase se encarga de procesar los\\ comandos y crear las correspondientes \\ tareas que se han de ejecutar\end{tabular} \\ \hline
+    main   & main.tasks   & -                & \begin{tabular}[c]{@{}l@{}}Declaración de las tareas soportadas\\ por el sistema\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Este submódulo contiene todas las \\ tareas definidas en el sistema\end{tabular}                                            \\ \hline
+    main   & main.tasks   & Version          & Declaración de la tarea Version                                                                   & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento \\ de la tarea Version\end{tabular}                                                     \\ \hline
+    main   & main.tasks   & Help             & Declaración de la tarea Ayuda                                                                     & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea Ayuda\end{tabular}                                                        \\ \hline
+    main   & main.tasks   & CleanUp          & Declaración de la tarea Limpiado                                                                  & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea Limpiado\end{tabular}                                                     \\ \hline
+    main   & main.tasks   & Compiler         & Declaración de la tarea de compilación                                                            & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea de compilación\end{tabular}                                               \\ \hline
+    main   & main.tasks   & DataSet          & \begin{tabular}[c]{@{}l@{}}Declaración de la tarea de creación\\ del dataset\end{tabular}         & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea de creación del dataset\end{tabular}                                      \\ \hline
+    main   & main.tasks   & RepositorySetup  & \begin{tabular}[c]{@{}l@{}}Declaración de la tarea de descarga\\ de los repositorios\end{tabular} & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea de descarga de los repositorios\end{tabular}                              \\ \hline
     \end{tabular}%
     }
     \caption{Descripción de los submódulos y clases que componen el módulo main}
