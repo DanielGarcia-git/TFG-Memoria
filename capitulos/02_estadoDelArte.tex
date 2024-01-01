@@ -1,0 +1,108 @@
+\chapter{Estado del arte de la ingeniería inversa}
+\label{cap:estadoDelArte}
+
+\begin{flushright}
+    \begin{minipage}[]{10cm}
+        \emph{Sometimes, the best way to advance is in reverse}\\
+    \end{minipage}\\
+
+    Eldad Eilam, \textit{Reversing : secrets of reverse engineering}\\
+\end{flushright}
+
+\vspace{1cm}
+
+% TODO:daniel: Corregir y revisar El estado del arte de la ingeniería inversa
+
+Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me
+gustaría introducir formalmente el concepto de ''ingeniería inversa'' o conocida
+en el mundo de la informática como \textit{reverse engineering}. La ingeniería
+inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que 
+el humano haya hecho. Por lo tanto, no es un concepto que solo acotemos dentro de
+la ingeniería informática, sino que se puede aplicar a cualquier proceso ingenieril.
+De hecho, este proceso es bastante similar al método científico, con la única diferencia
+que la ingeniería inversa solo se aplica sobre cosas que ha hecho un humano y en el
+método científico lo aplicamos en fenómenos naturales.
+
+La ingeniería inversa es usada normalmente para obtener conocimiento desconocido o la
+filosofía del diseño cuando esta información no está disponible, ya sea porque su
+propietario ha decidido no compartirla o porque esta información está perdida o 
+destruida. \cite{alma991003132729706711}
+
+La ingeniería inversa aplicada al \textit{software} es el mismo concepto, pero aplicada
+a programa en su formato binario, con el objetivo de obtener el código fuente en un
+lenguaje de programación concreto y así poder obtener información como el diseño del
+programa. De hecho, la ingeniería inversa aplicada al \textit{software} requiere
+diferentes artes: descifrado de códigos, resolución de puzzles, programación y análisis
+lógico.
+
+Las aplicaciones de la ingeniería inversa son muy variadas, pero podemos destacar dos
+categorías: seguridad y desarrollo de \textit{software}.
+
+Sus aplicaciones en seguridad son muy variadas, pero normalmente se le relaciona con
+\textit{malware}, algoritmos criptográficos y auditorias sobre binarios.
+
+Dentro del mundo del \textit{software} malicioso vemos que la ingeniería inversa se
+utiliza en dos aspectos diferentes. Desde el punto de perspectiva de los que desarrollan
+\textit{software} malicioso utilizan la ingeniería inversa para poder encontrar
+vulnerabilidades en los programas que quieren infectar. En cambio, desde el punto de vista
+de los desarrolladores de antivirus, utilizan la ingeniería inversa para poder diseccionar
+y analizar cada programa malicioso.
+
+También se puede aplicar ingeniería inversa sobre algoritmos criptográficos, de tal manera
+que podamos averiguar que tan seguro es ese mensaje encriptado, o incluso en caso de utilizar
+algoritmos basados en llaves, en los cuales la especificación del algoritmo de encriptación
+es conocido, pero que cada implementación específica puede variar, encontrar vulnerabilidades
+en estos algoritmos.
+
+Y por último, también la ingeniería inversa se aplica para realizar auditorias sobre binarios,
+de tal manera que podamos detectar si un programa es seguro o no, encontrar sus vulnerabilidades
+para poder corregirlas. Por lo tanto, cuanto mejores sean las herramientas de ingeniería inversa
+que se apliquen, podremos encontrar con mucha más eficacia problemas de seguridad en \textit{software}
+propietario.
+
+Como he mencionado con anterioridad, la ingeniería inversa también se aplica dentro del desarrollo
+de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas por ejemplo
+cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de
+herramientas de ingeniería inversa nos podrían ayudar a conseguir más interoperabilidad con
+el \textit{software} propietario.
+
+Otras de las aplicaciones, y que he mencionado anteriormente, es el comprobar la robustez y calidad
+de un programa informático, de tal manera que se pueda corregir posibles problemas de seguridad o
+problemas funcionales.
+
+Una vez introducido el concepto de ingeniería inversa de manera general, creo que es interesante
+contestar a la siguiente pregunta: \textbf{¿Es la ingeniería inversa legal?}
+
+Como hemos podido ver en los párrafos anteriores, muchas veces aplicamos ingeniería inversa sobre
+un \textit{software} propietario, algunos con fines de conocer vulnerabilidades y corregirlas
+y otros con fines de encontrar estas vulnerabilidades para tener un punto de ataque. En
+otras palabras, la legalidad de la aplicación de ingeniería inversa dependerá mucho
+de para que lo estamos aplicando, la finalidad, y sobre que lo estamos aplicando.
+
+En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades 
+y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar
+la interoperabilidad de dos programas.
+
+\section{Terminología y definiciones}
+\label{sec:terminalogia}
+
+% TODO:daniel: Corregir y revisar la terminalogia
+
+En este apartado pasaremos a detallar ciertos términos reiterativos que veremos a lo
+largo del proyecto y que son de especial importancia. Las definiciones son las siguientes:
+
+\begin{itemize}
+    \item \textbf{Large Lenguage Model:} un LLM o \textit{Large Lenguage Model} son 
+        modelos \textit{Pre-trained Lenguage Models}\footnote{El concepto de pre
+        entrenamiento en un modelo de lenguaje está relacionado con el aprendizaje
+        por transferencia. La idea del aprendizaje por transferencia es reutilizar
+        los conocimientos aprendidos en una o varias tareas y aplicarlos a tareas
+        nuevas.} (PLM) a los cuales se han aumentado o el tamaño del modelo en sí
+        o los datos. Con este aumento se dieron cuenta de que había una notoria mejora
+        en términos de \textit{performance} y de la capacidad de los modelos en hacer
+        ciertas tareas. \cite{ZhaoWayneXin2023ASoL}
+    \item \textbf{Fine-tuning:} es una técnica de entrenamiento que consiste en
+        reutilizar un modelo predefinido y preentrenado, de tal manera que ajustamos
+        ciertas capas de la red neuronal para obtener mejores resultados para nuestra
+        tarea en específico.
+\end{itemize}
