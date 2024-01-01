@@ -11,7 +11,8 @@
 
 \vspace{1cm}
 
-% TODO:daniel: Corregir y revisar El estado del arte de la ingeniería inversa
+% Corregido 01/01/2024
+% TODO:daniel: Revisar El estado del arte de la ingeniería inversa
 
 Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me
 gustaría introducir formalmente el concepto de ''ingeniería inversa'' o conocida
@@ -61,7 +62,7 @@ que se apliquen, podremos encontrar con mucha más eficacia problemas de segurid
 propietario.
 
 Como he mencionado con anterioridad, la ingeniería inversa también se aplica dentro del desarrollo
-de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas por ejemplo
+de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas, por ejemplo
 cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de
 herramientas de ingeniería inversa nos podrían ayudar a conseguir más interoperabilidad con
 el \textit{software} propietario.
@@ -82,6 +83,55 @@ de para que lo estamos aplicando, la finalidad, y sobre que lo estamos aplicando
 En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades 
 y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar
 la interoperabilidad de dos programas.
+
+\section{Ética y legalidad}
+\label{sec:etica_legalidad}
+
+Cuando inicie este proyecto, una de las primeras peguntas que me hice fue: si conseguimos
+generar código a partir de un ejecutable, ¿sería legal? ¿Sería ético? ¿Qué implicaciones
+legales y éticas tendría?
+
+Creo que es importante reflexionar e indagar mas sobre este asunto, ya que, como estudiante
+de ingeniería uno a de ser consciente de las repercursiones de los proyectos que desarrolla y
+de las implicaciones que tiene en la sociedad. Así mismo, tambien es importante saber que las
+tecnicas aplicadas en este proyecto son legales o no.
+
+Para poder responder a estas preguntas, me gustaría empezar por la ética. Creo que muchos, cuando
+lean esta memoria se sentiran identificados cuando de pequeños cogiamos juguetes o electrodomesticos
+para desmontarlos y poder ver como funcionaban. En aquel momento, desconociamos que lo que estabamos
+haciendo era ingeniería inversa, pero quiere decir esto que lo que haciamos era ilegal o inmoral?
+
+El ser humano, por natulareza es curioso y siempre ha tenido la necesidad de entender como funcionan
+las cosas, es algo inato y que nos a ayudado a tener las tecnologias que hoy en día tenemos. Por lo tanto,
+creo que lo importante es con que finalidad se hace. Si lo hacemos con la finalidad de aprender y entender
+como funcionan las cosas para poder crear nuevos producto o mejorar los existentes, creo que es algo
+positivo.
+
+Por dar un ejemplo ilustrativo, en los años 80's IBM dominaba el mercado de los ordenadores personales
+con su IBM PC gracias a su BIOS, e IBM se encargaba de proteger su monopolio amenzanado a cualquier otra
+empresa que intentara clonar su sistema. Phoenix Technologies, decidio aplicar la tecnica de la habitación
+limpia, la cual consistia en tener dos grupos de ingenieros totalmente desvinculados, donde uno se encargaba
+de estudiar a profundidad la BIOS de IBM para transmitirselo al segundo grupo, sin esecificar detalles 
+tecnicos o de código y que por lo tanto, pudieran crear un sistema que se comportara de igual manera programado
+desde cero. \cite{IngenieriaInversa}
+
+En este caso, gracias a un sistema basado enla ingeniería inversa, se pudo crear un sistema que se comportaba
+de la misma manera que el sistema de IBM, pero programado desde cero y por lo tanto, acabar con el monopolio 
+de IBM, lo cual fue muy beneficioso para el mercado y para los consumidores.
+
+Por lo que respecta a la legalidad de la ingeneria inversa, creo que es un tema más complejo y que depende
+mucho de la legislación de cada país. En el caso de España, el Real Decreto Legislativo 1/1996, de 12 de abril,
+por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, en su articulo 100 que establece
+los limites de explotación de la obra, en su apartado 3\cite{LeyPropiedadIntelectual}: 
+
+\begin{quote}
+    \textit{``El usuario legítimo de la copia de un programa estará facultado para observar, estudiar o 
+    verificar su funcionamiento, sin autorización previa del titular, con el fin de determinar las ideas
+    y principios implícitos en cualquier elemento del programa, siempre que lo haga durante cualquiera de
+    las operaciones de carga, visualización, ejecución, transmisión o almacenamiento del programa que tiene
+    derecho a hacer''}
+\end{quote}
+
 
 \section{Terminología y definiciones}
 \label{sec:terminalogia}
