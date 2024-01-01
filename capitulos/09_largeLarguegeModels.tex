@@ -76,10 +76,36 @@ habilidades que se han observado en los modelos grandes son:
         natural mas un conjunto de demostraciones de como se debe realizar la tarea.
         El modelo es capaz de realizar la tarea sin necesidad de entrenamiento previo.
         Esta habilidad fue introducida formalmente por GPT-3.
-    \item \textbf{\textit{Instruction following}:}
-    \item \textbf{\textit{Step-by-Step reasoning}:}
+    \item \textbf{\textit{Instruction following}:} esta es la habilidad de seguir
+        instrucciones por las cuales no se a entrenado, es decir, si hacemos un 
+        \textit{fine-tuning} de un modelo con un conjunto de multitareas formateadas en
+        lenguaje natural, el modelo es capaz de realizar las tareas sin necesidad de
+        entrenamiento previo.
+    \item \textbf{\textit{Step-by-Step reasoning}:} esta es la habilidad de resolver
+        problemas de razonamiento complejos, concretamente en resolver tareas que
+        requieren de multiples pasos de razonamiento.
 \end{itemize}
 
 \section{Fine-tuning}
 \label{sec:fine_tuning}
 
+El fine-tuning o en castellano ''ajuste fino'' es una técnica en la cual podemos ajustar 
+ciertos pesos en las camas de nuestra red neuronal, este ajuste lo podremos hacer para 
+todas las capas o solo para un subconjunto de ella. Esta técnica se utiliza para poder
+adaptar un modelo preentrenado a una tarea especifica.
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=15cm]{figuras/Capitulo_09/TrainVSFinetuning.png}
+    \end{center}
+    \caption[]{(\cite{SupervisedFineTuning})}
+    \label{fig:finetuning}
+\end{figure}\
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=15cm]{figuras/Capitulo_09/QLoRa.png}
+    \end{center}
+    \caption[]{(\cite{SupervisedFineTuning})}
+    \label{fig:qlora}
+\end{figure}\
