@@ -144,26 +144,68 @@ que entran en juego a la hora de aplicar ingeniería inversa. Podemos concluir q
 adquirido legalmente, podremos aplicar ingeniería inversa sobre estos, siempre y cuando la finalidad no sea copiar,
 sino entender el funcionamiento de un producto.
 
-\section{Terminología y definiciones}
-\label{sec:terminalogia}
+\section{Barreras de la ingeniería inversa}
+\label{sec:barreras}
 
-% TODO:daniel: Corregir y revisar la terminalogia
+% Corregido 02/01/2024
+% TODO:daniel: Revisar Barreras de la ingeniería inversa
 
-En este apartado pasaremos a detallar ciertos términos reiterativos que veremos a lo
-largo del proyecto y que son de especial importancia. Las definiciones son las siguientes:
+Como he mencionado, la ingeniería inversa no es un proceso sencillo y requiere de muchas
+habilidades y conocimientos para poder aplicarla. En este apartado, me gustaría introducir
+las diferentes barreras a nivel técnico que nos podemos encontrar a la hora de aplicar
+ingeniería inversa sobre un programa informático. \cite{alma991004951313206711}
 
-\begin{itemize}
-    \item \textbf{Large Lenguage Model:} un LLM o \textit{Large Lenguage Model} son 
-        modelos \textit{Pre-trained Lenguage Models}\footnote{El concepto de pre
-        entrenamiento en un modelo de lenguaje está relacionado con el aprendizaje
-        por transferencia. La idea del aprendizaje por transferencia es reutilizar
-        los conocimientos aprendidos en una o varias tareas y aplicarlos a tareas
-        nuevas.} (PLM) a los cuales se han aumentado o el tamaño del modelo en sí
-        o los datos. Con este aumento se dieron cuenta de que había una notoria mejora
-        en términos de \textit{performance} y de la capacidad de los modelos en hacer
-        ciertas tareas. \cite{ZhaoWayneXin2023ASoL}
-    \item \textbf{Fine-tuning:} es una técnica de entrenamiento que consiste en
-        reutilizar un modelo predefinido y preentrenado, de tal manera que ajustamos
-        ciertas capas de la red neuronal para obtener mejores resultados para nuestra
-        tarea en específico.
-\end{itemize}
+\begin{enumerate}
+    \item \textbf{Diferencia entre Dominio de la Aplicación y Lenguajes de Programación}
+        
+        Traducir de conceptos de dominio (que es lo que quiero que haga mi aplicación) a
+        un lenguaje de programación concreto y viceversa es un reto complejo, es decir, mapear
+        conceptos del comportamiento del código a conceptos de dominio.
+    \item \textbf{Concreción y abstracción}
+        
+        Cuando nos enseñan a programar, nos enseñan a abstraernos de los detalles de implementación
+        y a pensar en términos de conceptos abstractos. Por lo tanto, cuando aplicamos ingeniería
+        inversa, tenemos que hacer el proceso inverso, es decir, concretar los conceptos abstractos
+        a partir de detalles de implementación.
+    \item \textbf{Decadencia de la Estructura del Sistema}
+        
+        Muchos sistemas informáticos, a lo largo del tiempo y con el mantenimiento, han ido perdiendo
+        su estructura original, por lo tanto, a la hora de aplicar ingeniería inversa, nos podemos
+        encontrar con que el sistema no tiene una estructura clara.
+    \item \textbf{Disonancia Cognitiva}
+        
+        Los humanos pensamos en términos asociativos, mientras que los programas informáticos son expresiones
+        jerárquicas formales. En consecuencia, supone un desafío a la hora de aplicar ingeniería inversa.
+\end{enumerate}
+
+\section{Fases de la ingeniería inversa}
+\label{sec:fases}
+
+% Corregido 02/01/2024
+% TODO:daniel: Revisar Fases de la ingeniería inversa
+
+Normalmente, la ingeniería inversa, cuando la queremos aplicar sobre programas informáticos, se divide en
+cinco fases \cite{FasesIngineriaInversa}:
+
+\begin{enumerate}
+    \item \textbf{Recopilación de información}: esta fase consiste en recopilar toda la información posible
+        sobre el programa que queremos analizar. Esta información puede ser desde el código fuente, la
+        documentación, el manual de usuario, los binarios, etc.
+    \item \textbf{Análisis estático}: una vez recopilada la información es hora de analizarla. En esta fase
+        se analiza el código fuente, los binarios, la documentación, etc. El objetivo de esta fase es
+        entender la estructura, el funcionamiento, la lógica y la organización interna del programa. Esta fase
+        se caracteriza por no ejecutar el programa.
+    \item \textbf{Análisis dinámico}: una vez hecho el análisis estático, es hora de ejecutar el programa
+        y analizar su comportamiento. En esta fase se analiza el comportamiento del programa, como se comunica
+        con el sistema operativo, como se comunica con otros programas, etc.
+    \item \textbf{Desmontaje y decompilación}: para tener un análisis exhaustivo del programa, es necesario
+        desmontar y descompilar el programa. El desmontaje consiste en obtener el código ensamblador del programa
+        y la decompilación consiste en obtener el código fuente del programa.
+    \item \textbf{Reconstrucción}: Esta etapa se hará en el caso de que sea necesario modificar el programa o
+        mejorar la aplicación. Por ejemplo, en caso de detectar algún error durante las etapas anteriores, se
+        puede modificar el programa para corregirlo.
+\end{enumerate}
+
+Cabe destacar, que en el contexto de este proyecto, el objetivo es poder automatizar o mejorar los resultados
+de la fase de desmontaje y decompilación. Las otras fases son fases muy complejas y manuales que requieren
+de una persona dedicada a ello.
