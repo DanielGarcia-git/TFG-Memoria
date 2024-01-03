@@ -77,12 +77,14 @@ breaklines
 [\vspace{0.5mm} \bigrule] % después del cuerpo, dejar espacio vertical y trazar línea horizontal gruesa
 \geometry{a4paper, left=3.5cm, right=2cm, top=3cm, bottom=2cm, headsep=1.5cm}
 
-\newenvironment{code}{\captionsetup[code]{type=listing}}{}
-\SetupFloatingEnvironment{listing}{name=Código}
+\newenvironment{mycode}
+  {\captionsetup{type=listing}}
+  {}
+\SetupFloatingEnvironment{listing}{name=Código, listname={Índice de Códigos}}
+\captionsetup[listing]{belowskip=10pt}
 
 % Definición de mis propios tipos: Códigos, Ecuaciones y Tablas
 \DeclareCaptionType{myequation}[Ecuación][Índice de ecuaciones]
-\DeclareCaptionType{mycode}[Código][Índice de Códigos]
 
 \hyphenation{fuer-tes}
 \hyphenation{mul-ti-ca-pa}
