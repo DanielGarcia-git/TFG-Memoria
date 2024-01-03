@@ -1,0 +1,144 @@
+\chapter{Códigos utilizados en la memoria}
+\label{apen:codigos}
+
+En este apéndice se listan los códigos utilizados en la memoria y que por ser
+muy extensos no tiene cabida dentro del texto principal.
+
+\section{Código ensamblador del algoritmo \textit{Binary search}}
+\label{apensec:binarySearch}
+
+\begin{mycode}
+    \begin{minted}{asm}
+00000000000011a9 <binarysearch1>:
+    11a9:	f3 0f 1e fa          	endbr64
+    11ad:	55                   	push   %rbp
+    11ae:	48 89 e5             	mov    %rsp,%rbp
+    11b1:	48 83 ec 30          	sub    $0x30,%rsp
+    11b5:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+    11b9:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+    11bc:	89 55 e0             	mov    %edx,-0x20(%rbp)
+    11bf:	89 4d dc             	mov    %ecx,-0x24(%rbp)
+    11c2:	8b 45 e0             	mov    -0x20(%rbp),%eax
+    11c5:	3b 45 e4             	cmp    -0x1c(%rbp),%eax
+    11c8:	0f 8c 8c 00 00 00    	jl     125a <binarysearch1+0xb1>
+    11ce:	8b 45 e0             	mov    -0x20(%rbp),%eax
+    11d1:	2b 45 e4             	sub    -0x1c(%rbp),%eax
+    11d4:	89 c2                	mov    %eax,%edx
+    11d6:	c1 ea 1f             	shr    $0x1f,%edx
+    11d9:	01 d0                	add    %edx,%eax
+    11db:	d1 f8                	sar    %eax
+    11dd:	89 c2                	mov    %eax,%edx
+    11df:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    11e2:	01 d0                	add    %edx,%eax
+    11e4:	89 45 fc             	mov    %eax,-0x4(%rbp)
+    11e7:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    11ea:	48 98                	cltq
+    11ec:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+    11f3:	00 
+    11f4:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    11f8:	48 01 d0             	add    %rdx,%rax
+    11fb:	8b 00                	mov    (%rax),%eax
+    11fd:	39 45 dc             	cmp    %eax,-0x24(%rbp)
+    1200:	75 05                	jne    1207 <binarysearch1+0x5e>
+    1202:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    1205:	eb 58                	jmp    125f <binarysearch1+0xb6>
+    1207:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    120a:	48 98                	cltq
+    120c:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+    1213:	00 
+    1214:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    1218:	48 01 d0             	add    %rdx,%rax
+    121b:	8b 00                	mov    (%rax),%eax
+    121d:	39 45 dc             	cmp    %eax,-0x24(%rbp)
+    1220:	7d 1e                	jge    1240 <binarysearch1+0x97>
+    1222:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    1225:	8d 78 ff             	lea    -0x1(%rax),%edi
+    1228:	8b 55 dc             	mov    -0x24(%rbp),%edx
+    122b:	8b 75 e4             	mov    -0x1c(%rbp),%esi
+    122e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    1232:	89 d1                	mov    %edx,%ecx
+    1234:	89 fa                	mov    %edi,%edx
+    1236:	48 89 c7             	mov    %rax,%rdi
+    1239:	e8 6b ff ff ff       	call   11a9 <binarysearch1>
+    123e:	eb 1f                	jmp    125f <binarysearch1+0xb6>
+    1240:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    1243:	8d 70 01             	lea    0x1(%rax),%esi
+    1246:	8b 4d dc             	mov    -0x24(%rbp),%ecx
+    1249:	8b 55 e0             	mov    -0x20(%rbp),%edx
+    124c:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    1250:	48 89 c7             	mov    %rax,%rdi
+    1253:	e8 51 ff ff ff       	call   11a9 <binarysearch1>
+    1258:	eb 05                	jmp    125f <binarysearch1+0xb6>
+    125a:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    125f:	c9                   	leave
+    1260:	c3                   	ret
+
+0000000000001261 <binarysearch2>:
+    1261:	f3 0f 1e fa          	endbr64
+    1265:	55                   	push   %rbp
+    1266:	48 89 e5             	mov    %rsp,%rbp
+    1269:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+    126d:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+    1270:	89 55 e0             	mov    %edx,-0x20(%rbp)
+    1273:	89 4d dc             	mov    %ecx,-0x24(%rbp)
+    1276:	8b 45 e0             	mov    -0x20(%rbp),%eax
+    1279:	2b 45 e4             	sub    -0x1c(%rbp),%eax
+    127c:	89 c2                	mov    %eax,%edx
+    127e:	c1 ea 1f             	shr    $0x1f,%edx
+    1281:	01 d0                	add    %edx,%eax
+    1283:	d1 f8                	sar    %eax
+    1285:	89 c2                	mov    %eax,%edx
+    1287:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    128a:	01 d0                	add    %edx,%eax
+    128c:	89 45 fc             	mov    %eax,-0x4(%rbp)
+    128f:	eb 5d                	jmp    12ee <binarysearch2+0x8d>
+    1291:	8b 45 e0             	mov    -0x20(%rbp),%eax
+    1294:	3b 45 e4             	cmp    -0x1c(%rbp),%eax
+    1297:	7e 06                	jle    129f <binarysearch2+0x3e>
+    1299:	83 7d e0 00          	cmpl   $0x0,-0x20(%rbp)
+    129d:	79 07                	jns    12a6 <binarysearch2+0x45>
+    129f:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+    12a4:	eb 66                	jmp    130c <binarysearch2+0xab>
+    12a6:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    12a9:	48 98                	cltq
+    12ab:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+    12b2:	00 
+    12b3:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    12b7:	48 01 d0             	add    %rdx,%rax
+    12ba:	8b 00                	mov    (%rax),%eax
+    12bc:	39 45 dc             	cmp    %eax,-0x24(%rbp)
+    12bf:	7d 0b                	jge    12cc <binarysearch2+0x6b>
+    12c1:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    12c4:	83 e8 01             	sub    $0x1,%eax
+    12c7:	89 45 e0             	mov    %eax,-0x20(%rbp)
+    12ca:	eb 09                	jmp    12d5 <binarysearch2+0x74>
+    12cc:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    12cf:	83 c0 01             	add    $0x1,%eax
+    12d2:	89 45 e4             	mov    %eax,-0x1c(%rbp)
+    12d5:	8b 45 e0             	mov    -0x20(%rbp),%eax
+    12d8:	2b 45 e4             	sub    -0x1c(%rbp),%eax
+    12db:	89 c2                	mov    %eax,%edx
+    12dd:	c1 ea 1f             	shr    $0x1f,%edx
+    12e0:	01 d0                	add    %edx,%eax
+    12e2:	d1 f8                	sar    %eax
+    12e4:	89 c2                	mov    %eax,%edx
+    12e6:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+    12e9:	01 d0                	add    %edx,%eax
+    12eb:	89 45 fc             	mov    %eax,-0x4(%rbp)
+    12ee:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    12f1:	48 98                	cltq
+    12f3:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+    12fa:	00 
+    12fb:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+    12ff:	48 01 d0             	add    %rdx,%rax
+    1302:	8b 00                	mov    (%rax),%eax
+    1304:	39 45 dc             	cmp    %eax,-0x24(%rbp)
+    1307:	75 88                	jne    1291 <binarysearch2+0x30>
+    1309:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    130c:	5d                   	pop    %rbp
+    130d:	c3                   	ret
+    
+    \end{minted}
+    \caption[Código completo en Assembler del algoritmo \textit{binary search}]{Código completo en Assembler del algoritmo \textit{binary search} (Elaboración propia)}
+    \label{cod:binarySearchAsm_completo}
+\end{mycode}
