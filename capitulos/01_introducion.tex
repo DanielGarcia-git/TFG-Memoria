@@ -42,16 +42,15 @@ detallarán a continuación:
 
 \begin{itemize}
     \item \textbf{Capítulo 1: Introducción.} En este capítulo se introducirá el proyecto,
-        se contextualizará y se detallará el contenido de esta memoria.
+        se contextualizará y se detallará el contenido de esta memoria. Así mismo, se
+        detallarán los actores implicados en el proyecto, los objetivos y subobjetivos
+        que se quieren alcanzar y los posibles riesgos y obstáculos que se pueden encontrar.
     \item \textbf{Capítulo 2: Estado del arte de la ingeniería inversa.} En este capítulo
         se detallará el estado del arte de la ingeniería inversa, las herramientas que
         existen actualmente y se detallarán los diferentes métodos de ingeniería inversa 
         que existen.
     \item \textbf{Capítulo 3: Justificación.} En este capítulo se detallarán el problema
         a solucionar, las alternativas existentes y la solución tomada.
-    \item \textbf{Capítulo 4: Objetivos.} En este capítulo se detallarán los objetivos
-        y subobjetivos que se proponen en este proyecto, así como los posibles riesgos
-        y obstáculos que nos podemos encontrar durante el desarrollo del proyecto.
     \item \textbf{Capítulo 5: Metodología y rigor.} En este capítulo se detallará la
         metodología de trabajo que se utilizará durante el proyecto. Así mismo, también
         se detallará el seguimiento que se realizará para poder evaluar el grado de
@@ -130,4 +129,59 @@ proyecto, pero tiene una relevancia importante dentro de este mismo:
         Departamento de Operaciones, Innovación y Data Sciences en ESADE.
     \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú, profesor asociado
         de la UPC e investigador senior de PhD.
+\end{itemize}
+
+\section{Objetivos y subobjetivos}
+\label{sec:objetivos}
+
+% Corregido
+% TODO:daniel: Revisar la redacción de los objetivos
+
+Como hemos venido explicando en el capítulo \ref{cap:justificacion} nuestro principal
+objetivo en este proyecto es poder generar código en C compilable, realista y fiel
+al original, partiendo de un fichero ejecutable en su forma de ensamblador. Para
+poder alcanzar este objetivo nos asistiremos con inteligencia artificial de tal
+manera que podamos conseguir resultados óptimos.
+
+Para poder alcanzar este objetivo se ha decidido dividirlo en subobjetivos, de tal
+manera que podamos ir dando pasos hasta el objetivo principal. Los subobjetivos definidos
+son los siguientes:
+
+\begin{enumerate}
+    \item Despliegue de un modelo de redes neuronales para poder asistirnos a generar
+        código en C a partir de un ensamblado
+    \item Estudio y pruebas con modelos online tipo chatbot
+\end{enumerate}
+
+En el primer objetivo nos proponemos poder desplegar en un entorno con las capacidades
+técnica suficientes para poder ejecutar un modelo de red neuronal que nos pueda asistir en
+las tareas de aplicar ingeniería inversa sobre un fichero ejecutable.
+
+En el segundo objetivo nos proponemos obtener resultados preliminares que nos faciliten
+unos resultados orientativos para poder estimar la calidad de los resultados que podamos
+obtener en nuestro objetivo principal. Para ello, nos asistiremos de modelos tipos chatbot
+que podemos consultar online y así poder obtener resultados inmediatos, sin necesidad
+de desplegar un entorno dedicado.
+
+\section{Posibles riesgos y obstaculos}
+\label{sec:riesgos}
+
+% Corregido
+% TODO:daniel: Revisar la sección de riesgos
+
+Los riesgos que se asumen en este proyecto son altos debido a la incertidumbre que hay
+sobre este tema. Dado que los antecedentes son prácticamente nulos y dada una tecnología
+que está en auge y aun en desarrollo, los posibles problemas o resultados no esperados
+que nos podamos encontrar durante la investigación y el desarrollo son altos.
+
+Alguno de los posibles obstáculos que nos podemos encontrar son:
+
+\begin{itemize}
+    \item \textbf{Resultados no deseados:} podemos encontrarnos que a loa hora de querer
+        generar código C a partir de un ejecutable el modelo no sea capaz de procesar estos datos
+        y, por lo tanto, nos dé una salida que no es la esperada.
+    \item \textbf{Insuficiencia de recursos:} los modelos que utilizaremos son modelos
+        muy grandes que necesita mucha memoria de GPU para poderse ejecutar, aunque sabemos que
+        existen modelos más pequeños y que necesitan menos recursos, podemos encontrarnos de
+        que no sea suficiente esta reducción.
 \end{itemize}
