@@ -141,6 +141,7 @@ son los siguientes:
     \item Despliegue de un modelo de redes neuronales para poder asistirnos a generar
         código en C a partir de un ensamblado
     \item Estudio y pruebas con modelos online tipo chatbot
+    \item Creación de un \textit{dataset} para poder entrenar el modelo
 \end{enumerate}
 
 En el primer objetivo nos proponemos poder desplegar en un entorno con las capacidades
@@ -156,15 +157,15 @@ de desplegar un entorno dedicado.
 \section{Posibles riesgos y obstaculos}
 \label{sec:riesgos}
 
-% Corregido
-% TODO:daniel: Revisar la sección de riesgos
+% Corregido 05/01/2024
 
-Los riesgos que se asumen en este proyecto son altos debido a la incertidumbre que hay
-sobre este tema. Dado que los antecedentes son prácticamente nulos y dada una tecnología
-que está en auge y aun en desarrollo, los posibles problemas o resultados no esperados
-que nos podamos encontrar durante la investigación y el desarrollo son altos.
+Los obstáculos que se presentan en este proyecto son elevados debido a la incertidumbre
+que existe acerca de este tema. Dado que los antecedentes son prácticamente nulos, y
+debido a la tecnología que se encuentra en auge y aún en desarrollo, los posibles obstáculos
+o resultados no esperados que podamos hallar durante la investigación y el desarrollo
+son altamente significativos.
 
-Alguno de los posibles obstáculos que nos podemos encontrar son:
+Se han establecido los siguientes riesgos:
 
 \begin{itemize}
     \item \textbf{Resultados no deseados:} podemos encontrarnos que a loa hora de querer
@@ -175,3 +176,34 @@ Alguno de los posibles obstáculos que nos podemos encontrar son:
         existen modelos más pequeños y que necesitan menos recursos, podemos encontrarnos de
         que no sea suficiente esta reducción.
 \end{itemize}
+
+\subsection{Plan de contingencia}
+\label{subsec:planContingencia}
+
+% Corregido 05/01/2024
+
+Tal y como he descrito en la sección \ref{sec:riesgos} los riesgos que se asumen en este
+proyecto son altos, por lo tanto, es necesario tener un plan de contingencia para poder
+hacer frente a estos riesgos. A continuación se detallarán el plan de contingencia elaborado
+para este proyecto.
+
+Como se puede observar en la tabla \ref{tab:plan_contignecia} se detalla por cada riesgo
+la prevención y la respuesta que se dará a este riesgo. La prevención es la acción que se
+llevará a cabo para intentar evitar que el riesgo se produzca. La respuesta es la acción
+que se llevará a cabo en caso de que el riesgo se produzca.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Riesgo                    & Prevención                                                                                                                                                                                                & Respuesta                                                                                                                                                                                                                                       \\ \hline
+    Resultados no deseados    & \begin{tabular}[c]{@{}l@{}}\textbf{Validación rigurosa:} Validar el diseño del dataset\\ y de los modelos utilizados\\ \\ Desarrollo iterativo: Utilizar metodologías agiles\\ de desarrollo\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Revisión y ajuste:} Ajustar el sistema y el entrenamiento \\ cuando no se ajusten los resultados a lo esperado\\ \\ Colaboración con expertos: colaboración con los expertos\\ asociados a este proyecto\end{tabular} \\ \hline
+    Insuficiencia de recursos & \begin{tabular}[c]{@{}l@{}}\textbf{Evaluación de recursos:} evaluar lo que se necesitan\\ de recursos\\ \\ Planificación de recursos: asegurar la disponibilidad\\ de los recursos\end{tabular}           & \begin{tabular}[c]{@{}l@{}}\textbf{Escalabilidad de recursos:} en caso de que sean insuficientes,\\ mirar métodos para poder escalarlos\\ \\ Optimización de modelos: optimización de los modelos\\ para que estos consuman menos recursos\end{tabular}  \\ \hline
+    \end{tabular}%
+    }
+    \caption[Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este]{Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este (Elaboración propia))}
+    \label{tab:plan_contignecia}
+\end{table}
+
