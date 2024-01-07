@@ -42,42 +42,31 @@ detallarán a continuación:
 
 \begin{itemize}
     \item \textbf{Capítulo 1: Introducción.} En este capítulo se introducirá el proyecto,
-        se contextualizará y se detallará el contenido de esta memoria.
-    \item \textbf{Capítulo 2: Estado del arte de la ingeniería inversa.} En este capítulo
+        se contextualizará y se detallará el contenido de esta memoria. Así mismo, se
+        detallarán los actores implicados en el proyecto, los objetivos y subobjetivos
+        que se quieren alcanzar y los posibles riesgos y obstáculos que se pueden encontrar.
+    \item \textbf{Capítulo 2: Justificación.} En este capítulo se detallarán el problema
+        a solucionar, las alternativas existentes y la solución tomada.
+    \item \textbf{Capítulo 3: Estado del arte de la ingeniería inversa.} En este capítulo
         se detallará el estado del arte de la ingeniería inversa, las herramientas que
         existen actualmente y se detallarán los diferentes métodos de ingeniería inversa 
         que existen.
-    \item \textbf{Capítulo 3: Justificación.} En este capítulo se detallarán el problema
-        a solucionar, las alternativas existentes y la solución tomada.
-    \item \textbf{Capítulo 4: Objetivos.} En este capítulo se detallarán los objetivos
-        y subobjetivos que se proponen en este proyecto, así como los posibles riesgos
-        y obstáculos que nos podemos encontrar durante el desarrollo del proyecto.
-    \item \textbf{Capítulo 5: Metodología y rigor.} En este capítulo se detallará la
-        metodología de trabajo que se utilizará durante el proyecto. Así mismo, también
-        se detallará el seguimiento que se realizará para poder evaluar el grado de
-        cumplimiento de los objetivos marcados.
-    \item \textbf{Capítulo 6: Planificación.} En este capítulo se detallará la planificación
-        del proyecto, así como la división en tareas y la estimación de los recursos
-        necesarios para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 7: Presupuesto.} En este capítulo se detallará el presupuesto
-        del proyecto, así como los recursos necesarios para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 8: Sostenibilidad.} En este capítulo se detallará el impacto
-        que tendrá el proyecto en el medio ambiente, así como el impacto social y económico.
-    \item \textbf{Capítulo 9: Large Language Models.} En este capítulo se explicarán los
-        conceptos asociados con los Large Language Models, así como los diferentes modelos
-        que existen y las herramientas que se han utilizado para la realización de este
-        proyecto. Así mismo, se explicarán los posibles resultados que se puedan obtener con
-        estos modelos utilizando modelos online tipo ChatGPT\footnote{ChatGPT es una aplicación
-        de chatbot de inteligencia artificial desarrollado en 2022 por OpenAI que se especializa
-        en el diálogo.}.
-    \item \textbf{Capítulo 10: Diseño e implementación del sistema de scripts.} En este
+    \item \textbf{Capítulo 4: Diseño e implementación del sistema de scripts.} En este
         capítulo se detallará el diseño e implementación del sistema de scripts que se
         ha desarrollado para poder generar el \textit{dataset} que se utilizará para el
         entrenamiento del modelo.
-    \item \textbf{Capítulo 11: Estrategia de entrenamiento.} En este capítulo se detallará
+    \item \textbf{Capítulo 5: Estrategia de entrenamiento.} En este capítulo se detallará
         la estrategia de entrenamiento que se ha utilizado para poder entrenar el modelo.
-    \item \textbf{Capítulo 12: Resultados.} En este capítulo se detallarán los resultados
+    \item \textbf{Capítulo 6: Resultados.} En este capítulo se detallarán los resultados
         obtenidos durante el entrenamiento del modelo.
+    \item \textbf{Capítulo 7: Planificación.} En este capítulo se detallará la planificación
+        del proyecto, así como la división en tareas y la estimación de los recursos
+        necesarios para poder llevar a cabo el proyecto. Así mismo, se detallará la
+        metodología de trabajo que se ha utilizado para poder llevar a cabo el proyecto.
+    \item \textbf{Capítulo 8: Presupuesto.} En este capítulo se detallará el presupuesto
+        del proyecto, así como los recursos necesarios para poder llevar a cabo el proyecto.
+    \item \textbf{Capítulo 9: Sostenibilidad.} En este capítulo se detallará el impacto
+        que tendrá el proyecto en el medio ambiente, así como el impacto social y económico.
     \item \textbf{Capítulo 13: Conclusiones.} En este capítulo se detallarán las conclusiones
         obtenidas durante el desarrollo del proyecto.
     \item \textbf{Capítulo 14: Trabajo futuro.} En este capítulo se detallarán los Posibles
@@ -131,3 +120,90 @@ proyecto, pero tiene una relevancia importante dentro de este mismo:
     \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú, profesor asociado
         de la UPC e investigador senior de PhD.
 \end{itemize}
+
+\section{Objetivos y subobjetivos}
+\label{sec:objetivos}
+
+% Corregido
+% TODO:daniel: Revisar la redacción de los objetivos
+
+Como hemos venido explicando en el capítulo \ref{cap:justificacion} nuestro principal
+objetivo en este proyecto es poder generar código en C compilable, realista y fiel
+al original, partiendo de un fichero ejecutable en su forma de ensamblador. Para
+poder alcanzar este objetivo nos asistiremos con inteligencia artificial de tal
+manera que podamos conseguir resultados óptimos.
+
+Para poder alcanzar este objetivo se ha decidido dividirlo en subobjetivos, de tal
+manera que podamos ir dando pasos hasta el objetivo principal. Los subobjetivos definidos
+son los siguientes:
+
+\begin{enumerate}
+    \item Despliegue de un modelo de redes neuronales para poder asistirnos a generar
+        código en C a partir de un ensamblado
+    \item Estudio y pruebas con modelos online tipo chatbot
+    \item Creación de un \textit{dataset} para poder entrenar el modelo
+\end{enumerate}
+
+En el primer objetivo nos proponemos poder desplegar en un entorno con las capacidades
+técnica suficientes para poder ejecutar un modelo de red neuronal que nos pueda asistir en
+las tareas de aplicar ingeniería inversa sobre un fichero ejecutable.
+
+En el segundo objetivo nos proponemos obtener resultados preliminares que nos faciliten
+unos resultados orientativos para poder estimar la calidad de los resultados que podamos
+obtener en nuestro objetivo principal. Para ello, nos asistiremos de modelos tipos chatbot
+que podemos consultar online y así poder obtener resultados inmediatos, sin necesidad
+de desplegar un entorno dedicado.
+
+\section{Posibles riesgos y obstaculos}
+\label{sec:riesgos}
+
+% Corregido 05/01/2024
+
+Los obstáculos que se presentan en este proyecto son elevados debido a la incertidumbre
+que existe acerca de este tema. Dado que los antecedentes son prácticamente nulos, y
+debido a la tecnología que se encuentra en auge y aún en desarrollo, los posibles obstáculos
+o resultados no esperados que podamos hallar durante la investigación y el desarrollo
+son altamente significativos.
+
+Se han establecido los siguientes riesgos:
+
+\begin{itemize}
+    \item \textbf{Resultados no deseados:} podemos encontrarnos que a loa hora de querer
+        generar código C a partir de un ejecutable el modelo no sea capaz de procesar estos datos
+        y, por lo tanto, nos dé una salida que no es la esperada.
+    \item \textbf{Insuficiencia de recursos:} los modelos que utilizaremos son modelos
+        muy grandes que necesita mucha memoria de GPU para poderse ejecutar, aunque sabemos que
+        existen modelos más pequeños y que necesitan menos recursos, podemos encontrarnos de
+        que no sea suficiente esta reducción.
+\end{itemize}
+
+\subsection{Plan de contingencia}
+\label{subsec:planContingencia}
+
+% Corregido 05/01/2024
+
+Tal y como he descrito en la sección \ref{sec:riesgos} los riesgos que se asumen en este
+proyecto son altos, por lo tanto, es necesario tener un plan de contingencia para poder
+hacer frente a estos riesgos. A continuación se detallarán el plan de contingencia elaborado
+para este proyecto.
+
+Como se puede observar en la tabla \ref{tab:plan_contignecia} se detalla por cada riesgo
+la prevención y la respuesta que se dará a este riesgo. La prevención es la acción que se
+llevará a cabo para intentar evitar que el riesgo se produzca. La respuesta es la acción
+que se llevará a cabo en caso de que el riesgo se produzca.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Riesgo                    & Prevención                                                                                                                                                                                                & Respuesta                                                                                                                                                                                                                                       \\ \hline
+    Resultados no deseados    & \begin{tabular}[c]{@{}l@{}}\textbf{Validación rigurosa:} Validar el diseño del dataset\\ y de los modelos utilizados\\ \\ Desarrollo iterativo: Utilizar metodologías agiles\\ de desarrollo\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Revisión y ajuste:} Ajustar el sistema y el entrenamiento \\ cuando no se ajusten los resultados a lo esperado\\ \\ Colaboración con expertos: colaboración con los expertos\\ asociados a este proyecto\end{tabular} \\ \hline
+    Insuficiencia de recursos & \begin{tabular}[c]{@{}l@{}}\textbf{Evaluación de recursos:} evaluar lo que se necesitan\\ de recursos\\ \\ Planificación de recursos: asegurar la disponibilidad\\ de los recursos\end{tabular}           & \begin{tabular}[c]{@{}l@{}}\textbf{Escalabilidad de recursos:} en caso de que sean insuficientes,\\ mirar métodos para poder escalarlos\\ \\ Optimización de modelos: optimización de los modelos\\ para que estos consuman menos recursos\end{tabular}  \\ \hline
+    \end{tabular}%
+    }
+    \caption[Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este]{Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este (Elaboración propia))}
+    \label{tab:plan_contignecia}
+\end{table}
+
