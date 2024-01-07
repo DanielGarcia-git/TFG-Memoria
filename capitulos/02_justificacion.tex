@@ -10,12 +10,12 @@ que se han realizado sobre el tema y la solución que se ha tomado para resolver
 \section{Identificación del problema}
 \label{sec:problema}
 
-% Corregido
+% Corregido 07/01/2024
 % TODO:daniel: Revisar la sección de identificación del problema
 
 Tal y como explico en el capítulo \ref{cap:estadoDelArte} la ingeniería inversa tiene
-una relevancia muy alta en el campo de la informatica sobretodo en la seguridad. Pero como he
-mencionado aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los
+una relevancia muy alta en el campo de la informática sobre todo en la seguridad. Pero como he
+mencionado, aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los
 programas que podemos encontrar en el mercado son de tal complejidad que aplicar
 ingeniería inversa sobre la totalidad del programa supone horas y horas de trabajo,
 teniendo el riesgo de que los resultados obtenidos no se asemejen a la realidad.
@@ -36,7 +36,7 @@ código sea menos legible}, entre otras. \cite{TecnicasIlegibleBinario}
 Para dar un ejemplo ilustrativo veamos un ejemplo de código en C y su correspondiente
 código en ensamblador. En el código \ref{cod:EuclidianCode} podemos ver un programa en C
 que calcula el máximo común divisor de dos números utilizando el algoritmo de Euclides
-\footnote{En matemáticas, el algoritmo de Euclides, es un método eficiente para calcular 
+\footnote{En matemáticas, el algoritmo de Euclides, es un método eficiente para calcular
 el máximo común divisor (MCD) de dos números enteros, el número más grande que los divide
 a ambos sin dejar resto.}.
 
@@ -67,12 +67,12 @@ int EuclidsGCD(int m, int n) /*we want to find the GCD of m and n*/
     \label{cod:EuclidianCode}
 \end{mycode}
 
-A simple vista podemos ver que el código no optimizado es mas largo que el optimizado. Si nos
-fijamos mas en detalle en el codigo original vemos que tenemos un bucle \mintinline{c}{while(1)}
+A simple vista podemos ver que el código no optimizado es más largo que el optimizado. Si nos
+fijamos más en detalle en el código original vemos que tenemos un bucle \mintinline{c}{while(1)}
 que se repite hasta que se cumple la condición \mintinline{c}{if(r == 0) return n} lo cual
 provoca que el bucle se corte. En el código ensamblador sin optimizar podemos ver que la condición
-del bucle se esta comprobando todo el rato con la instrucción \mintinline{asm}{test eax, eax}
-la cual cosa si pensamos es inecesaria ya que la condición del bucle siempre es cierta.
+del bucle se está comprobando todo el rato con la instrucción \mintinline{asm}{test eax, eax}
+la cual cosa si pensamos es innecesaria, ya que la condición del bucle siempre es cierta.
 
 \begin{mycode}
     \begin{minted}{asm}
@@ -126,18 +126,18 @@ _EuclidsGCD ENDP
 _TEXT	ENDS
 END
     \end{minted}
-    \caption[]{(\cite{EuclidianCode})}
+    \caption[Código en assembler del programa \textit{Euclidean algorithm} no aplicando las optimizaciones del compilador]{Código en assembler del programa \textit{Euclidean algorithm} no aplicando las optimizaciones del compilador (\cite{EuclidianCode})}
     \label{cod:EuclidianCodeAsmNoOpt}
 \end{mycode}
 
-Lo que a simple vista vemos que se puede optimizar, el compilador lo ve y vemos que en el codigo 
+Lo que a simple vista vemos que se puede optimizar, el compilador lo ve y vemos que en el código
 optimizado no se comprueba la condición del bucle, sino que tan solo comprobamos la condición
-del \mintinline{c}{if} y si se cumple se salta fuera del bucle. Es decir, vemos que el compilador 
-a optimizado eliminando codigo inecesario y que era costoso computacionalmente. \textbf{¿Pero que
-repercusion tiene esto a la hora de aplicar ingeniería inversa?} Si tan solo disponemos del código 
-optimizado lo que llegaremos a inferir es que la condición del bucle no es \mintinline{c}{while(1)}
-si no que es \mintinline{c}{while(r != 0)} y que ademas el la estrucutra del \mintinline{c}{if} desaparece.
-En la figura \ref{cod:EuclidianCodeIng} podemos ver el resultado de aplicar ingieneria inversa sobre
+del \mintinline{c}{if} y si se cumple se salta fuera del bucle. Es decir, vemos que el compilador
+ha optimizado eliminando código innecesario y que era costoso computacionalmente. \textbf{¿Pero qué
+repercusión tiene esto a la hora de aplicar ingeniería inversa?} Si tan solo disponemos del código
+optimizado, lo que llegaremos a inferir es que la condición del bucle no es \mintinline{c}{while(1)}
+sino que es \mintinline{c}{while(r != 0)} y que además la estructura del \mintinline{c}{if} desaparece.
+En la figura \ref{cod:EuclidianCodeIng} podemos ver el resultado de aplicar ingeniería inversa sobre
 el código optimizado.
 
 \begin{mycode}
@@ -177,12 +177,12 @@ _EuclidsGCD ENDP
 _TEXT	ENDS
 END
     \end{minted}
-    \caption[]{(\cite{EuclidianCode})}
+    \caption[Código en assembler del programa \textit{Euclidean algorithm} aplicando las optimizaciones del compilador]{Código en assembler del programa \textit{Euclidean algorithm} aplicando las optimizaciones del compilador (\cite{EuclidianCode})}
     \label{cod:EuclidianCodeAsmOpt}
 \end{mycode}
 
 También a la hora de aplicar ingeniería inversa debemos sumar la complejidad de las aplicaciones
-distribuidas, es decir, antes, cuando disponíamos de un programa disponíamos de su código en
+distribuidas, es decir, antes, cuando disponíamos de un programa, disponíamos de su código en
 su totalidad, aunque este fuese en forma de un binario. Con las aplicaciones distribuidas, el
 programa se ha segmentado en diferentes partes y estas partes cada una se puede encontrar en una
 máquina diferente, provocando que no dispongamos a veces del todo el programa y, por lo tanto,
@@ -191,9 +191,8 @@ de todo su diseño y lógica.
 En consecuencia, debido a las técnicas de ocultación de código, las optimizaciones que el compilador
 puede aplicar sobre el código, el gran tamaño de los programas modernos y el auge de las aplicaciones
 distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y
-que las soluciones actuales, que detallaré en la sección \ref{sec:alternativas}, no son capaces de dar
-buenos resultados, sino que dan una especie de pseudocódigo que nos puede ayudar a entender la lógica
-del programa.
+que las soluciones actuales, no son capaces de dar buenos resultados, sino que dan una especie de
+pseudocódigo que nos puede ayudar a entender la lógica del programa.
 
 Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy complejo y costoso y, por
 lo tanto, inviable en muchos casos para ciertos escenarios.
@@ -216,7 +215,7 @@ int EuclidsGCD(int m, int n)
     return n;
 }
     \end{minted}
-    \caption[]{ (\cite{EuclidianCode})}
+    \caption[Código en C del programa \textit{Euclidean algorithm} generado a través de ingeniería inversa]{Código en C del programa \textit{Euclidean algorithm} generado a través de ingeniería inversa (\cite{EuclidianCode})}
     \label{cod:EuclidianCodeIng}
 \end{mycode}
 
