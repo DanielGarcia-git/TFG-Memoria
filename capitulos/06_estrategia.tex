@@ -134,6 +134,45 @@ el modelo, ya que nuestra entrada de datos potencialmente grande.
 \section{Estrategia de entrenamiento}
 \label{sec:estrategia_entrenamiento}
 
+Una vez escogido el modelo de lenguaje, se ha definido la estrategia de entrenamiento
+que se va a seguir. Para ello se ha tenido en cuenta los siguientes factores:
+
+\begin{itemize}
+    \item \textbf{Conjunto de entrenamiento:} el conjunto de entrenamiento debe ser
+        lo más realista posible, es decir, debe contener código en ensamblador y código
+        en C realista.
+    \item \textbf{Longitud de secuencia:} la longitud de secuencia debe ser lo más
+        grande posible, ya que nos permite tener una mayor flexibilidad a la hora de
+        generar el código en C y de entrenar el modelo.
+\end{itemize}
+
+Para ello se han definido dos estrategias de entrenamiento:
+
+\begin{enumerate}
+    \item \textbf{Estrategia 1:} se contruye un conjunto de entrenamiento a partir
+        de código en C extraido de repositorios de GitHub y se genera el código en
+        ensamblador a partir del código en C utilizando el sistema de scripts.
+
+        Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
+        muy grandes y podria comportar ciertos problemas a la hora de entrenar el modelo
+        debido a la limitación de hardware (en terminos de memoria VRAM) que tenemos. Así
+        mismo, son casos reales y por lo tanto, se espera que el modelo aprenda de casos
+        reales y que los resultados obtenidos sean mejores.
+        
+    \item \textbf{Estrategia 2:} se contruye un conjunto de entrenamiento que se compone 
+        de una relacion entre operaciones o instrucciones basicas en C y su equivalente
+        en ensamblador. 
+
+        Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
+        mas pequeño, es decir, la longitud de secuencia sera mas pequeña y por lo tanto
+        podra adaptarse mejor a la limitación de hardware que tenemos. Así mismo, en esta
+        esta estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
+        basicas en C y su equivalente en ensamblador y inferir esta traduccion en contextos mas
+        grandes y reales.
+\end{enumerate}
+
+
+
 
 
 
