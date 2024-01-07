@@ -149,25 +149,25 @@ que se va a seguir. Para ello se ha tenido en cuenta los siguientes factores:
 Para ello se han definido dos estrategias de entrenamiento:
 
 \begin{enumerate}
-    \item \textbf{Estrategia 1:} se contruye un conjunto de entrenamiento a partir
-        de código en C extraido de repositorios de GitHub y se genera el código en
+    \item \textbf{Estrategia 1:} se construye un conjunto de entrenamiento a partir
+        de código en C extraído de repositorios de GitHub y se genera el código en
         ensamblador a partir del código en C utilizando el sistema de scripts.
 
         Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
-        muy grandes y podria comportar ciertos problemas a la hora de entrenar el modelo
-        debido a la limitación de hardware (en terminos de memoria VRAM) que tenemos. Así
-        mismo, son casos reales y por lo tanto, se espera que el modelo aprenda de casos
+        muy grandes y podría comportar ciertos problemas a la hora de entrenar el modelo
+        debido a la limitación de hardware (en términos de memoria VRAM) que tenemos. Así
+        mismo, son casos reales y, por lo tanto, se espera que el modelo aprenda de casos
         reales y que los resultados obtenidos sean mejores.
-        
-    \item \textbf{Estrategia 2:} se contruye un conjunto de entrenamiento que se compone 
-        de una relacion entre operaciones o instrucciones basicas en C y su equivalente
-        en ensamblador. 
+
+    \item \textbf{Estrategia 2:} se construye un conjunto de entrenamiento que se compone
+        de una relación entre operaciones o instrucciones básicas en C y su equivalente
+        en ensamblador.
 
         Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
-        mas pequeño, es decir, la longitud de secuencia sera mas pequeña y por lo tanto
-        podra adaptarse mejor a la limitación de hardware que tenemos. Así mismo, en esta
-        esta estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
-        basicas en C y su equivalente en ensamblador y inferir esta traduccion en contextos mas
+        más pequeño, es decir, la longitud de secuencia será más pequeña y, por lo tanto,
+        podrá adaptarse mejor a la limitación de hardware que tenemos. Así mismo, en esta 
+        estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
+        básicas en C y su equivalente en ensamblador e inferir esta traducción en contextos más
         grandes y reales.
 \end{enumerate}
 
