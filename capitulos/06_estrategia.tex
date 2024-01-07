@@ -1,4 +1,184 @@
 \chapter{Estrategia de entrenamiento}
 \label{cap:estrategia_entrenamiento}
 
-% TODO:daniel: Hacer capítulo de estrategia de entrenamiento
+% Corregido 07/01/2024
+% TODO:daniel: Revisar la estrategia de entrenamiento
+
+En este capítulo se explicará la estrategia de entrenamiento que se ha seguido para
+entrenar los modelos de lenguaje. Para ello se explicará que modelo se ha escogido,
+qué estrategias se han seguido para entrenarlo y que limitaciones nos hemos encontrado
+para definir la estrategia de entrenamiento y ejecución del entrenamiento.
+
+\section{Modelo de lenguaje}
+\label{sec:modelo_lenguaje}
+
+% Corregido 07/01/2024
+% TODO:daniel: Revisar la estrategia de entrenamiento
+
+La decisión del modelo de lenguaje no ha sido una tarea fácil, debido a que podemos
+encontrar una gran variedad de modelos de lenguaje en internet. Para poder escoger
+el modelo de lenguaje que se va a utilizar se han tenido en cuenta los siguientes
+factores:
+
+\begin{itemize}
+    \item \textbf{Tamaño:} el modelo de lenguaje debe tener un tamaño adecuado
+        para poder entrenarlo en un ordenador personal.
+    \item \textbf{Coste computacional:} el modelo de lenguaje debe tener un coste
+        computacional adecuado para poder entrenarlo en un ordenador personal.
+    \item \textbf{Especialización:} el modelo de lenguaje debe estar especializado
+        en la generación y tratamiento de lenguajes de programación.
+\end{itemize}
+
+Pero antes de entrar en detalle de los modelos de lenguaje que se han escogido,
+hay que decidir bajo de plataforma interactuaremos con el modelo, es decir, bajo
+que API utilizaremos para poder entrenar el modelo de lenguaje. Actualmente, encontramos
+dos grandes opciones:
+
+\begin{enumerate}
+    \item \textbf{PyTorch:} es una biblioteca de código abierto para el aprendizaje
+        automático. Se utiliza para aplicaciones como la visión artificial y el
+        procesamiento del lenguaje natural, principalmente desarrollada por el
+        grupo de investigación de inteligencia artificial de Facebook. \cite{PyTorch}
+    \item \textbf{TensorFlow:} es una biblioteca de código abierto para el aprendizaje
+        automático desarrollada por Google. Se utiliza para aplicaciones como la visión
+        artificial y el procesamiento del lenguaje natural. \cite{TensorFlow}
+\end{enumerate}
+
+En el contexto de este proyecto, se ha decidido utilizar PyTorch. La decisión se ha
+tomado debido a que utilizaremos una plataforma de desarrollo llamada Lightning AI
+la cual utiliza internamente PyTorch.
+
+Lightning AI es una plataforma de desarrollo de código abierto para la investigación
+en inteligencia artificial y la producción de modelos de aprendizaje automático.
+Lightning AI se basa en PyTorch y proporciona una abstracción de nivel de investigación
+para PyTorch. \cite{LightningAI}
+
+Para ser más concretos utilizaremos una implementación de Lightning AI llamada
+lit-gpt\cite{litGPT} la cual nos permite entrenar e interactuar con modelos de lenguaje
+de la familia GPT. En la tabla \ref{tab:litGPT} podemos ver los modelos de lenguaje
+disponibles bajo esta plataforma. La ventaja de utilizar lit-gpt es que nos permite
+tener un entorno de desarrollo ya preparado para poder entrenar los modelos de lenguaje
+y así poder centrarnos en la estrategia de entrenamiento que es el objetivo principal de
+este proyecto.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \rowcolor[HTML]{8EA9D8} 
+        \textbf{Model and usage} & \textbf{Model size} & \textbf{Reference} \\
+        \hline
+        EleutherAI \href{tutorials/download_pythia.md}{Pythia} & \{14,31,70,160,410\}M, \{1,1.4,2.8,6.9,12\}B & \href{https://arxiv.org/abs/2304.01373}{Biderman et al. 2023} \\
+        \hline
+        LMSYS \href{tutorials/download_longchat.md}{LongChat} & 7B, 13B & \href{https://lmsys.org/blog/2023-06-29-longchat/}{LongChat Team 2023} \\
+        \hline
+        LMSYS \href{tutorials/download_vicuna.md}{Vicuna} & 7B, 13B, 33B & \href{https://lmsys.org/blog/2023-03-30-vicuna/}{Li et al. 2023} \\
+        \hline
+        Meta AI \href{tutorials/download_code_llama.md}{Code Llama} & 7B, 13B, 34B & \href{https://arxiv.org/abs/2308.12950}{Rozière et al. 2023} \\
+        \hline
+        Meta AI \href{tutorials/download_llama_2.md}{Llama 2} & 7B, 13B, 70B & \href{https://arxiv.org/abs/2307.09288}{Touvron et al. 2023} \\
+        \hline
+        Mistral AI \href{tutorials/download_mistral.md}{Mistral and Mixtral} & 7B & \href{https://mistral.ai/}{Mistral website} \\
+        \hline
+        Microsoft Research \href{tutorials/download_phi.md}{Phi} & 1.3B, 2.7B & \href{https://arxiv.org/abs/2309.05463}{Li et al. 2023} \\
+        \hline
+        NousResearch Nous-Hermes & 7B, 13B, 70B & \href{https://huggingface.co/NousResearch}{Org page} \\
+        \hline
+        OpenLM Research \href{tutorials/download_openllama.md}{OpenLLaMA} & 3B, 7B, 13B & \href{https://github.com/openlm-research/open_llama}{Geng \& Liu 2023} \\
+        \hline
+        Platypus & 7B, 13B, 70B & \href{https://arxiv.org/abs/2308.07317}{Lee, Hunter, and Ruiz 2023} \\
+        \hline
+        Stability AI StableCode & 3B & \href{https://stability.ai/blog/stablecode-llm-generative-ai-coding}{Stability AI 2023} \\
+        \hline
+        Stability AI \href{tutorials/download_freewilly_2.md}{FreeWilly2 (Stable Beluga 2)} & 70B & \href{https://stability.ai/blog/stable-beluga-large-instruction-fine-tuned-models}{Stability AI 2023} \\
+        \hline
+        Stability AI \href{tutorials/download_stablelm.md}{StableLM} & 3B, 7B & \href{https://github.com/Stability-AI/StableLM}{Stability AI 2023} \\
+        \hline
+        Stability AI \href{tutorials/download_stablelm.md}{StableLM Zephyr} & 3B & \href{https://stability.ai/blog/stablecode-llm-generative-ai-coding}{Stability AI 2023} \\
+        \hline
+        TII UAE \href{tutorials/download_falcon.md}{Falcon} & 7B, 40B, 180B & \href{https://falconllm.tii.ae}{TII 2023} \\
+        \hline
+        \href{tutorials/download_tinyllama.md}{TinyLlama} & 1.1B & \href{https://github.com/jzhang38/TinyLlama}{Zhang et al. 2023} \\
+        \hline
+        Together \href{tutorials/download_redpajama_incite.md}{RedPajama-INCITE} & 3B, 7B & \href{https://together.ai/blog/redpajama-models-v1}{Together 2023} \\
+        \hline
+        Trelis \href{tutorials/download_function_calling_llama_2.md}{Function Calling Llama 2} & 7B & \href{https://huggingface.co/Trelis/Llama-2-7b-chat-hf-function-calling-v2}{Trelis et al. 2023} \\
+        \hline
+    \end{tabular}%
+    }
+    \caption[Listado de los LLM soportados por lit-gpt]{Listado de los LLM soportados por lit-gpt (\cite{litGPT})}
+    \label{tab:litGPT}
+\end{table}
+
+Una vez escogida la plataforma de desarrollo, se ha decidido utilizar alguno de los
+modelos de lenguaje soportados por lit-gpt. Para ello se ha tenido en cuenta los
+factores que se han mencionado anteriormente. Debido a las limitaciones de hardware
+que tenemos, y que se explica con más detalle en la sección \ref{sec:limitaciones},
+se ha decidido utilizar un modelo de lenguaje con un tamaño de 3 billones de parámetros.
+
+No se ha escogido modelos más pequeños, ya que la evolución de los LLM nos ha enseñado
+que cada vez que aumentamos en número de parámetros del modelo de lenguaje, los resultados
+obtenidos son mejores. Así mismo no hemos utilizado modelos más grandes, ya que el coste
+computacional que supone entrenarlos es muy elevado y no disponemos de los recursos
+necesarios para poder entrenarlos.
+
+Así mismo, otra característica que se ha tenido en cuenta es que el modelo de lenguaje
+esté especializado en el tratamiento de lenguajes de programación. Para ello se ha
+decidido utilizar el modelo de lenguaje llamado StableCode\cite{StableCode} desarrollado
+por Stability AI. Este modelo de lenguaje está especializado en el tratamiento de lenguajes
+de programación. Además nos ofrece una longitud de secuencia de 16384 \textit{tokens}, lo cual
+nos permite tener una mayor flexibilidad a la hora de generar el código en C y de entrenar
+el modelo, ya que nuestra entrada de datos potencialmente grande.
+
+\section{Estrategia de entrenamiento}
+\label{sec:estrategia_entrenamiento}
+
+% Corregido 07/01/2024
+% TODO:daniel: Revisar la estrategia de entrenamiento
+
+Una vez escogido el modelo de lenguaje, se ha definido la estrategia de entrenamiento
+que se va a seguir. Para ello se ha tenido en cuenta los siguientes factores:
+
+\begin{itemize}
+    \item \textbf{Conjunto de entrenamiento:} el conjunto de entrenamiento debe ser
+        lo más realista posible, es decir, debe contener código en ensamblador y código
+        en C realista.
+    \item \textbf{Longitud de secuencia:} la longitud de secuencia debe ser lo más
+        grande posible, ya que nos permite tener una mayor flexibilidad a la hora de
+        generar el código en C y de entrenar el modelo.
+\end{itemize}
+
+Para ello se han definido dos estrategias de entrenamiento:
+
+\begin{enumerate}
+    \item \textbf{Estrategia 1:} se construye un conjunto de entrenamiento a partir
+        de código en C extraído de repositorios de GitHub y se genera el código en
+        ensamblador a partir del código en C utilizando el sistema de scripts.
+
+        Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
+        muy grandes y podría comportar ciertos problemas a la hora de entrenar el modelo
+        debido a la limitación de hardware (en términos de memoria VRAM) que tenemos. Así
+        mismo, son casos reales y, por lo tanto, se espera que el modelo aprenda de casos
+        reales y que los resultados obtenidos sean mejores.
+
+    \item \textbf{Estrategia 2:} se construye un conjunto de entrenamiento que se compone
+        de una relación entre operaciones o instrucciones básicas en C y su equivalente
+        en ensamblador.
+
+        Este conjunto de entrenamiento se caracteriza por tener unos datos de entrada
+        más pequeño, es decir, la longitud de secuencia será más pequeña y, por lo tanto,
+        podrá adaptarse mejor a la limitación de hardware que tenemos. Así mismo, en esta 
+        estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
+        básicas en C y su equivalente en ensamblador e inferir esta traducción en contextos más
+        grandes y reales.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
