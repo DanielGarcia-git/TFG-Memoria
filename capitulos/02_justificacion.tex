@@ -1,21 +1,21 @@
 \chapter{Justificación}
 \label{cap:justificacion}
 
-% Corregido 31/12/2023
+% Corregido 07/01/2024
 % TODO:daniel: Revisar la justificación
 
-En este capítulo se explicara cuál es el problema a resolver, las alternativas que hay
-en el mercado y la solución que se tomara en este proyecto.
+En este capítulo se explicará cuál es el problema a resolver, investigaciones previas
+que se han realizado sobre el tema y la solución que se ha tomado para resolver el problema.
 
 \section{Identificación del problema}
 \label{sec:problema}
 
-% Corregido
+% Corregido 07/01/2024
 % TODO:daniel: Revisar la sección de identificación del problema
 
-Como he explicado en el capítulo \ref{cap:introducion} la ingeniería inversa es aplicada
-en una infinidad de campos y de los cuales hoy en día es utilizada. Pero como he
-mencionado aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los
+Tal y como explico en el capítulo \ref{cap:estadoDelArte} la ingeniería inversa tiene
+una relevancia muy alta en el campo de la informática sobre todo en la seguridad. Pero como he
+mencionado, aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los
 programas que podemos encontrar en el mercado son de tal complejidad que aplicar
 ingeniería inversa sobre la totalidad del programa supone horas y horas de trabajo,
 teniendo el riesgo de que los resultados obtenidos no se asemejen a la realidad.
@@ -33,8 +33,156 @@ código redundante al programa}, \textit{loop unrolling}\footnote{Es una tecnica
 los compiladores que además de disminuir el coste computacional del programa hace que el
 código sea menos legible}, entre otras. \cite{TecnicasIlegibleBinario}
 
+Para dar un ejemplo ilustrativo veamos un ejemplo de código en C y su correspondiente
+código en ensamblador. En el código \ref{cod:EuclidianCode} podemos ver un programa en C
+que calcula el máximo común divisor de dos números utilizando el algoritmo de Euclides
+\footnote{En matemáticas, el algoritmo de Euclides, es un método eficiente para calcular
+el máximo común divisor (MCD) de dos números enteros, el número más grande que los divide
+a ambos sin dejar resto.}.
+
+Se ha compilado utilizando el compilador de Microsoft, se ha compilado uno sin optimizaciones
+y otro con optimizaciones. En el código \ref{cod:EuclidianCodeAsmNoOpt} podemos ver el código
+en ensamblador sin optimizaciones y en el código \ref{cod:EuclidianCodeAsmOpt} podemos ver
+el código en ensamblador con optimizaciones.
+
+\begin{mycode}
+    \begin{minted}{c}
+int EuclidsGCD(int m, int n) /*we want to find the GCD of m and n*/
+{
+    int q, r; /*q is the quotient, r is the remainder*/
+    while(1)
+    {
+        q = m / n; /*find q and r*/
+        r = m % n;
+        if(r == 0) /*if r is 0, return our n value*/
+        {
+            return n;
+        }
+        m = n; /*set m to the current n value*/
+        n = r; /*set n to our current remainder value*/
+    } /*repeat*/
+}
+    \end{minted}
+    \caption[Código en C del programa \textit{Euclidean algorithm}]{Código en C del programa \textit{Euclidean algorithm} (\cite{EuclidianCode})}
+    \label{cod:EuclidianCode}
+\end{mycode}
+
+A simple vista podemos ver que el código no optimizado es más largo que el optimizado. Si nos
+fijamos más en detalle en el código original vemos que tenemos un bucle \mintinline{c}{while(1)}
+que se repite hasta que se cumple la condición \mintinline{c}{if(r == 0) return n} lo cual
+provoca que el bucle se corte. En el código ensamblador sin optimizar podemos ver que la condición
+del bucle se está comprobando todo el rato con la instrucción \mintinline{asm}{test eax, eax}
+la cual cosa si pensamos es innecesaria, ya que la condición del bucle siempre es cierta.
+
+\begin{mycode}
+    \begin{minted}{asm}
+PUBLIC	_EuclidsGCD
+_TEXT	SEGMENT
+_r$ = -8	; size = 4
+_q$ = -4	; size = 4
+_m$ = 8	; size = 4
+_n$ = 12	; size = 4
+_EuclidsGCD PROC NEAR
+; Line 2
+    push	ebp
+    mov	ebp, esp
+    sub	esp, 8
+$L477:
+; Line 4
+    mov	eax, 1
+    test	eax, eax
+    je	SHORT $L473
+; Line 6
+    mov	eax, DWORD PTR _m$[ebp]
+    cdq
+    idiv	DWORD PTR _n$[ebp]
+    mov	DWORD PTR _q$[ebp], eax
+; Line 7
+    mov	eax, DWORD PTR _m$[ebp]
+    cdq
+    idiv	DWORD PTR _n$[ebp]
+    mov	DWORD PTR _r$[ebp], edx
+; Line 8
+    cmp	DWORD PTR _r$[ebp], 0
+    jne	SHORT $L479
+; Line 10
+    mov	eax, DWORD PTR _n$[ebp]
+    jmp	SHORT $L473
+$L479:
+; Line 12
+    mov	ecx, DWORD PTR _n$[ebp]
+    mov	DWORD PTR _m$[ebp], ecx
+; Line 13
+    mov	edx, DWORD PTR _r$[ebp]
+    mov	DWORD PTR _n$[ebp], edx
+; Line 14
+    jmp	SHORT $L477
+$L473:
+; Line 15
+    mov	esp, ebp
+    pop	ebp
+    ret	0
+_EuclidsGCD ENDP
+_TEXT	ENDS
+END
+    \end{minted}
+    \caption[Código en assembler del programa \textit{Euclidean algorithm} no aplicando las optimizaciones del compilador]{Código en assembler del programa \textit{Euclidean algorithm} no aplicando las optimizaciones del compilador (\cite{EuclidianCode})}
+    \label{cod:EuclidianCodeAsmNoOpt}
+\end{mycode}
+
+Lo que a simple vista vemos que se puede optimizar, el compilador lo ve y vemos que en el código
+optimizado no se comprueba la condición del bucle, sino que tan solo comprobamos la condición
+del \mintinline{c}{if} y si se cumple se salta fuera del bucle. Es decir, vemos que el compilador
+ha optimizado eliminando código innecesario y que era costoso computacionalmente. \textbf{¿Pero qué
+repercusión tiene esto a la hora de aplicar ingeniería inversa?} Si tan solo disponemos del código
+optimizado, lo que llegaremos a inferir es que la condición del bucle no es \mintinline{c}{while(1)}
+sino que es \mintinline{c}{while(r != 0)} y que además la estructura del \mintinline{c}{if} desaparece.
+En la figura \ref{cod:EuclidianCodeIng} podemos ver el resultado de aplicar ingeniería inversa sobre
+el código optimizado.
+
+\begin{mycode}
+    \begin{minted}{asm}
+PUBLIC	_EuclidsGCD
+_TEXT	SEGMENT
+_m$ = 8	; size = 4
+_n$ = 12       ; size = 4
+_EuclidsGCD PROC NEAR	
+; Line 7
+    mov	eax, DWORD PTR _m$[esp-4]
+    push	esi
+    mov	esi, DWORD PTR _n$[esp]
+    cdq
+    idiv	esi
+    mov	ecx, edx
+; Line 8
+    test	ecx, ecx
+    je	SHORT $L563
+$L547:
+; Line 12
+    mov	eax, esi
+    cdq
+    idiv	ecx
+; Line 13
+    mov	esi, ecx
+    mov	ecx, edx
+    test	ecx, ecx
+    jne	SHORT $L547
+$L563:
+; Line 10
+    mov	eax, esi
+    pop	esi
+; Line 15
+    ret	0
+_EuclidsGCD ENDP
+_TEXT	ENDS
+END
+    \end{minted}
+    \caption[Código en assembler del programa \textit{Euclidean algorithm} aplicando las optimizaciones del compilador]{Código en assembler del programa \textit{Euclidean algorithm} aplicando las optimizaciones del compilador (\cite{EuclidianCode})}
+    \label{cod:EuclidianCodeAsmOpt}
+\end{mycode}
+
 También a la hora de aplicar ingeniería inversa debemos sumar la complejidad de las aplicaciones
-distribuidas, es decir, antes, cuando disponíamos de un programa disponíamos de su código en
+distribuidas, es decir, antes, cuando disponíamos de un programa, disponíamos de su código en
 su totalidad, aunque este fuese en forma de un binario. Con las aplicaciones distribuidas, el
 programa se ha segmentado en diferentes partes y estas partes cada una se puede encontrar en una
 máquina diferente, provocando que no dispongamos a veces del todo el programa y, por lo tanto,
@@ -43,17 +191,74 @@ de todo su diseño y lógica.
 En consecuencia, debido a las técnicas de ocultación de código, las optimizaciones que el compilador
 puede aplicar sobre el código, el gran tamaño de los programas modernos y el auge de las aplicaciones
 distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y
-que las soluciones actuales, que detallaré en la sección \ref{sec:alternativas}, no son capaces de dar
-buenos resultados, sino que dan una especie de pseudocódigo que nos puede ayudar a entender la lógica
-del programa.
+que las soluciones actuales, no son capaces de dar buenos resultados, sino que dan una especie de
+pseudocódigo que nos puede ayudar a entender la lógica del programa.
 
 Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy complejo y costoso y, por
 lo tanto, inviable en muchos casos para ciertos escenarios.
 
+\begin{mycode}
+    \begin{minted}{c}
+int EuclidsGCD(int m, int n)
+{
+    int r;
+    r = m % n;
+    if(r != 0) 
+    {
+        do
+        {
+            m = n;
+            r = m % r;
+            n = r;
+        }while(r != 0)
+    }
+    return n;
+}
+    \end{minted}
+    \caption[Código en C del programa \textit{Euclidean algorithm} generado a través de ingeniería inversa]{Código en C del programa \textit{Euclidean algorithm} generado a través de ingeniería inversa (\cite{EuclidianCode})}
+    \label{cod:EuclidianCodeIng}
+\end{mycode}
+
+\section{Estudios previos}
+\label{sec:estudios_previos}
+
+% Corregido 07/01/2024
+% TODO:daniel: Revisar la sección de estudios previos
+
+Existen diferentes estudios y artículos que exploran la vía de utilizar redes neuronales,
+de diferentes tipos y arquitecturas, para poder aplicar ingeniería inversa sobre un programa
+y obtener un código en C, concretamente estos estudios persiguen obtener un descompilador utilizando
+inteligencia artificial. Los estudios que se han realizado hasta ahora son los siguientes:
+
+\begin{itemize}
+\item \textbf{Using Recurrent Neural Networks for Decompilation} \cite{8330222}
+\item \textbf{Towards Neural Decompilation (2019)} \cite{KatzOmer2019TND}
+\item \textbf{Coda: An End-to-End Neural Program Decompiler} \cite{FuCheng2019ANPD}
+\item \textbf{N-Bref: a neural-based decompiler framework} \cite{fu2021nbref}
+\item \textbf{Neutron: an attention-based neural decompiler} \cite{LiangRuigang2021Naan}
+\item \textbf{Beyond the C: Retargetable Decompilation using Neural Machine Translation} \cite{HosseiniIman2022BtCR}
+\end{itemize}
+
+Todos estos estudios tienen el mismo objetivo, aplicar ingeniería inversa sobre un programa
+y obtener un código en C asistiéndose a través de redes neuronales. En muchos de estos estudios
+definen procedimientos y técnicas para poder entrenar a la red neuronal, de hecho la mayoría
+utilizan un preprocesamiento del código en ensamblador para que a la red neuronal le sea más
+fácil procesar la información.
+
+Cabe destacar que la mayoría de estudios se han realizado antes del boom de la inteligencia artificial
+que sucedió en 2020 con la aparición de los modelos de lenguaje como GPT-3. Por lo tanto, estos
+estudios no se han beneficiado de los avances que se han realizado en el campo de la inteligencia
+artificial.
+
+Lo que intentamos en este proyecto es utilizar los LLM (\textit{Large Language Model}) que han aparecido
+en los últimos años para poder aplicar ingeniería inversa sobre un programa y obtener un código
+en C. Estos modelos de lenguaje han demostrado que son capaces de realizar tareas para las cuales
+no han sido entrenados y con resultados bastante buenos.
+
 \section{Solucion tomada}
 \label{sec:solucion}
 
-% Corregido
+% Corregido 07/01/2024
 % TODO:daniel: Revisar la sección de solución tomada
 
 Una vez visto en la sección \ref{sec:alternativas} las diferentes alternativas que hay
