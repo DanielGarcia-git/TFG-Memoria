@@ -13,8 +13,8 @@ Utilizaremos GPT-4 debido a que es el modelo más grande disponible en ChatGPT y
 funcionalidad para poder subir archivos nos ayudará a la hora de realizar las pruebas
 con el modelo.
 
-\subsection{¿Qué es ChatGPT?}
-\label{subsec:que_es_chatgpt}
+\section{¿Qué es ChatGPT?}
+\label{sec:que_es_chatgpt}
 
 % Corregido 02/01/2023
 % TODO:daniel: Revisar la sección de que es chatgpt
@@ -42,14 +42,14 @@ a la hora de realizar las pruebas con GPT-4. Estas limitaciones son las siguient
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/InterfazChatGPT.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/InterfazChatGPT.png}
     \end{center}
     \caption[Interfaz de usuario de ChatGPT]{Interfaz de usuario de ChatGPT (Elaboración propia)}
     \label{fig:interfaz_chatgpt}
 \end{figure}
 
-\subsection{Prueba con GPT-4}
-\label{subsec:prueba_gpt4}
+\section{Prueba con GPT-4}
+\label{sec:prueba_gpt4}
 
 % Corregido 02/01/2023
 % TODO:daniel: Revisar la sección de prueba con gpt-4
@@ -62,8 +62,8 @@ Para la segunda aproximación utilizaremos el método \textit{prompt finetuning}
 la sección \ref{sec:fine_tuning}. Este método consiste en entrenar el modelo con un conjunto
 de datos de entrenamiento y posteriormente evaluarlo con un conjunto de datos de prueba.
 
-\subsubsection{Prueba directa}
-\label{subsubsec:prueba_directa}
+\subsection{Prueba directa}
+\label{subsec:prueba_directa}
 
 % Corregido 03/01/2023
 % TODO:daniel: Revisar la sección de prueba directa
@@ -134,7 +134,7 @@ ninguna referencia a la función \mintinline{c}|printf()|.
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4.png}
     \end{center}
     \caption[Resultado de la prueba directa con GPT-4]{Resultado de la prueba directa con GPT-4 (Elaboración propia)}
     \label{fig:resultado_gpt4_directo}
@@ -229,7 +229,7 @@ alucinación del modelo, ya que la información en el ensamblador es bastante cl
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4_V2_1.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_1.png}
     \end{center}
     \caption[Resultado de la segunda prueba directa con GPT-4, primera captura]{Resultado de la segunda prueba directa con GPT-4, primera captura (Elaboración propia)}
     \label{fig:resultado_gpt4_directo_V2_1}
@@ -237,14 +237,14 @@ alucinación del modelo, ya que la información en el ensamblador es bastante cl
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4_V2_2.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_2.png}
     \end{center}
     \caption[Resultado de la segunda prueba directa con GPT-4, segunda captura]{Resultado de la segunda prueba directa con GPT-4, segunda captura (Elaboración propia)}
     \label{fig:resultado_gpt4_directo_V2_2}
 \end{figure}
 
-\subsubsection{Prueba con \textit{prompt finetuning}}
-\label{subsubsec:prueba_prompt_finetuning}
+\subsection{Prueba con \textit{prompt finetuning}}
+\label{subsec:prueba_prompt_finetuning}
 
 % Corregido 03/01/2023
 % TODO:daniel: Revisar la sección de prueba con prompt finetuning
@@ -301,7 +301,7 @@ Esto seguramente es debido a que GPT haya generado el código basándose en lo q
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoPromptGPT4.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoPromptGPT4.png}
     \end{center}
     \caption[Resultado de la prueba con \textit{prompt fine-tuning}]{Resultado de la prueba con \textit{prompt fine-tuning} (Elaboración propia)}
     \label{fig:resultado_gpt4_prompt}
