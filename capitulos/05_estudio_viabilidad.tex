@@ -1,22 +1,5 @@
-\chapter{Resultados}
-\label{cap:resultados}
-
-% Corregido 02/01/2023
-% TODO:daniel: Revisar el capítulo de resultados
-
-En este capítulo se presentan los resultados obtenidos en el desarrollo de este trabajo. 
-En la sección \ref{sec:evaluacion} se describe la metodología de evaluación utilizada 
-para medir el desempeño de los modelos. En la sección \ref{sec:resultados_preliminares} 
-se presentan los resultados preliminares obtenidos con el modelo ChatGPT. En la sección 
-\ref{sec:resultados_finales} se presentan los resultados finales obtenidos con el modelo 
-ChatGPT. Finalmente, en la sección \ref{sec:analisis_resultados} se realiza un análisis 
-de los resultados obtenidos.
-
-\section{Metodología de evaluación}
-\label{sec:evaluacion}
-
-\section{Resultados preliminares con ChatGPT}
-\label{sec:resultados_preliminares}
+\chapter{Viabilidad de la Hipótesis a través de ChatGPT}
+\label{cap:viabilidad_hipotesis}
 
 % Corregido 02/01/2023
 % TODO:daniel: Revisar la sección de resultados preliminares
@@ -30,8 +13,8 @@ Utilizaremos GPT-4 debido a que es el modelo más grande disponible en ChatGPT y
 funcionalidad para poder subir archivos nos ayudará a la hora de realizar las pruebas
 con el modelo.
 
-\subsection{¿Qué es ChatGPT?}
-\label{subsec:que_es_chatgpt}
+\section{¿Qué es ChatGPT?}
+\label{sec:que_es_chatgpt}
 
 % Corregido 02/01/2023
 % TODO:daniel: Revisar la sección de que es chatgpt
@@ -59,14 +42,14 @@ a la hora de realizar las pruebas con GPT-4. Estas limitaciones son las siguient
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/InterfazChatGPT.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/InterfazChatGPT.png}
     \end{center}
     \caption[Interfaz de usuario de ChatGPT]{Interfaz de usuario de ChatGPT (Elaboración propia)}
     \label{fig:interfaz_chatgpt}
 \end{figure}
 
-\subsection{Prueba con GPT-4}
-\label{subsec:prueba_gpt4}
+\section{Prueba con GPT-4}
+\label{sec:prueba_gpt4}
 
 % Corregido 02/01/2023
 % TODO:daniel: Revisar la sección de prueba con gpt-4
@@ -79,8 +62,8 @@ Para la segunda aproximación utilizaremos el método \textit{prompt finetuning}
 la sección \ref{sec:fine_tuning}. Este método consiste en entrenar el modelo con un conjunto
 de datos de entrenamiento y posteriormente evaluarlo con un conjunto de datos de prueba.
 
-\subsubsection{Prueba directa}
-\label{subsubsec:prueba_directa}
+\subsection{Prueba directa}
+\label{subsec:prueba_directa}
 
 % Corregido 03/01/2023
 % TODO:daniel: Revisar la sección de prueba directa
@@ -151,7 +134,7 @@ ninguna referencia a la función \mintinline{c}|printf()|.
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4.png}
     \end{center}
     \caption[Resultado de la prueba directa con GPT-4]{Resultado de la prueba directa con GPT-4 (Elaboración propia)}
     \label{fig:resultado_gpt4_directo}
@@ -246,7 +229,7 @@ alucinación del modelo, ya que la información en el ensamblador es bastante cl
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4_V2_1.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_1.png}
     \end{center}
     \caption[Resultado de la segunda prueba directa con GPT-4, primera captura]{Resultado de la segunda prueba directa con GPT-4, primera captura (Elaboración propia)}
     \label{fig:resultado_gpt4_directo_V2_1}
@@ -254,14 +237,14 @@ alucinación del modelo, ya que la información en el ensamblador es bastante cl
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoDirectoGPT4_V2_2.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_2.png}
     \end{center}
     \caption[Resultado de la segunda prueba directa con GPT-4, segunda captura]{Resultado de la segunda prueba directa con GPT-4, segunda captura (Elaboración propia)}
     \label{fig:resultado_gpt4_directo_V2_2}
 \end{figure}
 
-\subsubsection{Prueba con \textit{prompt finetuning}}
-\label{subsubsec:prueba_prompt_finetuning}
+\subsection{Prueba con \textit{prompt finetuning}}
+\label{subsec:prueba_prompt_finetuning}
 
 % Corregido 03/01/2023
 % TODO:daniel: Revisar la sección de prueba con prompt finetuning
@@ -318,7 +301,7 @@ Esto seguramente es debido a que GPT haya generado el código basándose en lo q
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_06/ResultadoPromptGPT4.png}
+      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoPromptGPT4.png}
     \end{center}
     \caption[Resultado de la prueba con \textit{prompt fine-tuning}]{Resultado de la prueba con \textit{prompt fine-tuning} (Elaboración propia)}
     \label{fig:resultado_gpt4_prompt}
@@ -365,8 +348,19 @@ void build_maxheap(int *a, int n) {
     \label{cod:heapSortC}
 \end{mycode}
 
-\section{Resultados finales}
-\label{sec:resultados_finales}
+\section{Conclusiones}
+\label{sec:conclusiones}
 
-\section{Análisis de resultados}
-\label{sec:analisis_resultados}
+Como se ha podido observar en las secciones anteriores, el modelo GPT-4 es capaz de generar
+código en C a partir de código en ensamblador. El código generado por GPT-4 es bastante
+similar al código original en C, a pesar de ser un código compilable, es decir, a nivel
+sintáctico es correcto, a nivel funcional no es del todo correcto como se ha podido
+ver en los ejemplos anteriores.
+
+Por lo tanto, visto los ejemplos hemos observador que modelos como GPT-4, es decir, LLM's
+son capaces de generar código en C a partir de código en ensamblador, pero no son capaces
+de generar código en C funcional, es decir, que se comporte de la misma forma que el Código
+original.
+
+Seguramente con un \textit{fine-tuning} adecuado podemos llegar a conseguir que el código generado
+sea correcto funcionalmente y sintácticamente.
