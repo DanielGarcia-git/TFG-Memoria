@@ -15,13 +15,55 @@ En la realización de este proyecto se ha utilizado dos entornos de ejecución d
         llamada Lightning IA Studio.
 \end{itemize}
 
+\section{Plataforma de desarrollo \textit{lit-gpt}}
+\label{sec:lit_gpt}
+
+% Corregido 09/01/2024
+% TODO:daniel: Revisar lit-gpt
+
+Lit GPT es una plataforma de desarrollo que nos permite entrenar modelos de
+lenguaje de manera sencilla. Esta plataforma nos ofrece una serie de scripts que nos
+permiten entrenar modelos utilizando diferentes técnicas de las cuales hemos hablado
+en el capítulo \ref{cap:estadoDelArte}. Así mismo, nos ofrece una serie de scripts que nos permiten convertir
+los modelos de lenguaje de la plataforma de \textit{huggingface} a un formato que pueda
+ser utilizado por el \textit{framework lightning}. Esta plataforma de desarrollo se encuentra
+disponible en el siguiente repositorio de GitHub \url{https://github.com/Lightning-AI/lit-gpt.git}.
+
+Algunas de las opciones que son interesantes para este proyecto es que \textit{lit-gpt} nos
+permite modificar la precisión de los modelos de lenguaje, es decir, podemos entrenar
+modelos de lenguaje con una precisión de 16 bits o de 32 bits. Así mismo, nos permite
+aplicar técnicas de cuantización. Estas técnicas de cuantización nos permiten reducir
+el tamaño de los modelos de lenguaje y reducir su consumo de memoria.
+Para poder aplicar estas técnicas \textit{lit-gpt} nos ofrece una serie de opciones que
+podemos pasar a los scripts de entrenamiento. En la tabla \ref{tab:opciones_litgpt} 
+tenemos las opciones que nos ofrece \textit{lit-gpt}.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Opción      & Descripción                                                                                                                                                  & Posibles valores                                                                                              \\ \hline
+    --precision & \begin{tabular}[c]{@{}l@{}}Define la precisión de los pesos, 16 bits o 32 bits.\\ Esta opción depende mucho de la compatibilidad del\\ hardware\end{tabular} & {[}16-true, bf16-true, 32-true{]}                                                                             \\ \hline
+    --quantize  & \begin{tabular}[c]{@{}l@{}}Define el método de cuantificación que se le aplicará\\ al modelo\end{tabular}                                                    & \begin{tabular}[c]{@{}l@{}}{[}bnb.nf4, bnb.nf4-dq, bnb.fp4,\\ bnb.fp4-dq, bnb.int8, gptq.int4{]}\end{tabular} \\ \hline
+    \end{tabular}%
+    }
+    \caption[Opciones que nos ofrece \textit{lit-gpt}]{Opciones que nos ofrece \textit{lit-gpt} (Elaboración propia)}
+    \label{tab:opciones_litgpt}
+\end{table}
+
 \section{Configuración}
+\label{sec:configuracion}
 
 \subsection{Cluster AC: \textit{Sert}}
 \label{subsec:cluster_ac}
 
-El cluster de AC es un cluster de computación de alto rendimiento que dispone el departamento
-de Arquitectura de Computadores de la Universitat Politècnica de Catalunya. Este cluster dispone
+% Corregido 09/01/2024
+% TODO:daniel: Revisar cluster AC
+
+El clúster de AC es un clúster de computación de alto rendimiento que dispone el departamento
+de Arquitectura de Computadores de la Universitat Politècnica de Catalunya. Este clúster dispone
 de un nodo con GPU's que recibe el nombre de \textit{sert-2001}. Este nodo tiene las siguientes
 características técnicas:
 
@@ -64,11 +106,50 @@ archivos. Este directorio se encuentra en la ruta \textit{/scratch/nas/3/danielg
 \subsubsection{Configuración del entorno}
 \label{subsubsec:configuracion_entorno}
 
+% Corregido 09/01/2024
+% TODO:daniel: Revisar configuración del entorno
+
 Como se ha mencionado en el capítulo \ref{cap:estrategia_entrenamiento}, se ha utilizado
 la plataforma de desarrollo \textit{lit-gpt}. Para la configuración del entorno se ha
-a seteado un entorno virtual de Python y instalado todas las dependencias que requiere
+ha configurado un entorno virtual de Python e instalado todas las dependencias que requiere
 la plataforma. Para la instalación de las dependencias se ha utilizado el gestor de paquetes
 de Python \textit{pip}.
+
+Para la instalación de las dependencias se ha utilizado el fichero requirements.txt que
+nos proporciona la plataforma. Este fichero contiene todas las dependencias necesarias
+para la ejecución de la plataforma. Una vez instaladas todas las dependencias, se
+ha descargado el modelo de lenguaje \textit{stabilityai/stablecode-completion-alpha-3b}, este
+modelo se encuentra disponible en la plataforma de \textit{huggingface} a través de este URL
+\url{https://huggingface.co/stabilityai/stablecode-completion-alpha-3b}.
+
+\begin{mycode}
+    \begin{minted}[bash]
+# Clonamos el repositorio de lit-gpt
+git clone https://github.com/Lightning-AI/lit-gpt.git
+cd lit-gpt
+
+# Iniciamos un entorno virtual de Python
+virtualenv ~/soft
+
+# Instalamos dependencias
+$HOME/soft/bin/pip install -r requirements.txt
+
+# Descargamos el modelo de lenguaje
+$HOME/soft/bin/python scripts/download.py --repo_id stabilityai/stablecode-completion-alpha-3b
+
+# Convertimos el modelo de lenguaje
+python scripts/convert_hf_checkpoint.py --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b
+
+# Ejecutamos un ejemplo para comprobar que todo funciona correctamente
+$HOME/soft/bin/python generate/base.py
+    --prompt "Hello, my name is"
+    --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b,→
+    --precision 16-true
+    --quantize bnb.nf4
+    \end{minted}
+    \caption[Conjunto de comandos necesarios para configurar el entorno]{Conjunto de comandos necesarios para configurar el entorno (Elaboración propia)}
+    \label{code:configuracion_entorno}
+\end{mycode}
 
 \subsubsection{Limitaciones}
 \label{subsubsec:limitaciones}
