@@ -123,7 +123,7 @@ modelo se encuentra disponible en la plataforma de \textit{huggingface} a travé
 \url{https://huggingface.co/stabilityai/stablecode-completion-alpha-3b}.
 
 \begin{mycode}
-    \begin{minted}[bash]
+    \begin{minted}{bash}
 # Clonamos el repositorio de lit-gpt
 git clone https://github.com/Lightning-AI/lit-gpt.git
 cd lit-gpt
@@ -230,12 +230,97 @@ En ambos entornos se ha ejecutado el mismo conjunto de entrenamiento. Este conju
 entrenamiento se ha generado con el sistema de scripts que se ha desarrollado en el capítulo
 \ref{cap:diseñoImplentacion_scripts}.
 
+\subsection{Creación del conjunto de entrenamiento}
+\label{subsec:creacion_conjunto_entrenamiento}
+
+\subsubsection{Estrategia 1}
+\label{subsubsec:creacion_conjunto:estrategia_1}
+
+\begin{mycode}
+    \begin{minted}{bash}
+# Clonamos los repositorios y compilamos
+$HOME/soft/bin/python ./src/main.py -r -c ./data/compiler/compilerOptions.json
+
+# Generamos el conjunto de entrenamiento
+$HOME/soft/bin/python ./src/main.py -D -d
+
+# Copiamos el conjunto de entrenamiento
+mkdir data/Estrategia_1
+cp \
+/scratch/nas/3/danielg/TFG-Development/output/dataset/dataSet.json 
+/scratch/nas/3/danielg/lit-gpt/data/Estrategia_1/dataSet.json
+
+# Copiamos el script de preparación
+cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_1.py
+    \end{minted}
+    \caption[Comando para generar el conjunto de entrenamiento para la estrategia 1]{Comando para generar el conjunto de entrenamiento para la estrategia 1 (Elaboración propia)}
+    \label{code:DataSet_Estrategia_1}
+\end{mycode}
+
+\subsubsection{Estrategia 2}
+\label{subsubsec:creacion_conjunto:estrategia_2}
+
+\begin{mycode}
+    \begin{minted}{bash}
+# Clonamos el repositorio de neural-compilers
+git clone https://github.com/jordiae/neural-compilers.git
+cd neural-compilers
+
+# Instalamos dependencias
+bash setup.sh
+
+# Generamos el conjunto de entrenamiento
+python prepare-train-data.py --config-file configs/data_configs/data-config1.json
+
+# Copiamos el conjunto de entrenamiento
+mkdir data/Estrategia_2
+cp \
+/scratch/nas/3/danielg/TFG-Development/ data/dataset/Estrategia_2.json 
+/scratch/nas/3/danielg/lit-gpt/data/Estrategia_2/dataSet.json
+
+# Copiamos el script de preparación
+cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_2.py
+    \end{minted}
+    \caption[Comando para generar el conjunto de entrenamiento para la estrategia 2]{Comando para generar el conjunto de entrenamiento para la estrategia 2 (Elaboración propia)}
+    \label{code:DataSet_Estrategia_2}
+\end{mycode}
+
 \subsection{Cluster AC: \textit{Sert}}
 \label{subsec:cluster_ac_ejecucion}
 
+\subsubsection{Estrategia 1}
+\label{subsubsec:cluster_ac_ejecucion:estrategia_1}
 
+\begin{mycode}
+    \begin{minted}{bash}
+$HOME/soft/bin/python scripts/prepare_Estrategia_1.py --destination_path data/Estrategia_1/ --max_seq_length 2048
+
+$HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_1 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_1 --precision 16-true --quantize bnb.nf4
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:Ejecución_Estrategia_1}
+\end{mycode}
+
+\subsubsection{Estrategia 2}
+\label{subsubsec:cluster_ac_ejecucion:estrategia_2}
+
+\begin{mycode}
+    \begin{minted}{bash}
+$HOME/soft/bin/python scripts/prepare_Estrategia_2.py --destination_path data/Estrategia_2/ --max_seq_length 2048
+
+$HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_2 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_2 --precision 16-true --quantize bnb.nf4
+\end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:Ejecución_Estrategia_2}
+\end{mycode}
 
 \subsection{Lightning IA Studio}
 \label{subsec:lightning_ia_studio_ejecucion}
+
+En el entorno de Lightning IA Studio se ha ejecutado tan solo la estrategia 2, ya que
+esta es la que a nivel de recursos computacionales es más exigente. Para la ejecución
+de la estrategia 2 se ha utilizado los mismos pasos que se han utilizado en el cluster
+del departamento de Arquitectura de Computadores que se explica en el código \ref{code:Ejecución_Estrategia_2}.
+
 
 
