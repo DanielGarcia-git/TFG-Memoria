@@ -236,6 +236,15 @@ entrenamiento se ha generado con el sistema de scripts que se ha desarrollado en
 \subsubsection{Estrategia 1}
 \label{subsubsec:creacion_conjunto:estrategia_1}
 
+En el código \ref{code:DataSet_Estrategia_1} tenemos el conjunto de comandos que se han
+utilizado para generar el conjunto de entrenamiento para la estrategia 1. En este conjunto
+de comandos se ha utilizado el script \textit{main.py} que se ha desarrollado en el capítulo
+\ref{cap:diseñoImplentacion_scripts}. Este script nos permite clonar los repositorios de
+los proyectos, compilarlos y generar el conjunto de entrenamiento. Así mismo, se ha copiado
+el conjunto de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}.
+Por último, se ha copiado el script de preparación de la estrategia 1 a la carpeta \textit{scripts}
+del proyecto de \textit{lit-gpt}.
+
 \begin{mycode}
     \begin{minted}{bash}
 # Clonamos los repositorios y compilamos
@@ -259,6 +268,15 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_1.py
 
 \subsubsection{Estrategia 2}
 \label{subsubsec:creacion_conjunto:estrategia_2}
+
+En el código \ref{code:DataSet_Estrategia_2} tenemos el conjunto de comandos que se han
+utilizado para generar el conjunto de entrenamiento para la estrategia 2. En este conjunto
+de comandos se ha utilizado el script \textit{prepare-train-data.py} que podemos encontrar
+en el repositorio de \textit{neural-compilers}. Este script nos permite generar un conjunto
+de entrenamiento con una secuencia de tokens baja. Así mismo, se ha copiado el conjunto
+de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}. Por último,
+se ha copiado el script de preparación de la estrategia 2 a la carpeta \textit{scripts}
+del proyecto de \textit{lit-gpt}.
 
 \begin{mycode}
     \begin{minted}{bash}
@@ -291,18 +309,31 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_2.py
 \subsubsection{Estrategia 1}
 \label{subsubsec:cluster_ac_ejecucion:estrategia_1}
 
+En el entorno del cluster AC se ha ejecutado la estrategia 1 y la estrategia 2. Para la
+ejecución de la estrategia 1 se ha utilizado los siguientes comandos que se pueden encontrar
+en el código \ref{code:Ejecución_Estrategia_1}.
+
 \begin{mycode}
     \begin{minted}{bash}
 $HOME/soft/bin/python scripts/prepare_Estrategia_1.py --destination_path data/Estrategia_1/ --max_seq_length 2048
 
 $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_1 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_1 --precision 16-true --quantize bnb.nf4
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Comandos para ejecutar el \textit{finetuning} con la estrategia 1]{Comandos para ejecutar el \textit{finetuning} con la estrategia 1 (Elaboración propia)}
     \label{code:Ejecución_Estrategia_1}
 \end{mycode}
 
+Una vez ejecutado estos comandos se han obenido las siguientes metricas de entrenamiento:
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
 \subsubsection{Estrategia 2}
 \label{subsubsec:cluster_ac_ejecucion:estrategia_2}
+
+Para la ejecución de la estrategia 2 se ha utilizado los siguientes comandos que se
+pueden encontrar en el código \ref{code:Ejecución_Estrategia_2}.
 
 \begin{mycode}
     \begin{minted}{bash}
@@ -310,9 +341,15 @@ $HOME/soft/bin/python scripts/prepare_Estrategia_2.py --destination_path data/Es
 
 $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_2 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_2 --precision 16-true --quantize bnb.nf4
 \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Comandos para ejecutar el \textit{finetuning} con la estrategia 2]{Comandos para ejecutar el \textit{finetuning} con la estrategia 2 (Elaboración propia)}
     \label{code:Ejecución_Estrategia_2}
 \end{mycode}
+
+Una vez ejecutado estos comandos se han obenido las siguientes metricas de entrenamiento:
+
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Lightning IA Studio}
 \label{subsec:lightning_ia_studio_ejecucion}
