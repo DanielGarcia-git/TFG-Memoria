@@ -134,7 +134,7 @@ el modelo, ya que nuestra entrada de datos potencialmente grande.
 \section{Estrategia de entrenamiento}
 \label{sec:estrategia_entrenamiento}
 
-% Corregido 07/01/2024
+% Corregido 09/01/2024
 % TODO:daniel: Revisar la estrategia de entrenamiento
 
 Una vez escogido el modelo de lenguaje, se ha definido la estrategia de entrenamiento
@@ -172,7 +172,37 @@ Para ello se han definido dos estrategias de entrenamiento:
         estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
         básicas en C y su equivalente en ensamblador e inferir esta traducción en contextos más
         grandes y reales.
+
+        Cabe destacar que en esta estrategia se ha utilizado dos conjuntos de entrenamiento
+        diferentes. Uno más pequeño y otro más grande, el pequeño es un subconjunto del grande.
 \end{enumerate}
+
+Para la creación del conjunto de entrenamiento de la estrategia 2 se ha utilizado un script
+utilizado en el artículo \textit{Learning C to x86 Translation: An Experiment in Neural Compilation}
+el cual podemos encontrar en el repositorio de GitHub con URL \url{https://github.com/jordiae/neural-compilers}.
+En este artículo se crea un repositorio de GitHub el cual contiene más de un millón de funciones en C
+\cite{Armengol-EstapéJordi2021LCtx}.
+
+En la tabla \ref{tab:estrategias} podemos ver un resumen de las características de cada una de las estrategias
+de entrenamiento. En concreto, el número de datos y su peso en disco, y el máximo de longitud
+de secuencia.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Estrategia   & Numero de entradas & Peso en MB & Secuencia máxima \\ \hline
+    Estrategia 1 & 200                & 4.63       & 1091             \\ \hline
+    Estrategia 2 & 99 944             & 114        & 1091             \\ \hline
+    Estrategia 2 & 485 737            & 554        & 2048             \\ \hline
+    \end{tabular}%
+    }
+    \caption[Tamaño de los \textit{training sets} utilizados]{Tamaño de los \textit{training sets} utilizados (Elaboración propia))}
+    \label{tab:estrategias}
+\end{table}
+
 
 
 

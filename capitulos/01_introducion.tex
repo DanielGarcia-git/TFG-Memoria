@@ -3,7 +3,7 @@
 
 \setcounter{page}{1}
 
-% Corregido 29/12/2023
+% Corregido 08/01/2024
 % TODO:daniel: Revisar la introducción
 
 Es innegable que el \textit{software} ha cobrado una importancia en nuestra sociedad, tal es
@@ -14,31 +14,28 @@ las industrias en los últimos 10 años. Por dar un dato más concreto, en el a�
 mundial en los próximos cinco años. Teniendo que en septiembre de 2021 siete de las
 diez empresas más valiosas del mundo son empresas de \textit{software}. \cite{IndustriaSoftware}
 
-Es tal a importancia del \textit{software} en nuestra sociedad que muchos estados tienen planes
-específicos para digitalizar su economía, como es el caso de España con su plan
-España Digital 2025 o el Programa Europa Digital (DIGITAL) \cite{EspañaDigital2025}
-\cite{ProgramaEuropaDigital}. Estos planes tienen como objetivo la digitalización
-de la economía y la sociedad.
+Dada su relevancia en el mundo actual, es importante que el \textit{software} sea de calidad,
+sea seguro, sea fiable y sea mantenible. Para cumplir todos estos requisitos aplicamos ingeniería
+inversa sobre el \textit{software}, de tal manera que muchas veces podemos encontrar vulnerabilidades
+en el \textit{software} que pueden ser explotadas por atacantes, los cuales también aplican técnicas
+similares de ingeniería inversa.
 
-Pero, ¿qué es el \textit{software}? El \textit{software} es un conjunto de programas, instrucciones
-y reglas informáticas que permiten ejecutar distintas tareas en una computadora.
-\cite{Software} Normalmente adquirimos este \textit{software} de las empresas a través de
-su formato binario. Este formato binario es el resultado de un proceso de compilación
-de un lenguaje de programación de alto nivel a un lenguaje de bajo nivel, que al final
-es el que entiende la máquina. Durante el proceso de compilación se pierde mucha
-información, como por ejemplo los comentarios, los nombres de las variables, entre
-otros.
+La inguinaria inversa es un proceso en el cual a través de razonamiento deductivo se intenta
+obtener información de un sistema, en este caso de un programa informático. En el caso de
+la ingeniería inversa de \textit{software} se intenta obtener información del código fuente
+a partir del código objeto o ejecutable.
 
-Así mismo, las empresas también aplican técnicas de ofuscación de código, de tal
-manera que el código resultante sea más difícil de entender o de intentar hacer los
-pasos inversos, es decir, aplicar ingeniería inversa. Pero, ¿por qué querríamos
-aplicar ingeniería inversa sobre \textit{software}? ¿Qué es la ingeniería inversa? ¿Existen
-herramientas que nos ayuden a aplicar ingeniería inversa? ¿Podríamos mejorar los
-resultados ayudándonos de la inteligencia artificial?
+Es un proceso complejo y que requiere de mucho tiempo y esfuerzo, por lo que se intenta
+automatizar este proceso. Una de las técnicas que se están explorando, debido al auge
+de la inteligencia artificial, es la aplicación de técnicas de inteligencia artificial
+para poder automatizar este proceso.
 
-Todas estas preguntas y muchas más se intentarán responder en este proyecto de final
-de grado. Para ello, se ha dividido el proyecto en diferentes capítulos, que se
-detallarán a continuación:
+Lo que intentaremos abordar en este proyecto es si asistiéndonos a través de modelos de lenguaje
+y de técnicas de inteligencia artificial, podemos generar código C a partir de un ejecutable
+en ensamblador.
+
+Todas estas cuestiones las trataremos dentro de esta memoria que se ha dividido en los
+siguientes capítulos:
 
 \begin{itemize}
     \item \textbf{Capítulo 1: Introducción.} En este capítulo se introducirá el proyecto,
@@ -46,26 +43,35 @@ detallarán a continuación:
         detallarán los actores implicados en el proyecto, los objetivos y subobjetivos
         que se quieren alcanzar y los posibles riesgos y obstáculos que se pueden encontrar.
     \item \textbf{Capítulo 2: Justificación.} En este capítulo se detallarán el problema
-        a solucionar, las alternativas existentes y la solución tomada.
+        a solucionar, los estudios previos y la solución tomada.
     \item \textbf{Capítulo 3: Estado del arte de la ingeniería inversa.} En este capítulo
         se detallará el estado del arte de la ingeniería inversa, las herramientas que
         existen actualmente y se detallarán los diferentes métodos de ingeniería inversa 
         que existen.
-    \item \textbf{Capítulo 4: Diseño e implementación del sistema de scripts.} En este
+    \item \textbf{Capítulo 4: Fases de la Ingenieria inversa asistida por IA} En este
+        capítulo se detallará la hoja de ruta que se ha seguido para el desarrollo de este
+        proyecto.
+    \item \textbf{Capítulo 5: Viabilidad de la Hipótesis a través de ChatGPT} En este capítulo
+        se detallará la viabilidad de la hipótesis planteada a través de un modelo de lenguaje
+        disponible interactuable a través de internet.
+    \item \textbf{Capítulo 6: Estrategia de entrenamiento} En este capítulo se detallará
+    la estrategia de entrenamiento que se ha utilizado para poder entrenar el modelo.
+    \item \textbf{Capítulo 7: Diseño e implementación del sistema de scripts.} En este
         capítulo se detallará el diseño e implementación del sistema de scripts que se
         ha desarrollado para poder generar el \textit{dataset} que se utilizará para el
         entrenamiento del modelo.
-    \item \textbf{Capítulo 5: Estrategia de entrenamiento.} En este capítulo se detallará
-        la estrategia de entrenamiento que se ha utilizado para poder entrenar el modelo.
-    \item \textbf{Capítulo 6: Resultados.} En este capítulo se detallarán los resultados
+    \item \textbf{Capítulo 8: Configuración y ejecución de los entornos de entrenamiento} En
+        este capítulo se detallará la configuración y ejecución de los entornos de entrenamiento
+        que se han utilizado para poder entrenar el modelo.
+    \item \textbf{Capítulo 9: Resultados.} En este capítulo se detallarán los resultados
         obtenidos durante el entrenamiento del modelo.
-    \item \textbf{Capítulo 7: Planificación.} En este capítulo se detallará la planificación
+    \item \textbf{Capítulo 10: Planificación.} En este capítulo se detallará la planificación
         del proyecto, así como la división en tareas y la estimación de los recursos
         necesarios para poder llevar a cabo el proyecto. Así mismo, se detallará la
         metodología de trabajo que se ha utilizado para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 8: Presupuesto.} En este capítulo se detallará el presupuesto
+    \item \textbf{Capítulo 11: Presupuesto.} En este capítulo se detallará el presupuesto
         del proyecto, así como los recursos necesarios para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 9: Sostenibilidad.} En este capítulo se detallará el impacto
+    \item \textbf{Capítulo 12: Sostenibilidad.} En este capítulo se detallará el impacto
         que tendrá el proyecto en el medio ambiente, así como el impacto social y económico.
     \item \textbf{Capítulo 13: Conclusiones.} En este capítulo se detallarán las conclusiones
         obtenidas durante el desarrollo del proyecto.
@@ -76,7 +82,7 @@ detallarán a continuación:
 \section{Contextualización}
 \label{sec:contextualizacion}
 
-% Corregido
+% Corregido 10/01/2024
 % Revisado 27/12/2023
 
 Este proyecto se enmarca dentro de un proyecto de final de Grado de Ingeniería
@@ -89,14 +95,22 @@ pasaré a detallar más adelante, que están estrechamente relacionadas con la
 especialidad cursada. Estas son las competencias técnicas:
 
 \begin{itemize}
-    \item \textbf{CTI3.3} Diseñar, implantar y configurar redes y servicios.
-    \item \textbf{CTI3.4} Diseñar \textit{software} de comunicaciones.
+    \item \textbf{CTI3.1} Concebre sistemes, aplicacions i serveis basats en
+        tecnologies de xarxa, tenint en compte Internet, web, comerç electrònic,
+        multimèdia, serveis interactius i computació ubiqua. [En profunditat] 
+    \item \textbf{CTI3.3} Dissenyar, implantar i configurar xarxes i serveis. [Bastant]
 \end{itemize}
+
+La competencia \textbf{CTI3.1} se desarrollará a través de la investigación de modelos de
+lenguaje y de la implementación de un sistema de scripts que nos permitirá generar
+el \textit{dataset} necesario para poder entrenar el modelo. La competencia \textbf{CTI3.3}
+se desarrollará a través de la configuración de los entornos de entrenamiento y
+la ejecución de los mismos.
 
 \section{Actores implicados}
 \label{sec:actores}
 
-% Corregido
+% Corregido 08/01/2024
 % Revisado 29/12/2023
 
 A continuación se pasarán a detallar a los actores implicados en el trabajo de final
@@ -109,16 +123,13 @@ proyecto, pero tiene una relevancia importante dentro de este mismo:
         de modelos a utilizar, metodos de \textit{fine-tuning}, entre otras. Así mismo,
         también se encargará del desarrollo de las herramientas necesarias para el proyecto.
     \item \textbf{Director y codirector:} El director del trabajo de final de grado, Alex
-        Pajuelo Gonzalez perteneciente al CRAAX\footnote{Centre de Recerca d'Arquitectures
-        Avançades de Xarxes} y profesor asociado a la UPC. Será el encargado de dirigir y
-        supervisar este proyecto. Así mismo, el codirector del proyecto, Juan José Costa Prats
-        perteneciente al CRAAX, ara tareas similares al director.
+        Pajuelo Gonzalez. Será el encargado de dirigir y supervisar este proyecto. Así
+        mismo, el codirector del proyecto, Juan José Costa Prats ara tareas similares al director.
     \item \textbf{Experto en Inteligencia Artificial:} este proyecto constará con un experto en
         inteligencia artificial que dará soporte en temas más específicos que se salen fuera del
         alcance de este proyecto. El experto es Jordi Nin Guerrero profesor titular en el
         Departamento de Operaciones, Innovación y Data Sciences en ESADE.
-    \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú, profesor asociado
-        de la UPC e investigador senior de PhD.
+    \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú.
 \end{itemize}
 
 \section{Objetivos y subobjetivos}
