@@ -22,9 +22,9 @@ En la realización de este proyecto se ha utilizado dos entornos de ejecución d
 % TODO:daniel: Revisar lit-gpt
 
 Lit GPT es una plataforma de desarrollo que nos permite entrenar modelos de
-lenguaje de manera sencilla. Esta plataforma nos ofrece una serie de scripts que nos
+lenguaje de manera sencilla. Esta plataforma nos ofrece una serie de \textit{scripts} que nos
 permiten entrenar modelos utilizando diferentes técnicas de las cuales hemos hablado
-en el capítulo \ref{cap:estadoDelArte}. Así mismo, nos ofrece una serie de scripts que nos permiten convertir
+en el capítulo \ref{cap:estadoDelArte}. Así mismo, nos ofrece una serie de \textit{scripts} que nos permiten convertir
 los modelos de lenguaje de la plataforma de \textit{huggingface} a un formato que pueda
 ser utilizado por el \textit{framework lightning}. Esta plataforma de desarrollo se encuentra
 disponible en el siguiente repositorio de GitHub \url{https://github.com/Lightning-AI/lit-gpt.git}.
@@ -35,7 +35,7 @@ modelos de lenguaje con una precisión de 16 bits o de 32 bits. Así mismo, nos 
 aplicar técnicas de cuantización. Estas técnicas de cuantización nos permiten reducir
 el tamaño de los modelos de lenguaje y reducir su consumo de memoria.
 Para poder aplicar estas técnicas \textit{lit-gpt} nos ofrece una serie de opciones que
-podemos pasar a los scripts de entrenamiento. En la tabla \ref{tab:opciones_litgpt} 
+podemos pasar a los \textit{scripts} de entrenamiento. En la tabla \ref{tab:opciones_litgpt} 
 tenemos las opciones que nos ofrece \textit{lit-gpt}.
 
 \begin{table}[H]
@@ -227,7 +227,7 @@ se ha llegado con esta solución.
 \label{sec:ejecucion}
 
 En ambos entornos se ha ejecutado el mismo conjunto de entrenamiento. Este conjunto de
-entrenamiento se ha generado con el sistema de scripts que se ha desarrollado en el capítulo
+entrenamiento se ha generado con el sistema de \textit{scripts} que se ha desarrollado en el capítulo
 \ref{cap:diseñoImplentacion_scripts}.
 
 \subsection{Creación del conjunto de entrenamiento}
@@ -236,13 +236,16 @@ entrenamiento se ha generado con el sistema de scripts que se ha desarrollado en
 \subsubsection{Estrategia 1}
 \label{subsubsec:creacion_conjunto:estrategia_1}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar la creación del conjunto de entrenamiento de la estrategia 1
+
 En el código \ref{code:DataSet_Estrategia_1} tenemos el conjunto de comandos que se han
 utilizado para generar el conjunto de entrenamiento para la estrategia 1. En este conjunto
-de comandos se ha utilizado el script \textit{main.py} que se ha desarrollado en el capítulo
-\ref{cap:diseñoImplentacion_scripts}. Este script nos permite clonar los repositorios de
+de comandos se ha utilizado el \textit{script} \textit{main.py} que se ha desarrollado en el capítulo
+\ref{cap:diseñoImplentacion_scripts}. Este \textit{script} nos permite clonar los repositorios de
 los proyectos, compilarlos y generar el conjunto de entrenamiento. Así mismo, se ha copiado
 el conjunto de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}.
-Por último, se ha copiado el script de preparación de la estrategia 1 a la carpeta \textit{scripts}
+Por último, se ha copiado el \textit{script} de preparación de la estrategia 1 a la carpeta \textit{scripts}
 del proyecto de \textit{lit-gpt}.
 
 \begin{mycode}
@@ -269,13 +272,16 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_1.py
 \subsubsection{Estrategia 2}
 \label{subsubsec:creacion_conjunto:estrategia_2}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar la creación del conjunto de entrenamiento de la estrategia 2
+
 En el código \ref{code:DataSet_Estrategia_2} tenemos el conjunto de comandos que se han
 utilizado para generar el conjunto de entrenamiento para la estrategia 2. En este conjunto
-de comandos se ha utilizado el script \textit{prepare-train-data.py} que podemos encontrar
-en el repositorio de \textit{neural-compilers}. Este script nos permite generar un conjunto
-de entrenamiento con una secuencia de tokens baja. Así mismo, se ha copiado el conjunto
+de comandos se ha utilizado el \textit{script} \textit{prepare-train-data.py} que podemos encontrar
+en el repositorio de \textit{neural-compilers}. Este \textit{script} nos permite generar un conjunto
+de entrenamiento con una secuencia de \textit{tokens} baja. Así mismo, se ha copiado el conjunto
 de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}. Por último,
-se ha copiado el script de preparación de la estrategia 2 a la carpeta \textit{scripts}
+se ha copiado el \textit{script} de preparación de la estrategia 2 a la carpeta \textit{scripts}
 del proyecto de \textit{lit-gpt}.
 
 \begin{mycode}
@@ -306,10 +312,26 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_2.py
 \subsection{Cluster AC: \textit{Sert}}
 \label{subsec:cluster_ac_ejecucion}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar la ejecución del cluster AC
+
+Ambas estrategias se han ejecutado con la misma configuración de entrenamiento que pasaré
+a detallar a continuación:
+
+\begin{itemize}
+    \item Micro Batch Size 1
+    \item Batch Size 128
+    \item Número de parámetros entrenables: 2,621,440
+    \item Número de parámetros no entrenables: 2,769,310,720
+\end{itemize}
+
 \subsubsection{Estrategia 1}
 \label{subsubsec:cluster_ac_ejecucion:estrategia_1}
 
-En el entorno del cluster AC se ha ejecutado la estrategia 1 y la estrategia 2. Para la
+% Corregido 10/01/2024
+% TODO:daniel: Revisar la ejecución de la estrategia 1
+
+En el entorno del clúster AC se ha ejecutado la estrategia 1 y la estrategia 2. Para la
 ejecución de la estrategia 1 se ha utilizado los siguientes comandos que se pueden encontrar
 en el código \ref{code:Ejecución_Estrategia_1}.
 
@@ -323,14 +345,21 @@ $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_1 --checkpoint
     \label{code:Ejecución_Estrategia_1}
 \end{mycode}
 
-Una vez ejecutado estos comandos se han obenido las siguientes metricas de entrenamiento:
+Una vez ejecutado estos comandos se han obtenido las siguientes métricas de entrenamiento:
 
+% TODO:daniel: Añadir las metricas de entrenamiento de la estrategia 1
 \begin{itemize}
-    \item 
+    \item \textbf{Máxima longitud de la secuencia:} 1091
+    \item \textbf{Número de iteraciones:} 200
+    \item \textbf{Tiempo de entrenamiento:} 91.44 segundos
+    \item \textbf{Memoria utilizada:} 7.24 GB
 \end{itemize}
 
 \subsubsection{Estrategia 2}
 \label{subsubsec:cluster_ac_ejecucion:estrategia_2}
+
+% Corregido 10/01/2024
+% TODO:daniel: Revisar la ejecución de la estrategia 2
 
 Para la ejecución de la estrategia 2 se ha utilizado los siguientes comandos que se
 pueden encontrar en el código \ref{code:Ejecución_Estrategia_2}.
@@ -345,19 +374,51 @@ $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_2 --checkpoint
     \label{code:Ejecución_Estrategia_2}
 \end{mycode}
 
-Una vez ejecutado estos comandos se han obenido las siguientes metricas de entrenamiento:
+Una vez ejecutado estos comandos se han obtenido las siguientes métricas de entrenamiento
+para el conjunto de entrenamiento de 100 000 ejemplos:
 
+% TODO:daniel: Añadir las metricas de entrenamiento de la estrategia 2
 \begin{itemize}
-    \item 
+    \item \textbf{Máxima longitud de la secuencia:} 2048
+    \item \textbf{Número de iteraciones:} 100 000
+    \item \textbf{Tiempo de entrenamiento:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+Y las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejemplos:
+
+% TODO:daniel: Añadir las metricas de entrenamiento de la estrategia 2
+\begin{itemize}
+    \item \textbf{Máxima longitud de la secuencia:} 1091
+    \item \textbf{Número de iteraciones:} 500 000
+    \item \textbf{Tiempo de entrenamiento:}
+    \item \textbf{Memoria utilizada:}
 \end{itemize}
 
 \subsection{Lightning IA Studio}
 \label{subsec:lightning_ia_studio_ejecucion}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar Lightning IA Studio
+
 En el entorno de Lightning IA Studio se ha ejecutado tan solo la estrategia 2, ya que
 esta es la que a nivel de recursos computacionales es más exigente. Para la ejecución
-de la estrategia 2 se ha utilizado los mismos pasos que se han utilizado en el cluster
-del departamento de Arquitectura de Computadores que se explica en el código \ref{code:Ejecución_Estrategia_2}.
+de la estrategia 2 se ha utilizado los mismos pasos que se han utilizado en el clúster
+del departamento de Arquitectura de Computadores, que se explica en el código \ref{code:Ejecución_Estrategia_2}.
+
+En esta ejecución, al disponer de más potencia computacional se ha podido ejecutar un modelo
+de lenguaje más grande. En concreto, se ha utilizado el modelo de LLama 2 de 7 billones de
+parámetros.
+
+Las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejemplos:
+
+% TODO:daniel: Añadir las metricas de entrenamiento de la estrategia 2
+\begin{itemize}
+    \item \textbf{Máxima longitud de la secuencia:} 2048
+    \item \textbf{Número de iteraciones:} 500 000
+    \item \textbf{Tiempo de entrenamiento:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
 
 
 

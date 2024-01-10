@@ -34,7 +34,7 @@ correcto. Si no cumple con ninguno de los dos criterios, diremos que es un resul
 \section{Resultados finales}
 \label{sec:resultados_finales}
 
-% Corregido 09/01/2024
+% Corregido 10/01/2024
 % TODO:daniel: Revisar los resultados finales
 
 Después de haber ejecutado el \textit{fine-tuning} de nuestro modelo, vamos a hacer las mismas pruebas
@@ -43,13 +43,173 @@ generar código en C que sea compilable y ejecutable. Para ello, vamos a utiliza
 de datos. Diferenciaremos entre los resultados obtenidos en el Clúster del departamento de Arquitectura
 de Computadores y los resultados obtenidos en Lightning IA Studio.
 
+Para poder comprobar el resultado lanzaremos el comando que se describe en el código \ref{code:comando_lora},
+en la parte de la opcion \mintinline{bash}|--prompt| pondremos el siguiente texto:
+
+\begin{quote}
+    \textit{``Below is an instruction that describes a task, paired with an input that provides further context.
+    Write a response that appropriately completes the request. \newline
+    Instruction: Generates C code from this assembler code \newline
+    Input: \textbf{El codigo en ensamblador}\newline
+    Response:''}
+\end{quote}
+
+Así mismo iremos cambiando los directorios de estrategia dependiendo de que estrategia estemos probando
+en cada momento.
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+$HOME/soft/bin/python generate/lora.py 
+    --prompt "" 
+    --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b 
+    --lora_path out/lora/Estrategia_1/lit_model_lora_finetuned.pth 
+    --precision 16-true
+    --quantize bnb.nf4
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:comando_lora}
+\end{mycode}
+
 \subsection{Cluster AC}
 \label{subsec:cluster_ac}
 
+\subsubsection{Estrategia 1}
+\label{subsubsec:resultados:estrategia_1}
 
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.25 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.65 segundos
+    \item \textbf{Tiempo de inferencia:} 3.31 segundos, 30.24 tokens por segundo
+    \item \textbf{Memoria utilizada:} 2.20 GB
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+The function endbr64 returns to the caller by following the function chain with the function endbr64, a function that returns an error code. The function endbr64 calls the function puts. The function puts calls puts with the argument line, which is a pointer to the line. The function puts calls the function puts, a function that calls  put to print the line. The function puts calls the function puts, a function that calls put to print the line. The
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.25 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.66 segundos
+    \item \textbf{Tiempo de inferencia:} 4.11 segundos, 24.33 tokens por segundo
+    \item \textbf{Memoria utilizada:} 3.78 GB
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+The function endbr64 returns the absolute value of the least significant bit of the value in EBX on success, and 1 on failure. On failure, endbr64 returns the value to the sign of the operand in EBX.
+
+### Instruction:
+The function mov ecx, EBX represents the value to the least significant bit of 8 byte at address EBX. The value in EBX is 1 on success, and 0 if the least significant
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+\subsubsection{Estrategia 2}
+\label{subsubsec:resultados:estrategia_2}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+
+
+
+
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
 
 \subsection{Lightning IA Studio}
 \label{subsec:lightning_ia_studio}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:}
+\end{mycode}
 
 \section{Análisis de resultados}
 \label{sec:analisis_resultados}

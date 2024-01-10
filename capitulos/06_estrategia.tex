@@ -172,6 +172,9 @@ Para ello se han definido dos estrategias de entrenamiento:
         estrategia se espera que el modelo aprenda a relacionar operaciones o instrucciones
         básicas en C y su equivalente en ensamblador e inferir esta traducción en contextos más
         grandes y reales.
+
+        Cabe destacar que en esta estrategia se ha utilizado dos conjuntos de entrenamiento
+        diferentes. Uno más pequeño y otro más grande, el pequeño es un subconjunto del grande.
 \end{enumerate}
 
 Para la creación del conjunto de entrenamiento de la estrategia 2 se ha utilizado un script
@@ -183,6 +186,22 @@ En este artículo se crea un repositorio de GitHub el cual contiene más de un m
 En la tabla \ref{tab:estrategias} podemos ver un resumen de las características de cada una de las estrategias
 de entrenamiento. En concreto, el número de datos y su peso en disco, y el máximo de longitud
 de secuencia.
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{8EA9D8} 
+    Estrategia   & Numero de entradas & Peso en MB & Secuencia máxima \\ \hline
+    Estrategia 1 & 200                & 4.63       & 1091             \\ \hline
+    Estrategia 2 & 99 944             & 114        & 1091             \\ \hline
+    Estrategia 2 & 485 737            & 554        & 2048             \\ \hline
+    \end{tabular}%
+    }
+    \caption[Tamaño de los \textit{training sets} utilizados]{Tamaño de los \textit{training sets} utilizados (Elaboración propia))}
+    \label{tab:estrategias}
+\end{table}
 
 
 
