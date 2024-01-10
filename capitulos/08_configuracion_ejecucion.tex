@@ -123,7 +123,7 @@ modelo se encuentra disponible en la plataforma de \textit{huggingface} a travé
 \url{https://huggingface.co/stabilityai/stablecode-completion-alpha-3b}.
 
 \begin{mycode}
-    \begin{minted}{bash}
+    \begin{minted}[fontsize=\scriptsize]{bash}
 # Clonamos el repositorio de lit-gpt
 git clone https://github.com/Lightning-AI/lit-gpt.git
 cd lit-gpt
@@ -138,7 +138,7 @@ $HOME/soft/bin/pip install -r requirements.txt
 $HOME/soft/bin/python scripts/download.py --repo_id stabilityai/stablecode-completion-alpha-3b
 
 # Convertimos el modelo de lenguaje
-python scripts/convert_hf_checkpoint.py --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b
+$HOME/soft/bin/python scripts/convert_hf_checkpoint.py --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b
 
 # Ejecutamos un ejemplo para comprobar que todo funciona correctamente
 $HOME/soft/bin/python generate/base.py
@@ -246,7 +246,7 @@ Por último, se ha copiado el script de preparación de la estrategia 1 a la car
 del proyecto de \textit{lit-gpt}.
 
 \begin{mycode}
-    \begin{minted}{bash}
+    \begin{minted}[fontsize=\scriptsize]{bash}
 # Clonamos los repositorios y compilamos
 $HOME/soft/bin/python ./src/main.py -r -c ./data/compiler/compilerOptions.json
 
@@ -279,7 +279,7 @@ se ha copiado el script de preparación de la estrategia 2 a la carpeta \textit{
 del proyecto de \textit{lit-gpt}.
 
 \begin{mycode}
-    \begin{minted}{bash}
+    \begin{minted}[fontsize=\scriptsize]{bash}
 # Clonamos el repositorio de neural-compilers
 git clone https://github.com/jordiae/neural-compilers.git
 cd neural-compilers
@@ -293,7 +293,7 @@ python prepare-train-data.py --config-file configs/data_configs/data-config1.jso
 # Copiamos el conjunto de entrenamiento
 mkdir data/Estrategia_2
 cp \
-/scratch/nas/3/danielg/TFG-Development/ data/dataset/Estrategia_2.json 
+/scratch/nas/3/danielg/dataSets/Estrategia_2.json 
 /scratch/nas/3/danielg/lit-gpt/data/Estrategia_2/dataSet.json
 
 # Copiamos el script de preparación
@@ -314,7 +314,7 @@ ejecución de la estrategia 1 se ha utilizado los siguientes comandos que se pue
 en el código \ref{code:Ejecución_Estrategia_1}.
 
 \begin{mycode}
-    \begin{minted}{bash}
+    \begin{minted}[fontsize=\scriptsize]{bash}
 $HOME/soft/bin/python scripts/prepare_Estrategia_1.py --destination_path data/Estrategia_1/ --max_seq_length 2048
 
 $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_1 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_1 --precision 16-true --quantize bnb.nf4
@@ -336,7 +336,7 @@ Para la ejecución de la estrategia 2 se ha utilizado los siguientes comandos qu
 pueden encontrar en el código \ref{code:Ejecución_Estrategia_2}.
 
 \begin{mycode}
-    \begin{minted}{bash}
+    \begin{minted}[fontsize=\scriptsize]{bash}
 $HOME/soft/bin/python scripts/prepare_Estrategia_2.py --destination_path data/Estrategia_2/ --max_seq_length 2048
 
 $HOME/soft/bin/python finetune/lora.py --data_dir data/Estrategia_2 --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b --out_dir out/lora/Estrategia_2 --precision 16-true --quantize bnb.nf4

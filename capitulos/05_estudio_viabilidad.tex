@@ -97,7 +97,7 @@ pruebas:
 \end{quote}
 
 \begin{mycode}
-    \begin{minted}{c}
+    \begin{minted}[fontsize=\scriptsize]{c}
 #include <stdio.h>
 
 int main () {
@@ -110,7 +110,7 @@ int main () {
 \end{mycode}
 
 \begin{mycode}
-    \begin{minted}{asm}
+    \begin{minted}[fontsize=\scriptsize]{asm}
 0000000000001149 <main>:
     1149:	f3 0f 1e fa          	endbr64
     114d:	55                   	push   %rbp
@@ -148,7 +148,7 @@ por completo el código en ensamblador dirigirse al apendice \ref{apen:codigos} 
 \ref{apensec:binarySearch}).
 
 \begin{mycode}
-    \begin{minted}{c}
+    \begin{minted}[fontsize=\scriptsize]{c}
 int binarysearch1(const int *arr, int l, int r, int x) {
     if (r >= l)
     {
@@ -187,7 +187,7 @@ int binarysearch2(const int *arr, int l, int r, int x) {
 \end{mycode}
 
 \begin{mycode}
-    \begin{minted}{asm}
+    \begin{minted}[fontsize=\scriptsize]{asm}
 00000000000011a9 <binarysearch1>:
     11a9:	f3 0f 1e fa          	endbr64
     11ad:	55                   	push   %rbp
@@ -308,7 +308,7 @@ Esto seguramente es debido a que GPT haya generado el código basándose en lo q
 \end{figure}
 
 \begin{mycode}
-    \begin{minted}{c}
+    \begin{minted}[fontsize=\scriptsize]{c}
 void max_heapify(int *a, int i, int n) {
     int j, temp;
     temp = a[i];

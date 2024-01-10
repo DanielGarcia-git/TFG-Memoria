@@ -46,7 +46,7 @@ en ensamblador sin optimizaciones y en el código \ref{cod:EuclidianCodeAsmOpt} 
 el código en ensamblador con optimizaciones.
 
 \begin{mycode}
-    \begin{minted}{c}
+    \begin{minted}[fontsize=\scriptsize]{c}
 int EuclidsGCD(int m, int n) /*we want to find the GCD of m and n*/
 {
     int q, r; /*q is the quotient, r is the remainder*/
@@ -75,7 +75,7 @@ del bucle se está comprobando todo el rato con la instrucción \mintinline{asm}
 la cual cosa si pensamos es innecesaria, ya que la condición del bucle siempre es cierta.
 
 \begin{mycode}
-    \begin{minted}{asm}
+    \begin{minted}[fontsize=\scriptsize]{asm}
 PUBLIC	_EuclidsGCD
 _TEXT	SEGMENT
 _r$ = -8	; size = 4
@@ -141,7 +141,7 @@ En la figura \ref{cod:EuclidianCodeIng} podemos ver el resultado de aplicar inge
 el código optimizado.
 
 \begin{mycode}
-    \begin{minted}{asm}
+    \begin{minted}[fontsize=\scriptsize]{asm}
 PUBLIC	_EuclidsGCD
 _TEXT	SEGMENT
 _m$ = 8	; size = 4
@@ -198,7 +198,7 @@ Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy compl
 lo tanto, inviable en muchos casos para ciertos escenarios.
 
 \begin{mycode}
-    \begin{minted}{c}
+    \begin{minted}[fontsize=\scriptsize]{c}
 int EuclidsGCD(int m, int n)
 {
     int r;
