@@ -512,3 +512,39 @@ y en la figura \ref{fig:IDAPro_binaryseacrh2} podemos observar la función \text
     \caption[Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh2}]{Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh2} (Elaboración propia)}
     \label{fig:IDAPro_binaryseacrh2}
 \end{figure}\
+
+\section{Estudios previos}
+\label{sec:estudios_previos}
+
+% Corregido 07/01/2024
+% TODO:daniel: Revisar la sección de estudios previos
+
+Existen diferentes estudios y artículos que exploran la vía de utilizar redes neuronales,
+de diferentes tipos y arquitecturas, para poder aplicar ingeniería inversa sobre un programa
+y obtener un código en C, concretamente estos estudios persiguen obtener un descompilador utilizando
+inteligencia artificial. Los estudios que se han realizado hasta ahora son los siguientes:
+
+\begin{itemize}
+\item \textbf{Using Recurrent Neural Networks for Decompilation} \cite{8330222}
+\item \textbf{Towards Neural Decompilation (2019)} \cite{KatzOmer2019TND}
+\item \textbf{Coda: An End-to-End Neural Program Decompiler} \cite{FuCheng2019ANPD}
+\item \textbf{N-Bref: a neural-based decompiler framework} \cite{fu2021nbref}
+\item \textbf{Neutron: an attention-based neural decompiler} \cite{LiangRuigang2021Naan}
+\item \textbf{Beyond the C: Retargetable Decompilation using Neural Machine Translation} \cite{HosseiniIman2022BtCR}
+\end{itemize}
+
+Todos estos estudios tienen el mismo objetivo, aplicar ingeniería inversa sobre un programa
+y obtener un código en C asistiéndose a través de redes neuronales. En muchos de estos estudios
+definen procedimientos y técnicas para poder entrenar a la red neuronal, de hecho la mayoría
+utilizan un preprocesamiento del código en ensamblador para que a la red neuronal le sea más
+fácil procesar la información.
+
+Cabe destacar que la mayoría de estudios se han realizado antes del boom de la inteligencia artificial
+que sucedió en 2020 con la aparición de los modelos de lenguaje como GPT-3. Por lo tanto, estos
+estudios no se han beneficiado de los avances que se han realizado en el campo de la inteligencia
+artificial.
+
+Lo que intentamos en este proyecto es utilizar los LLM (\textit{Large Language Model}) que han aparecido
+en los últimos años para poder aplicar ingeniería inversa sobre un programa y obtener un código
+en C. Estos modelos de lenguaje han demostrado que son capaces de realizar tareas para las cuales
+no han sido entrenados y con resultados bastante buenos.
