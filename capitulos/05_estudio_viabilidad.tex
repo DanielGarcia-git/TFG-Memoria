@@ -126,19 +126,32 @@ int main () {
     \label{cod:helloWorldAsm}
 \end{mycode}
 
-La salida obtenida con GPT-4 se muestra en la figura \ref{fig:resultado_gpt4_directo}. Como se puede
+La salida obtenida con GPT-4 se muestra en la código \ref{cod:resultado_gpt4_directo}. Como se puede
 observar, el resultado obtenido es bastante bueno y se acerca bastante al código original en C. Vemos
 que no ha podido generar directamente la función \mintinline{c}|printf()| sino que ha utilizado
 otra como \mintinline{c}|puts()|, pero esto es debido a que el código en ensamblador no tiene
 ninguna referencia a la función \mintinline{c}|printf()|.
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4.png}
-    \end{center}
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+#include <stdio.h>
+
+int main() {
+    // The original assembly code likely refers to a string constant.
+    // The exact string is not provided in the assembly, but it's located at _IO_stdin_used+0x4.
+    // For this example, we'll assume it's a generic message.
+    const char* message = "Hello, World!";
+
+    // Printing the message. This corresponds to the 'puts' call in the assembly.
+    puts(message);
+
+    // Return 0 indicates successful execution.
+    return 0;
+}
+    \end{minted}
     \caption[Resultado de la prueba directa con GPT-4]{Resultado de la prueba directa con GPT-4 (Elaboración propia)}
-    \label{fig:resultado_gpt4_directo}
-\end{figure}
+    \label{cod:resultado_gpt4_directo}
+\end{mycode}
 
 Para tener más detalles aplicando este método vamos se ha probado con un código más complejo.
 En este caso se ha utilizado la implementación en C del algoritmo \textit{binary search} en
@@ -221,27 +234,49 @@ int binarysearch2(const int *arr, int l, int r, int x) {
     \label{cod:binarySearchAsm_parcial}
 \end{mycode}
 
-La salida obtenida con GPT-4 se muestra en la figura \ref{fig:resultado_gpt4_directo_V2_1} y
-en la figura \ref{fig:resultado_gpt4_directo_V2_2}. Como se puede observar, el resultado obtenido
-es bastante bueno y se acerca bastante al código original en C. Pero observamos que no ha sido capaz
-de distinguir entre la función iterativa y la función recursiva. Creo que esto de debe más a una
-alucinación del modelo, ya que la información en el ensamblador es bastante clara.
+La salida obtenida con GPT-4 se muestra en el código \ref{fig:resultado_gpt4_directo_V2}.
+Como se puede observar, el resultado obtenido es bastante bueno y se acerca bastante al
+código original en C. Pero observamos que no ha sido capaz de distinguir entre la función
+iterativa y la función recursiva. Creo que esto de debe más a una alucinación del modelo,
+ya que la información en el ensamblador es bastante clara.
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_1.png}
-    \end{center}
-    \caption[Resultado de la segunda prueba directa con GPT-4, primera captura]{Resultado de la segunda prueba directa con GPT-4, primera captura (Elaboración propia)}
-    \label{fig:resultado_gpt4_directo_V2_1}
-\end{figure}
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+int binarysearch1(int* array, int start, int end, int value) {
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoDirectoGPT4_V2_2.png}
-    \end{center}
-    \caption[Resultado de la segunda prueba directa con GPT-4, segunda captura]{Resultado de la segunda prueba directa con GPT-4, segunda captura (Elaboración propia)}
-    \label{fig:resultado_gpt4_directo_V2_2}
-\end{figure}
+        if (array[mid] == value)
+            return mid;
+
+        if (array[mid] < value)
+            start = mid + 1;
+        else
+            end = mid - 1;
+    }
+
+    return -1;
+}
+
+int binarysearch2(int* array, int start, int end, int value) {
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
+
+        if (array[mid] == value)
+            return mid;
+
+        if (array[mid] < value)
+            start = mid + 1;
+        else
+            end = mid - 1;
+    }
+
+    return -1;
+}       
+    \end{minted}
+    \caption[Resultado de la segunda prueba directa con GPT-4]{Resultado de la segunda prueba directa con GPT-4 (Elaboración propia)}
+    \label{cod:resultado_gpt4_directo_V2}
+\end{mycode}
 
 \subsection{Prueba con \textit{prompt finetuning}}
 \label{subsec:prueba_prompt_finetuning}
