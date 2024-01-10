@@ -77,6 +77,13 @@ $HOME/soft/bin/python generate/lora.py
 \subsubsection{Estrategia 1}
 \label{subsubsec:resultados:estrategia_1}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar los resultados de la estrategia 1
+
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 1 y la prueba con el programa de \textit{Hello World} y obtenemos
+las siguientes métricas de generación:
+
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:} 0.25 segundos
     \item \textbf{Tiempo en cargar los pesos del modelo:} 4.65 segundos
@@ -84,13 +91,20 @@ $HOME/soft/bin/python generate/lora.py
     \item \textbf{Memoria utilizada:} 2.20 GB
 \end{itemize}
 
+En el código \ref{code:Prueba1_Estrategia1_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 The function endbr64 returns to the caller by following the function chain with the function endbr64, a function that returns an error code. The function endbr64 calls the function puts. The function puts calls puts with the argument line, which is a pointer to the line. The function puts calls the function puts, a function that calls  put to print the line. The function puts calls the function puts, a function that calls put to print the line. The
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba1_Estrategia1_ClusterAC}
 \end{mycode}
+
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 1 y la prueba con el programa de \textit{Binary Search} y obtenemos
+las siguientes métricas de generación:
 
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:} 0.25 segundos
@@ -98,6 +112,9 @@ The function endbr64 returns to the caller by following the function chain with 
     \item \textbf{Tiempo de inferencia:} 4.11 segundos, 24.33 tokens por segundo
     \item \textbf{Memoria utilizada:} 3.78 GB
 \end{itemize}
+
+En el código \ref{code:Prueba2_Estrategia1_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
@@ -107,12 +124,28 @@ The function endbr64 returns the absolute value of the least significant bit of 
 The function mov ecx, EBX represents the value to the least significant bit of 8 byte at address EBX. The value in EBX is 1 on success, and 0 if the least significant
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba2_Estrategia1_ClusterAC}
 \end{mycode}
 
 \subsubsection{Estrategia 2}
 \label{subsubsec:resultados:estrategia_2}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar los resultados de la estrategia 2
+
+Como he mencionado en el capítulo \ref{cap:estrategia_entrenamiento}, la estrategia 2
+es una estrategia que se ha diseñado para intentar mejorar los resultados de la estrategia 1
+y que se compone de dos conjuntos de entrenamiento, una más pequeño con 100 000 muestras y otro
+que contiene alrededor de 500 000 muestras. En esta sección vamos a ver los resultados obtenidos
+con la estrategia 2 usando estos dos conjuntos de entrenamiento y probando con los dos programas
+de prueba.
+
+\subsubsection{Conjunto de entrenamiento de 100 000 muestras}
+
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
+las siguientes métricas de generación:
+
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:}
     \item \textbf{Tiempo en cargar los pesos del modelo:}
@@ -120,14 +153,21 @@ The function mov ecx, EBX represents the value to the least significant bit of 8
     \item \textbf{Memoria utilizada:}
 \end{itemize}
 
+En el código \ref{code:Prueba1_Estrategia2_1_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba1_Estrategia2_1_ClusterAC}
 \end{mycode}
 
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemos
+las siguientes métricas de generación:
+
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:}
     \item \textbf{Tiempo en cargar los pesos del modelo:}
@@ -135,33 +175,44 @@ The function mov ecx, EBX represents the value to the least significant bit of 8
     \item \textbf{Memoria utilizada:}
 \end{itemize}
 
+En el código \ref{code:Prueba2_Estrategia2_1_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba2_Estrategia2_1_ClusterAC}
+\end{mycode}ç
+
+\subsubsection{Conjunto de entrenamiento de 500 000 muestras}
+
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
+las siguientes métricas de generación:
+
+\begin{itemize}
+    \item \textbf{Tiempo en instanciar el modelo:}
+    \item \textbf{Tiempo en cargar los pesos del modelo:}
+    \item \textbf{Tiempo de inferencia:}
+    \item \textbf{Memoria utilizada:}
+\end{itemize}
+
+En el código \ref{code:Prueba1_Estrategia2_2_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+
+    \end{minted}
+    \caption[]{ (Elaboración propia)}
+    \label{code:Prueba1_Estrategia2_2_ClusterAC}
 \end{mycode}
 
-
-
-
-
-
-\begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
-\end{itemize}
-
-\begin{mycode}
-    \begin{minted}[fontsize=\scriptsize]{c}
-
-    \end{minted}
-    \caption[]{ (Elaboración propia)}
-    \label{code:}
-\end{mycode}
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemos
+las siguientes métricas de generación:
 
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:}
@@ -170,17 +221,32 @@ The function mov ecx, EBX represents the value to the least significant bit of 8
     \item \textbf{Memoria utilizada:}
 \end{itemize}
 
+En el código \ref{code:Prueba2_Estrategia2_2_ClusterAC} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba2_Estrategia2_2_ClusterAC}
 \end{mycode}
 
 \subsection{Lightning IA Studio}
 \label{subsec:lightning_ia_studio}
 
+% Corregido 10/01/2024
+% TODO:daniel: Revisar los resultados de Lightning IA Studio
+
+Como he mencionado anteriormente, en \textit{Lightning IA Studio} se ha ejecutado el
+entrenamiento únicamente con la estrategia 2 y con el conjunto de entrenamiento de
+500 000 muestras. En esta sección vamos a ver los resultados obtenidos con esta
+configuración.
+
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
+las siguientes métricas de generación:
+
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:}
     \item \textbf{Tiempo en cargar los pesos del modelo:}
@@ -188,14 +254,21 @@ The function mov ecx, EBX represents the value to the least significant bit of 8
     \item \textbf{Memoria utilizada:}
 \end{itemize}
 
+En el código \ref{code:Prueba1_Estrategia2_LightningAI} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba1_Estrategia2_LightningAI}
 \end{mycode}
 
+Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
+la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemos
+las siguientes métricas de generación:
+
 \begin{itemize}
     \item \textbf{Tiempo en instanciar el modelo:}
     \item \textbf{Tiempo en cargar los pesos del modelo:}
@@ -203,12 +276,15 @@ The function mov ecx, EBX represents the value to the least significant bit of 8
     \item \textbf{Memoria utilizada:}
 \end{itemize}
 
+En el código \ref{code:Prueba2_Estrategia2_LightningAI} podemos ver el resultado obtenido
+en la primera prueba.
+
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
     \caption[]{ (Elaboración propia)}
-    \label{code:}
+    \label{code:Prueba2_Estrategia2_LightningAI}
 \end{mycode}
 
 \section{Análisis de resultados}
