@@ -63,9 +63,6 @@ $HOME/soft/bin/python generate/lora.py
     --prompt "" 
     --checkpoint_dir checkpoints/stabilityai/stablecode-completion-alpha-3b 
     --lora_path out/lora/Estrategia_1/lit_model_lora_finetuned.pth 
-    --precision 16-true
-    --quantize bnb.nf4
-
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:comando_lora}
@@ -147,10 +144,10 @@ la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
 las siguientes métricas de generación:
 
 \begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.16 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.42 segundos
+    \item \textbf{Tiempo de inferencia:} 2.56 segundos, 39.12 tokens por segundo
+    \item \textbf{Memoria utilizada:} 5.82 GB
 \end{itemize}
 
 En el código \ref{code:Prueba1_Estrategia2_1_ClusterAC} podemos ver el resultado obtenido
@@ -158,7 +155,11 @@ en la primera prueba.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
-
+void ncecl3e(struct sub_data * sub_data) { 
+    sub_data = sub_data - 0x0b; 
+    union sub_data * sub_data = sub_data - 0x0b; 
+    sub_data - & sub_data - sub_data - sub_sub_data = - 0x4f800010b880000000e0000007d
+}
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:Prueba1_Estrategia2_1_ClusterAC}
@@ -169,10 +170,10 @@ la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemo
 las siguientes métricas de generación:
 
 \begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.16 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.43 segundos
+    \item \textbf{Tiempo de inferencia:} 3.16 segundos, 31.66 tokens por segundo
+    \item \textbf{Memoria utilizada:} 7.58 GB
 \end{itemize}
 
 En el código \ref{code:Prueba2_Estrategia2_1_ClusterAC} podemos ver el resultado obtenido
@@ -180,11 +181,11 @@ en la primera prueba.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
-
+%% % % rsp % rsp % rsp ***************************************************************** % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp rsp rsp % rsp % rsp rsp % rsp % rsp rsp % rsp % rsp % rsp rsp % rsp rsp % rsp % rsp % rsp % rsp rsp % rsp rsp % rsp % rsp rsp rsp % rsp % rn % rsp rsp % rsp % rsp % Resp % rsp % rsp % rsp rsp % rsp <%
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:Prueba2_Estrategia2_1_ClusterAC}
-\end{mycode}ç
+\end{mycode}
 
 \subsubsection{Conjunto de entrenamiento de 500 000 muestras}
 
@@ -193,10 +194,10 @@ la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
 las siguientes métricas de generación:
 
 \begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.15 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.37 segundos
+    \item \textbf{Tiempo de inferencia:} 2.52 segundos, 39.65 tokens por segundo
+    \item \textbf{Memoria utilizada:} 5.82 GB
 \end{itemize}
 
 En el código \ref{code:Prueba1_Estrategia2_2_ClusterAC} podemos ver el resultado obtenido
@@ -204,7 +205,10 @@ en la primera prueba.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
-
+void ncecl3e(struct sub_data * sub_data) {
+    sub_data = sub_data - 0x0b; union sub_data * sub_data = sub_data - 0x0b;
+    sub_data - & sub_data - sub_data - sub_sub_data = - 0x4f800010b880000000e0000007d
+}
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:Prueba1_Estrategia2_2_ClusterAC}
@@ -215,10 +219,10 @@ la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemo
 las siguientes métricas de generación:
 
 \begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
+    \item \textbf{Tiempo en instanciar el modelo:} 0.16 segundos
+    \item \textbf{Tiempo en cargar los pesos del modelo:} 4.36 segundos
+    \item \textbf{Tiempo de inferencia:} 3.17 segundos, 31.50 tokens por segundo
+    \item \textbf{Memoria utilizada:} 7.58 GB
 \end{itemize}
 
 En el código \ref{code:Prueba2_Estrategia2_2_ClusterAC} podemos ver el resultado obtenido
@@ -226,7 +230,7 @@ en la primera prueba.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
-
+%% % % rsp % rsp % rsp ***************************************************************** % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp % rsp rsp rsp % rsp % rsp rsp % rsp % rsp rsp % rsp % rsp % rsp rsp % rsp rsp % rsp % rsp % rsp % rsp rsp % rsp rsp % rsp % rsp rsp rsp % rsp % rn % rsp rsp % rsp % rsp % Resp % rsp % rsp % rsp rsp % rsp <%
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:Prueba2_Estrategia2_2_ClusterAC}
