@@ -11,8 +11,6 @@ En la realización de este proyecto se ha utilizado dos entornos de ejecución d
 \begin{itemize}
     \item \textbf{Entorno local:} se ha utilizado el cluster \textit{sert} del departamento
         de Arquitectura de Computadores de la Universitat Politècnica de Catalunya.
-    \item \textbf{Entorno en la nube:} se ha utilizado una plataforma de entrenamiento en la nube
-        llamada Lightning IA Studio.
 \end{itemize}
 
 \section{Plataforma de desarrollo \textit{lit-gpt}}
@@ -168,60 +166,6 @@ Las limitaciones que tiene este entorno de ejecución son las siguientes:
         para el entrenamiento de modelos de lenguaje. Por lo tanto, se deberán de configurar, instalar
         y comprobar el correcto funcionamiento de las librerías necesarias para el entrenamiento.
 \end{itemize}
-
-\subsection{Lightning IA Studio}
-\label{subsec:lightning_ia_studio}
-
-% Corregido 08/01/2024
-% TODO:daniel: Revisar Lightning IA Studio
-
-Lightning IA Studio es una plataforma de entrenamiento en la nube que permite entrenar
-modelos de lenguaje de manera sencilla. Lo que promete es un entorno de entrenamiento
-sencillo, rápido, escalable y sin necesidad de configurar el entorno. Esta plataforma
-se encuentra en fase beta y puedes acceder al instante si se tienen cuenta acabada en
-edu. En la figura \ref{fig:lightning_ia_studio} tenemos una captura de pantalla de la
-plataforma.
-
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_08/Lightning_Studio.png}
-    \end{center}
-    \caption[Captura de pantalla de la interfaz de usuario de Lightning Studio]{Captura de pantalla de la interfaz de usuario de Lightning Studio (Elaboración propia)}
-    \label{fig:lightning_ia_studio}
-\end{figure}
-
-Así mismo, nos ofrece un entorno amigable y sencillo, donde por ejemplo podemos cambiar de
-un entorno de CPU a un entorno de GPU y viceversa con un sencillo clic. Nos ofrece estos dos
-entornos con las siguientes características:
-
-\begin{itemize}
-    \item \textbf{Entorno CPU}
-    \begin{itemize}
-        \item Un entorno con 4 núcleos de CPU pensado para tareas menos pesadas.
-        \item Un entorno con 32 núcleos de CPU pensado para tareas más pesadas como la preparación de conjuntos de entrenamientos muy grandes.
-    \end{itemize}
-    \item \textbf{Entorno GPU: }
-    \begin{itemize}
-        \item 1 o 4 NVIDIA A10 Tensor core optimizada para trabajos de IA
-        \item 1 o 4 NVIDIA V100 Tensor core optimizada para trabajos de IA
-        \item 1 o 4 NVIDIA T4 Tensor core optimizada para trabajos de IA
-    \end{itemize}
-\end{itemize}
-
-El servicio de Lightning IA Studio sigue un modelo de pago por uso. Donde se utilizan
-créditos que equivalen a horas de GPU. Concretamente, 15 créditos nos da para 6 horas de
-uso en la GPU. Así mismo, nos ofrecen 15 créditos gratuitos cada mes. \cite{lightningiaPricing}
-
-\subsubsection{Limitaciones}
-\label{subsubsec:limitaciones}
-
-% Corregido 08/01/2024
-% TODO:daniel: Revisar limitaciones de Lightning IA Studio
-
-La principal limitación que tiene esta plataforma es que es un servicio de pago que dentro
-del contexto de este proyecto no se ha asumido debido a que se ha utilizado como refuerzo, es
-decir, donde no se ha llegado con el clúster del departamento de Arquitectura de Computadores
-se ha llegado con esta solución.
 
 \section{Ejecución}
 \label{sec:ejecucion}
@@ -394,31 +338,3 @@ Y las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejempl
     \item \textbf{Tiempo de entrenamiento:}
     \item \textbf{Memoria utilizada:}
 \end{itemize}
-
-\subsection{Lightning IA Studio}
-\label{subsec:lightning_ia_studio_ejecucion}
-
-% Corregido 10/01/2024
-% TODO:daniel: Revisar Lightning IA Studio
-
-En el entorno de Lightning IA Studio se ha ejecutado tan solo la estrategia 2, ya que
-esta es la que a nivel de recursos computacionales es más exigente. Para la ejecución
-de la estrategia 2 se ha utilizado los mismos pasos que se han utilizado en el clúster
-del departamento de Arquitectura de Computadores, que se explica en el código \ref{code:Ejecución_Estrategia_2}.
-
-En esta ejecución, al disponer de más potencia computacional se ha podido ejecutar un modelo
-de lenguaje más grande. En concreto, se ha utilizado el modelo de LLama 2 de 7 billones de
-parámetros.
-
-Las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejemplos:
-
-% TODO:daniel: Añadir las metricas de entrenamiento de la estrategia 2
-\begin{itemize}
-    \item \textbf{Máxima longitud de la secuencia:} 2048
-    \item \textbf{Número de iteraciones:} 500 000
-    \item \textbf{Tiempo de entrenamiento:}
-    \item \textbf{Memoria utilizada:}
-\end{itemize}
-
-
-

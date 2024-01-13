@@ -41,7 +41,7 @@ Después de haber ejecutado el \textit{fine-tuning} de nuestro modelo, vamos a h
 que hicimos en el capítulo \ref{cap:viabilidad_hipotesis} para comprobar si el modelo es capaz de
 generar código en C que sea compilable y ejecutable. Para ello, vamos a utilizar el mismo conjunto
 de datos. Diferenciaremos entre los resultados obtenidos en el Clúster del departamento de Arquitectura
-de Computadores y los resultados obtenidos en Lightning IA Studio.
+de Computadores.
 
 Para poder comprobar el resultado lanzaremos el comando que se describe en el código \ref{code:comando_lora},
 en la parte de la opcion \mintinline{bash}|--prompt| pondremos el siguiente texto:
@@ -230,61 +230,6 @@ en la primera prueba.
     \end{minted}
     \caption[]{ (Elaboración propia)}
     \label{code:Prueba2_Estrategia2_2_ClusterAC}
-\end{mycode}
-
-\subsection{Lightning IA Studio}
-\label{subsec:lightning_ia_studio}
-
-% Corregido 10/01/2024
-% TODO:daniel: Revisar los resultados de Lightning IA Studio
-
-Como he mencionado anteriormente, en \textit{Lightning IA Studio} se ha ejecutado el
-entrenamiento únicamente con la estrategia 2 y con el conjunto de entrenamiento de
-500 000 muestras. En esta sección vamos a ver los resultados obtenidos con esta
-configuración.
-
-Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
-la estrategia 2 y la prueba con el programa de \textit{Hello World} y obtenemos
-las siguientes métricas de generación:
-
-\begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
-\end{itemize}
-
-En el código \ref{code:Prueba1_Estrategia2_LightningAI} podemos ver el resultado obtenido
-en la primera prueba.
-
-\begin{mycode}
-    \begin{minted}[fontsize=\scriptsize]{c}
-
-    \end{minted}
-    \caption[]{ (Elaboración propia)}
-    \label{code:Prueba1_Estrategia2_LightningAI}
-\end{mycode}
-
-Ejecutamos los comandos que se describen en el código \ref{code:comando_lora} para
-la estrategia 2 y la prueba con el programa de \textit{Binary Search} y obtenemos
-las siguientes métricas de generación:
-
-\begin{itemize}
-    \item \textbf{Tiempo en instanciar el modelo:}
-    \item \textbf{Tiempo en cargar los pesos del modelo:}
-    \item \textbf{Tiempo de inferencia:}
-    \item \textbf{Memoria utilizada:}
-\end{itemize}
-
-En el código \ref{code:Prueba2_Estrategia2_LightningAI} podemos ver el resultado obtenido
-en la primera prueba.
-
-\begin{mycode}
-    \begin{minted}[fontsize=\scriptsize]{c}
-
-    \end{minted}
-    \caption[]{ (Elaboración propia)}
-    \label{code:Prueba2_Estrategia2_LightningAI}
 \end{mycode}
 
 \section{Análisis de resultados}
