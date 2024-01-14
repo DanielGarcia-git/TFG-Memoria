@@ -2,19 +2,20 @@
 \label{cap:resultados}
 
 % Corregido 02/01/2023
-% TODO:daniel: Revisar el capítulo de resultados
+% Revisado 14/01/2024
 
 En este capítulo se presentan los resultados obtenidos en el desarrollo de este trabajo. 
 En la sección \ref{sec:evaluacion} se describe la metodología de evaluación utilizada 
 para medir el desempeño de los modelos. En la sección \ref{sec:resultados_finales} se
-presentan los resultados finales obtenidos con el modelo ChatGPT. Finalmente, en la
-sección \ref{sec:analisis_resultados} se realiza un análisis de los resultados obtenidos.
+presentan los resultados finales obtenidos con el modelo \textit{Stable Code} después 
+de realizarle un \textit{fine-tuning}. Finalmente, en la sección \ref{sec:analisis_resultados}
+se realiza un análisis de los resultados obtenidos.
 
 \section{Metodología de evaluación}
 \label{sec:evaluacion}
 
 % Corregido 08/01/2024
-% TODO:daniel: Revisar la metodología de evaluación
+% Revisado 14/01/2024
 
 Para poder evaluar la calidad de los resultados se han definido una serie de criterios que
 nos permitirán evaluar los resultados obtenidos. Estos criterios son los siguientes:
@@ -28,20 +29,20 @@ nos permitirán evaluar los resultados obtenidos. Estos criterios son los siguie
 
 Por lo tanto, si el resultado cumple con el primer criterio, diremos que es un resultado aceptable,
 ya que ha generado un código sintácticamente correcto. Si el resultado cumple con el segundo criterio
-diremos que es un resultado bueno, ya que ha generado un código sintácticamente correcto y funcionalmente
+diremos que es un resultado excelente, ya que ha generado un código sintácticamente correcto y funcionalmente
 correcto. Si no cumple con ninguno de los dos criterios, diremos que es un resultado malo.
 
 \section{Resultados finales}
 \label{sec:resultados_finales}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar los resultados finales
+% Revisado 14/01/2024
 
 Después de haber ejecutado el \textit{fine-tuning} de nuestro modelo, vamos a hacer las mismas pruebas
 que hicimos en el capítulo \ref{cap:viabilidad_hipotesis} para comprobar si el modelo es capaz de
 generar código en C que sea compilable y ejecutable. Para ello, vamos a utilizar el mismo conjunto
-de datos. Diferenciaremos entre los resultados obtenidos en el Clúster del departamento de Arquitectura
-de Computadores.
+de datos. Diferenciare entre las diferentes estrategias de entrenamiento definidas en el capítulo
+\ref{cap:estrategia_entrenamiento}.
 
 Para poder comprobar el resultado lanzaremos el comando que se describe en el código \ref{code:comando_lora},
 en la parte de la opcion \mintinline{bash}|--prompt| pondremos el siguiente texto:
@@ -67,7 +68,7 @@ $HOME/soft/bin/python generate/lora.py
     --quantize bnb.nf4
 
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Comando lanzado para generar una salida dado un \textit{prompt} utilizando los pesos refinados por el \textit{fine-tuning}]{Comando lanzado para generar una salida dado un \textit{prompt} utilizando los pesos refinados por el \textit{fine-tuning} (Elaboración propia)}
     \label{code:comando_lora}
 \end{mycode}
 
@@ -98,7 +99,7 @@ en la primera prueba.
     \begin{minted}[fontsize=\scriptsize]{c}
 The function endbr64 returns to the caller by following the function chain with the function endbr64, a function that returns an error code. The function endbr64 calls the function puts. The function puts calls puts with the argument line, which is a pointer to the line. The function puts calls the function puts, a function that calls  put to print the line. The function puts calls the function puts, a function that calls put to print the line. The
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 1 y utilizando como entrada el programa de \textit{Hello World}]{Salida del modelo entrenado con la estrategia 1 y utilizando como entrada el programa de \textit{Hello World} (Elaboración propia)}
     \label{code:Prueba1_Estrategia1_ClusterAC}
 \end{mycode}
 
@@ -123,7 +124,7 @@ The function endbr64 returns the absolute value of the least significant bit of 
 ### Instruction:
 The function mov ecx, EBX represents the value to the least significant bit of 8 byte at address EBX. The value in EBX is 1 on success, and 0 if the least significant
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 1 y utilizando como entrada el programa de \textit{Binary Search}]{Salida del modelo entrenado con la estrategia 1 y utilizando como entrada el programa de \textit{Binary Search} (Elaboración propia)}
     \label{code:Prueba2_Estrategia1_ClusterAC}
 \end{mycode}
 
@@ -160,7 +161,7 @@ en la primera prueba.
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 2 (100 000 muestras) y utilizando como entrada el programa de \textit{Hello World}]{Salida del modelo entrenado con la estrategia 2 (100 000 muestras) y utilizando como entrada el programa de \textit{Hello World} (Elaboración propia)}
     \label{code:Prueba1_Estrategia2_1_ClusterAC}
 \end{mycode}
 
@@ -182,7 +183,7 @@ en la primera prueba.
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 2 (100 000 muestras) y utilizando como entrada el programa de \textit{Binary Search}]{Salida del modelo entrenado con la estrategia 2 (100 000 muestras) y utilizando como entrada el programa de \textit{Binary Search} (Elaboración propia)}
     \label{code:Prueba2_Estrategia2_1_ClusterAC}
 \end{mycode}ç
 
@@ -206,7 +207,7 @@ en la primera prueba.
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 2 (500 000 muestras) y utilizando como entrada el programa de \textit{Hello World}]{Salida del modelo entrenado con la estrategia 2 (500 000 muestras) y utilizando como entrada el programa de \textit{Hello World} (Elaboración propia)}
     \label{code:Prueba1_Estrategia2_2_ClusterAC}
 \end{mycode}
 
@@ -228,7 +229,7 @@ en la primera prueba.
     \begin{minted}[fontsize=\scriptsize]{c}
 
     \end{minted}
-    \caption[]{ (Elaboración propia)}
+    \caption[Salida del modelo entrenado con la estrategia 2 (500 000 muestras) y utilizando como entrada el programa de \textit{Binary Search}]{Salida del modelo entrenado con la estrategia 2 (500 000 muestras) y utilizando como entrada el programa de \textit{Binary Search} (Elaboración propia)}
     \label{code:Prueba2_Estrategia2_2_ClusterAC}
 \end{mycode}
 
