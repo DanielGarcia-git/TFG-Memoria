@@ -1,12 +1,12 @@
-\chapter{Viabilidad de la Hipótesis a través de ChatGPT}
+\chapter{Viabilidad de la hipótesis a través de ChatGPT}
 \label{cap:viabilidad_hipotesis}
 
 % Corregido 02/01/2023
-% TODO:daniel: Revisar la sección de resultados preliminares
+% Revisado 14/01/2023
 
 Para hacernos una idea de qué tipo de resultado obtendremos, es decir, si un modelo
 tipo LLM es capaz de generar respuestas correctas dando un binario en su formato
-de código en ensamblador, se realizó una prueba con el modelo GPT-4 utilizando
+de código en ensamblador, se realizará una prueba con el modelo GPT-4 utilizando
 la interfaz ChatGPT.
 
 Utilizaremos GPT-4 debido a que es el modelo más grande disponible en ChatGPT y su
@@ -17,7 +17,7 @@ con el modelo.
 \label{sec:que_es_chatgpt}
 
 % Corregido 02/01/2023
-% TODO:daniel: Revisar la sección de que es chatgpt
+% Revisado 14/01/2023
 
 ChatGPT es una interfaz de usuario que permite interactuar con el modelo GPT-3.5 y GPT-4
 de manera sencilla. Esta interfaz fue desarrollada por OpenIA y se encuentra disponible
@@ -33,11 +33,11 @@ a la hora de realizar las pruebas con GPT-4. Estas limitaciones son las siguient
 
 \begin{itemize}
     \item Según OpenIA GPT-4 tiene un 40\% más de probabilidad de producir un resultado
-        factualmente correcto que GPT-3.5. Pero según algunos investigadores, las
+        factualmente correcto que GPT-3.5. Pero según algunos investigadores aseguran que las
         alucinaciones de GPT-4 son más preocupantes, ja que GPT-4 es capaz de inventar
         de forma mucho más convincente.
     \item Limitaciones de tamaño en el \textit{promopting} de entrada, lo cual en nuestro
-        caso es una limitación importante, ya que nuestros datos son muy grandes.
+        caso es una limitación importante, ya que nuestros datos de entrada son muy grandes.
 \end{itemize}
 
 \begin{figure}[H]
@@ -52,21 +52,21 @@ a la hora de realizar las pruebas con GPT-4. Estas limitaciones son las siguient
 \label{sec:prueba_gpt4}
 
 % Corregido 02/01/2023
-% TODO:daniel: Revisar la sección de prueba con gpt-4
+% Revisado 14/01/2023
 
 Para realizar las pruebas con GPT-4 utilizaremos dos aproximaciones. La primera aproximación
 se basará en preguntarle directamente si es capaz de generar el código en C a partir de un
 ensamblador.
 
 Para la segunda aproximación utilizaremos el método \textit{prompt finetuning} descrito en
-la sección \ref{sec:fine_tuning}. Este método consiste en entrenar el modelo con un conjunto
+la sección \ref{subsec:fine_tuning}. Este método consiste en entrenar el modelo con un conjunto
 de datos de entrenamiento y posteriormente evaluarlo con un conjunto de datos de prueba.
 
 \subsection{Prueba directa}
 \label{subsec:prueba_directa}
 
 % Corregido 03/01/2023
-% TODO:daniel: Revisar la sección de prueba directa
+% Revisado 14/01/2023
 
 Para la prueba directa utilizaremos un código sencillo, empezaremos con un código en C
 que simplemente haga el típico \textit{Hello World} y posteriormente lo convertiremos a
@@ -153,7 +153,7 @@ int main() {
     \label{cod:resultado_gpt4_directo}
 \end{mycode}
 
-Para tener más detalles aplicando este método vamos se ha probado con un código más complejo.
+Para que las pruebas sean más robustas se ha probado con un código más complejo.
 En este caso se ha utilizado la implementación en C del algoritmo \textit{binary search} en
 su forma iterativa y recursiva. El código en C se muestra en el código \ref{cod:binarySearchC}
 y el código en ensamblador se muestra en el código \ref{cod:binarySearchAsm_parcial} (para ver
@@ -230,11 +230,11 @@ int binarysearch2(const int *arr, int l, int r, int x) {
     130c:	5d                   	pop    %rbp
     130d:	c3                   	ret
     \end{minted}
-    \caption[Código parcial en Assembler del algoritmo \textit{binary search}]{Código parcial en Assembler del algoritmo \textit{binary search} (Elaboración propia)}
+    \caption[Código parcial en assembler del algoritmo \textit{binary search}]{Código parcial en Assembler del algoritmo \textit{binary search} (Elaboración propia)}
     \label{cod:binarySearchAsm_parcial}
 \end{mycode}
 
-La salida obtenida con GPT-4 se muestra en el código \ref{fig:resultado_gpt4_directo_V2}.
+La salida obtenida con GPT-4 se muestra en el código \ref{cod:resultado_gpt4_directo_V2}.
 Como se puede observar, el resultado obtenido es bastante bueno y se acerca bastante al
 código original en C. Pero observamos que no ha sido capaz de distinguir entre la función
 iterativa y la función recursiva. Creo que esto de debe más a una alucinación del modelo,
@@ -278,11 +278,11 @@ int binarysearch2(int* array, int start, int end, int value) {
     \label{cod:resultado_gpt4_directo_V2}
 \end{mycode}
 
-\subsection{Prueba con \textit{prompt finetuning}}
+\subsection{Prueba aplicando \textit{prompt finetuning}}
 \label{subsec:prueba_prompt_finetuning}
 
 % Corregido 03/01/2023
-% TODO:daniel: Revisar la sección de prueba con prompt finetuning
+% Revisado 14/01/2023
 
 Como he mencionado anteriormente, el método \textit{prompt finetuning} consiste en entrenar
 el modelo con un conjunto de datos de entrenamiento y posteriormente evaluarlo con un conjunto
@@ -325,23 +325,13 @@ pruebas:
     Please provide the C code translations for the last example.''}
 \end{quote}
 
-La salida obtenida con GPT-4 se muestra en la figura \ref{fig:resultado_gpt4_prompt}. Como se puede
+La salida obtenida con GPT-4 se muestra en la figura \ref{cod:resultado_gpt4_prompt}. Como se puede
 observar, el resultado obtenido no es el mejor, ya que contiene errores funcionales y, por lo tanto,
 el código generado no se comportaría de la misma forma que el código original en C. Por dar un ejemplo,
 como se puede observar en el código \ref{cod:heapSortC} la función \mintinline{c}|max_heapify()| se ha
 implementado de forma iterativa, y el código generado por GPT-4 es recursivo.
 
-Esto seguramente es debido a que GPT haya generado el código basándose en lo que pueda saber del algoritmo
-\textit{heap sort} y no en el código en ensamblador.
-
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[scale=0.3]{figuras/Capitulo_05/ResultadoPromptGPT4.png}
-    \end{center}
-    \caption[Resultado de la prueba con \textit{prompt fine-tuning}]{Resultado de la prueba con \textit{prompt fine-tuning} (Elaboración propia)}
-    \label{fig:resultado_gpt4_prompt}
-\end{figure}
-
+\newpage
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 void max_heapify(int *a, int i, int n) {
@@ -383,8 +373,56 @@ void build_maxheap(int *a, int n) {
     \label{cod:heapSortC}
 \end{mycode}
 
+Esto seguramente es debido a que GPT haya generado el código basándose en lo que pueda saber del algoritmo
+\textit{heap sort} y no en el código en ensamblador.
+
+\begin{mycode}
+    \begin{minted}[fontsize=\scriptsize]{c}
+void max_heapify(int arr[], int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+
+    if (l < n && arr[l] > arr[largest])
+        largest = l;
+
+    if (r < n && arr[r] > arr[largest])
+        largest = r;
+
+    if (largest != i) {
+        int swap = arr[i];
+        arr[i] = arr[largest];
+        arr[largest] = swap;
+        max_heapify(arr, n, largest);
+    }
+}
+
+void heapsort(int arr[], int n) {
+    for (int i = n / 2 - 1; i >= 0; i--)
+        max_heapify(arr, n, i);
+
+    for (int i = n - 1; i > 0; i--) {
+        int swap = arr[0];
+        arr[0] = arr[i];
+        arr[i] = swap;
+        max_heapify(arr, i, 0);
+    }
+}
+
+void build_maxheap(int arr[], int n) {
+    for (int i = n / 2 - 1; i >= 0; i--)
+        max_heapify(arr, n, i);
+}
+    \end{minted}
+    \caption[Código generado por GPT-4 en C del algoritmo \textit{heap sort}]{Código generado por GPT-4 en C del algoritmo \textit{heap sort} (Elaboración propia)}
+    \label{cod:resultado_gpt4_prompt}
+\end{mycode}
+
 \section{Conclusiones}
 \label{sec:conclusiones}
+
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
 Como se ha podido observar en las secciones anteriores, el modelo GPT-4 es capaz de generar
 código en C a partir de código en ensamblador. El código generado por GPT-4 es bastante
@@ -392,9 +430,9 @@ similar al código original en C, a pesar de ser un código compilable, es decir
 sintáctico es correcto, a nivel funcional no es del todo correcto como se ha podido
 ver en los ejemplos anteriores.
 
-Por lo tanto, visto los ejemplos hemos observador que modelos como GPT-4, es decir, LLM's
+Por lo tanto, visto los ejemplos hemos observador que modelos como GPT-4, es decir, los LLM's
 son capaces de generar código en C a partir de código en ensamblador, pero no son capaces
-de generar código en C funcional, es decir, que se comporte de la misma forma que el Código
+de generar código en C funcional, es decir, que se comporte de la misma forma que el código
 original.
 
 Seguramente con un \textit{fine-tuning} adecuado podemos llegar a conseguir que el código generado
