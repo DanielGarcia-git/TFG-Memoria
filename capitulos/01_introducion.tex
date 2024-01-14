@@ -3,10 +3,11 @@
 
 \setcounter{page}{1}
 
-% Corregido 08/01/2024
-% TODO:daniel: Revisar la introducción
+% Corregido 14/01/2024
+% Revisado 14/01/2024
+% TODO:daniel: Intentar añadi un poco mas de contexto
 
-Es innegable que el \textit{software} ha cobrado una importancia en nuestra sociedad, tal es
+Es innegable que el \textit{software} ha cobrado una gran importancia en nuestra sociedad, tal es
 la importancia que la industria del \textit{software} ha crecido al doble de la tasa de todas
 las industrias en los últimos 10 años. Por dar un dato más concreto, en el año 2020
 (el año de la pandemia) mientras la economía se contraía un 3.3\% la industria del
@@ -14,68 +15,69 @@ las industrias en los últimos 10 años. Por dar un dato más concreto, en el a�
 mundial en los próximos cinco años. Teniendo que en septiembre de 2021 siete de las
 diez empresas más valiosas del mundo son empresas de \textit{software}. \cite{IndustriaSoftware}
 
-Dada su relevancia en el mundo actual, es importante que el \textit{software} sea de calidad,
-sea seguro, sea fiable y sea mantenible. Para cumplir todos estos requisitos aplicamos ingeniería
-inversa sobre el \textit{software}, de tal manera que muchas veces podemos encontrar vulnerabilidades
-en el \textit{software} que pueden ser explotadas por atacantes, los cuales también aplican técnicas
-similares de ingeniería inversa.
+Esta importancia que ha cobrado el \textit{software} en nuestra sociedad ha hecho que
+las características del \textit{software} sean cada vez más importantes, es decir, debemos
+crear \textit{software} que sea seguro, fiable, escalable, etc. Para poder cumplir con
+estas características se han creado una serie de metodologías y técnicas que nos ayudan
+a poder cumplir con estas características. Una de estas técnicas es la ingeniería inversa.
 
-La inguinaria inversa es un proceso en el cual a través de razonamiento deductivo se intenta
-obtener información de un sistema, en este caso de un programa informático. En el caso de
-la ingeniería inversa de \textit{software} se intenta obtener información del código fuente
-a partir del código objeto o ejecutable.
+La ingeniería inversa es un proceso en el cual a través de razonamiento deductivo se intenta
+obtener información de un sistema, en este caso de un programa informático. Este razonamiento
+deductivo requiere un nivel de conocimiento técnico alto por parte del que aplica la ingeniería
+inversa, ya que se requiere de conocimientos de arquitectura de computadores, de sistemas
+operativos, de lenguajes de programación, de compiladores, entre otros.
 
-Es un proceso complejo y que requiere de mucho tiempo y esfuerzo, por lo que se intenta
-automatizar este proceso. Una de las técnicas que se están explorando, debido al auge
-de la inteligencia artificial, es la aplicación de técnicas de inteligencia artificial
-para poder automatizar este proceso.
+Es un proceso complejo que requiere de mucho tiempo, esfuerzo y conocimiento técnico alto.
+Una de las técnicas que se están explorando para intentar automatizar el proceso, es la
+aplicación de técnicas de aprendizaje automático.
 
-Lo que intentaremos abordar en este proyecto es si asistiéndonos a través de modelos de lenguaje
-y de técnicas de inteligencia artificial, podemos generar código C a partir de un ejecutable
-en ensamblador.
+Lo que intentaremos abordar en este proyecto es resolver la siguiente hipótesis: \textbf{¿utilizando
+modelos de lenguaje del estilo GPT podemos automatizar la generación de código en C a partir de
+un ejecutable?}
 
 Todas estas cuestiones las trataremos dentro de esta memoria que se ha dividido en los
 siguientes capítulos:
 
 \begin{itemize}
-    \item \textbf{Capítulo 1: Introducción.} En este capítulo se introducirá el proyecto,
+    \item \textbf{Capítulo 1: Introducción} En este capítulo se introducirá el proyecto,
         se contextualizará y se detallará el contenido de esta memoria. Así mismo, se
         detallarán los actores implicados en el proyecto, los objetivos y subobjetivos
         que se quieren alcanzar y los posibles riesgos y obstáculos que se pueden encontrar.
-    \item \textbf{Capítulo 2: Justificación.} En este capítulo se detallarán el problema
+    \item \textbf{Capítulo 2: Justificación} En este capítulo se detallarán el problema
         a solucionar, los estudios previos y la solución tomada.
-    \item \textbf{Capítulo 3: Estado del arte de la ingeniería inversa.} En este capítulo
-        se detallará el estado del arte de la ingeniería inversa, las herramientas que
-        existen actualmente y se detallarán los diferentes métodos de ingeniería inversa 
-        que existen.
+    \item \textbf{Capítulo 3: Estado del arte} En este capítulo se detallará el estado
+        del arte de la ingeniería inversa, las herramientas que existen actualmente y
+        se detallarán los diferentes métodos de ingeniería inversa que existen. Así mismo,
+        se hablará sobre el estado del arte de los modelos de lenguaje, métodos de aprendizaje
+        y métodos de reducción de memoria a la hora de entrenarlos.
     \item \textbf{Capítulo 4: Fases de la Ingenieria inversa asistida por IA} En este
         capítulo se detallará la hoja de ruta que se ha seguido para el desarrollo de este
         proyecto.
     \item \textbf{Capítulo 5: Viabilidad de la Hipótesis a través de ChatGPT} En este capítulo
         se detallará la viabilidad de la hipótesis planteada a través de un modelo de lenguaje
-        disponible interactuable a través de internet.
-    \item \textbf{Capítulo 6: Estrategia de entrenamiento} En este capítulo se detallará
-    la estrategia de entrenamiento que se ha utilizado para poder entrenar el modelo.
-    \item \textbf{Capítulo 7: Diseño e implementación del sistema de scripts.} En este
+        disponible e interactuable a través de internet.
+    \item \textbf{Capítulo 6: Estrategia de entrenamiento} En este capítulo se detallará que
+        modelo se ha elegido y la estrategia de entrenamiento que se ha utilizado para poder 
+        entrenar el modelo.
+    \item \textbf{Capítulo 7: Diseño e implementación del sistema de scripts} En este
         capítulo se detallará el diseño e implementación del sistema de scripts que se
         ha desarrollado para poder generar el \textit{dataset} que se utilizará para el
         entrenamiento del modelo.
     \item \textbf{Capítulo 8: Configuración y ejecución de los entornos de entrenamiento} En
         este capítulo se detallará la configuración y ejecución de los entornos de entrenamiento
         que se han utilizado para poder entrenar el modelo.
-    \item \textbf{Capítulo 9: Resultados.} En este capítulo se detallarán los resultados
+    \item \textbf{Capítulo 9: Resultados} En este capítulo se detallarán los resultados
         obtenidos durante el entrenamiento del modelo.
-    \item \textbf{Capítulo 10: Planificación.} En este capítulo se detallará la planificación
+    \item \textbf{Capítulo 10: Planificación} En este capítulo se detallará la planificación
         del proyecto, así como la división en tareas y la estimación de los recursos
-        necesarios para poder llevar a cabo el proyecto. Así mismo, se detallará la
-        metodología de trabajo que se ha utilizado para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 11: Presupuesto.} En este capítulo se detallará el presupuesto
-        del proyecto, así como los recursos necesarios para poder llevar a cabo el proyecto.
-    \item \textbf{Capítulo 12: Sostenibilidad.} En este capítulo se detallará el impacto
+        necesarios. Así mismo, se detallará la metodología de trabajo que se ha utilizado.
+    \item \textbf{Capítulo 11: Presupuesto} En este capítulo se detallará el presupuesto
+        del proyecto, así como los recursos necesarios.
+    \item \textbf{Capítulo 12: Sostenibilidad} En este capítulo se detallará el impacto
         que tendrá el proyecto en el medio ambiente, así como el impacto social y económico.
-    \item \textbf{Capítulo 13: Conclusiones.} En este capítulo se detallarán las conclusiones
+    \item \textbf{Capítulo 13: Conclusiones} En este capítulo se detallarán las conclusiones
         obtenidas durante el desarrollo del proyecto.
-    \item \textbf{Capítulo 14: Trabajo futuro.} En este capítulo se detallarán los Posibles
+    \item \textbf{Capítulo 14: Trabajo futuro} En este capítulo se detallarán los posibles
         trabajos futuros que se pueden realizar a partir de este proyecto.
 \end{itemize}
 
@@ -83,22 +85,22 @@ siguientes capítulos:
 \label{sec:contextualizacion}
 
 % Corregido 10/01/2024
-% Revisado 27/12/2023
+% Revisado 14/01/2024
 
 Este proyecto se enmarca dentro de un proyecto de final de Grado de Ingeniería
 Informática, en la especialidad de Tecnologías de la Información. Este grado se
 imparte en la Facultad de Informática de Barcelona (FIB) y está dentro del contexto
 de la Universitat Politècnica de Catalunya (UPC).
 
-En este trabajo se ha propuesto abordar una serie de competencias técnicas, que
-pasaré a detallar más adelante, que están estrechamente relacionadas con la
-especialidad cursada. Estas son las competencias técnicas:
+En este trabajo se ha propuesto abordar una serie de competencias técnicas que 
+stán estrechamente relacionadas con la especialidad cursada. Estas son las 
+competencias técnicas:
 
 \begin{itemize}
-    \item \textbf{CTI3.1} Concebre sistemes, aplicacions i serveis basats en
-        tecnologies de xarxa, tenint en compte Internet, web, comerç electrònic,
-        multimèdia, serveis interactius i computació ubiqua. [En profunditat] 
-    \item \textbf{CTI3.3} Dissenyar, implantar i configurar xarxes i serveis. [Bastant]
+    \item \textbf{CTI3.1} Concebir sistemas, aplicaciones y servicios basados en
+        tecnologías de red, incluyendo Internet, web, comercio electrónico,
+        multimedia, servicios interactivos y computación ubicua. [En profundidad]
+    \item \textbf{CTI3.3} Diseñar, implementar y configurar redes y servicios. [Bastante]
 \end{itemize}
 
 La competencia \textbf{CTI3.1} se desarrollará a través de la investigación de modelos de
@@ -111,79 +113,90 @@ la ejecución de los mismos.
 \label{sec:actores}
 
 % Corregido 08/01/2024
-% Revisado 29/12/2023
+% Revisado 14/01/2024
 
 A continuación se pasarán a detallar a los actores implicados en el trabajo de final
 de grado. Estos actores pueden participar de manera directa o indirecta dentro del
 proyecto, pero tiene una relevancia importante dentro de este mismo:
 
 \begin{itemize}
-    \item \textbf{Investigador:} Este proyecto consta de un único investigador, Daniel
-        García Estevez. Este se encargará de hacer tareas tales como la investigación
+    \item \textbf{Investigador:} Este proyecto consta de un único investigador, \textbf{Daniel
+        García Estevez}. Este se encargará de hacer tareas tales como la investigación
         de modelos a utilizar, metodos de \textit{fine-tuning}, entre otras. Así mismo,
         también se encargará del desarrollo de las herramientas necesarias para el proyecto.
-    \item \textbf{Director y codirector:} El director del trabajo de final de grado, Alex
-        Pajuelo Gonzalez. Será el encargado de dirigir y supervisar este proyecto. Así
-        mismo, el codirector del proyecto, Juan José Costa Prats ara tareas similares al director.
+    \item \textbf{Director y codirector:} El director del trabajo de final de grado,\textbf{ Alex
+        Pajuelo Gonzalez}. Será el encargado de dirigir y supervisar este proyecto. Así
+        mismo, el codirector del proyecto, \textbf{Juan José Costa Prats} ara tareas similares al director.
     \item \textbf{Experto en Inteligencia Artificial:} este proyecto constará con un experto en
         inteligencia artificial que dará soporte en temas más específicos que se salen fuera del
-        alcance de este proyecto. El experto es Jordi Nin Guerrero profesor titular en el
+        alcance de este proyecto. El experto es \textbf{Jordi Nin Guerrero} profesor titular en el
         Departamento de Operaciones, Innovación y Data Sciences en ESADE.
-    \item \textbf{Colaboradores:} también contaremos con la ayuda de Xavi Verdú.
+    \item \textbf{Colaboradores:} también contaremos con la ayuda de \textbf{Xavi Verdú}.
 \end{itemize}
 
 \section{Objetivos y subobjetivos}
 \label{sec:objetivos}
 
-% Corregido
-% TODO:daniel: Revisar la redacción de los objetivos
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
-Como hemos venido explicando en el capítulo \ref{cap:justificacion} nuestro principal
+Como he introducido en el capítulo \ref{cap:introducion} nuestro principal
 objetivo en este proyecto es poder generar código en C compilable, realista y fiel
-al original, partiendo de un fichero ejecutable en su forma de ensamblador. Para
-poder alcanzar este objetivo nos asistiremos con inteligencia artificial de tal
-manera que podamos conseguir resultados óptimos.
+al original, partiendo de un fichero ejecutable. Para poder alcanzar este objetivo
+nos asistiremos con inteligencia artificial de tal manera que podamos conseguir
+resultados óptimos y rápidos.
 
 Para poder alcanzar este objetivo se ha decidido dividirlo en subobjetivos, de tal
 manera que podamos ir dando pasos hasta el objetivo principal. Los subobjetivos definidos
 son los siguientes:
 
 \begin{enumerate}
-    \item Despliegue de un modelo de redes neuronales para poder asistirnos a generar
-        código en C a partir de un ensamblado
-    \item Estudio y pruebas con modelos online tipo chatbot
+    \item Despliegue y entrenamiento de un modelo de redes neuronales ya existente para
+        poder asistirnos a generar código en C a partir de un ensamblado
+    \item Estudio y pruebas con modelos online tipo \textit{chatbot} para obtener de forma rápida
+        unos resultados preliminares.
     \item Creación de un \textit{dataset} para poder entrenar el modelo
+    \item Obtener conclusiones de la viabilidad de la hipótesis planteada
 \end{enumerate}
 
-En el primer objetivo nos proponemos poder desplegar en un entorno con las capacidades
-técnica suficientes para poder ejecutar un modelo de red neuronal que nos pueda asistir en
+En el primer subobjetivo nos proponemos poder desplegar en un entorno con las capacidades
+técnicas suficientes y disponibles para poder ejecutar un modelo de red neuronal que nos pueda asistir en
 las tareas de aplicar ingeniería inversa sobre un fichero ejecutable.
 
-En el segundo objetivo nos proponemos obtener resultados preliminares que nos faciliten
+En el segundo subobjetivo nos proponemos obtener resultados preliminares que nos faciliten
 unos resultados orientativos para poder estimar la calidad de los resultados que podamos
-obtener en nuestro objetivo principal. Para ello, nos asistiremos de modelos tipos chatbot
-que podemos consultar online y así poder obtener resultados inmediatos, sin necesidad
+obtener en nuestro objetivo principal. Para ello, nos asistiremos de modelos tipos \textit{chatbot}
+que podemos interactuar desde internet y así poder obtener resultados inmediatos, sin necesidad
 de desplegar un entorno dedicado.
+
+En el tercer subobjetivo nos proponemos automatizar la creación de un \textit{dataset} que
+nos permita entrenar el modelo de redes neuronales. Para ello, crearemos un sistema de scripts
+que se encargará de la creación de este \textit{dataset}.
+
+En el cuarto y último subobjetivo nos proponemos obtener conclusiones de la viabilidad de la
+hipótesis planteada. Para ello, nos basaremos en los resultados obtenidos en los subobjetivos
+anteriores.
 
 \section{Posibles riesgos y obstáculos}
 \label{sec:riesgos}
 
-% Corregido 05/01/2024
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
 Los obstáculos que se presentan en este proyecto son elevados debido a la incertidumbre
-que existe acerca de este tema. Dado que los antecedentes son prácticamente nulos, y
-debido a la tecnología que se encuentra en auge y aún en desarrollo, los posibles obstáculos
+que existe acerca de la hipótesis planteada. Dado que los antecedentes son escasos, y
+la tecnología usada encuentra en auge y aun en desarrollo, los posibles obstáculos
 o resultados no esperados que podamos hallar durante la investigación y el desarrollo
 son altamente significativos.
 
 Se han establecido los siguientes riesgos:
 
 \begin{itemize}
-    \item \textbf{Resultados no deseados:} podemos encontrarnos que a loa hora de querer
+    \item \textbf{Resultados no deseados:} podemos encontrarnos que a la hora de querer
         generar código C a partir de un ejecutable el modelo no sea capaz de procesar estos datos
-        y, por lo tanto, nos dé una salida que no es la esperada.
+        y, por lo tanto, nos dé una salida que no es la esperada o deseada.
     \item \textbf{Insuficiencia de recursos:} los modelos que utilizaremos son modelos
-        muy grandes que necesita mucha memoria de GPU para poderse ejecutar, aunque sabemos que
+        muy grandes que necesita mucha memoria para poderse ejecutar, aunque sabemos que
         existen modelos más pequeños y que necesitan menos recursos, podemos encontrarnos de
         que no sea suficiente esta reducción.
 \end{itemize}
@@ -193,10 +206,10 @@ Se han establecido los siguientes riesgos:
 
 % Corregido 05/01/2024
 
-Tal y como he descrito en la sección \ref{sec:riesgos} los riesgos que se asumen en este
-proyecto son altos, por lo tanto, es necesario tener un plan de contingencia para poder
-hacer frente a estos riesgos. A continuación se detallarán el plan de contingencia elaborado
-para este proyecto.
+Tal y como se ha descrito en la sección \ref{sec:riesgos} los riesgos que se asumen en este
+proyecto son altos, por lo tanto, es necesario tener un plan de contingencia que describe
+el procedimiento a aplicar cuando el riesgo se produzca. A continuación se detallarán
+el plan de contingencia elaborado para este proyecto.
 
 Como se puede observar en la tabla \ref{tab:plan_contignecia} se detalla por cada riesgo
 la prevención y la respuesta que se dará a este riesgo. La prevención es la acción que se
@@ -210,11 +223,11 @@ que se llevará a cabo en caso de que el riesgo se produzca.
     \hline
     \rowcolor[HTML]{8EA9D8} 
     Riesgo                    & Prevención                                                                                                                                                                                                & Respuesta                                                                                                                                                                                                                                       \\ \hline
-    Resultados no deseados    & \begin{tabular}[c]{@{}l@{}}\textbf{Validación rigurosa:} Validar el diseño del dataset\\ y de los modelos utilizados\\ \\ Desarrollo iterativo: Utilizar metodologías agiles\\ de desarrollo\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Revisión y ajuste:} Ajustar el sistema y el entrenamiento \\ cuando no se ajusten los resultados a lo esperado\\ \\ Colaboración con expertos: colaboración con los expertos\\ asociados a este proyecto\end{tabular} \\ \hline
-    Insuficiencia de recursos & \begin{tabular}[c]{@{}l@{}}\textbf{Evaluación de recursos:} evaluar lo que se necesitan\\ de recursos\\ \\ Planificación de recursos: asegurar la disponibilidad\\ de los recursos\end{tabular}           & \begin{tabular}[c]{@{}l@{}}\textbf{Escalabilidad de recursos:} en caso de que sean insuficientes,\\ mirar métodos para poder escalarlos\\ \\ Optimización de modelos: optimización de los modelos\\ para que estos consuman menos recursos\end{tabular}  \\ \hline
+    Resultados no deseados    & \begin{tabular}[c]{@{}l@{}}\textbf{Validación rigurosa:} Validar el diseño del dataset\\ y de los modelos utilizados\\ \\ \textbf{Desarrollo iterativo:} Utilizar metodologías agiles\\ de desarrollo\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Revisión y ajuste:} Ajustar el sistema y el entrenamiento \\ cuando no se ajusten los resultados a lo esperado\\ \\ \textbf{Colaboración con expertos:} colaboración con los expertos\\ asociados a este proyecto\end{tabular} \\ \hline
+    Insuficiencia de recursos & \begin{tabular}[c]{@{}l@{}}\textbf{Evaluación de recursos:} evaluar lo que se necesitan\\ de recursos\\ \\ \textbf{Planificación de recursos:} asegurar la disponibilidad\\ de los recursos\end{tabular}           & \begin{tabular}[c]{@{}l@{}}\textbf{Escalabilidad de recursos:} en caso de que sean insuficientes,\\ mirar métodos para poder escalarlos\\ \\ \textbf{Optimización de modelos:} optimización de los modelos\\ para que estos consuman menos recursos\end{tabular}  \\ \hline
     \end{tabular}%
     }
-    \caption[Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este]{Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este (Elaboración propia))}
+    \caption[Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este]{Plan de contingencia donde se detalla por cada riesgo la prevención y respuesta que se da a este (Elaboración propia)}
     \label{tab:plan_contignecia}
 \end{table}
 
