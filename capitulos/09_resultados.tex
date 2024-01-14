@@ -240,4 +240,56 @@ en la primera prueba.
 \section{Análisis de resultados}
 \label{sec:analisis_resultados}
 
-Vista general de los resultados obtenidos y análisis de los mismos.
+% Corregido 14/01/2024
+% TODO:daniel: Revisar los resultados de la estrategia 1 y 2
+
+Una vez visto los resultados obtenidos con las diferentes estrategias de entrenamiento
+que se definieron en el capítulo \ref{cap:estrategia_entrenamiento}, vamos a analizar
+los resultados obtenidos y ver si cumplen con los criterios de evaluación definidos en
+la sección \ref{sec:evaluacion}.
+
+\subsection{Estrategia 1}
+\label{subsec:analisis_resultados:estrategia_1}
+
+% Corregido 14/01/2024
+% TODO:daniel: Revisar los resultados de la estrategia 1
+
+Por lo que respecta a la estrategia 1 podemos ver que los resultados obtenidos son malos.
+Esto es debido a que no obtenemos ninguna salida que sea un código en C, tan solo obtenemos
+como salida texto, en este caso texto en inglés que nos intenta explicar el funcionamiento
+del ejecutable que le hemos pasado como entrada.
+
+Si entramos en calificar si por lo menos el texto que nos da explica de manera razonada el
+funcionamiento del programa, podemos ver que no es así, sí que se aproxima ligeramente al
+funcionamiento del programa, pero no es una explicación que nos permita entender con
+exactitud la lógica del programa.
+
+\subsection{Estrategia 2}
+\label{subsec:analisis_resultados:estrategia_2}
+
+% Corregido 14/01/2024
+% TODO:daniel: Revisar los resultados de la estrategia 2
+
+Por lo que respecta a la estrategia 2 podemos ver que los resultados obtenidos son malos.
+A diferencia de la estrategia 1, en este caso sí que obtenemos una salida parecida a un
+código en C, pero no es un código en C válido, ya que sintácticamente no es correcto.
+
+Así mismo, con el ejemplo del programa de \textit{Hello World} podemos ver que el código
+generado intenta ir por las líneas de lo que esperamos obtener como salida, pero por lo que
+respecta al programa de \textit{Binary Search} podemos ver que el código generado no tiene
+ningún sentido, vemos que solamente repita la palabra de un registro de la CPU.
+
+\subsection{Conclusiones}
+\label{subsec:analisis_resultados:conclusiones}
+
+% Corregido 14/01/2024
+% TODO:daniel: Revisar las conclusiones
+
+Por lo que respecta a los resultados obtenidos, podemos ver que no cumplen con ninguno de los
+criterios de evaluación definidos en la sección \ref{sec:evaluacion}. Por lo tanto, podemos
+concluir que la hipótesis planteada en el capítulo \ref{cap:introducion} no es viable.
+No obstante, distinguiría en que esta hipótesis no es viable en modelos con pocos parámetros. Como
+hemos podido ver en el capítulo \ref{cap:viabilidad_hipotesis} las pruebas hechas en GPT-4 no
+eran nada malas y sí que se podía ver que el modelo era capaz de generar código en C que era
+compilable y ejecutable.
+

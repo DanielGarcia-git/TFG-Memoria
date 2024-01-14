@@ -1,4 +1,77 @@
 \chapter{Conclusiones}
 \label{cap:conclusiones}
 
-Añadir conclusiones, lo dejo para el final
+% Corregido 14/01/2024
+% TODO: Revisar conclusiones
+
+El desarrollo de este proyecto no ha sido una tarea fácil. Se trataba de un proyecto
+complejo y ambicioso, pero a la vez muy interesante. El objetivo de este proyecto,
+como bien he comentado en el capítulo \ref{cap:introducion}, es el de investigar
+la viabilidad de utilizar modelos de lenguaje, concretamente utilizar LLM, para
+realizar la ingeniería inversa de código en ensamblador. En otras palabras, investigar
+si podemos asistirnos con técnicas de aprendizaje automático para mejorar los resultados
+que obtenemos a la hora de aplicar ingeniería inversa a un ejecutable.
+
+Para ello, se ha realizado un estudio e investigación de los modelos de lenguaje
+disponibles gratuitamente en internet. Se ha analizado las características de cada
+uno de ellos teniendo muy en cuenta su tamaño y el coste computacional que supone
+entrenarlos, ya que en nuestro proyecto es una limitación que tenemos que tener muy
+en cuenta. También se ha definido la estrategia de entrenamiento que se va a seguir.
+
+También, se ha realizado un sistema de \textit{scripts} que nos permite extraer
+los datos de entrenamiento de un ejecutable y generar un conjunto de entrenamiento
+que se compone de un conjunto de datos de entrada, el código en ensamblador, y un
+conjunto de datos de salida, el código en C.
+
+Por lo tanto, a la pregunta de: \textbf{¿utilizando modelos de lenguaje del estilo
+GPT podemos automatizar la generación de código en C a partir de un ejecutable?} Mi
+respuesta es clara: \textbf{SI}. En este proyecto, a lo largo del recorrido de esta memoria
+se ha demostrado que a pesar de que los resultados obtenidos no son buenos, es posible
+utilizar modelos de lenguaje para automatizar la generación de código en C a partir de
+un ejecutable.
+
+Pero, ¿por qué los resultados no son buenos? La respuesta es sencilla, y es que los
+modelos de lenguaje utilizados no son lo suficientemente grandes para que la habilidad
+de generar código en C a partir de código en ensamblador pueda emerger. Es decir, la historia
+en este aspecto es clara, cada vez que se ha aumentado el tamaño del modelo de lenguaje, es decir,
+el número de parámetros que tiene los modelos, los resultados han mejorado haciendo que estos
+modelos adquieran habilidades por las cuales no habían sido entrenados.
+
+Por lo tanto, y basándome en los resultados obtenidos en el capítulo \ref{cap:viabilidad_hipotesis},
+hemos visto que los resultados obtenidos utilizando un modelo que tiene 600 billones de parámetros
+como es el caso de GPT-4 son muy buenos y seguramente si tuviéramos la opción de realizar un
+\textit{fine-tuning} de este modelo con un conjunto de datos de entrenamiento lo suficientemente
+grande y representativo de la tarea que queremos realizar, los resultados serían muy buenos.
+
+Basándome en los estudios que también se citan en este proyecto, concretamente en la sección
+\ref{sec:estudios_previos}, se ha demostrado que los modelos de lenguaje son capaces de aprender
+de realizar este tipo de tarea y que el campo de la ingeniería inversa asistida por IA es un campo
+que tiene mucho futuro y aun un largo recorrido.
+
+Así mismo, creo que las investigaciones que se realicen en este campo pueden ser muy beneficiosas
+para la comunidad de la seguridad informática, y pueden ayudar a mejorar la seguridad de los sistemas
+informáticos. Por ejemplo, dando un ejemplo más personal, herramientas como estas podrían ayudar dentro
+de la industria de las \textit{Smart Cards}, en la cual yo trabajo, a mejorar la seguridad de este tipo
+de sistemas \textit{embeded} y que son críticos en nuestra sociedad.
+
+Por lo que respecta a si se ha logrado o no los objetivos marcados en el capítulo \ref{cap:objetivos},
+en este caso se ha de decir que se han cumplido los cuatro objetivos marcados. Se ha podido desplegar
+un entorno de entrenamiento y se han entrenado modelos de lenguaje con diferentes tamaños de \textit{datasets}.
+También se ha podido realizar pruebas con un modelo tipo \textit{chatbot}, en este caso utilizando ChatGPT
+GPT-4, y se han obtenido resultados prometedores. También se ha podido generar un \textit{dataset} de entrenamiento
+utilizando un sistema de \textit{scripts} que nos permite extraer los datos de entrenamiento de un ejecutable
+y generar un conjunto de entrenamiento. Y por último, se ha podido realizar un estudio de los resultados obtenidos
+y obtener conclusiones de estos mismos.
+
+También se han logrado adquirir las competencias asociadas en este proyecto, concretamente la
+competencia CTI3.1 se ha adquirido satisfactoriamente con la investigación que se ha realizado
+y con la implementación de los \textit{scripts} que nos permiten extraer los datos de entrenamiento.
+También se ha adquirido la competencia CTI3.3 con la configuración de los entornos de entrenamiento
+y con la ejecución de los mismos.
+
+En conclusión, este proyecto ha sido una experiencia muy enriquecedora y que me ha permitido
+aprender mucho sobre el campo de la inteligencia artificial y de la ingeniería inversa, de
+los cuales desconocía mucho. Así mismo, hemos podido poner un grano de arena en la investigación
+de métodos para mejorar los procesos de ingeniería inversa y que pueden ser muy beneficiosos
+para la comunidad informática.
+
