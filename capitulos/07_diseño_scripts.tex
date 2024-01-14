@@ -1,61 +1,58 @@
-\chapter{Diseño e implementación del sistema de scripts}
+\chapter{Diseño e implementación del sistema de \textit{scripts}}
 \label{cap:diseñoImplentacion_scripts}
 
 % Corregido 29/12/2023
-% TODO:danielg: Revisar la introducción del capítulo
+% Revisado 14/01/2024
 
-Como hemos visto en el capítulo \ref{cap:introducion} el objetivo principal de este
-proyecto es poder generar código en C a partir de un fichero ejecutable en su forma
-de ensamblador. Para poder alcanzar este objetivo nos asistiremos con inteligencia
-artificial de tal manera que podamos conseguir resultados óptimos. Para ello deberemos
-de generar un \textit{dataset} que contenga los datos necesarios para poder entrenar
-nuestro modelo.
+Como he explicado en el capítulo \ref{cap:introducion}, el objetivo principal de este
+proyecto es poder generar código en C a partir de un fichero ejecutable. Para poder
+alcanzar este objetivo nos asistiremos con inteligencia artificial de tal manera que
+podamos conseguir resultados óptimos. Para ello, deberemos de generar un \textit{dataset}
+que contenga los datos necesarios para poder entrenar nuestro modelo.
 
-Por ello, se ha diseñado un sistema de scripts que nos permitirá automatizar el proceso
+Se ha diseñado un sistema de \textit{scripts} que nos permitirá automatizar el proceso
 de generar nuestro \textit{dataset}. Para el diseño de este sistema se han seguido los
 siguientes criterios:
 
 \begin{itemize}
-    \item \textbf{Modularidad:} el sistema de scripts debe de ser modular, de tal manera
+    \item \textbf{Modularidad:} el sistema de \textit{scripts} debe de ser modular, de tal manera
         que se puedan añadir nuevas funcionalidades de manera sencilla.
-    \item \textbf{Mantenibilidad:} el sistema de scripts debe de ser mantenible, de tal
+    \item \textbf{Mantenibilidad:} el sistema de \textit{scripts} debe de ser mantenible, de tal
         manera que se puedan corregir errores o añadir nuevas funcionalidades de manera
         sencilla.
-    \item \textbf{Portable:} el sistema de scripts debe de ser portable, de tal manera
+    \item \textbf{Portable:} el sistema de \textit{scripts} debe de ser portable, de tal manera
         que se pueda ejecutar en cualquier sistema operativo.
 \end{itemize}
 
-\section{Diseño del sistema de scripts}
+\section{Diseño del sistema de \textit{scripts}}
 \label{sec:diseño_sistema_scripts}
 
 % Corregido 30/12/2023
-% TODO:danielg: Revisar la sección de diseño del sistema de scripts
+% Revisado 14/01/2024
 
-Como bien he mencionado en el apartado anterior \ref{cap:diseñoImplentacion_scripts}, el
-sistema de scripts debe de ser modular, mantenible y portable. Podréis ver en la sección
-\ref{subsec:diagrama_clases} el diagrama de clases del sistema de scripts. Pero antes de
-entrar en detalle de los diferentes módulos implementados, explicaré las funcionalidades
-que nos ofrece este sistema de scripts.
+Como bien he mencionado en el apartado anterior, el sistema de \textit{scripts} debe de ser
+modular, mantenible y portable. Podréis ver en la sección \ref{subsec:diagrama_clases}
+el diagrama de clases del sistema de \textit{scripts}. Pero antes de entrar en detalle de
+los diferentes módulos implementados, explicaré las funcionalidades que nos ofrece
+este sistema de \textit{scripts}.
 
-\subsection{Casos de uso del sistema de scripts}
+\subsection{Casos de uso del sistema de \textit{scripts}}
 \label{subsec:casos_uso_sistema_scripts}
 
 % Corregido 30/12/2023
-% TODO:danielg: Revisar la sección de diseño del sistema de scripts
+% Revisado 14/01/2024
 
-El sistema de scripts tiene como objetivo principal automatizar la generación de un dataset
+El sistema de \textit{scripts} tiene como objetivo principal automatizar la generación de un \textit{dataset}
 que contenga los datos necesarios para poder entrenar nuestro modelo. Para la generación
-de este dataset se ha dividido en diferentes pasos:
-
-% TODO:danielg: Revisar si hace falta añadir algun paso mas como por ejemplo en del finetuning
+de este \textit{dataset} se ha dividido en diferentes pasos:
 
 \begin{enumerate}
     \item \textbf{Recolección de datos:} en este paso se recogerán los datos necesarios
-        para poder generar el dataset. En mi caso, se trata de recolectar códigos escritos
+        para poder generar el \textit{dataset}. En mi caso, se trata de recolectar códigos escritos
         en C. Mayoritariamente se han recolectado de la página web \textit{Github}
         \footnote{URL al sitio web \href{https://github.com/}{Github}}, de repositorios 
         públicos que se detallan en el apéndice \ref{apen:repositorios}.
-    \item \textbf{Compilación y generación de ensamblador:} en este paso se compilarán los
+    \item \textbf{Compilación y generación del ensamblador:} en este paso se compilarán los
         códigos obtenidos en el paso anterior y se generará el código en ensamblador. En este
         paso se decidirán cosas como el nivel de optimización de la compilación (con esto podemos
         definir diferentes niveles de complejidad en el código ensamblador). Una vez generado el
@@ -65,20 +62,20 @@ de este dataset se ha dividido en diferentes pasos:
         puede utilizarse como desensamblador para ver un ejecutable en forma de ensamblador.} o 
         \textit{dumpbin}\footnote{El volcado de archivos binarios COFF de Microsoft o \textit{dumpbin}
         muestra información sobre los archivos binarios del formato de archivo de objeto común.}.
-    \item \textbf{Generación de dataset:} en este paso se generará el dataset a partir de los
+    \item \textbf{Generación de \textit{dataset}:} en este paso se generará el \textit{dataset} a partir de los
         códigos ensambladores obtenidos en el paso anterior. Este paso generará un fichero JSON
         \footnote{JSON o JavaScript Object Notation es un formato de texto sencillo para el 
         intercambio de datos.} con los datos necesarios y en el formato correcto para poder 
         entrenar nuestro modelo.
 \end{enumerate}
 
-\subsection{Módulos del sistema de scripts}
+\subsection{Módulos del sistema de \textit{scripts}}
 \label{subsec:modulos_sistema_scripts}
 
 % Corregido 31/12/2023
-% TODO:danielg: Revisar la sección de módulos del sistema de scripts
+% Revisado 14/01/2024
 
-En esta sección se detallarán los diferentes módulos y submódulos definidos en el sistema de scripts y las
+En esta sección se detallarán los diferentes módulos y submódulos definidos en el sistema de \textit{scripts} y las
 funcionalidades o propósitos que tienen cada uno de ellos. Para más información sobre los métodos que contiene
 cada módulo, submódulo o clase podéis consultar la documentación generada que se encuentra en conjunto con
 el código fuente del proyecto.
@@ -86,7 +83,7 @@ el código fuente del proyecto.
 Los módulos definidos son los siguientes:
 
 \begin{itemize}
-    \item \textbf{Modulo main}
+    \item \textbf{Modulo \textit{main}}
     \begin{itemize}
         \item \textit{main.tasks}
         \item \textit{main.command}
@@ -106,13 +103,13 @@ Los módulos definidos son los siguientes:
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Modulo main}
+\subsubsection{Modulo \textit{main}}
 \label{subsubsec:modulo_main}
 
 % Corregido 31/12/2023
-% TODO:danielg: Revisar la sección del módulo main
+% Revisado 14/01/2024
 
-El módulo \textit{main} es el módulo principal del sistema de scripts. Este módulo se encarga de interpretar
+El módulo \textit{main} es el módulo principal del sistema de \textit{scripts}. Este módulo se encarga de interpretar
 la entrada del usuario (los argumentos) y de llamar a los diferentes submódulos para que realicen las tareas
 correspondientes.
 
@@ -140,18 +137,18 @@ componen el módulo \textit{main}.
     main   & main.tasks   & RepositorySetup  & \begin{tabular}[c]{@{}l@{}}Declaración de la tarea de descarga\\ de los repositorios\end{tabular} & \begin{tabular}[c]{@{}l@{}}Esta clase define el comportamiento\\ de la tarea de descarga de los repositorios\end{tabular}                              \\ \hline
     \end{tabular}%
     }
-    \caption{Descripción de los submódulos y clases que componen el módulo main}
+    \caption[Descripción de los submódulos y clases que componen el módulo \textit{main}]{Descripción de los submódulos y clases que componen el módulo \textit{main} (Elaboración propia)}
     \label{tab:main_description}
 \end{table}
 
-\subsubsection{Modulo script}
+\subsubsection{Modulo \textit{script}}
 \label{subsubsec:modulo_script}
 
 % Corregido 31/12/2023
-% TODO:danielg: Revisar la sección del módulo script
+% Revisaod 14/01/2024
 
 El módulo \textit{script} es el módulo que se encarga de realizar las tareas de recolección de datos, compilación
-y generación del dataset.
+y generación del \textit{dataset}.
 
 En la tabla \ref{tab:script_description} se puede ver una descripción de los diferentes submódulos y clases que
 componen el módulo \textit{script}.
@@ -174,15 +171,15 @@ componen el módulo \textit{script}.
     script                                               & script.repository                                      & RepositoryList                                     & \begin{tabular}[c]{@{}l@{}}Declaración de un conjunto\\ repositorios\end{tabular}                                        & \begin{tabular}[c]{@{}l@{}}Esta clase representa un conjunto de\\ repositorios de Git\end{tabular}                                             \\ \hline
     \end{tabular}%
     }
-    \caption{Descripción de los submódulos y clases que componen el módulo script}
+    \caption[Descripción de los submódulos y clases que componen el módulo \textit{script}]{Descripción de los submódulos y clases que componen el módulo \textit{script} (Elaboración propia)}
     \label{tab:script_description}
 \end{table}
 
-\subsubsection{Modulo utils}
+\subsubsection{Modulo \textit{utils}}
 \label{subsubsec:modulo_utils}
 
 % Corregido 30/12/2023
-% TODO:danielg: Revisar la sección del módulo utils
+% Revisado 14/01/2024
 
 El módulo \textit{utils} es un módulo que contiene clases y submódulos auxiliares, es decir, son clases que
 ayudan al resto del sistema, por ejemplo con variables globales, enumeradores, clases abstractas, clases
@@ -213,7 +210,7 @@ componen el módulo \textit{utils}.
     utils                                                & utils.file                                             & ObjdumpFile                                        & \begin{tabular}[c]{@{}l@{}}Declaración de un fichero que\\ contienen código en ensamblador\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Esta clase representa un fichero de la salida estándar\\ al ejecutar un comando del estilo objdump\end{tabular}                                          \\ \hline
     \end{tabular}%
     }
-    \caption{Descripción de los submódulos y clases que componen el módulo utils}
+    \caption[Descripción de los submódulos y clases que componen el módulo \textit{utils}]{Descripción de los submódulos y clases que componen el módulo \textit{utils} (Elaboración propia))}
     \label{tab:utils_description}
 \end{table}
 
@@ -233,7 +230,7 @@ componen el módulo \textit{utils}.
     \begin{center}
         \includegraphics[scale=0.2]{figuras/Capitulo_07/UML_Script.png}
     \end{center}
-    \caption[Diagrama de clases del sistema de scripts]{Diagrama de clases del sistema de scripts (Elaboración propia)}
+    \caption[Diagrama de clases del sistema de \textit{scripts}]{Diagrama de clases del sistema de \textit{scripts} (Elaboración propia)}
     \label{fig:UML_Script}
 \end{figure}\
 
@@ -244,29 +241,33 @@ componen el módulo \textit{utils}.
 \pdfpagewidth=\paperwidth
 \headwidth=\textwidth
 
-\section{Implementación del sistema de scripts}
+\section{Implementación del sistema de \textit{scripts}}
 \label{sec:implementacion_sistema_scripts}
 
 % Corregido 30/12/2023
-% TODO:danielg: Revisar la sección de implementación del sistema de scripts
+% Revisado 14/01/2024
 
-La implementación del sistema de scripts se ha realizado utilizando el lenguaje de programación Python
+La implementación del sistema de \textit{scripts} se ha realizado utilizando el lenguaje de programación Python
 \footnote{Python es un lenguaje de alto nivel de programación interpretado cuya filosofía hace hincapié
 en la legibilidad de su código. Es un lenguaje de programación multiparadigma, ya que soporta parcialmente
 la orientación a objetos, programación imperativa y programación funcional. Es un lenguaje interpretado,
 dinámico y multiplataforma. }. La principal razón de utilizar este lenguaje de programación es debido a
 que es un lenguaje muy orientado al \textit{scripting}, es decir, es un lenguaje que permite realizar
-scripts de manera sencilla y rápida. Además, siguiendo con los criterios de diseño que me he marcado,
+\textit{scripts} de manera sencilla y rápida. Además, siguiendo con los criterios de diseño que me he marcado,
 Python nos permite aumentar la portabilidad de nuestro sistema, ya que es un lenguaje que se puede ejecutar
 en cualquier sistema operativo.
+
+Así mismo, Python nos permite una mayor compatibilidad con la plataforma de desarrollo elegido, que en el caso
+de este proyecto es \textit{lit-gpt} que también está implementada utilizando Python. Esto nos permite
+integrar nuestro sistema de \textit{scripts} con la plataforma de desarrollo de manera sencilla.
 
 \subsection{Herramientas de desarrollo}
 \label{subsec:herramientas_desarrollo}
 
 % Corregido 30/12/2023
-% TODO:danielg: Revisar la sección de herramientas de desarrollo
+% Revisado 14/01/2024
 
-Para poder desarrollar el sistema de scripts se han utilizado diferentes herramientas de desarrollo que han 
+Para poder desarrollar el sistema de \textit{scripts} se han utilizado diferentes herramientas de desarrollo que han 
 ayudado a lo largo de la implementación del sistema. A continuación se detallan las herramientas utilizadas:
 
 \begin{itemize}
