@@ -2,7 +2,7 @@
 \label{cap:justificacion}
 
 % Corregido 07/01/2024
-% TODO:daniel: Revisar la justificación
+% Revisado 14/01/2024
 
 En este capítulo se explicará cuál es el problema a resolver, investigaciones previas
 que se han realizado sobre el tema y la solución que se ha tomado para resolver el problema.
@@ -10,13 +10,13 @@ que se han realizado sobre el tema y la solución que se ha tomado para resolver
 \section{Identificación del problema}
 \label{sec:problema}
 
-% Corregido 07/01/2024
-% TODO:daniel: Revisar la sección de identificación del problema
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
-Tal y como explico en el capítulo \ref{cap:estadoDelArte} la ingeniería inversa tiene
-una relevancia muy alta en el campo de la informática sobre todo en la seguridad. Pero como he
-mencionado, aplicar ingeniería inversa no es una tarea fácil, ya que actualmente los
-programas que podemos encontrar en el mercado son de tal complejidad que aplicar
+Tal y como explicaré en el capítulo \ref{cap:estadoDelArte}, la ingeniería inversa tiene
+una relevancia muy alta en el campo de la informática sobre todo en el ámbito de la
+seguridad. Pero aplicar ingeniería inversa no es una tarea fácil, ya que actualmente
+los programas que podemos encontrar en el mercado son de tal complejidad que aplicar
 ingeniería inversa sobre la totalidad del programa supone horas y horas de trabajo,
 teniendo el riesgo de que los resultados obtenidos no se asemejen a la realidad.
 
@@ -40,11 +40,12 @@ que calcula el máximo común divisor de dos números utilizando el algoritmo de
 el máximo común divisor (MCD) de dos números enteros, el número más grande que los divide
 a ambos sin dejar resto.}.
 
-Se ha compilado utilizando el compilador de Microsoft, se ha compilado uno sin optimizaciones
+Este código se ha compilado utilizando el compilador de Microsoft, se ha compilado uno sin optimizaciones
 y otro con optimizaciones. En el código \ref{cod:EuclidianCodeAsmNoOpt} podemos ver el código
 en ensamblador sin optimizaciones y en el código \ref{cod:EuclidianCodeAsmOpt} podemos ver
 el código en ensamblador con optimizaciones.
 
+\newpage
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{c}
 int EuclidsGCD(int m, int n) /*we want to find the GCD of m and n*/
@@ -68,11 +69,12 @@ int EuclidsGCD(int m, int n) /*we want to find the GCD of m and n*/
 \end{mycode}
 
 A simple vista podemos ver que el código no optimizado es más largo que el optimizado. Si nos
-fijamos más en detalle en el código original vemos que tenemos un bucle \mintinline{c}{while(1)}
+fijamos más en detalle en el código original escrito en C vemos que tenemos un bucle \mintinline{c}{while(1)}
 que se repite hasta que se cumple la condición \mintinline{c}{if(r == 0) return n} lo cual
-provoca que el bucle se corte. En el código ensamblador sin optimizar podemos ver que la condición
+provoca que el bucle finalice. En el código ensamblador sin optimizar podemos ver que la condición
 del bucle se está comprobando todo el rato con la instrucción \mintinline{asm}{test eax, eax}
-la cual cosa si pensamos es innecesaria, ya que la condición del bucle siempre es cierta.
+(línea 15 en el código \ref{cod:EuclidianCodeAsmNoOpt}) la cual cosa si pensamos es innecesaria, ya
+que la condición del bucle siempre es cierta.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{asm}
@@ -135,9 +137,9 @@ optimizado no se comprueba la condición del bucle, sino que tan solo comprobamo
 del \mintinline{c}{if} y si se cumple se salta fuera del bucle. Es decir, vemos que el compilador
 ha optimizado eliminando código innecesario y que era costoso computacionalmente. \textbf{¿Pero qué
 repercusión tiene esto a la hora de aplicar ingeniería inversa?} Si tan solo disponemos del código
-optimizado, lo que llegaremos a inferir es que la condición del bucle no es \mintinline{c}{while(1)}
-sino que es \mintinline{c}{while(r != 0)} y que además la estructura del \mintinline{c}{if} desaparece.
-En la figura \ref{cod:EuclidianCodeIng} podemos ver el resultado de aplicar ingeniería inversa sobre
+optimizado, lo que llegaremos a inferir es que la condición del bucle no es \mintinline{c}{while(1)},
+sino que es \mintinline{c}{while(r != 0)} convirtiéndose en una estructura \mintinline{c}|do {} while ()|.
+En la figura \ref{cod:EuclidianCodeIng} podemos el código en C generado si aplicamos ingeniería inversa sobre
 el código optimizado.
 
 \begin{mycode}
@@ -184,15 +186,14 @@ END
 También a la hora de aplicar ingeniería inversa debemos sumar la complejidad de las aplicaciones
 distribuidas, es decir, antes, cuando disponíamos de un programa, disponíamos de su código en
 su totalidad, aunque este fuese en forma de un binario. Con las aplicaciones distribuidas, el
-programa se ha segmentado en diferentes partes y estas partes cada una se puede encontrar en una
-máquina diferente, provocando que no dispongamos a veces del todo el programa y, por lo tanto,
-de todo su diseño y lógica.
+programa se ha segmentado en diferentes partes y en diferentes máquinas, provocando que no
+dispongamos a veces del todo el programa y, por lo tanto, de todo su diseño y lógica.
 
 En consecuencia, debido a las técnicas de ocultación de código, las optimizaciones que el compilador
 puede aplicar sobre el código, el gran tamaño de los programas modernos y el auge de las aplicaciones
 distribuidas hacen que la tarea de aplicar ingeniería inversa sobre un programa sea muy compleja y
 que las soluciones actuales, no son capaces de dar buenos resultados, sino que dan una especie de
-pseudocódigo que nos puede ayudar a entender la lógica del programa.
+"pseudocódigo" que nos podría llegar a ayudar a entender la lógica del programa.
 
 Todos estos factores contribuyen a que aplicar ingeniería inversa sea muy complejo y costoso y, por
 lo tanto, inviable en muchos casos para ciertos escenarios.
@@ -223,29 +224,80 @@ int EuclidsGCD(int m, int n)
 \label{sec:estudios_previos}
 
 % Corregido 07/01/2024
-% TODO:daniel: Revisar la sección de estudios previos
+% Revisado 14/01/2024
 
 Existen diferentes estudios y artículos que exploran la vía de utilizar redes neuronales,
 de diferentes tipos y arquitecturas, para poder aplicar ingeniería inversa sobre un programa
-y obtener un código en C, concretamente estos estudios persiguen obtener un descompilador utilizando
-inteligencia artificial. Los estudios que se han realizado hasta ahora son los siguientes:
+y obtener un código en C, concretamente estos estudios persiguen obtener un descompilador.
+Los estudios que se han realizado hasta ahora son los siguientes:
 
 \begin{itemize}
 \item \textbf{Using Recurrent Neural Networks for Decompilation} \cite{8330222}
+
+    El artículo presenta una técnica de decompilación innovadora usando Redes
+    Neuronales Recurrentes (RNN). Se enfoca en recuperar código fuente a partir
+    de código binario, demostrando su efectividad con código C. Los resultados
+    muestran una decompilación precisa y aplicable a la práctica, resaltando el
+    potencial de esta metodología para mejorar la decompilación en diversas
+    situaciones y lenguajes de programación.
+
 \item \textbf{Towards Neural Decompilation (2019)} \cite{KatzOmer2019TND}
+
+    El artúclo se centra en una técnica innovadora de decompilación automática
+    utilizando traducción automática neural. El enfoque propone transformar
+    programas de bajo nivel a un lenguaje de programación de alto nivel más legible,
+    aprovechando los avances en la traducción automática neural. La técnica se basa
+    en la idea de aprender un decompilador a partir de un compilador existente, utilizando
+    para ello un modelo de traducción automática neural. Se ha probado con éxito en la
+    decompilación de código LLVM IR y x86 a código C.
+
 \item \textbf{Coda: An End-to-End Neural Program Decompiler} \cite{FuCheng2019ANPD}
+
+    El artículo presenta "Coda", un marco de trabajo neural de punta a punta para la
+    decompilación de programas. Coda utiliza un codificador consciente del tipo de
+    instrucción y un decodificador de árbol para generar un árbol de sintaxis abstracta,
+    seguido de una corrección de errores iterativa guiada por un predictor de errores neural.
+    Los resultados muestran que Coda supera significativamente a los decompiladores convencionales,
+    logrando una precisión promedio del 82 \% en la recuperación de programas de muestras binarias
+    no vistas.
+
 \item \textbf{N-Bref: a neural-based decompiler framework} \cite{fu2021nbref}
+
+    El artículo presenta "N-Bref", un marco de trabajo basado en redes neuronales para la
+    decompilación de alto rendimiento. N-Bref utiliza transformadores estructurales y
+    técnicas avanzadas de procesamiento de datos para mejorar la decompilación, logrando
+    resultados precisos en la recuperación de tipos de datos y generación de código fuente.
+    Los experimentos demuestran que N-Bref supera a los métodos anteriores, ofreciendo un
+    enfoque más eficaz y preciso para la decompilación de programas.
+
 \item \textbf{Neutron: an attention-based neural decompiler} \cite{LiangRuigang2021Naan}
+
+    El artículo describe "Neutron", un marco de decompilación neural basado en atención,
+    que traduce códigos de programación de bajo nivel (como el código ensamblador) a un
+    lenguaje de alto nivel con funciones similares. Neutron utiliza operaciones básicas
+    del lenguaje de programación como unidades de traducción, mejorando la capacidad de
+    generalización del modelo y su precisión en la decompilación. Los experimentos demuestran
+    que Neutron alcanza un 96.96\% de precisión promedio en proyectos reales, superando a otros
+    modelos de decompilación.
+
 \item \textbf{Beyond the C: Retargetable Decompilation using Neural Machine Translation} \cite{HosseiniIman2022BtCR}
+
+    El artículo "Beyond the C: Retargetable Decompilation using Neural Machine Translation"
+    explora un nuevo enfoque en la decompilación neural, tratando tanto el código fuente como
+    el ensamblador como texto plano. Este enfoque permite que el decompilador sea fácilmente
+    adaptable a nuevos lenguajes. Los resultados muestran que este método es eficaz en varios
+    lenguajes de programación, logrando decompilaciones precisas con menos conocimientos específicos
+    del dominio, lo que representa un avance significativo en la decompilación asistida por IA.
+
 \end{itemize}
 
 Todos estos estudios tienen el mismo objetivo, aplicar ingeniería inversa sobre un programa
-y obtener un código en C asistiéndose a través de redes neuronales. En muchos de estos estudios
-definen procedimientos y técnicas para poder entrenar a la red neuronal, de hecho la mayoría
-utilizan un preprocesamiento del código en ensamblador para que a la red neuronal le sea más
-fácil procesar la información.
+y obtener un código en C asistiéndose a través de técnicas de aprendizaje automático. En muchos
+de estos estudios definen procedimientos y técnicas para poder entrenar a la red neuronal, de
+hecho la mayoría utilizan un preprocesamiento del código en ensamblador para que a la red
+neuronal le sea más fácil procesar la información.
 
-Cabe destacar que la mayoría de estudios se han realizado antes del boom de la inteligencia artificial
+Cabe destacar que la mayoría de estudios se han realizado antes del "boom" de la inteligencia artificial
 que sucedió en 2020 con la aparición de los modelos de lenguaje como GPT-3. Por lo tanto, estos
 estudios no se han beneficiado de los avances que se han realizado en el campo de la inteligencia
 artificial.
@@ -258,22 +310,20 @@ no han sido entrenados y con resultados bastante buenos.
 \section{Solución tomada}
 \label{sec:solucion}
 
-% Corregido 07/01/2024
-% TODO:daniel: Revisar la sección de solución tomada
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
-Una vez visto en la sección \ref{sec:alternativas} las diferentes alternativas que hay
-en el mercado para poder aplicar ingeniería inversa sobre fichero ejecutable y observado
-que los resultados obtenidos no son un código en C compilable y realista, quiero explicar
-cuál es la solución que en este proyecto se desarrollara.
+Como se ha podido observar en la sección \ref{sec:estudios_previos}, todos los estudios abordan
+el problema utilizando tipos de redes neuronales y con diferentes enfoques o técnicas de entrenamiento.
+Pero ninguna ha utilizado lo que se conoce como LLM (\textit{Large Language Model}) que han aparecido
+en los últimos años.
 
-El objetivo es a través de un ejecutable desamblado poder generar un código en C compilable
-y lo más fiel al original. Para ello queremos de asistirnos de la inteligencia artificial
-de tal manera que si le damos un código desamblado esta nos pueda devolver un código en C.
-Más concretamente, queremos utilizar inteligencias artificiales basadas en redes neuronales
-del estilo de ChatGPT\footnote{ChatGPT es una aplicación de chatbot de inteligencia artificial
-desarrollado en 2022 por OpenAI que se especializa en el diálogo} o modelos similares como 
-Llama\footnote{LLaMA (Large Language Model Meta AI) es un gran modelo de lenguaje (LLM) 
-lanzado por Meta AI en febrero de 2023}.
+La solución tomada en este proyecto pasa por utilizar LLM para poder automatizar el proceso de
+aplicar ingeniería inversa sobre un ejecutable. Más concretamente, queremos utilizar inteligencias
+artificiales basadas en redes neuronales del estilo de ChatGPT\footnote{ChatGPT es una aplicación de
+\textit{chatbot} de inteligencia artificial desarrollado en 2022 por OpenAI que se especializa en el
+diálogo} o modelos similares como Llama\footnote{LLaMA (Large Language Model Meta AI) es un gran
+modelo de lenguaje (LLM) lanzado por Meta AI en febrero de 2023}.
 
 Por lo tanto, lo que se pretende en esta solución es poder mejorar los resultados de decompiladores
 que hay en el mercado, asistiéndonos con inteligencia artificial, la cual ha demostrado
