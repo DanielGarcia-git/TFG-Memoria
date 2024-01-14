@@ -1,23 +1,13 @@
-\chapter{Estado del arte de la ingeniería inversa}
+\chapter{Estado del arte}
 \label{cap:estadoDelArte}
 
-\begin{flushright}
-    \begin{minipage}[]{10cm}
-        \emph{Sometimes, the best way to advance is in reverse}\\
-    \end{minipage}\\
-
-    Eldad Eilam, \textit{Reversing : secrets of reverse engineering}\\
-\end{flushright}
-
-\vspace{1cm}
-
 % Corregido 01/01/2024
-% TODO:daniel: Revisar El estado del arte de la ingeniería inversa
+% Revisado 14/01/2024
 
-Antes de entrar en profundidad en el proyecto que en esta memoria se detalla me
+Antes de entrar en el desarrollo del proyecto que en esta memoria se detalla me
 gustaría introducir formalmente el concepto de ''ingeniería inversa'' o conocida
 en el mundo de la informática como \textit{reverse engineering}. La ingeniería
-inversa es el proceso de extraer conocimiento o el diseño por cualquier cosa que 
+inversa es el proceso de extraer conocimiento o el diseño de cualquier cosa que
 el humano haya hecho. Por lo tanto, no es un concepto que solo acotemos dentro de
 la ingeniería informática, sino que se puede aplicar a cualquier proceso ingenieril.
 De hecho, este proceso es bastante similar al método científico, con la única diferencia
@@ -26,7 +16,7 @@ método científico lo aplicamos en fenómenos naturales.
 
 La ingeniería inversa es usada normalmente para obtener conocimiento desconocido o la
 filosofía del diseño cuando esta información no está disponible, ya sea porque su
-propietario ha decidido no compartirla o porque esta información está perdida o 
+propietario ha decidido no compartirla o porque esta información está perdida o
 destruida. \cite{alma991003132729706711}
 
 La ingeniería inversa aplicada al \textit{software} es el mismo concepto, pero aplicada
@@ -39,7 +29,7 @@ lógico.
 Las aplicaciones de la ingeniería inversa son muy variadas, pero podemos destacar dos
 categorías: seguridad y desarrollo de \textit{software}.
 
-Sus aplicaciones en seguridad son muy variadas, pero normalmente se le relaciona con
+Sus aplicaciones en seguridad son muy dispares, pero normalmente se le relaciona con
 \textit{malware}, algoritmos criptográficos y auditorias sobre binarios.
 
 Dentro del mundo del \textit{software} malicioso vemos que la ingeniería inversa se
@@ -53,102 +43,31 @@ También se puede aplicar ingeniería inversa sobre algoritmos criptográficos, 
 que podamos averiguar que tan seguro es ese mensaje encriptado, o incluso en caso de utilizar
 algoritmos basados en llaves, en los cuales la especificación del algoritmo de encriptación
 es conocido, pero que cada implementación específica puede variar, encontrar vulnerabilidades
-en estos algoritmos.
+en estos algoritmos o el valor de las llaves.
 
 Y por último, también la ingeniería inversa se aplica para realizar auditorias sobre binarios,
 de tal manera que podamos detectar si un programa es seguro o no, encontrar sus vulnerabilidades
 para poder corregirlas. Por lo tanto, cuanto mejores sean las herramientas de ingeniería inversa
-que se apliquen, podremos encontrar con mucha más eficacia problemas de seguridad en \textit{software}
-propietario.
+que se apliquen, podremos encontrar con mucha más eficacia problemas de seguridad o funcionales
+en \textit{software} propietario.
 
 Como he mencionado con anterioridad, la ingeniería inversa también se aplica dentro del desarrollo
 de \textit{software}, estas aplicaciones las podemos encontrar en diferentes etapas, por ejemplo
-cuando disponemos de un \textit{software} propietario y a documentación es escasa, el uso de
+cuando disponemos de un \textit{software} propietario y la documentación es escasa, el uso de
 herramientas de ingeniería inversa nos podrían ayudar a conseguir más interoperabilidad con
 el \textit{software} propietario.
 
-Otras de las aplicaciones, y que he mencionado anteriormente, es el comprobar la robustez y calidad
-de un programa informático, de tal manera que se pueda corregir posibles problemas de seguridad o
-problemas funcionales.
-
-Una vez introducido el concepto de ingeniería inversa de manera general, creo que es interesante
-contestar a la siguiente pregunta: \textbf{¿Es la ingeniería inversa legal?}
-
-Como hemos podido ver en los párrafos anteriores, muchas veces aplicamos ingeniería inversa sobre
-un \textit{software} propietario, algunos con fines de conocer vulnerabilidades y corregirlas
-y otros con fines de encontrar estas vulnerabilidades para tener un punto de ataque. En
-otras palabras, la legalidad de la aplicación de ingeniería inversa dependerá mucho
-de para que lo estamos aplicando, la finalidad, y sobre que lo estamos aplicando.
-
-En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades 
+En conclusión, la ingeniería inversa es un proceso complejo y que requiere de muchas habilidades
 y que sus aplicaciones son muy variadas, desde auditorias sobre binarios hasta mejorar
-la interoperabilidad de dos programas.
-
-\section{Ética y legalidad}
-\label{sec:etica_legalidad}
-
-% Corregido 01/01/2024
-% TODO:daniel: Revisar Ética y legalidad
-
-Cuando inicie este proyecto, una de las primeras peguntas que me hice fue: si conseguimos
-generar código a partir de un ejecutable, ¿sería legal? ¿Sería ético? ¿Qué implicaciones
-legales y éticas tendría?
-
-Creo que es importante reflexionar e indagar más sobre este asunto, ya que, como estudiante
-de ingeniería, uno a de ser consciente de las repercusiones de los proyectos que desarrolla y
-de las implicaciones que tiene en la sociedad. Así mismo, también es crucial saber que las
-técnicas aplicadas en este proyecto son legales o no.
-
-Para poder responder a estas preguntas, me gustaría empezar por la ética. Creo que muchos, cuando
-lean esta memoria, se sentirán identificados cuando de pequeños cogíamos juguetes o electrodomésticos
-para desmontarlos y poder ver como funcionaban. En aquel momento, desconocíamos que lo que estábamos
-haciendo era ingeniería inversa, ¿pero quiere decir esto que lo que hacíamos era ilegal o inmoral?
-
-El ser humano, por naturaleza, es curioso y siempre ha tenido la necesidad de entender como funcionan
-las cosas, es algo innato y que nos ha ayudado a tener las tecnologías que hoy en día tenemos. Por lo tanto,
-creo que lo importante es con qué finalidad se hace. Si lo hacemos con la finalidad de aprender y entender
-como funcionan las cosas para poder crear nuevos productos o mejorar los existentes, creo que es algo
-positivo.
-
-Por dar un ejemplo ilustrativo, en los años 80's IBM dominaba el mercado de los ordenadores personales
-con su IBM PC gracias a su BIOS, e IBM se encargaba de proteger su monopolio amenazando a cualquier otra
-empresa que intentara clonar su sistema. Phoenix Technologies, decidió aplicar la técnica de la habitación
-limpia, la cual consistía en tener dos grupos de ingenieros totalmente desvinculados, donde uno se encargaba
-de estudiar en profundidad la BIOS de IBM para transmitírselo al segundo grupo, sin especificar detalles
-técnicos o de código y que, por lo tanto, pudieran crear un sistema que se comportara de igual manera programada
-desde cero.
-
-En este caso, gracias a un sistema basado en la ingeniería inversa, se pudo crear un sistema que se comportaba
-de la misma manera que el sistema de IBM, pero programado desde cero y, por lo tanto, acabar con el monopolio
-de IBM, lo cual fue muy beneficioso para el mercado y para los consumidores. \cite{IngenieriaInversa}
-
-Por lo que respecta a la legalidad de la ingeniería inversa, creo que es un tema más complejo y que depende
-mucho de la legislación de cada país. En el caso de España, el Real Decreto Legislativo 1/1996, de 12 de abril,
-por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, en su artículo 100, que establece
-los límites de explotación de la obra, en su apartado 3\cite{LeyPropiedadIntelectual}: 
-
-\begin{quote}
-    \textit{``El usuario legítimo de la copia de un programa estará facultado para observar, estudiar o 
-    verificar su funcionamiento, sin autorización previa del titular, con el fin de determinar las ideas
-    y principios implícitos en cualquier elemento del programa, siempre que lo haga durante cualquiera de
-    las operaciones de carga, visualización, ejecución, transmisión o almacenamiento del programa que tiene
-    derecho a hacer''}
-\end{quote}
-
-Como se puede observar, la ley contempla que nosotros como usuarios podamos analizar e indagar en el funcionamiento
-de un programa informático que legítimamente hemos adquirido y dentro de los términos de uso, es decir, aplicar
-ingeniería inversa.
-
-A pesar de que hay muchos casos a contemplar que se van fuera del objetivo de este trabajo y de muchas más leyes
-que entran en juego a la hora de aplicar ingeniería inversa. Podemos concluir que mientras estos programas se hayan
-adquirido legalmente, podremos aplicar ingeniería inversa sobre estos, siempre y cuando la finalidad no sea copiar,
-sino entender el funcionamiento de un producto.
+la interoperabilidad de dos programas. Pero en lo que inferimos claramente es que la
+ingeniería inversa es necesaria para poder seguir mejorando la calidad del \textit{software}
+que actualmente y en el futuro produciremos.
 
 \section{Barreras de la ingeniería inversa}
 \label{sec:barreras}
 
 % Corregido 02/01/2024
-% TODO:daniel: Revisar Barreras de la ingeniería inversa
+% Revisado 14/01/2024
 
 Como he mencionado, la ingeniería inversa no es un proceso sencillo y requiere de muchas
 habilidades y conocimientos para poder aplicarla. En este apartado, me gustaría introducir
@@ -161,28 +80,32 @@ ingeniería inversa sobre un programa informático. \cite{alma991004951313206711
         Traducir de conceptos de dominio (que es lo que quiero que haga mi aplicación) a
         un lenguaje de programación concreto y viceversa es un reto complejo, es decir, mapear
         conceptos del comportamiento del código a conceptos de dominio.
+
     \item \textbf{Concreción y abstracción}
         
         Cuando nos enseñan a programar, nos enseñan a abstraernos de los detalles de implementación
         y a pensar en términos de conceptos abstractos. Por lo tanto, cuando aplicamos ingeniería
         inversa, tenemos que hacer el proceso inverso, es decir, concretar los conceptos abstractos
         a partir de detalles de implementación.
+
     \item \textbf{Decadencia de la Estructura del Sistema}
         
         Muchos sistemas informáticos, a lo largo del tiempo y con el mantenimiento, han ido perdiendo
         su estructura original, por lo tanto, a la hora de aplicar ingeniería inversa, nos podemos
-        encontrar con que el sistema no tiene una estructura clara.
+        encontrar con que el sistema no tiene una estructura clara, lo cual implica una dificultat añadida.
+
     \item \textbf{Disonancia Cognitiva}
         
         Los humanos pensamos en términos asociativos, mientras que los programas informáticos son expresiones
         jerárquicas formales. En consecuencia, supone un desafío a la hora de aplicar ingeniería inversa.
+
 \end{enumerate}
 
 \section{Fases de la ingeniería inversa}
 \label{sec:fases}
 
 % Corregido 02/01/2024
-% TODO:daniel: Revisar Fases de la ingeniería inversa
+% Revisado 14/01/2024
 
 Normalmente, la ingeniería inversa, cuando la queremos aplicar sobre programas informáticos, se divide en
 cinco fases \cite{FasesIngineriaInversa}:
@@ -213,13 +136,13 @@ de una persona dedicada a ello.
 \section{Historia de los Large Language Models}
 \label{sec:historia}
 
-% Corregido 02/01/2024
-% TODO:daniel: Revisar la sección de historia
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
 El lenguaje es una de las habilidades más importantes que tenemos los seres humanos, y es
-que gracias a esta habilidad podemos comunicarnos entre nosotros. Pero, las máquinas no
+que gracias a esta habilidad podemos comunicarnos entre nosotros. Las máquinas no
 tienen esta habilidad, a menos que las equipemos en algoritmos poderosos de inteligencia
-artificial. Pero aun así siempre ha sido un reto conseguir que las máquinas puedan leer,
+artificial. Pero aun así, siempre ha sido un reto conseguir que las máquinas puedan leer,
 escribir y comunicarse como los humanos.
 
 \begin{figure}[H]
@@ -231,10 +154,8 @@ escribir y comunicarse como los humanos.
 \end{figure}\
 
 \textit{Lenguage modeling} (LM) es, a día de hoy, una de las mejores aproximaciones para conseguir
-que las máquinas puedan entender el lenguaje humano. La investigación en LM se puede dividir
-en cuatro etapas \cite{ZhaoWayneXin2023ASoL}:
-
-% TODO:daniel: Revisar la traducción de este párrafo
+que las máquinas puedan entender el lenguaje humano. La investigación en las LM's se puede dividir
+en cuatro tipos \cite{ZhaoWayneXin2023ASoL}:
 
 \begin{enumerate}
     \item \textit{\textbf{Statistical language models (SLM)}}: Estos modelos están desarrollados basados en aprendizaje
@@ -258,14 +179,16 @@ en cuatro etapas \cite{ZhaoWayneXin2023ASoL}:
         con conjuntos de datos de entrenamiento más pequeños que los PLM.
 \end{enumerate}
 
-En mi caso, haremos hincapié en los LLM, ya que son los modelos que se han utilizado para la realización de este
-proyecto. Típicamente, los \textit{Large Language Models} se refiere a modelos de lenguajes que
-tienen cientos de billones de parámetros, y que son entrenados con datos masivos de texto.
-Algunos de estos modelos son GPT-3, PaLM, Galactica o LLaMA. Estos modelos han demostrado altas
-capacidades para entender el lenguaje natural y resolver tareas complejas a través del lenguaje o texto.
+En el caso de este proyecto, haremos hincapié en los LLM, ya que son los modelos que
+se han utilizado para la realización de este proyecto. Típicamente, los \textit{Large
+Language Models} se refiere a modelos de lenguajes que tienen cientos de billones de
+parámetros, y que son entrenados con datos masivos de texto. Algunos de estos modelos
+son GPT-3, PaLM, Galactica o LLaMA. Estos modelos han demostrado altas capacidades para
+entender el lenguaje natural y resolver tareas complejas a través del lenguaje o texto.
 
 Así mismo, dentro de los LLM estos han ido creciendo en tamaño y en cantidad de parámetros.
 Para ilustrarlo, en la figura \ref{fig:evolutionLLM} podemos ver la evolución de los LLM a lo largo
+del tiempo respecto a su tamaño y cantidad de parámetros.
 
 \begin{figure}[H]
     \begin{center}
@@ -277,8 +200,10 @@ Para ilustrarlo, en la figura \ref{fig:evolutionLLM} podemos ver la evolución d
 
 Pero lo que hace realmente interesante estos tipos de modelos es el concepto de
 \textit{emergent abilities}, que nos viene a decir que hay habilidades que en
-modelos pequeños no se observan, pero que en modelos grandes aparecen. Tres
-habilidades que se han observado en los modelos grandes son:
+modelos pequeños no se observan, pero que en modelos grandes aparecen, es decir,
+al haber augmentado el tamaño de los modelos a provocado que aprendan a hacer tareas
+que los modelos más pequeños no han adquirido. Tres habilidades emergentes que se
+han observado en los modelos grandes son:
 
 \begin{itemize}
     \item \textbf{\textit{In-context learning}:} esta habilidad es la capacidad
@@ -296,11 +221,11 @@ habilidades que se han observado en los modelos grandes son:
         requieren de múltiples pasos de razonamiento.
 \end{itemize}
 
-\section{Fine-tuning}
-\label{sec:fine_tuning}
+\subsection{Fine-tuning}
+\label{subsec:fine_tuning}
 
 % Corregido 02/01/2024
-% TODO:daniel: Revisar la sección de fine-tuning
+% Revisado 14/01/2024
 
 \begin{wrapfigure}{r}{0.3\textwidth}
     \centering
@@ -313,7 +238,7 @@ El \textit{fine-tuning} o en castellano ''ajuste fino'' es una técnica en la cu
 ciertos pesos en las capas de nuestra red neuronal, de tal manera que podamos afinar los
 resultados de nuestro modelo para una tarea en específico. Esta técnica se parte de un
 modelo preentrenado y se van ajustando las diferentes capas, en su totalidad o parcialmente,
-con un conjunto de datos etiquetados. Esta técnica nos permite poder entrenar o ajustar los
+con un conjunto de datos etiquetados. En esta técnica nos permite poder entrenar o ajustar los
 modelos de manera eficiente y reduciendo los recursos computacionales y de memoria, pudiendo
 incluso entrenar estos modelos en hardware de bajo coste o dispositivos comerciales para
 uso doméstico.
@@ -332,7 +257,7 @@ mejorar la capacidad de realizar dicha tarea. \cite{Finetuning}
 \end{figure}
 
 Dentro de las técnicas de \textit{fine-tuning} cabe destacar cinco métodos diferentes, aunque en
-nuestro proyecto utilizaremos tan solo uno de ellos:
+nuestro proyecto utilizaremos tan solo dos de ellos:
 
 \begin{enumerate}
     \item \textit{\textbf{Prompt Tuning}}: El \textit{prompt tuning} es una técnica que consiste en
@@ -373,23 +298,55 @@ nuestro proyecto utilizaremos tan solo uno de ellos:
     \label{fig:qlora}
 \end{figure}
 
-\section{Cuantización de modelos}
-\label{sec:cuantizacion}
+\subsection{Cuantización de modelos}
+\label{subsec:cuantizacion}
 
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
+La cuantización surge por la necesidad de poder ejecutar modelos de redes neuronales,
+que cada vez son mucho más grandes y complejos, en dispositivos con recursos limitados.
+La idea básica que hay detrás de la cuantización es la de comprimir, es decir, reducir
+la precisión numérica de los parámetros del modelo para obtener representaciones más
+compactas que requieren menos bits y, por lo tanto, menos memoria.
+
+Un símil lo podríamos encontrar en la música, donde podemos encontrar diferentes formatos
+con diferentes precisiones que permiten comprimir la música y reducir el tamaño del archivo.
+Por ejemplo, el formato WAV tiene una precisión de 16 bits, mientras que el formato MP3
+tiene una precisión de 8 bits.
+
+Volviendo al mundo de las redes neuronales, la mayoría de redes neuronales utilizan números
+de coma flotante de 32 bits para representar los parámetros del modelo. Pero la cuantización
+puede reducir la precisión de los parámetros a 8 bits. Para lograrlo se mapean los grandes
+rangos de valores de punto flotante a rangos más pequeños de valores enteros.
+
+\begin{itemize}
+    \item \textit{4-bit NormalFloat Quantization} \cite{DettmersTim2023QEFo}
+    \item \textit{Double Quantization} \cite{DettmersTim2023QEFo}
+    \item \textit{4-bit Floating Point} \cite{DettmersTim2023QEFo}
+    \item \textit{El algoritmo GPTQ} \cite{DettmersTim20218OvB}
+    \item \textit{8-bit optimizers via block-wise quantization} \cite{FrantarElias2022GAPQ}
+\end{itemize}
+
+En el contexto de este proyecto, nos centraremos en la cuantización \textit{4-bit
+NormalFloat Quantization} que es la que se ha utilizado para poder cuantizar los
+modelos de lenguaje que se han utilizado para la realización de este proyecto.
+
+Cabe destacar que la cuantización de modelos conlleva una pérdida de precisión y, por
+lo tanto, su uso puede provocar que para ciertas tareas el resultado no sea lo esperado.
 
 \section{Soluciones y alternativas existentes}
 \label{sec:alternativas}
 
 % Corregido
-% TODO:daniel: Revisar la sección de alternativas
+% Revisado 14/01/2024
 
 Actualmente, en el mercado podemos encontrar diferentes herramientas o programas llamados
 decompiladores o reversores los cuales tienen la capacidad de convertir un ejecutable
 en un código C aproximado llamado normalmente por estas herramienta como pseudocódigo.
 
 Así mismo, la mayoría de estas herramientas están más orientadas a la generación de un
-código ensamblador más "amigable" y que mayoritariamente siempre necesitara intervención
+código ensamblador más ``amigable'' y que mayoritariamente siempre necesitara intervención
 para que pueda ser más legible y así ayudar en procesos de depuración.
 
 Algunas de estas herramientas son:
@@ -407,8 +364,8 @@ ya que esta es la más usada para aplicar ingeniería inversa.
 \subsection{IDA Pro}
 \label{subsec:IDA_pro}
 
-% Corregido
-% TODO:daniel: Revisar la sección de IDA Pro
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
 IDA o \textit{Interactive Disassembler} es un desensamblador que es utilizado para
 ingeniería inversa. IDA soporta una variedad de formato de ejecutables para diferentes
@@ -487,7 +444,7 @@ int binarysearch2(const int *arr, int l, int r, int x)
     return mid;
 }
     \end{minted}
-    \caption[Búsqueda binaria, iterativa y recursiva]{Búsqueda binaria, iterativa y recursiva (\cite{BinarySearchGitHub})}
+    \caption[Búsqueda binaria en su forma iterativa y recursiva]{Búsqueda binaria en su forma iterativa y recursiva (\cite{BinarySearchGitHub})}
     \label{cod:binarySearch}
 \end{mycode}
 
@@ -499,7 +456,7 @@ y en la figura \ref{fig:IDAPro_binaryseacrh2} podemos observar la función \text
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[width=15cm]{figuras/Capitulo_02/IDAPro_binaryseacrh1.png}
+      \includegraphics[width=15cm]{figuras/Capitulo_03/IDAPro_binaryseacrh1.png}
     \end{center}
     \caption[Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh1}]{Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh1} (Elaboración propia)}
     \label{fig:IDAPro_binaryseacrh1}
@@ -507,44 +464,79 @@ y en la figura \ref{fig:IDAPro_binaryseacrh2} podemos observar la función \text
 
 \begin{figure}[H]
     \begin{center}
-      \includegraphics[width=15cm]{figuras/Capitulo_02/IDAPro_binaryseacrh2.png}
+      \includegraphics[width=15cm]{figuras/Capitulo_03/IDAPro_binaryseacrh2.png}
     \end{center}
     \caption[Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh2}]{Captura de pantalla de IDA Free con el pseudocódigo generado para la funcion \textit{binaryseacrh2} (Elaboración propia)}
     \label{fig:IDAPro_binaryseacrh2}
 \end{figure}\
 
-\section{Estudios previos}
-\label{sec:estudios_previos}
+Como se puede observar, el pseudocódigo generado es bastante legible y se puede
+entender el funcionamiento básico de los métodos. Pero también se puede observar
+que el pseudocódigo generado no es capaz de dar nombre de funciones o de variables
+que sean representativos. Así mismo, observamos que en algunas comprobaciones la
+legibilidad del código es bastante pobre y dificulta en muchos casos el entendimiento
+eficaz de la funcionalidad del código.
 
-% Corregido 07/01/2024
-% TODO:daniel: Revisar la sección de estudios previos
+\section{Ética y legalidad}
+\label{sec:etica_legalidad}
 
-Existen diferentes estudios y artículos que exploran la vía de utilizar redes neuronales,
-de diferentes tipos y arquitecturas, para poder aplicar ingeniería inversa sobre un programa
-y obtener un código en C, concretamente estos estudios persiguen obtener un descompilador utilizando
-inteligencia artificial. Los estudios que se han realizado hasta ahora son los siguientes:
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
-\begin{itemize}
-\item \textbf{Using Recurrent Neural Networks for Decompilation} \cite{8330222}
-\item \textbf{Towards Neural Decompilation (2019)} \cite{KatzOmer2019TND}
-\item \textbf{Coda: An End-to-End Neural Program Decompiler} \cite{FuCheng2019ANPD}
-\item \textbf{N-Bref: a neural-based decompiler framework} \cite{fu2021nbref}
-\item \textbf{Neutron: an attention-based neural decompiler} \cite{LiangRuigang2021Naan}
-\item \textbf{Beyond the C: Retargetable Decompilation using Neural Machine Translation} \cite{HosseiniIman2022BtCR}
-\end{itemize}
+Cuando inicie este proyecto, una de las primeras peguntas que me hice fue: si conseguimos
+generar código a partir de un ejecutable, ¿sería legal? ¿Sería ético? ¿Qué implicaciones
+legales y éticas tendría?
 
-Todos estos estudios tienen el mismo objetivo, aplicar ingeniería inversa sobre un programa
-y obtener un código en C asistiéndose a través de redes neuronales. En muchos de estos estudios
-definen procedimientos y técnicas para poder entrenar a la red neuronal, de hecho la mayoría
-utilizan un preprocesamiento del código en ensamblador para que a la red neuronal le sea más
-fácil procesar la información.
+Creo que es importante reflexionar e indagar más sobre este asunto, ya que, como estudiante
+de ingeniería, uno ha de ser consciente de las repercusiones de los proyectos que desarrolla y
+de las implicaciones que tiene en la sociedad. Así mismo, también es crucial saber que las
+técnicas aplicadas en este proyecto son legales o no.
 
-Cabe destacar que la mayoría de estudios se han realizado antes del boom de la inteligencia artificial
-que sucedió en 2020 con la aparición de los modelos de lenguaje como GPT-3. Por lo tanto, estos
-estudios no se han beneficiado de los avances que se han realizado en el campo de la inteligencia
-artificial.
+Para poder responder a estas preguntas, me gustaría empezar por la ética. Creo que muchos, cuando
+lean esta memoria, se sentirán identificados cuando de pequeños cogíamos juguetes o aparatos electrónicos
+para desmontarlos y poder ver como funcionaban. En aquel momento, desconocíamos que lo que estábamos
+haciendo era aplicar ingeniería inversa, ¿pero quiere decir esto que lo que hacíamos era ilegal o inmoral?
 
-Lo que intentamos en este proyecto es utilizar los LLM (\textit{Large Language Model}) que han aparecido
-en los últimos años para poder aplicar ingeniería inversa sobre un programa y obtener un código
-en C. Estos modelos de lenguaje han demostrado que son capaces de realizar tareas para las cuales
-no han sido entrenados y con resultados bastante buenos.
+El ser humano, por naturaleza, es curioso y siempre ha tenido la necesidad de entender como funcionan
+las cosas, es algo innato y que nos ha ayudado a tener las tecnologías que hoy en día tenemos. Por lo tanto,
+creo que lo importante es con qué finalidad se hace. Si lo hacemos con la finalidad de aprender y entender
+como funcionan las cosas para poder crear nuevos productos o mejorar los existentes, creo que es algo
+positivo y necesario.
+
+Por dar un ejemplo ilustrativo, en los años 80's IBM dominaba el mercado de los ordenadores personales
+con su IBM PC gracias a su BIOS\footnote{\textit{Basic Input Output System} es el primer programa que se
+ejecuta cuando encendemos un ordenador. La función principal es iniciar y probar el \textit{hardware}
+del sistema y cargar un gesto de arranque o un sistema operativo.}, en aquel momento IBM era la único empresa
+que fue capaz de crear un programa que se encargara de gestionar el \textit{hardware} del ordenador y que
+permitiera cargar un sistema operativo. Por lo tanto, IBM tenía el monopolio de los ordenadores personales
+e IBM se encargaba de proteger su monopolio amenazando a cualquier otra empresa que intentara clonar su sistema.
+Phoenix Technologies, decidió aplicar la técnica de la habitación limpia, la cual consistía en tener dos grupos
+de ingenieros totalmente desvinculados, donde uno se encargaba de estudiar en profundidad la BIOS de IBM para
+transmitírselo al segundo grupo, sin especificar detalles técnicos o de código y que, por lo tanto, pudieran
+crear un sistema que se comportara de igual manera programada desde cero.
+
+En este caso, gracias a un sistema basado en la ingeniería inversa, se pudo crear un sistema que se comportaba
+de la misma manera que el sistema de IBM, pero programado desde cero y, por lo tanto, acabar con el monopolio
+de IBM, lo cual fue muy beneficioso para el mercado y para los consumidores. \cite{IngenieriaInversa}
+
+Por lo que respecta a la legalidad de la ingeniería inversa, creo que es un tema más complejo y que depende
+mucho de la legislación de cada país. En el caso de España, el Real Decreto Legislativo 1/1996, de 12 de abril,
+por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, en su artículo 100, que establece
+los límites de explotación de la obra, en su apartado 3:
+
+\begin{quote}
+\textit{''El usuario legítimo de la copia de un programa estará facultado para observar, estudiar o
+verificar su funcionamiento, sin autorización previa del titular, con el fin de determinar las ideas
+y principios implícitos en cualquier elemento del programa, siempre que lo haga durante cualquiera de
+las operaciones de carga, visualización, ejecución, transmisión o almacenamiento del programa que tiene
+derecho a hacer\cite{LeyPropiedadIntelectual}''}
+\end{quote}
+
+Como se puede observar, la ley contempla que nosotros como usuarios podamos analizar e indagar en el funcionamiento
+de un programa informático que legítimamente hemos adquirido y dentro de los términos de uso, es decir, aplicar
+ingeniería inversa.
+
+A pesar de que hay muchos casos a contemplar que se van fuera del marco de este proyecto y de muchas más leyes
+que entran en juego a la hora de aplicar ingeniería inversa, podemos concluir que mientras estos programas se hayan
+adquirido legalmente, podremos aplicar ingeniería inversa sobre estos, siempre y cuando la finalidad no sea copiar,
+sino entender el funcionamiento de un producto adquirido.

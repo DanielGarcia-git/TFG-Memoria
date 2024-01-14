@@ -1,29 +1,30 @@
 \chapter{Configuración y ejecución de los entornos de entrenamiento}
 \label{cap:configuracion_ejecucion}
 
-% Corregido 08/01/2024
-% TODO:daniel: Revisar la configuración y ejecución de los entornos de entrenamiento
+% Corregido 14/01/2024
+% Revisado 14/01/2024
 
 En este capítulo se detalla la configuración que se ha realizado para la ejecución de los
 del modelo de lenguaje y qué plataformas se han utilizado para la ejecución de los mismos.
-En la realización de este proyecto se ha utilizado dos entornos de ejecución diferentes:
-
-\begin{itemize}
-    \item \textbf{Entorno local:} se ha utilizado el cluster \textit{sert} del departamento
-        de Arquitectura de Computadores de la Universitat Politècnica de Catalunya.
-\end{itemize}
+En la realización de este proyecto se ha utilizado un único entorno de ejecución. En el caso
+de este proyecto se ha utilizado el clúster \textit{sert} del departamento de Arquitectura de
+Computadores de la Universitat Politècnica de Catalunya.
 
 \section{Plataforma de desarrollo \textit{lit-gpt}}
 \label{sec:lit_gpt}
 
 % Corregido 09/01/2024
-% TODO:daniel: Revisar lit-gpt
+% Revisado 14/01/2024
 
-Lit GPT es una plataforma de desarrollo que nos permite entrenar modelos de
+\textit{Lit-gpt} es una plataforma de desarrollo que nos permite entrenar modelos de
 lenguaje de manera sencilla. Esta plataforma nos ofrece una serie de \textit{scripts} que nos
 permiten entrenar modelos utilizando diferentes técnicas de las cuales hemos hablado
 en el capítulo \ref{cap:estadoDelArte}. Así mismo, nos ofrece una serie de \textit{scripts} que nos permiten convertir
-los modelos de lenguaje de la plataforma de \textit{huggingface} a un formato que pueda
+los modelos de lenguaje de la plataforma de \textit{huggingface}\footnote{Es una empresa
+estadounidenseque desarrolla herramientas para crear aplicaciones utilizando el
+aprendizaje automático. Es conocida por su biblioteca de transformadores creada para
+aplicaciones de procesamiento de lenguaje natural y su plataforma que permite a los
+usuarios compartir conjuntos de datos y modelos de aprendizaje automático.\cite{HuggingFace}} a un formato que pueda
 ser utilizado por el \textit{framework lightning}. Esta plataforma de desarrollo se encuentra
 disponible en el siguiente repositorio de GitHub \url{https://github.com/Lightning-AI/lit-gpt.git}.
 
@@ -58,7 +59,7 @@ tenemos las opciones que nos ofrece \textit{lit-gpt}.
 \label{subsec:cluster_ac}
 
 % Corregido 09/01/2024
-% TODO:daniel: Revisar cluster AC
+% Revisado 14/01/2024
 
 El clúster de AC es un clúster de computación de alto rendimiento que dispone el departamento
 de Arquitectura de Computadores de la Universitat Politècnica de Catalunya. Este clúster dispone
@@ -105,20 +106,21 @@ archivos. Este directorio se encuentra en la ruta \textit{/scratch/nas/3/danielg
 \label{subsubsec:configuracion_entorno}
 
 % Corregido 09/01/2024
-% TODO:daniel: Revisar configuración del entorno
+% Revisado 14/01/2024
 
 Como se ha mencionado en el capítulo \ref{cap:estrategia_entrenamiento}, se ha utilizado
 la plataforma de desarrollo \textit{lit-gpt}. Para la configuración del entorno se ha
 ha configurado un entorno virtual de Python e instalado todas las dependencias que requiere
 la plataforma. Para la instalación de las dependencias se ha utilizado el gestor de paquetes
-de Python \textit{pip}.
+de Python \textit{pip}. Para la instalación de las dependencias se ha utilizado el
+fichero requirements.txt que nos proporciona la plataforma. Este fichero contiene 
+todas las dependencias necesarias para la ejecución de la plataforma.
 
-Para la instalación de las dependencias se ha utilizado el fichero requirements.txt que
-nos proporciona la plataforma. Este fichero contiene todas las dependencias necesarias
-para la ejecución de la plataforma. Una vez instaladas todas las dependencias, se
-ha descargado el modelo de lenguaje \textit{stabilityai/stablecode-completion-alpha-3b}, este
-modelo se encuentra disponible en la plataforma de \textit{huggingface} a través de este URL
-\url{https://huggingface.co/stabilityai/stablecode-completion-alpha-3b}.
+Una vez instaladas todas las dependencias, se ha descargado el modelo de lenguaje \textit{stabilityai/stablecode-completion-alpha-3b},
+este modelo se encuentra disponible en la plataforma de \textit{huggingface} a través de
+este URL \url{https://huggingface.co/stabilityai/stablecode-completion-alpha-3b}. En el
+código \ref{cod:configuracion_entorno} tenemos el conjunto de comandos que se han
+utilizado para configurar el entorno de ejecución.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{bash}
@@ -146,14 +148,14 @@ $HOME/soft/bin/python generate/base.py
     --quantize bnb.nf4
     \end{minted}
     \caption[Conjunto de comandos necesarios para configurar el entorno]{Conjunto de comandos necesarios para configurar el entorno (Elaboración propia)}
-    \label{code:configuracion_entorno}
+    \label{cod:configuracion_entorno}
 \end{mycode}
 
 \subsubsection{Limitaciones}
 \label{subsubsec:limitaciones}
 
 % Corregido 08/01/2024
-% TODO:daniel: Revisar limitaciones del cluster AC
+% Revisado 14/01/2024
 
 Las limitaciones que tiene este entorno de ejecución son las siguientes:
 
@@ -170,10 +172,6 @@ Las limitaciones que tiene este entorno de ejecución son las siguientes:
 \section{Ejecución}
 \label{sec:ejecucion}
 
-En ambos entornos se ha ejecutado el mismo conjunto de entrenamiento. Este conjunto de
-entrenamiento se ha generado con el sistema de \textit{scripts} que se ha desarrollado en el capítulo
-\ref{cap:diseñoImplentacion_scripts}.
-
 \subsection{Creación del conjunto de entrenamiento}
 \label{subsec:creacion_conjunto_entrenamiento}
 
@@ -181,7 +179,7 @@ entrenamiento se ha generado con el sistema de \textit{scripts} que se ha desarr
 \label{subsubsec:creacion_conjunto:estrategia_1}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar la creación del conjunto de entrenamiento de la estrategia 1
+% Revisado 14/01/2024
 
 En el código \ref{code:DataSet_Estrategia_1} tenemos el conjunto de comandos que se han
 utilizado para generar el conjunto de entrenamiento para la estrategia 1. En este conjunto
@@ -190,7 +188,7 @@ de comandos se ha utilizado el \textit{script} \textit{main.py} que se ha desarr
 los proyectos, compilarlos y generar el conjunto de entrenamiento. Así mismo, se ha copiado
 el conjunto de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}.
 Por último, se ha copiado el \textit{script} de preparación de la estrategia 1 a la carpeta \textit{scripts}
-del proyecto de \textit{lit-gpt}.
+del proyecto de \textit{lit-gpt} y modificando ligeramente para adaptarlo a nuestras necesidades.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{bash}
@@ -217,7 +215,7 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_1.py
 \label{subsubsec:creacion_conjunto:estrategia_2}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar la creación del conjunto de entrenamiento de la estrategia 2
+% Revisado 14/01/2024
 
 En el código \ref{code:DataSet_Estrategia_2} tenemos el conjunto de comandos que se han
 utilizado para generar el conjunto de entrenamiento para la estrategia 2. En este conjunto
@@ -226,7 +224,7 @@ en el repositorio de \textit{neural-compilers}. Este \textit{script} nos permite
 de entrenamiento con una secuencia de \textit{tokens} baja. Así mismo, se ha copiado el conjunto
 de entrenamiento a la carpeta \textit{data} del proyecto de \textit{lit-gpt}. Por último,
 se ha copiado el \textit{script} de preparación de la estrategia 2 a la carpeta \textit{scripts}
-del proyecto de \textit{lit-gpt}.
+del proyecto de \textit{lit-gpt} y modificando ligeramente para adaptarlo a nuestras necesidades.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{bash}
@@ -257,10 +255,10 @@ cp scripts/prepare_alpaca.py scripts/prepare_Estrategia_2.py
 \label{subsec:cluster_ac_ejecucion}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar la ejecución del cluster AC
+% Revisado 14/01/2024
 
-Ambas estrategias se han ejecutado con la misma configuración de entrenamiento que pasaré
-a detallar a continuación:
+Ambas estrategias se han ejecutado con la misma configuración de entrenamiento y
+utilizando el método de \textit{fine-tuning} QLoRa que pasaré a detallar a continuación:
 
 \begin{itemize}
     \item Micro Batch Size 1
@@ -273,11 +271,14 @@ a detallar a continuación:
 \label{subsubsec:cluster_ac_ejecucion:estrategia_1}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar la ejecución de la estrategia 1
+% Revisado 14/01/2024
 
 En el entorno del clúster AC se ha ejecutado la estrategia 1 y la estrategia 2. Para la
 ejecución de la estrategia 1 se ha utilizado los siguientes comandos que se pueden encontrar
-en el código \ref{code:Ejecución_Estrategia_1}.
+en el código \ref{code:Ejecución_Estrategia_1}. Cabe destacar que en la preparación del
+\textit{dataset} hemos limitado la longitud máxima de la secuencia a 2048 \textit{tokens}.
+Esto es debido a que por encima de 2048 \textit{tokens} la cantidad de memoria necesaria
+para el entrenamiento es muy elevada y no se podría ejecutar el entrenamiento.
 
 \begin{mycode}
     \begin{minted}[fontsize=\scriptsize]{bash}
@@ -295,14 +296,14 @@ Una vez ejecutado estos comandos se han obtenido las siguientes métricas de ent
     \item \textbf{Máxima longitud de la secuencia:} 1091
     \item \textbf{Número de iteraciones:} 200
     \item \textbf{Tiempo de entrenamiento:} 91.44 segundos
-    \item \textbf{Memoria utilizada:} 7.24 GB
+    \item \textbf{Memoria máxima utilizada:} 7.24 GB
 \end{itemize}
 
 \subsubsection{Estrategia 2}
 \label{subsubsec:cluster_ac_ejecucion:estrategia_2}
 
 % Corregido 10/01/2024
-% TODO:daniel: Revisar la ejecución de la estrategia 2
+% Revisado 14/01/2024
 
 Para la ejecución de la estrategia 2 se ha utilizado los siguientes comandos que se
 pueden encontrar en el código \ref{code:Ejecución_Estrategia_2}.
@@ -324,7 +325,7 @@ para el conjunto de entrenamiento de 100 000 ejemplos:
     \item \textbf{Máxima longitud de la secuencia:} 2048
     \item \textbf{Número de iteraciones:} 100 000
     \item \textbf{Tiempo de entrenamiento:} 6 horas y 45 minutos
-    \item \textbf{Memoria utilizada:} 6.71 GB
+    \item \textbf{Memoria máxima utilizada:} 6.71 GB
 \end{itemize}
 
 Y las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejemplos:
@@ -333,5 +334,5 @@ Y las métricas obtenidas para el conjunto de entrenamiento de 500 000 de ejempl
     \item \textbf{Máxima longitud de la secuencia:} 2048
     \item \textbf{Número de iteraciones:} 500 000
     \item \textbf{Tiempo de entrenamiento:} 31 horas y 43 minutos
-    \item \textbf{Memoria utilizada:} 9.74 GB
+    \item \textbf{Memoria máxima utilizada:} 9.74 GB
 \end{itemize}
