@@ -2,18 +2,18 @@
 \label{cap:estrategia_entrenamiento}
 
 % Corregido 07/01/2024
-% TODO:daniel: Revisar la estrategia de entrenamiento
+% Revisado 14/01/2024
 
 En este capítulo se explicará la estrategia de entrenamiento que se ha seguido para
 entrenar los modelos de lenguaje. Para ello se explicará que modelo se ha escogido,
 qué estrategias se han seguido para entrenarlo y que limitaciones nos hemos encontrado
-para definir la estrategia de entrenamiento y ejecución del entrenamiento.
+para definir la estrategia de entrenamiento y la ejecución del entrenamiento.
 
 \section{Elección del modelo de lenguaje}
 \label{sec:modelo_lenguaje}
 
 % Corregido 07/01/2024
-% TODO:daniel: Revisar la estrategia de entrenamiento
+% Revisado 14/01/2024
 
 La decisión del modelo de lenguaje no ha sido una tarea fácil, debido a que podemos
 encontrar una gran variedad de modelos de lenguaje en internet. Para poder escoger
@@ -22,15 +22,17 @@ factores:
 
 \begin{itemize}
     \item \textbf{Tamaño:} el modelo de lenguaje debe tener un tamaño adecuado
-        para poder entrenarlo en un ordenador personal.
+        para poder entrenarlo en un entorno limitado.
     \item \textbf{Coste computacional:} el modelo de lenguaje debe tener un coste
-        computacional adecuado para poder entrenarlo en un ordenador personal.
+        computacional adecuado para poder entrenarlo en un entorno limitado.
     \item \textbf{Especialización:} el modelo de lenguaje debe estar especializado
         en la generación y tratamiento de lenguajes de programación.
+    \item \textbf{Plataforma de desarrollo:} el modelo de lenguaje debe ser compatible
+        con la plataforma de desarrollo que se va a utilizar para entrenarlo.
 \end{itemize}
 
 Pero antes de entrar en detalle de los modelos de lenguaje que se han escogido,
-hay que decidir bajo de plataforma interactuaremos con el modelo, es decir, bajo
+hay que decidir bajo que plataforma interactuaremos con el modelo, es decir, bajo
 que API utilizaremos para poder entrenar el modelo de lenguaje. Actualmente, encontramos
 dos grandes opciones:
 
@@ -50,15 +52,14 @@ la cual utiliza internamente PyTorch.
 
 Lightning AI es una plataforma de desarrollo de código abierto para la investigación
 en inteligencia artificial y la producción de modelos de aprendizaje automático.
-Lightning AI se basa en PyTorch y proporciona una abstracción de nivel de investigación
-para PyTorch. \cite{LightningAI}
+Lightning AI se basa en PyTorch y proporciona una abstracción para PyTorch. \cite{LightningAI}
 
 Para ser más concretos utilizaremos una implementación de Lightning AI llamada
-lit-gpt\cite{litGPT} la cual nos permite entrenar e interactuar con modelos de lenguaje
+\textit{lit-gpt}\cite{litGPT} la cual nos permite entrenar e interactuar con modelos de lenguaje
 de la familia GPT. En la tabla \ref{tab:litGPT} podemos ver los modelos de lenguaje
-disponibles bajo esta plataforma. La ventaja de utilizar lit-gpt es que nos permite
+disponibles bajo esta plataforma. La ventaja de utilizar \textit{lit-gpt} es que nos permite
 tener un entorno de desarrollo ya preparado para poder entrenar los modelos de lenguaje
-y así poder centrarnos en la estrategia de entrenamiento que es el objetivo principal de
+y así poder centrarnos en la estrategia de entrenamiento que es uno de los objetivos de
 este proyecto.
 
 \begin{table}[H]
@@ -67,7 +68,7 @@ este proyecto.
     \begin{tabular}{|l|l|l|}
         \hline
         \rowcolor[HTML]{8EA9D8} 
-        \textbf{Model and usage} & \textbf{Model size} & \textbf{Reference} \\
+        \textbf{Modelo y uso} & \textbf{Tamaño del modelo} & \textbf{Referencia} \\
         \hline
         EleutherAI \href{tutorials/download_pythia.md}{Pythia} & \{14,31,70,160,410\}M, \{1,1.4,2.8,6.9,12\}B & \href{https://arxiv.org/abs/2304.01373}{Biderman et al. 2023} \\
         \hline
@@ -112,10 +113,10 @@ este proyecto.
 \end{table}
 
 Una vez escogida la plataforma de desarrollo, se ha decidido utilizar alguno de los
-modelos de lenguaje soportados por lit-gpt. Para ello se ha tenido en cuenta los
+modelos de lenguaje soportados por \textit{lit-gpt}. Para ello se ha tenido en cuenta los
 factores que se han mencionado anteriormente. Debido a las limitaciones de hardware
-que tenemos, y que se explica con más detalle en la sección \ref{sec:limitaciones},
-se ha decidido utilizar un modelo de lenguaje con un tamaño de 3 billones de parámetros.
+que tenemos, y que se explica con más detalle en el capítulo \ref{cap:configuracion_ejecucion},
+se ha decidido utilizar un modelo de lenguaje con un tamaño de tres billones de parámetros.
 
 No se ha escogido modelos más pequeños, ya que la evolución de los LLM nos ha enseñado
 que cada vez que aumentamos en número de parámetros del modelo de lenguaje, los resultados
@@ -135,10 +136,10 @@ el modelo, ya que nuestra entrada de datos potencialmente grande.
 \label{sec:estrategia_entrenamiento}
 
 % Corregido 09/01/2024
-% TODO:daniel: Revisar la estrategia de entrenamiento
+% Revisado 14/01/2024
 
-Una vez escogido el modelo de lenguaje, se ha definido la estrategia de entrenamiento
-que se va a seguir. Para ello se ha tenido en cuenta los siguientes factores:
+Una vez escogido el modelo de lenguaje, se ha definido la estrategia de entrenamiento.
+Para ello se ha tenido en cuenta los siguientes factores:
 
 \begin{itemize}
     \item \textbf{Conjunto de entrenamiento:} el conjunto de entrenamiento debe ser
